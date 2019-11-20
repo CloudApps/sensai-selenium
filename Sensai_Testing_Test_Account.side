@@ -55,7 +55,7 @@
       "value": ""
     }, {
       "id": "2e63709b-2bfe-4a2e-8deb-0a1bb18d88c4",
-      "comment": "Click on the sidebar toggle button to open the sidebar menu.",
+      "comment": "Click on the sidebar toggle button to open the sidebar menu. ",
       "command": "click",
       "target": "id=sidebarToggleButton",
       "targets": [
