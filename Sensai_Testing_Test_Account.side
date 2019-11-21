@@ -1,16 +1,37 @@
 {
   "id": "889c9b84-57ce-423a-a2e9-542dc54fe7f2",
   "version": "2.0",
-  "name": "Sensai testing - Test Account",
+  "name": "Sensai_Testing_Test_Account",
   "url": "http://sensai-webapp-787509357522-dev.s3-website-eu-west-1.amazonaws.com",
   "tests": [{
     "id": "dba0a97c-d3d3-4404-9166-c83da8925147",
     "name": "Tenant User - Datasets - View and verify tabs and table headings",
     "commands": [{
-      "id": "1c6d0fa3-c3a4-4ce2-9219-82e7f98736f8",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -55,7 +76,7 @@
       "value": ""
     }, {
       "id": "2e63709b-2bfe-4a2e-8deb-0a1bb18d88c4",
-      "comment": "Click on the sidebar toggle button to open the sidebar menu. ",
+      "comment": "Click on the sidebar toggle button to open the sidebar menu.",
       "command": "click",
       "target": "id=sidebarToggleButton",
       "targets": [
@@ -463,6 +484,13 @@
       ],
       "value": "All Datasets"
     }, {
+      "id": "baee746f-0f2e-4f07-9aa5-e302516a0fea",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "6e27e1f7-3b78-4a9e-a97c-aafb0ece9ef0",
       "comment": "Click the Log Out link",
       "command": "click",
@@ -493,10 +521,31 @@
     "id": "25a8c0a8-f8c7-40f3-99fe-27f1355a5f6d",
     "name": "CloudApps Admin - Log in fail - incorrect password",
     "commands": [{
-      "id": "aca16cdb-2e6c-4f85-be37-f58222b40d3e",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -562,6 +611,27 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "1f3c5610-badb-4310-9ef8-dfea7dea1df8",
       "comment": "Enter the SL tenant admin username, i.e. sl_tenant_admin@sensai.test",
       "command": "type",
@@ -618,7 +688,7 @@
       "id": "7e298eed-1b5e-4fd6-bc49-51915659d9e2",
       "comment": "",
       "command": "pause",
-      "target": "120000",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -804,7 +874,7 @@
       "id": "5113b5a6-038e-474a-a686-c0e81ea8dd0d",
       "comment": "",
       "command": "pause",
-      "target": "120000",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -992,7 +1062,7 @@
       "id": "42974de0-0fd8-452a-be45-ac9326e02b8d",
       "comment": "",
       "command": "pause",
-      "target": "120000",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -1188,7 +1258,7 @@
       "id": "aac3ae55-4083-405c-ab27-8e9b5ec86381",
       "comment": "",
       "command": "pause",
-      "target": "120000",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -1311,6 +1381,13 @@
       ],
       "value": ""
     }, {
+      "id": "63caf2da-837a-41ad-8799-faf0cb7cf819",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "d311fb02-d8e7-47b0-9d42-42d65f34e9ed",
       "comment": "",
       "command": "click",
@@ -1337,15 +1414,43 @@
         ["xpath=//button[contains(.,'Log in with Salesforce')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "5904306a-0f7b-4b37-ada9-a2da6e2b2525",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "50c7ee26-a12f-4fa4-9dc1-1bbac663a1a8",
     "name": "CloudApps Admin - Tenants - Create New Tenant",
     "commands": [{
-      "id": "94c47ce0-a423-403e-a264-8ed0214182b5",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -1693,6 +1798,13 @@
       ],
       "value": "${currenttenantorgid}"
     }, {
+      "id": "cb501481-ccba-40fb-9a04-9916658429fa",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "f57b7fdd-310e-46a1-980a-52d840600b7c",
       "comment": "",
       "command": "click",
@@ -1724,10 +1836,31 @@
     "id": "04614dbc-f134-4488-a951-111b3ef83f06",
     "name": "Tenant Admin - Users - Create New Tenant User",
     "commands": [{
-      "id": "d689e65c-0c49-424a-9ce5-ddc8aa605947",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -1979,6 +2112,13 @@
       ],
       "value": ""
     }, {
+      "id": "40ad87db-9358-49a7-9b6a-481fc07011d2",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "860567ba-bd8c-4f0f-af64-48747d9393ec",
       "comment": "Click \"Logout\" in the header",
       "command": "click",
@@ -2009,10 +2149,31 @@
     "id": "bbd846d2-93e8-40c7-9d16-0a4e9ad03de2",
     "name": "CloudApps Admin - Tenants - Enable and Disable Tenant",
     "commands": [{
-      "id": "b47c05b7-8b2e-426e-926d-fc5db8564106",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -2200,6 +2361,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "b9d49f41-bae1-44ca-9e8a-88892ae315f3",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "be425ad1-5ec3-401b-9cf7-c7d235417ae3",
       "comment": "",
       "command": "click",
@@ -2231,10 +2399,31 @@
     "id": "d86b1f6f-8166-4a14-a638-6523245cc92d",
     "name": "CloudApps Admin - Log in and Verify Sidebar Menu items",
     "commands": [{
-      "id": "f6f84251-ffd5-4aeb-990f-f9cc3380cf2f",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -2277,13 +2466,6 @@
         ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "01062a57-ae88-4d4a-86de-c9f89f6f2099",
-      "comment": "",
-      "command": "//verifyText",
-      "target": "xpath=//h3",
-      "targets": [],
-      "value": "All Datasets"
     }, {
       "id": "bfbf54d6-429c-4a54-a5eb-a6ac9b90bbeb",
       "comment": "",
@@ -2370,12 +2552,12 @@
       ],
       "value": ""
     }, {
-      "id": "a950a030-0ad5-4e49-aa2e-40660e601644",
+      "id": "36f92e5f-e42e-4e49-8941-d97c2b0758e0",
       "comment": "",
-      "command": "//verifyText",
-      "target": "css=.mb-4",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
       "targets": [],
-      "value": "All Datasets"
+      "value": "1200000"
     }, {
       "id": "223e8abc-42fb-47ae-806a-cb33452529a2",
       "comment": "",
@@ -2394,10 +2576,31 @@
     "id": "15faae31-5501-4179-8ad5-f584e3e6d393",
     "name": "Tenant Admin - Users - New Tenant User with same name",
     "commands": [{
-      "id": "2d027619-633d-4808-a356-6dca25bda009",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -2617,6 +2820,13 @@
       ],
       "value": ""
     }, {
+      "id": "1333d345-6cb8-4e48-b8c4-a51e3e65fae8",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "e46e6d99-2313-4fe9-8657-e0fa54366fe2",
       "comment": "Click \"Logout\" in the header",
       "command": "click",
@@ -2648,10 +2858,31 @@
     "id": "04086720-9be8-457d-9cba-916cf041326e",
     "name": "CloudApps Admin - Tenants - Edit Tenant",
     "commands": [{
-      "id": "9675b688-b8be-423c-824c-2b731408ce6b",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -2890,6 +3121,13 @@
       ],
       "value": ""
     }, {
+      "id": "6a3c3d3d-55c5-4206-b7a2-7a790403f37a",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "c279f893-2dec-4536-9912-109b960ca9b1",
       "comment": "Click the Log Out link in the header",
       "command": "click",
@@ -2908,10 +3146,31 @@
     "id": "306cb67e-ebe8-4c23-a21a-bc61f44d6256",
     "name": "Tenant User - Log In Fail - inactive user",
     "commands": [{
-      "id": "b80602c0-321d-47a2-8e2c-5f6396a89eed",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -2977,10 +3236,31 @@
     "id": "4838c76f-afa6-4a3a-9525-eb3dcc61ccfc",
     "name": "Tenant User - Log In Fail - incorrect password",
     "commands": [{
-      "id": "3563d825-002c-44a4-86a5-038b59285a47",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -3050,10 +3330,31 @@
     "id": "b3f65c24-7ea2-4d55-8436-f14eb8a3ecf5",
     "name": "Tenant Admin - Connections - Log in, Import datasets, Load Connections - TBC",
     "commands": [{
-      "id": "a5a3bd15-e248-4bd4-85c2-63dabd8bc241",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -3257,6 +3558,13 @@
       ],
       "value": ""
     }, {
+      "id": "e7894189-cfcc-4ed6-8894-a951e196fb16",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "8e9bcb0e-cc4a-4186-9d51-2e28a240258c",
       "comment": "Click the \"Log Out\" link in the header",
       "command": "click",
@@ -3282,10 +3590,31 @@
     "id": "c9090129-12de-4804-aa51-7f0dbe81f7d0",
     "name": "Tenant Admin - Users - Enable and Disable Tenant User",
     "commands": [{
-      "id": "9547fce8-188e-42bb-be41-c9ad559fd9cf",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -3499,15 +3828,50 @@
         ["xpath=//button[contains(.,'Enable User')]", "xpath:innerText"]
       ],
       "value": "Enable User"
+    }, {
+      "id": "a7dd3498-ff65-4454-a1b7-2b5272e0bde6",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
+      "id": "fde9c923-a102-4b45-b2a9-46ecaeafb728",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "3e901cc4-d1c3-4a46-90a8-26b328f8a0a0",
     "name": "Tenant User - Log In Fail - Non-existent User",
     "commands": [{
-      "id": "6e33c6f6-ed1a-4119-9304-19ae8e375c38",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -3577,10 +3941,31 @@
     "id": "8d8039c6-1d43-4dd6-858f-fd4b41a7d274",
     "name": "Tenant User - Datasets - Join Datasets, create Model, verify Model record and train the Model",
     "commands": [{
-      "id": "14181f5d-b6c1-4d51-bc4b-727019c2264e",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -4276,6 +4661,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "89fbe7f2-afac-4af7-9220-7322823164d8",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "50d5d970-05d4-4410-877a-6280a9093ff7",
       "comment": "Click the Logout link in the header.",
       "command": "click",
@@ -4306,10 +4698,31 @@
     "id": "295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25",
     "name": "Tenant Admin - Log in and Verify Sidebar Menu items",
     "commands": [{
-      "id": "ddd47e43-0a60-4499-b4b3-d71d4453e4da",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -4460,6 +4873,13 @@
       "targets": [],
       "value": "All Datasets"
     }, {
+      "id": "c4888312-3ac1-40bd-b35f-54944ad8c142",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "7da73513-b76b-4ce3-a597-a77f47416923",
       "comment": "",
       "command": "click",
@@ -4477,10 +4897,31 @@
     "id": "4c34d032-2867-490a-9c6b-49f2957c953c",
     "name": "Tenant User - Log in and Verify Sidebar Menu items",
     "commands": [{
-      "id": "33667769-e92b-48ed-aef4-708d4134852b",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -4608,10 +5049,31 @@
     "id": "e0a107e7-e823-4087-af95-b29995a4282d",
     "name": "Tenant User - log in and view Production Connection",
     "commands": [{
-      "id": "34031b30-1707-496d-bd54-b313b5fc1393",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -4793,15 +5255,50 @@
       "target": "linkText=Import Datasets",
       "targets": [],
       "value": ""
+    }, {
+      "id": "0cadc509-d559-480d-8529-82b90ac9face",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
+      "id": "03eb22a5-4a59-45f7-bfa1-136585fc70f0",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5",
     "name": "Tenant Admin - Model History charts",
     "commands": [{
-      "id": "17ee23f0-4e62-4498-894c-b82906dd8bdc",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -5080,6 +5577,13 @@
       ],
       "value": ""
     }, {
+      "id": "eaccfa11-f7b4-4138-a2ee-a3084a7f9457",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "27901f5c-b972-4c4f-82ab-e64fd918cf86",
       "comment": "Click the \"Log Out\" link in the header.",
       "command": "click",
@@ -5110,10 +5614,31 @@
     "id": "b3258e1c-f266-4e39-9fa8-2584089946c7",
     "name": "Tenant Admin - Security - View Security details inc API Key",
     "commands": [{
-      "id": "02ee9ddc-492e-4d13-810e-13990fd0c4c1",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -5266,6 +5791,13 @@
       ],
       "value": ""
     }, {
+      "id": "f8a2c5ca-3789-46db-a53c-89dc16744bde",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "732ac688-f611-48b0-a346-871e277648d1",
       "comment": "Click the Log Out link",
       "command": "click",
@@ -5291,10 +5823,31 @@
     "id": "dc31ee01-e671-4f3a-b6ae-b906dbc13a4a",
     "name": "Tenant Admin - Salesforce - Log in and verify the Opportunity Sensai Component - IN PROGRESS",
     "commands": [{
-      "id": "8191cc2d-7733-49c5-8f5c-f13aa5ff776e",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
-      "target": "https://login.salesforce.com/",
+      "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -5400,7 +5953,7 @@
     }, {
       "id": "10dc92a1-0d66-4c0a-a695-ede9e58ef575",
       "comment": "Click the \"Log Out\" link.",
-      "command": "//click",
+      "command": "click",
       "target": "linkText=Log Out",
       "targets": [],
       "value": ""
@@ -5416,10 +5969,31 @@
     "id": "c2fe18fe-bd16-49e8-b654-cf0b9d050029",
     "name": "Tenant User - Snapshots - disable and enable",
     "commands": [{
-      "id": "01ca1a45-7079-4316-9469-e777130c47bf",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -5604,6 +6178,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "647dc0cf-64c6-48ee-8d0c-aab37a05ae6a",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "580008dd-93b5-4e13-a201-331f96339a79",
       "comment": "Click the Log Out link.",
       "command": "click",
@@ -5628,10 +6209,31 @@
     "id": "5f5f5494-9f1e-41f0-a286-ad29be8074d5",
     "name": "Tenant User - Models - Deploy model to External Connection",
     "commands": [{
-      "id": "8b67eda0-1386-4300-9940-359f0b2348b4",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -5797,6 +6399,13 @@
       ],
       "value": ""
     }, {
+      "id": "4e4dc45c-f0bf-4a66-b486-42c9867bb330",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
+    }, {
       "id": "3b3af0c8-62a4-490b-a8a8-6199feacc964",
       "comment": "",
       "command": "click",
@@ -5808,10 +6417,31 @@
     "id": "5dd5b601-18b0-4233-bf56-6ef244d2f396",
     "name": "Tenant User - Models - Clone model",
     "commands": [{
-      "id": "a09d7e96-19f2-47a8-b5c9-243e5a915ace",
+      "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -6105,6 +6735,13 @@
         ["xpath=//div/button", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "7888eee2-ce16-4346-874c-5357c05150c2",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "1200000"
     }, {
       "id": "7c21e183-c4a9-4336-8ff5-40cb0f21acb8",
       "comment": "",
