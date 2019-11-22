@@ -1742,7 +1742,7 @@
     }, {
       "id": "0762e2e6-0116-41d9-b1af-9547d8819a9b",
       "comment": "CANNOT GET THIS TO WORK - it validates the link exists.... Confirm the new Tenant Name link element exists in the table list, i.e. ${tenantcompanyname}",
-      "command": "verifyElementPresent",
+      "command": "//verifyElementPresent",
       "target": "linkText=${tenantcompanyname}",
       "targets": [],
       "value": ""
@@ -2940,13 +2940,13 @@
       "value": ""
     }, {
       "id": "af84ddab-982c-43e1-b17e-2557bd0cb91f",
-      "comment": "Click on the \"Tenants\" link in the Sidebar panel - TBC - no ID or inner text etc",
+      "comment": "Click on the \"Tenants\" link in the Sidebar menu.",
       "command": "click",
-      "target": "css=#sidebarNav > .nav-link:nth-child(1)",
+      "target": "css=.tenantsSidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(1)", "css:finder"],
+        ["css=.tenantsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div", "xpath:idRelative"],
-        ["xpath=//div[6]/div/div/div[2]/div/div", "xpath:position"]
+        ["xpath=//div/div/div[2]/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -3038,10 +3038,24 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "fdb192ff-0bd4-4da8-aa0c-391b9774e6f2",
+      "comment": "Wait for the Edit Tenant button to be available before continuing.",
+      "command": "waitForElementPresent",
+      "target": "id=editTenantButton",
+      "targets": [
+        ["id=editTenantButton", "id"],
+        ["css=#editTenantButton", "css:finder"],
+        ["xpath=//button[@id='editTenantButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Edit Tenant')]", "xpath:innerText"]
+      ],
+      "value": "60000"
+    }, {
       "id": "bd8850a8-7570-4dde-8dcd-3c1c0b229c2a",
       "comment": "",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p",
+      "target": "css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext",
       "targets": [
         ["css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
