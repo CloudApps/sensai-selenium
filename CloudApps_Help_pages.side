@@ -1,0 +1,431 @@
+{
+  "id": "687b4d51-3c17-4226-bd9b-3e9fcf6862ae",
+  "version": "2.0",
+  "name": "CloudApps Help pages",
+  "url": "http://help.sumo.cloud",
+  "tests": [{
+    "id": "cf6e7736-f06b-4772-9d74-4f16876eba8c",
+    "name": "SuMo Help pages",
+    "commands": [{
+      "id": "6cf086b0-fc53-41b9-8342-297b71becc47",
+      "comment": "",
+      "command": "open",
+      "target": "http://help.sumo.cloud",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1aee058f-c6c0-4a0f-b7c7-ba51a326799d",
+      "comment": "Verify the SuMo logo image element is present on the Home page.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//img[contains(@src,'https://dzf8vqv24eqhg.cloudfront.net/userfiles/3875/5623/ckfinder/images/Sumo-Motivate-Success-Logo-Blue-SuMo-Help-2017.png')]",
+      "targets": [
+        ["css=p > img", "css:finder"],
+        ["xpath=//img[contains(@src,'https://dzf8vqv24eqhg.cloudfront.net/userfiles/3875/5623/ckfinder/images/Sumo-Motivate-Success-Logo-Blue-SuMo-Help-2017.png')]", "xpath:img"],
+        ["xpath=//div[@id='ext-gen120']/p/img", "xpath:idRelative"],
+        ["xpath=//p/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1c21224-3a77-48bc-8f84-dac709790d44",
+      "comment": "Verify the \"Get Going\" header text is present.",
+      "command": "verifyText",
+      "target": "xpath=//h1[contains(.,'Get Going')]",
+      "targets": [
+        ["css=h1:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='ext-gen120']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Get Going')]", "xpath:innerText"]
+      ],
+      "value": "Get Going"
+    }, {
+      "id": "6afc2a62-a7a0-45ae-87df-a46384cf5d7b",
+      "comment": "Click on the \"Getting Started\" section item in the sidebar menu.",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Getting Started')]",
+      "targets": [
+        ["id=ext-gen101", "id"],
+        ["css=#ext-gen101", "css:finder"],
+        ["xpath=//span[@id='ext-gen101']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen99']/span", "xpath:idRelative"],
+        ["xpath=//li[2]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Getting Started')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "582a3e81-bb80-497b-aaff-8eeb944f684e",
+      "comment": "Verify that the \"Prerequisites\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Prerequisites')]",
+      "targets": [
+        ["id=ext-gen126", "id"],
+        ["css=#ext-gen126", "css:finder"],
+        ["xpath=//span[@id='ext-gen126']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen124']/span", "xpath:idRelative"],
+        ["xpath=//ul/li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Prerequisites')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e745f883-2ed4-41cc-ae0e-78b4d6582b48",
+      "comment": "Verify that the \"Package Installation\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Package Installation')]",
+      "targets": [
+        ["id=ext-gen132", "id"],
+        ["css=#ext-gen132", "css:finder"],
+        ["xpath=//span[@id='ext-gen132']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen130']/span", "xpath:idRelative"],
+        ["xpath=//ul/li[2]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Package Installation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9da1934-e7d1-49c6-8763-93ce87e7d9ec",
+      "comment": "Verify that the \"Post-Install Steps\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Post-Install Steps')]",
+      "targets": [
+        ["id=ext-gen138", "id"],
+        ["css=#ext-gen138", "css:finder"],
+        ["xpath=//span[@id='ext-gen138']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen136']/span", "xpath:idRelative"],
+        ["xpath=//li[3]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Post-Install Steps')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e99c3e6b-3f32-4afb-9e4b-e1e7743dcebb",
+      "comment": "Verify that the \"Configuration\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Configuration')]",
+      "targets": [
+        ["id=ext-gen144", "id"],
+        ["css=#ext-gen144", "css:finder"],
+        ["xpath=//span[@id='ext-gen144']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen142']/span", "xpath:idRelative"],
+        ["xpath=//li[4]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Configuration')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6824e5ee-7155-448e-9a6c-9f229b0ddbc1",
+      "comment": "Verify that the \"Customisation\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Customisation')]",
+      "targets": [
+        ["id=ext-gen150", "id"],
+        ["css=#ext-gen150", "css:finder"],
+        ["xpath=//span[@id='ext-gen150']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen148']/span", "xpath:idRelative"],
+        ["xpath=//li[5]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Customisation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "10f308d7-c30c-41ec-b397-35425a374765",
+      "comment": "Verify that the \"Deployment\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Deployment')]",
+      "targets": [
+        ["id=ext-gen156", "id"],
+        ["css=#ext-gen156", "css:finder"],
+        ["xpath=//span[@id='ext-gen156']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen154']/span", "xpath:idRelative"],
+        ["xpath=//li[6]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Deployment')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee2125be-502f-479d-ae9e-1fb4e5945c15",
+      "comment": "Click on the \"Upgrading\" section item in the sidebar menu.",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Upgrading')]",
+      "targets": [
+        ["id=ext-gen107", "id"],
+        ["css=#ext-gen107", "css:finder"],
+        ["xpath=//span[@id='ext-gen107']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen105']/span", "xpath:idRelative"],
+        ["xpath=//div/li[3]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Upgrading')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c88a6c89-6543-4430-b7ae-c743d7374407",
+      "comment": "Verify that the \"Release History\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Release History')]",
+      "targets": [
+        ["id=ext-gen164", "id"],
+        ["css=#ext-gen164", "css:finder"],
+        ["xpath=//span[@id='ext-gen164']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen162']/span", "xpath:idRelative"],
+        ["xpath=//li[3]/ul/li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Release History')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e2ab2ea-5142-45ce-944f-a5c88078f08f",
+      "comment": "Verify that the \"Pre-Upgrade Information\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Pre-Upgrade Information')]",
+      "targets": [
+        ["id=ext-gen170", "id"],
+        ["css=#ext-gen170", "css:finder"],
+        ["xpath=//span[@id='ext-gen170']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen168']/span", "xpath:idRelative"],
+        ["xpath=//li[3]/ul/li[2]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Pre-Upgrade Information')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "57feaae3-9544-4f23-9394-3258a96e4440",
+      "comment": "Verify that the \"Automated Upgrade\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Automated Upgrade')]",
+      "targets": [
+        ["id=ext-gen176", "id"],
+        ["css=#ext-gen176", "css:finder"],
+        ["xpath=//span[@id='ext-gen176']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen174']/span", "xpath:idRelative"],
+        ["xpath=//li[3]/ul/li[3]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Automated Upgrade')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c70b61c4-97cd-4910-ad94-fc169970d444",
+      "comment": "Verify that the \"Post-Upgrade Steps\" menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Post-Upgrade Steps')]",
+      "targets": [
+        ["id=ext-gen182", "id"],
+        ["css=#ext-gen182", "css:finder"],
+        ["xpath=//span[@id='ext-gen182']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen180']/span", "xpath:idRelative"],
+        ["xpath=//li[3]/ul/li[4]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Post-Upgrade Steps')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "407f833c-4f6e-4d07-8346-265c46f12548",
+      "comment": "Verify that the \"Resources\" section menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Resources')]",
+      "targets": [
+        ["id=ext-gen113", "id"],
+        ["css=#ext-gen113", "css:finder"],
+        ["xpath=//span[@id='ext-gen113']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen111']/span", "xpath:idRelative"],
+        ["xpath=//div/li[4]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Resources')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c4e3c13-d908-46c3-abba-4b43f9428ce7",
+      "comment": "Verify that the \"Training\" section menu item is available.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//span[contains(.,'Training')]",
+      "targets": [
+        ["id=ext-gen119", "id"],
+        ["css=#ext-gen119", "css:finder"],
+        ["xpath=//span[@id='ext-gen119']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen117']/span", "xpath:idRelative"],
+        ["xpath=//div/li[5]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Training')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "08bedbd2-aad0-41af-869d-18bc79e66034",
+      "comment": "Click on the version 7 link at the bottom of the page",
+      "command": "click",
+      "target": "xpath=//a[@href='http://help.sumo.cloud/?version=7']",
+      "targets": [
+        ["css=u:nth-child(5) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'here')])[2]", "xpath:link"],
+        ["xpath=//div[@id='ext-gen287']/p[12]/u/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://help.sumo.cloud/?version=7']", "xpath:href"],
+        ["xpath=//p[12]/u/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5092fc98-d8a6-4fd4-9b60-95ddbb387768",
+      "comment": "Click on the Getting Started section's menu item in the sidebar menu.",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Getting Started')]",
+      "targets": [
+        ["id=ext-gen101", "id"],
+        ["css=#ext-gen101", "css:finder"],
+        ["xpath=//span[@id='ext-gen101']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen99']/span", "xpath:idRelative"],
+        ["xpath=//li[2]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Getting Started')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d8a9dc6-dd59-4b99-a243-0a9f550f56ea",
+      "comment": "Verify the Prerequisites sub-menu item is present.",
+      "command": "verifyText",
+      "target": "xpath=//span[contains(.,'Prerequisites')]",
+      "targets": [
+        ["id=ext-gen126", "id"],
+        ["css=#ext-gen126", "css:finder"],
+        ["xpath=//span[@id='ext-gen126']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen124']/span", "xpath:idRelative"],
+        ["xpath=//ul/li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Prerequisites')]", "xpath:innerText"]
+      ],
+      "value": "Prerequisites"
+    }, {
+      "id": "ea938cbc-ae22-46cc-b90b-a94a1b268d40",
+      "comment": "Verify the Package Installation sub-menu item is present.",
+      "command": "verifyText",
+      "target": "xpath=//span[contains(.,'Package Installation')]",
+      "targets": [
+        ["id=ext-gen132", "id"],
+        ["css=#ext-gen132", "css:finder"],
+        ["xpath=//span[@id='ext-gen132']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen130']/span", "xpath:idRelative"],
+        ["xpath=//ul/li[2]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Package Installation')]", "xpath:innerText"]
+      ],
+      "value": "Package Installation"
+    }, {
+      "id": "85adcfae-3ece-4976-bae4-7f243174034d",
+      "comment": "Click on the Resources section's menu item in the sidebar menu.",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Resources')]",
+      "targets": [
+        ["id=ext-gen113", "id"],
+        ["css=#ext-gen113", "css:finder"],
+        ["xpath=//span[@id='ext-gen113']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen111']/span", "xpath:idRelative"],
+        ["xpath=//div/li[4]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Resources')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b844b358-3a02-4dac-b666-89ec19be3b19",
+      "comment": "Click on the Training section's menu item in the sidebar menu.",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Training')]",
+      "targets": [
+        ["id=ext-gen119", "id"],
+        ["css=#ext-gen119", "css:finder"],
+        ["xpath=//span[@id='ext-gen119']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen117']/span", "xpath:idRelative"],
+        ["xpath=//div/li[5]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Training')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54b13d33-074d-410f-8aa0-e3030370943d",
+      "comment": "Verify the People Insight & Coaching Setup sub-menu item is present.",
+      "command": "verifyText",
+      "target": "xpath=//span[contains(.,'People Insight & Coaching Setup')]",
+      "targets": [
+        ["id=ext-gen267", "id"],
+        ["css=#ext-gen267", "css:finder"],
+        ["xpath=//span[@id='ext-gen267']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen265']/span", "xpath:idRelative"],
+        ["xpath=//li[4]/ul/li[5]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'People Insight & Coaching Setup')]", "xpath:innerText"]
+      ],
+      "value": "People Insight & Coaching Setup"
+    }, {
+      "id": "ba1d4d0f-3bb7-4f08-ad0c-4e1524996584",
+      "comment": "Click on the Home sidebar menu item.",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Home')]",
+      "targets": [
+        ["id=ext-gen95", "id"],
+        ["css=#ext-gen95", "css:finder"],
+        ["xpath=//span[@id='ext-gen95']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen93']/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8673f65-b7fb-4797-bfff-a67a6bacf408",
+      "comment": "Verify the bottom paragraph includes the text element \"Looking for help with \"",
+      "command": "verifyText",
+      "target": "xpath=//span[contains(.,'Looking for help with ')]",
+      "targets": [
+        ["css=span:nth-child(13)", "css:finder"],
+        ["xpath=//div[@id='ext-gen299']/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Looking for help with ')]", "xpath:innerText"]
+      ],
+      "value": "Looking for help with "
+    }, {
+      "id": "3fd7669e-be54-400e-9afd-dee26f0ee7eb",
+      "comment": "Wait for the \"Version 8\" element to be present.",
+      "command": "waitForElementPresent",
+      "target": "xpath=//strong[contains(.,'Version 8')]",
+      "targets": [
+        ["css=strong:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='ext-gen120']/p[12]/strong", "xpath:idRelative"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Version 7')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8171b824-4c6e-4832-9da7-a8a251294d84",
+      "comment": "Verify the bottom paragraph includes the text element \"Version 8 \"",
+      "command": "//verifyText",
+      "target": "xpath=//strong[contains(.,'Version 8 ')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a8b25a03-15a5-460a-9c8c-2d54ba4b791f",
+      "comment": "Click on the version 8 link at the bottom of the page",
+      "command": "click",
+      "target": "xpath=//a[@href='http://help.sumo.cloud/?version=8']",
+      "targets": [
+        ["linkText=here", "linkText"],
+        ["css=u > a", "css:finder"],
+        ["xpath=//a[contains(text(),'here')]", "xpath:link"],
+        ["xpath=//div[@id='ext-gen299']/u/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://help.sumo.cloud/?version=8']", "xpath:href"],
+        ["xpath=//u/a", "xpath:position"],
+        ["xpath=//a[contains(.,'here')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff57d8fc-a095-41fd-b052-95626f4a17b3",
+      "comment": "Wait for the \"Version 7\" element to be present.",
+      "command": "waitForElementPresent",
+      "target": "xpath=//strong[contains(.,'Version 7')]",
+      "targets": [
+        ["css=strong:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='ext-gen120']/p[12]/strong", "xpath:idRelative"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Version 7')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "79abd129-7a50-44f7-acbe-9a134139e5b1",
+      "comment": "Verify the bottom paragraph includes the text element \"Version 7\"",
+      "command": "//verifyText",
+      "target": "xpath=//strong[contains(.,'Version 7')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d171e0ce-322d-48c8-a89b-0acb8df72bbb",
+      "comment": "",
+      "command": "//verifyText",
+      "target": "xpath=//div[@id='ext-gen120']/p[12]/span[4]",
+      "targets": [],
+      "value": " to be redirected to the Version 7 online documentation."
+    }]
+  }],
+  "suites": [{
+    "id": "6f388662-8ebf-4716-a28f-1ab2faeb967b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["cf6e7736-f06b-4772-9d74-4f16876eba8c"]
+  }],
+  "urls": ["http://help.sumo.cloud/"],
+  "plugins": []
+}
