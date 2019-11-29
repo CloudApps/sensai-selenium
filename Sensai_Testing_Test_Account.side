@@ -631,16 +631,9 @@
     "id": "f9d2f8f8-c48e-4036-a7b7-87cec92c6a22",
     "name": "All User Types - Log in success - check the Default section, available sections & username and Log Out links in the header.",
     "commands": [{
-      "id": "a8b9b0a6-b425-45d0-9d46-01b4766c405f",
-      "comment": "",
-      "command": "//runScript",
-      "target": "WebDriver.quit()",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "2fccea6b-1992-495f-a731-1092e42e3b46",
       "comment": "",
-      "command": "setWindowSize",
+      "command": "//setWindowSize",
       "target": "1280x800",
       "targets": [],
       "value": ""
@@ -654,7 +647,7 @@
     }, {
       "id": "786ef70f-512f-43bb-9479-af55d5bd72c3",
       "comment": "",
-      "command": "pause",
+      "command": "//pause",
       "target": "60000",
       "targets": [],
       "value": ""
@@ -3396,30 +3389,23 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "ef879e65-26b2-44f9-a5a1-928cbe1df58d",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
       "comment": "",
-      "command": "if",
+      "command": "//if",
       "target": "document.getElementById('username') === null",
       "targets": [],
       "value": ""
     }, {
       "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "id=logoutHeaderLink",
       "targets": [],
       "value": ""
     }, {
       "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
       "comment": "",
-      "command": "end",
+      "command": "//end",
       "target": "",
       "targets": [],
       "value": ""
@@ -4471,13 +4457,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "d2f398dd-8d3f-4242-93fa-156480261fb4",
-      "comment": "",
-      "command": "//waitForElementPresent",
-      "target": "xpath=//a[contains(text(),'JoinedDataset')]",
-      "targets": [],
-      "value": "90000"
-    }, {
       "id": "d87d17d1-74a5-45ae-b5bc-90f102b2d99d",
       "comment": "Confirm that the first row's \"Origen\" is \"Joined\"",
       "command": "verifyText",
@@ -4490,7 +4469,7 @@
       "value": "Joined"
     }, {
       "id": "913c3c19-7c29-4bd0-8f9e-48674eb366ff",
-      "comment": "Click on the link \"Joined_Dataset_${joineddatasetnumber}\" exists - TBC - THE LINKS HAVE UNDERSCORES ADDED TO THEIR NAME WHICH ISN'T GREAT",
+      "comment": "Click on the link \"Joined_Dataset_${joineddatasetnumber}\" exists",
       "command": "click",
       "target": "linkText=${joineddatasetname}",
       "targets": [],
@@ -4960,6 +4939,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "330a14dd-2f98-4e5b-a385-e6087943370e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "linkText=Model from ${joineddatasetname}",
+      "targets": [],
+      "value": "120000"
+    }, {
       "id": "2ffdf82b-7eb5-4f37-b115-30bffa1e6a29",
       "comment": "",
       "command": "click",
@@ -5412,6 +5398,13 @@
         ["xpath=//div[5]/div/div/div/button", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "463cfd2e-df94-41c1-8e91-3bc97f647768",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "f832fcb1-dc50-4150-bd5b-46480bc15799",
       "comment": "",
@@ -6266,7 +6259,7 @@
     "name": "Tenant Admin - Salesforce - Log in and verify the Opportunity Sensai Component - BLOCKED 27-11-2019",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
-      "comment": "",
+      "comment": "https://login.salesforce.com/",
       "command": "open",
       "target": "https://login.salesforce.com",
       "targets": [],
@@ -6301,7 +6294,7 @@
       "value": ""
     }, {
       "id": "e18e4b06-0f18-4a19-b76e-e283ccaed205",
-      "comment": "Log in to my Salesforce org as my user: slovatt@SLversion8.test",
+      "comment": "Log in to the Pre-release Salesforce org as my user: slovatt@sensai.prerelease.demo1",
       "command": "type",
       "target": "id=username",
       "targets": [
@@ -6312,7 +6305,7 @@
         ["xpath=//div[@id='username_container']/input", "xpath:idRelative"],
         ["xpath=//div/input", "xpath:position"]
       ],
-      "value": "slovatt@SLversion8.test"
+      "value": "slovatt@sensai.prerelease.demo1"
     }, {
       "id": "1ea6db36-913d-4ee2-b718-486f241b2c8a",
       "comment": "",
@@ -6326,7 +6319,7 @@
         ["xpath=//form[@id='login_form']/input", "xpath:idRelative"],
         ["xpath=//form/input", "xpath:position"]
       ],
-      "value": "SLv8123$$"
+      "value": "sl_prerelease_prod123!"
     }, {
       "id": "cf71669b-206c-4f0b-83ca-8a06312f17fd",
       "comment": "Click the \"Log In\" button.",
@@ -6343,9 +6336,9 @@
       "value": ""
     }, {
       "id": "ec9d5daa-44b2-4888-9f31-a7e10420d134",
-      "comment": "Go to my Opportunity.",
+      "comment": "Go to Opportunity \"360Networks Inc.-New Business\"",
       "command": "open",
-      "target": "https://slversion8.lightning.force.com/lightning/r/Opportunity/0064J000003zkaqQAA/view",
+      "target": "https://sensai-pre-demo.lightning.force.com/lightning/r/Opportunity/0064J000002RMhUQAW/view",
       "targets": [],
       "value": ""
     }, {
@@ -7331,7 +7324,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["f9d2f8f8-c48e-4036-a7b7-87cec92c6a22"]
+    "tests": ["8d8039c6-1d43-4dd6-858f-fd4b41a7d274"]
   }],
   "urls": ["http://sensai-webapp-787509357522-dev.s3-website-eu-west-1.amazonaws.com/"],
   "plugins": []
