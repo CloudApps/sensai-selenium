@@ -1,0 +1,11 @@
+{
+  "name": "sensai-selenium",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CloudApps/sensai-selenium.git"
+  },
+  "devDependencies": {
+    "selenium-side-runner": "^3.16.0"
+  }
+}
