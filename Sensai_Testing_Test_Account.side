@@ -43,7 +43,7 @@
       "value": ""
     }, {
       "id": "dcd98d28-472b-417b-9ca1-521c5da0f799",
-      "comment": "Enter the Tenant User's username, i.e. sltenantuser@sensai.test",
+      "comment": "Enter the Tenant User's username, i.e. sl_tenant_user@sensai.test",
       "command": "type",
       "target": "id=username",
       "targets": [
@@ -53,7 +53,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sltenantuser@sensai.test"
+      "value": "sl_tenant_user@sensai.test"
     }, {
       "id": "e601758a-7eb2-4db7-9c0c-42e4dfe974da",
       "comment": "Enter the Tenant User's password, i.e. SL_tenant_user_123!",
@@ -109,13 +109,13 @@
       "value": ""
     }, {
       "id": "d27b6bdc-9a8b-47f5-a9df-67657ed0ee31",
-      "comment": "Click on the Datasets sidebar menu item (1st menu item in the list).",
+      "comment": "Click on the Datasets sidebar menu item.",
       "command": "click",
-      "target": "css=#sidebarNav > .nav-link:nth-child(1)",
+      "target": "css=.datasetsSidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(1)", "css:finder"],
+        ["css=.datasetsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div", "xpath:idRelative"],
-        ["xpath=//div/div/div[2]/div/div", "xpath:position"]
+        ["xpath=//div[5]/div/div/div[2]/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -1585,7 +1585,7 @@
     }, {
       "id": "3323d023-6007-448a-a323-3b8ddbdf063d",
       "comment": "",
-      "command": "pause",
+      "command": "//pause",
       "target": "60000",
       "targets": [],
       "value": ""
@@ -1671,27 +1671,6 @@
       "target": "",
       "targets": [],
       "value": "120000"
-    }, {
-      "id": "e1c33257-9ab1-4151-a729-37d6f421ec8a",
-      "comment": "Wait for the sidebar toggle button to be available.",
-      "command": "//waitForElementPresent",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "baf1b6da-7e9d-424f-8532-6fffa922a1e3",
-      "comment": "Click on the Sidebar toggle button",
-      "command": "//click",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "467fd65f-5ef1-4eab-9a36-c621f45a175b",
-      "comment": "Click on the \"Tenants\" sidebar menu item.",
-      "command": "//click",
-      "target": "css=.tenantsSidebarLink",
-      "targets": [],
-      "value": "Tenants"
     }, {
       "id": "de0441d8-45c7-4c8e-93e4-fb8e21f527a5",
       "comment": "Go to the Tenants list view - cannot click on the Sidebar toggle button when running from the Command Line.",
@@ -2131,13 +2110,13 @@
       "value": ""
     }, {
       "id": "199978da-46fc-454e-bcde-b4acf8f44b9c",
-      "comment": "Click on \"Users\" in the sidebar, i.e. the 2nd item in the list - TBC - can only use Relative target",
+      "comment": "Click on \"Users\" in the sidebar menu.",
       "command": "click",
-      "target": "css=#sidebarNav > .nav-link:nth-child(2)",
+      "target": "css=.usersSidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(2)", "css:finder"],
+        ["css=.usersSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[2]", "xpath:idRelative"],
-        ["xpath=//div[5]/div/div/div[2]/div/div[2]", "xpath:position"]
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -2939,14 +2918,14 @@
       ],
       "value": ""
     }, {
-      "id": "75c27e9b-588f-466b-a2bd-d0bedc0a1ea9",
-      "comment": "Click on \"Users\" in the sidebar, i.e. the 2nd item in the list - TBC - can only use Relative target",
+      "id": "38d96338-8ee7-4364-aa72-68f211b30b8d",
+      "comment": "Click on \"Users\" in the sidebar menu.",
       "command": "click",
-      "target": "css=#sidebarNav > .nav-link:nth-child(2)",
+      "target": "css=.usersSidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(2)", "css:finder"],
+        ["css=.usersSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[2]", "xpath:idRelative"],
-        ["xpath=//div[5]/div/div/div[2]/div/div[2]", "xpath:position"]
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -3127,7 +3106,7 @@
     }, {
       "id": "8978cd01-f8d7-4379-94c6-a9022459487a",
       "comment": "",
-      "command": "pause",
+      "command": "//pause",
       "target": "60000",
       "targets": [],
       "value": ""
@@ -3193,27 +3172,6 @@
       ],
       "value": ""
     }, {
-      "id": "dd602610-84f7-4963-8468-f873584a830c",
-      "comment": "Wait for the sidebar toggle button to be available.",
-      "command": "//waitForElementPresent",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "a4b3d68e-b49a-4dac-8c0f-d74929f6b6f5",
-      "comment": "Click on the Sidebar toggle button",
-      "command": "//click",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "af84ddab-982c-43e1-b17e-2557bd0cb91f",
-      "comment": "Click on the \"Tenants\" link in the Sidebar menu.",
-      "command": "//click",
-      "target": "css=.tenantsSidebarLink",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "6b5d98b7-f414-4e95-a729-0de0990fbb3f",
       "comment": "Go to the Tenants list view - cannot click on the Sidebar toggle button when running from the Command Line.",
       "command": "open",
@@ -3222,17 +3180,17 @@
       "value": ""
     }, {
       "id": "b59e53cf-5ba1-4f96-8232-914a5c0f0727",
-      "comment": "Click on the existing Tenant \"SL Tenant Editing Ltd\" to access the record - TBC - Check when I've created the \"general\" tenant",
+      "comment": "Click on the existing Tenant \"SL Tenant to Edit Ltd\" to access the record - TBC - Check when I've created the \"general\" tenant",
       "command": "click",
-      "target": "linkText=SL Tenant Editing Ltd",
+      "target": "linkText=SL Tenant to Edit Ltd",
       "targets": [
-        ["linkText=TestTenant", "linkText"],
-        ["css=tr:nth-child(2) a", "css:finder"],
-        ["xpath=//a[contains(text(),'TestTenant')]", "xpath:link"],
-        ["xpath=//table[@id='tenantsTable']/tbody/tr[2]/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/tenants/001_12c6caceb36943a1b5a5d98d0d6b8bbd')]", "xpath:href"],
-        ["xpath=//tr[2]/td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'TestTenant')]", "xpath:innerText"]
+        ["linkText=SL Tenant to Edit Ltd", "linkText"],
+        ["css=tr:nth-child(5) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SL Tenant to Edit Ltd')]", "xpath:link"],
+        ["xpath=//table[@id='tenantsTable']/tbody/tr[5]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tenants/001_344d6ddbad6c41a8a272cc7ac35f1ade')]", "xpath:href"],
+        ["xpath=//tr[5]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SL Tenant to Edit Ltd')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
@@ -3277,11 +3235,11 @@
       "value": ""
     }, {
       "id": "cfe5b463-62d5-4d71-9fb3-e612b23b3d3d",
-      "comment": "Type \"SL Tenant Editing Ltd EDITED\"",
+      "comment": "Type \"SL Tenant to Edit Ltd EDITED\"",
       "command": "type",
       "target": "xpath=//*[@id=\"company_name\"]",
       "targets": [],
-      "value": "SL Tenant Editing Ltd EDITED"
+      "value": "SL Tenant to Edit Ltd EDITED"
     }, {
       "id": "6677a901-3a77-45d9-a175-1a4f7b2c92e5",
       "comment": "Store the variable company_name_edited with the value of the \"id=company_name\" field",
@@ -3333,7 +3291,7 @@
         ["xpath=//p", "xpath:position"],
         ["xpath=//p[contains(.,'SL Tenant Editing Ltd EDITED')]", "xpath:innerText"]
       ],
-      "value": "SL Tenant Editing Ltd EDITED"
+      "value": "SL Tenant to Edit Ltd EDITED"
     }, {
       "id": "c329d294-93ff-4a6d-89d6-753c2523a7fe",
       "comment": "",
@@ -3359,14 +3317,14 @@
         ["xpath=//input[@id='company_name']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "SL Tenant Editing Ltd EDITED"
+      "value": "SL Tenant to Edit Ltd EDITED"
     }, {
       "id": "16fc0f74-7f70-441e-8ebe-9ba6486c3931",
-      "comment": "Type \"SL Tenant Editing Ltd\" so that the Tenant's name is back to what it is, ready for when this test is run again.",
+      "comment": "Type \"SL Tenant to Edit Ltd\" so that the Tenant's name is back to what it is, ready for when this test is run again.",
       "command": "type",
       "target": "xpath=//*[@id=\"company_name\"]",
       "targets": [],
-      "value": "SL Tenant Editing Ltd"
+      "value": "SL Tenant to Edit Ltd"
     }, {
       "id": "bcfe0846-cf0b-415b-b928-8f7a2a798390",
       "comment": "Click the Update button on the \"edit Tenant modal\".",
@@ -3391,7 +3349,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'TestTenantdzcds')]", "xpath:innerText"]
       ],
-      "value": "SL Tenant Editing Ltd"
+      "value": "SL Tenant to Edit Ltd"
     }, {
       "id": "fc5ea793-dfe4-4791-af10-d54b70259cf2",
       "comment": "Click on the blue \"back\" arrow.",
@@ -3477,7 +3435,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sl_tenant_user_disabled_mfa@sensai.test"
+      "value": "SL_tenant_user_disabled@sensai.test"
     }, {
       "id": "228c7c87-e3cf-4170-a8bb-e26d92313a6a",
       "comment": "",
@@ -3490,7 +3448,7 @@
         ["xpath=//div[@id='root']/div/div/form/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "SL_tenant_user_disabled_mfa123!"
+      "value": "SL_tenant_user_disabled123!"
     }, {
       "id": "9caaaa58-69e3-4750-aaed-84ca6288e0ca",
       "comment": "",
@@ -3574,7 +3532,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sltenantuser@sensai.test"
+      "value": "sl_tenant_user@sensai.test"
     }, {
       "id": "25cf63f9-6f87-4c09-9ecf-845c6c08bcd5",
       "comment": "Enter an incorrect password - only 2 letters incorrect - lowercase \"sl\" instead of uppercase, i.e. sl_tenant_user_123!",
@@ -3727,9 +3685,9 @@
       "id": "db578807-c030-41fc-9fec-247d840ab62b",
       "comment": "Click on the \"Connections\" sidebar item",
       "command": "click",
-      "target": "css=.nav-link:nth-child(5)",
+      "target": "css=.connectionsSidebarLink",
       "targets": [
-        ["css=.nav-link:nth-child(5)", "css:finder"],
+        ["css=.connectionsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[5]", "xpath:idRelative"],
         ["xpath=//div/div[5]", "xpath:position"]
       ],
@@ -4031,28 +3989,28 @@
       "value": ""
     }, {
       "id": "25f3921c-fd6b-44cf-8475-2a64747d99c9",
-      "comment": "Click on \"Users\" in the sidebar, i.e. the 2nd item in the list.",
+      "comment": "Click on \"Users\" in the sidebar menu.",
       "command": "click",
-      "target": "css=#sidebarNav > .nav-link:nth-child(2)",
+      "target": "css=.usersSidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(2)", "css:finder"],
+        ["css=.usersSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[2]", "xpath:idRelative"],
-        ["xpath=//div[5]/div/div/div[2]/div/div[2]", "xpath:position"]
+        ["xpath=//div/div/div[2]/div/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "416e7bd6-7e19-42a2-ac25-6546c6f87d42",
-      "comment": "Click on the existing Tenant User \"SL Disabled MFA User\" to access the record.",
+      "comment": "Click on the existing Tenant User \"SL Tenant User Disabled\" to access the record.",
       "command": "click",
-      "target": "linkText=SL Disabled MFA User",
+      "target": "linkText=SL Tenant User Disabled",
       "targets": [
-        ["linkText=SL Disabled MFA User", "linkText"],
-        ["css=tr:nth-child(9) > td:nth-child(1) > a", "css:finder"],
-        ["xpath=//a[contains(text(),'SL Disabled MFA User')]", "xpath:link"],
-        ["xpath=//table[@id='usersTable']/tbody/tr[9]/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/users/sl_tenant_user_disabled_mfa%40sensai.test')]", "xpath:href"],
-        ["xpath=//tr[9]/td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SL Disabled MFA User')]", "xpath:innerText"]
+        ["linkText=SL Tenant User Disabled", "linkText"],
+        ["css=tr:nth-child(3) > td:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'SL Tenant User Disabled')]", "xpath:link"],
+        ["xpath=//table[@id='usersTable']/tbody/tr[3]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/users/sl_tenant_user_disabled%40sensai.test')]", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SL Tenant User Disabled')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
@@ -4064,22 +4022,29 @@
         ["id=toggleUserStatusButton", "id"],
         ["css=#toggleUserStatusButton", "css:finder"],
         ["xpath=//button[@id='toggleUserStatusButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
-        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
         ["xpath=//button[contains(.,'Enable User')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "a5e5f4cd-854d-41b4-b2c8-dc565e4a8ff9",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "css=.btn-sm:nth-child(2)",
+      "id": "a6c5953a-d62c-4279-a0bd-29f6bc9c1505",
+      "comment": "Click the \"Enable\" button on the \"Enable Tenant\" confirmation dialog.",
+      "command": "click",
+      "target": "xpath=(//button[@type='button'])[6]",
       "targets": [
         ["css=.btn-sm:nth-child(2)", "css:finder"],
         ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
         ["xpath=//div[3]/button[2]", "xpath:position"]
       ],
-      "value": "120000"
+      "value": ""
+    }, {
+      "id": "10d24a40-8234-44b1-bf7e-7385fd0deffd",
+      "comment": "",
+      "command": "pause",
+      "target": "120000",
+      "targets": [],
+      "value": ""
     }, {
       "id": "465c59b3-c720-452f-9108-c9bd6cbe8a97",
       "comment": "Verify that the Tenant Status change button currently shows \"Disable User\"",
@@ -4098,9 +4063,9 @@
       "id": "7dc41bf6-db71-4822-8748-a9ec2ae29765",
       "comment": "Verify the Enabled tick is present in the Enabled field.",
       "command": "verifyElementPresent",
-      "target": "css=.form-control-plaintext > svg",
+      "target": "css=.check-icon",
       "targets": [
-        ["css=.form-control-plaintext > svg", "css:finder"]
+        ["css=.check-icon", "css:finder"]
       ],
       "value": ""
     }, {
@@ -4124,15 +4089,36 @@
       "target": "css=.btn-danger",
       "targets": [
         ["css=.btn-danger", "css:finder"],
-        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
         ["xpath=//div[3]/button[2]", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "48594cc7-67fb-4e56-ab70-4c8429a036d7",
+      "id": "1278cc59-c6a6-44ce-80c1-e4e1c7791171",
+      "comment": "",
+      "command": "pause",
+      "target": "120000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f19393b7-4b4a-4aa9-8f0a-16ed57de2a97",
+      "comment": "Wait for the \"Edit User\" button to be present - to make sure the Tick would be present by then.",
+      "command": "waitForElementPresent",
+      "target": "id=editUserButton",
+      "targets": [
+        ["id=editUserButton", "id"],
+        ["css=#editUserButton", "css:finder"],
+        ["xpath=//button[@id='editUserButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Edit User')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "84271358-9e89-42a5-852b-e1b71aaa3d92",
       "comment": "Verify the Enabled tick is NOT present in the Enabled field.",
       "command": "verifyElementNotPresent",
-      "target": "css=.form-control-plaintext > svg",
+      "target": "css=.check-icon",
       "targets": [],
       "value": ""
     }, {
@@ -4161,45 +4147,6 @@
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
       ],
-      "value": ""
-    }, {
-      "id": "a6c5953a-d62c-4279-a0bd-29f6bc9c1505",
-      "comment": "Click the \"Enable\" button on the \"Enable Tenant\" confirmation dialog.",
-      "command": "click",
-      "target": "css=.btn-sm:nth-child(2)",
-      "targets": [
-        ["css=.btn-sm:nth-child(2)", "css:finder"],
-        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
-        ["xpath=//div[3]/button[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "83504258-b27e-46af-990f-9091838eea53",
-      "comment": "Verify that the Tenant User Status change button currently shows \"Enable User\"",
-      "command": "verifyText",
-      "target": "id=toggleUserStatusButton",
-      "targets": [
-        ["id=toggleUserStatusButton", "id"],
-        ["css=#toggleUserStatusButton", "css:finder"],
-        ["xpath=//button[@id='toggleUserStatusButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
-        ["xpath=//button[2]", "xpath:position"],
-        ["xpath=//button[contains(.,'Enable User')]", "xpath:innerText"]
-      ],
-      "value": "Enable User"
-    }, {
-      "id": "a7dd3498-ff65-4454-a1b7-2b5272e0bde6",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "fde9c923-a102-4b45-b2a9-46ecaeafb728",
-      "comment": "",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
       "value": ""
     }]
   }, {
@@ -4316,7 +4263,7 @@
     }, {
       "id": "1dadfae8-01f4-41f1-9aaf-6fa8e41bccec",
       "comment": "",
-      "command": "pause",
+      "command": "//pause",
       "target": "60000",
       "targets": [],
       "value": ""
@@ -4343,18 +4290,18 @@
       "value": ""
     }, {
       "id": "a6bfbd70-2d85-4847-a2a4-20e259609b7c",
-      "comment": "Enter the Tenant User's username, i.e. sl_salesforce_tenant@sensai.test (Linked to my Salesforce v8 test org)",
+      "comment": "Enter the Tenant User's username, i.e.sl_tenant_user@sensai.test",
       "command": "type",
       "target": "id=username",
       "targets": [],
-      "value": "sl_salesforce_tenant@sensai.test"
+      "value": "sl_tenant_user@sensai.test"
     }, {
       "id": "a400193e-add1-4a50-aef4-a91d910bf52e",
-      "comment": "Enter the Tenant User's password, i.e. SL_salesforce_tenant_admin123!",
+      "comment": "Enter the Tenant User's password, i.e. SL_tenant_user_123!",
       "command": "type",
       "target": "id=password",
       "targets": [],
-      "value": "SL_salesforce_tenant_admin123!"
+      "value": "SL_tenant_user_123!"
     }, {
       "id": "00d49e84-91ea-4ecf-b3c0-14dd5a29d558",
       "comment": "Click on the Login button",
@@ -4404,13 +4351,13 @@
       "value": ""
     }, {
       "id": "40d8ebbd-e4a9-4d87-bbe9-44a5d0cd5a47",
-      "comment": "Click on the Datasets option in the sidebar menu (3rd item).",
+      "comment": "Click on the Datasets option in the sidebar menu.",
       "command": "click",
-      "target": "css=#sidebarNav > .nav-link:nth-child(3)",
+      "target": "css=.datasetsSidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(3)", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[3]", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div[3]", "xpath:position"]
+        ["css=.datasetsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div[2]/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -5349,7 +5296,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sltenantuser@sensai.test"
+      "value": "sl_tenant_user@sensai.test"
     }, {
       "id": "166e45be-1042-4c10-aea4-6a4f1bb3575a",
       "comment": "",
@@ -5414,37 +5361,45 @@
       "id": "9841e17a-7ca8-4713-bd6f-51ee211e7e97",
       "comment": "",
       "command": "verifyText",
-      "target": "css=#sidebarNav > .nav-link:nth-child(1)",
+      "target": "css=.datasetsSidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(1)", "css:finder"],
+        ["css=.datasetsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div/div[2]/div/div", "xpath:position"]
+        ["xpath=//div[6]/div/div/div[2]/div/div", "xpath:position"]
       ],
       "value": "Datasets"
     }, {
       "id": "54f2139a-6994-4dff-9c69-6298c5b9f6eb",
       "comment": "",
       "command": "verifyText",
-      "target": "css=#sidebarNav > .nav-link:nth-child(2)",
+      "target": "css=.modelsSidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(2)", "css:finder"],
+        ["css=.modelsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[2]", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div/div[2]/div/div[2]", "xpath:position"]
+        ["xpath=//div/div/div[2]/div/div[2]", "xpath:position"]
       ],
       "value": "Models"
     }, {
       "id": "9ea48925-117d-439c-aa85-1fdd3f2b2654",
       "comment": "",
       "command": "verifyText",
-      "target": "css=#sidebarNav > .nav-link:nth-child(3)",
-      "targets": [],
+      "target": "css=.connectionsSidebarLink",
+      "targets": [
+        ["css=.connectionsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[3]", "xpath:idRelative"],
+        ["xpath=//div/div[3]", "xpath:position"]
+      ],
       "value": "Connections"
     }, {
       "id": "21e1800b-b11e-42d5-88d3-78ac67ff5f01",
       "comment": "",
       "command": "verifyText",
-      "target": "css=#sidebarNav > .nav-link:nth-child(4)",
-      "targets": [],
+      "target": "css=.predictionsSidebarLink",
+      "targets": [
+        ["css=.predictionsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[4]", "xpath:idRelative"],
+        ["xpath=//div/div[4]", "xpath:position"]
+      ],
       "value": "Predictions"
     }, {
       "id": "e5194471-c9b0-4ecc-a734-1c061580a6c7",
@@ -5468,6 +5423,19 @@
         ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
         ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
         ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a6ef8a0-860c-423f-823e-775d7ddbf308",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }]
@@ -5521,7 +5489,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sl_salesforce_tenant@sensai.test"
+      "value": "slovatt@SLversion8.test"
     }, {
       "id": "424b55c8-d456-4ade-afe1-5ce603c2cec6",
       "comment": "",
@@ -5534,7 +5502,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "SL_tenant_user_123!"
+      "value": "SL_salesforce_tenant_admin123!"
     }, {
       "id": "a9d3860b-4e13-45a9-a456-d561b43d9834",
       "comment": "",
@@ -5579,9 +5547,9 @@
       "id": "1b5300b6-3a38-4dea-8781-fbb7ce0abd64",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='sidebarNav']/div[3]",
+      "target": "css=.connectionsSidebarLink",
       "targets": [
-        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["css=.connectionsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[3]", "xpath:idRelative"],
         ["xpath=//div/div[3]", "xpath:position"]
       ],
@@ -5590,10 +5558,10 @@
       "id": "ecd3e3c3-9ed5-4ae5-932e-f74e79cf934d",
       "comment": "",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div/div[2]/div/div/h3",
+      "target": "xpath=//h3[contains(.,'All Connections')]",
       "targets": [
         ["css=.mb-4", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div/div/h3", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div/div/h3", "xpath:idRelative"],
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'All Connections')]", "xpath:innerText"]
       ],
@@ -5639,7 +5607,7 @@
       "value": ""
     }, {
       "id": "b4cdfcfc-c4c5-45a1-a279-7f770fe70221",
-      "comment": "Enter the Test1 org's user slovatt@test1.com",
+      "comment": "Enter the Salesforce org's username slovatt@SLversion8.test",
       "command": "type",
       "target": "xpath=//input[@id='username']",
       "targets": [
@@ -5647,7 +5615,7 @@
         ["xpath=//input[@id='username']", "xpath:attributes"],
         ["xpath=//div[2]/div/input", "xpath:position"]
       ],
-      "value": "slovatt@test1.com"
+      "value": "slovatt@SLversion8.test"
     }, {
       "id": "0eb9eb87-b5d5-4b97-aa03-3354ca9a5937",
       "comment": "Click the modal \"Save\" button",
@@ -5782,7 +5750,7 @@
       "value": "SL_salesforce_tenant_admin123!"
     }, {
       "id": "12fa3b6a-871f-4c06-b447-e305164db380",
-      "comment": "Log in to the rc2@mailinator.com Tenant Admin user account.",
+      "comment": "Click the Login button.",
       "command": "click",
       "target": "id=login",
       "targets": [
@@ -5824,11 +5792,11 @@
       "id": "3c832e54-137a-4c8f-a39f-948da54d47db",
       "comment": "Click on the \"Models\" item in the sidebar",
       "command": "click",
-      "target": "css=.nav-link:nth-child(4)",
+      "target": "css=.modelsSidebarLink",
       "targets": [
-        ["css=.nav-link:nth-child(6)", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
-        ["xpath=//div/div[6]", "xpath:position"]
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[4]", "xpath:idRelative"],
+        ["xpath=//div/div[4]", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -5864,16 +5832,9 @@
     }, {
       "id": "ad719d17-bfc0-41b4-bc2a-4b36942a1216",
       "comment": "Verify the \"Delete\" button element is present.",
-      "command": "verifyElementPresent",
+      "command": "//verifyElementPresent",
       "target": "id=deleteModelButton",
-      "targets": [
-        ["id=deleteModelButton", "id"],
-        ["css=#deleteModelButton", "css:finder"],
-        ["xpath=//button[@id='deleteModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Delete')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "563c7129-2d46-43f5-9b1e-d6184410b15f",
@@ -5940,9 +5901,9 @@
       "id": "cb1b9716-469f-4608-9334-633843d36416",
       "comment": "Verify the Model Accuracy chart's Y axis label text \"Accuracy (%)\" exists.",
       "command": "verifyText",
-      "target": "css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan",
+      "target": "css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer > .recharts-text > tspan",
       "targets": [
-        ["css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan", "css:finder"]
+        ["css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer > .recharts-text > tspan", "css:finder"]
       ],
       "value": "Accuracy (%)"
     }, {
@@ -6184,11 +6145,11 @@
       "id": "857584d6-85da-457e-8c37-ba01a2ab6cf6",
       "comment": "Click on the \"Security\" sidebar item",
       "command": "click",
-      "target": "css=#sidebarNav > .nav-link:nth-child(1)",
+      "target": "css=.securitySidebarLink",
       "targets": [
-        ["css=#sidebarNav > .nav-link:nth-child(1)", "css:finder"],
+        ["css=.securitySidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div", "xpath:idRelative"],
-        ["xpath=//div[5]/div/div/div[2]/div/div", "xpath:position"]
+        ["xpath=//div/div/div[2]/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -6253,8 +6214,8 @@
     }, {
       "id": "6e8a4130-3280-461f-aac1-ca39baca100a",
       "comment": "Verify the API Key rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO exists",
-      "command": "verifyText",
-      "target": "xpath=//p[contains(.,'NCzmnMMx2K9vSHTgp67QH9z4YQNoYuW98TTZUC8i')]",
+      "command": "//verifyText",
+      "target": "xpath=//p[contains(.,'rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO')]",
       "targets": [],
       "value": "rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO\\n\\n"
     }, {
@@ -6307,34 +6268,34 @@
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
-      "target": "https://test.cloudapps.dev",
+      "target": "https://login.salesforce.com",
       "targets": [],
       "value": ""
     }, {
       "id": "ba51d0dd-7add-4700-8bc0-fd6a89b7e02d",
       "comment": "",
-      "command": "pause",
+      "command": "//pause",
       "target": "60000",
       "targets": [],
       "value": ""
     }, {
       "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
       "comment": "",
-      "command": "if",
+      "command": "//if",
       "target": "document.getElementById('username') === null",
       "targets": [],
       "value": ""
     }, {
       "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "id=logoutHeaderLink",
       "targets": [],
       "value": ""
     }, {
       "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
       "comment": "",
-      "command": "end",
+      "command": "//end",
       "target": "",
       "targets": [],
       "value": ""
@@ -6381,61 +6342,33 @@
       ],
       "value": ""
     }, {
-      "id": "3efaabcc-f960-4636-9bc7-3def7fcd1a2e",
-      "comment": "Click on the Salesforce Lightning App Menu \"waffle\" icon",
-      "command": "click",
-      "target": "css=.slds-icon-waffle",
-      "targets": [
-        ["css=.slds-icon-waffle", "css:finder"],
-        ["xpath=//header[@id='oneHeader']/div[3]/one-appnav/div/div/div/nav/one-app-launcher-header/button/div", "xpath:idRelative"],
-        ["xpath=//one-app-launcher-header/button/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "f1a3fdd8-8545-4b57-99ab-2d92c814f0da",
-      "comment": "Click on the \"Opportunities\" link in the App Launcher",
-      "command": "click",
-      "target": "xpath=//div[@id='content_353:542;a']/div/div[2]/div/div[2]/ul/li[56]/a/span/span",
-      "targets": [
-        ["css=.slds-col--padded:nth-child(56) .label", "css:finder"],
-        ["xpath=//div[@id='content_353:542;a']/div/div[2]/div/div[2]/ul/li[56]/a/span/span", "xpath:idRelative"],
-        ["xpath=//li[56]/a/span/span", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "ec9d5daa-44b2-4888-9f31-a7e10420d134",
-      "comment": "Click on my Opportunity \"100 cositas\"",
-      "command": "click",
-      "target": "linkText=1000 cositas",
-      "targets": [
-        ["linkText=1000 cositas", "linkText"],
-        ["css=.slds-cell-edit:nth-child(3) .slds-truncate", "css:finder"],
-        ["xpath=(//a[contains(text(),'1000 cositas')])[3]", "xpath:link"],
-        ["xpath=//div[@id='brandBand_1']/div/div/div[2]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/table/tbody/tr/th/span/a", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '/lightning/r/0067E00000DqiEbQAJ/view')])[3]", "xpath:href"],
-        ["xpath=//th/span/a", "xpath:position"]
-      ],
+      "comment": "Go to my Opportunity.",
+      "command": "open",
+      "target": "https://slversion8.lightning.force.com/lightning/r/Opportunity/0064J000003zkaqQAA/view",
+      "targets": [],
       "value": ""
     }, {
       "id": "ba0f83b6-bc39-4016-beeb-e84c670a01f0",
       "comment": "Verify the \"Sensai\" component header element exists on the page.",
       "command": "verifyElementPresent",
-      "target": "xpath=//div[@id='brandBand_1']/div/div/div[3]/div/div/div[3]/div[2]/div/article/div/div[2]",
+      "target": "css=.header-bg",
       "targets": [
-        ["css=.slds-size_1-of-1", "css:finder"],
-        ["xpath=//div[@id='brandBand_1']/div/div/div[3]/div/div/div[3]/div[2]/div/article/div/div[2]", "xpath:idRelative"],
-        ["xpath=//article/div/div[2]", "xpath:position"]
+        ["css=.header-bg", "css:finder"],
+        ["xpath=//div[@id='brandBand_1']/div/div/div/div/div/div/div[3]/div[2]/div/article/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/article/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "ef602631-ed26-43ab-98a0-040ae4d1cf11",
       "comment": "Click on the User menu at the top right",
       "command": "click",
-      "target": "xpath=//header[@id='oneHeader']/div[2]/span/div[2]/ul/li[8]/span/button/div/span/div/span",
+      "target": "css=.profileTrigger",
       "targets": [
-        ["css=.profileTrigger > .uiImage", "css:finder"],
-        ["xpath=//header[@id='oneHeader']/div[2]/span/div[2]/ul/li[8]/span/button/div/span/div/span", "xpath:idRelative"],
-        ["xpath=//button/div/span/div/span", "xpath:position"]
+        ["css=.profileTrigger", "css:finder"],
+        ["xpath=//img[@alt='User']", "xpath:img"],
+        ["xpath=//div[@id='151:207;a']/span/span/img", "xpath:idRelative"],
+        ["xpath=//span/img", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -6447,8 +6380,8 @@
       "value": ""
     }, {
       "id": "a9c16846-7256-4b83-b606-47af18298833",
-      "comment": "Verify the \"Log in to Sandbox\" button exists.",
-      "command": "//verifyElementPresent",
+      "comment": "Verify the Salesforce \"Log in\" button exists.",
+      "command": "verifyElementPresent",
       "target": "id=Login",
       "targets": [],
       "value": ""
@@ -6493,7 +6426,7 @@
       "value": ""
     }, {
       "id": "a48ae8ee-c53e-45e0-b23c-8e245203cd47",
-      "comment": "Enter the Tenant Admin's username, i.e. sl_salesforce_tenant@sensai.test",
+      "comment": "Enter the Tenant Admin's username, i.e. slovatt@SLversion8.test",
       "command": "type",
       "target": "id=username",
       "targets": [
@@ -6503,7 +6436,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sl_salesforce_tenant@sensai.test"
+      "value": "slovatt@SLversion8.test"
     }, {
       "id": "eb54aecc-d908-4e2c-9c83-75ad925ff930",
       "comment": "Enter the Tenant User's password, i.e. SL_salesforce_tenant_admin123!",
@@ -6561,11 +6494,11 @@
       "id": "68276658-708b-41e5-a6d5-f9e3101a8f89",
       "comment": "Click the \"Connections\" link in the sidebar menu. (5th item)",
       "command": "click",
-      "target": "xpath=//div[@id='sidebarNav']/div[5]",
+      "target": "css=.connectionsSidebarLink",
       "targets": [
-        ["css=.nav-link:nth-child(3)", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[3]", "xpath:idRelative"],
-        ["xpath=//div/div[3]", "xpath:position"]
+        ["css=.connectionsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[5]", "xpath:idRelative"],
+        ["xpath=//div/div[5]", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -6654,7 +6587,7 @@
       "id": "ec77da0a-5a04-43c8-a76e-9fa858db528f",
       "comment": "Click the \"Predictions\" link in the sidebar menu. (6th item)",
       "command": "//click",
-      "target": "xpath=//div[@id='sidebarNav']/div[6]",
+      "target": "css=.predictionsSidebarLink",
       "targets": [],
       "value": ""
     }, {
@@ -6770,7 +6703,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sl_salesforce_tenant@sensai.test"
+      "value": "slovatt@SLversion8.test"
     }, {
       "id": "27668955-bb3c-47f7-aebc-5fd06d035d29",
       "comment": "",
@@ -6826,18 +6759,18 @@
       "value": ""
     }, {
       "id": "ec58307c-489b-49dc-8711-f6badd77339e",
-      "comment": "Click on the Models link in the sidebar menu. (4th item)",
+      "comment": "Click on the Models link in the sidebar menu.",
       "command": "click",
-      "target": "css=.nav-link:nth-child(4)",
+      "target": "css=.modelsSidebarLink",
       "targets": [
-        ["css=.nav-link:nth-child(4)", "css:finder"],
+        ["css=.modelsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[4]", "xpath:idRelative"],
         ["xpath=//div/div[4]", "xpath:position"]
       ],
-      "value": "Models"
+      "value": ""
     }, {
       "id": "60ef121d-5b3a-497b-9462-0d72e4e61ee0",
-      "comment": "Click the first row's Action Menu",
+      "comment": "Click the first row's Action Menu.",
       "command": "click",
       "target": "css=tr:nth-child(1) .dropdown-toggle",
       "targets": [
@@ -6865,14 +6798,9 @@
     }, {
       "id": "0a4e10af-39b7-4aa9-a107-83efe0b3688f",
       "comment": "Click on the \"Assign Model\" dropdown list.",
-      "command": "click",
+      "command": "//click",
       "target": "id=connectionId",
-      "targets": [
-        ["id=connectionId", "id"],
-        ["css=#connectionId", "css:finder"],
-        ["xpath=//select[@id='connectionId']", "xpath:attributes"],
-        ["xpath=//select", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "4e214800-82b6-45ac-8d2b-0a5f4b240660",
@@ -6924,9 +6852,9 @@
       "id": "ce89fb2d-9808-4c9c-891b-c10f39076dee",
       "comment": "Click on the Connections link in the sidebar menu. (4th item)",
       "command": "click",
-      "target": "css=.nav-link:nth-child(5)",
+      "target": "css=.connectionsSidebarLink",
       "targets": [
-        ["css=.nav-link:nth-child(5)", "css:finder"],
+        ["css=.connectionsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[5]", "xpath:idRelative"],
         ["xpath=//div/div[5]", "xpath:position"]
       ],
@@ -6952,13 +6880,26 @@
       "command": "waitForElementPresent",
       "target": "id=logoutHeaderLink",
       "targets": [],
-      "value": "1200000"
+      "value": "120000"
     }, {
       "id": "3b3af0c8-62a4-490b-a8a8-6199feacc964",
       "comment": "",
       "command": "click",
       "target": "id=logoutHeaderLink",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "cb9d9023-2157-40b3-9634-257fe676f209",
+      "comment": "Verify the Username field is present.",
+      "command": "verifyElementPresent",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
       "value": ""
     }]
   }, {
@@ -7011,7 +6952,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sltenantuser@sensai.test"
+      "value": "sl_tenant_user@sensai.test"
     }, {
       "id": "198917e4-c746-443f-92ab-717f19436da8",
       "comment": "",
@@ -7076,11 +7017,11 @@
       "id": "e7eec12a-39a0-4b2e-85e4-8cdc4d01fe68",
       "comment": "Click on the Models link in the sidebar menu (2nd menu item)",
       "command": "click",
-      "target": "css=.nav-link:nth-child(2)",
+      "target": "css=.modelsSidebarLink",
       "targets": [
-        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["css=.modelsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[2]", "xpath:idRelative"],
-        ["xpath=//div[5]/div/div/div[2]/div/div[2]", "xpath:position"]
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -7362,7 +7303,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25", "b3258e1c-f266-4e39-9fa8-2584089946c7", "04614dbc-f134-4488-a951-111b3ef83f06", "c9090129-12de-4804-aa51-7f0dbe81f7d0", "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5", "dc31ee01-e671-4f3a-b6ae-b906dbc13a4a", "15faae31-5501-4179-8ad5-f584e3e6d393"]
+    "tests": ["295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25", "b3258e1c-f266-4e39-9fa8-2584089946c7", "04614dbc-f134-4488-a951-111b3ef83f06", "c9090129-12de-4804-aa51-7f0dbe81f7d0", "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5", "15faae31-5501-4179-8ad5-f584e3e6d393"]
   }, {
     "id": "9beaa2a2-3b73-46fa-bc5b-0bb36a6a6f8c",
     "name": "Tenant User Test Suite",
@@ -7383,7 +7324,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["b3f65c24-7ea2-4d55-8436-f14eb8a3ecf5"]
+    "tests": ["b3f65c24-7ea2-4d55-8436-f14eb8a3ecf5", "dc31ee01-e671-4f3a-b6ae-b906dbc13a4a"]
   }, {
     "id": "37ef4279-3109-41b1-97c1-22dc2d1dc40b",
     "name": "TestSuiteForTroubleshooting",
