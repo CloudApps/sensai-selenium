@@ -5,19 +5,12 @@
   "url": "http://sensai-webapp-787509357522-dev.s3-website-eu-west-1.amazonaws.com",
   "tests": [{
     "id": "dba0a97c-d3d3-4404-9166-c83da8925147",
-    "name": "Tenant User - Datasets - View and verify tabs and table headings",
+    "name": "Tenant User - Datasets - View and verify tabs and fields for Uploaded and Joined ones.",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a3b84ede-21e6-4871-bf12-141dfa8ff891",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -140,7 +133,7 @@
       "value": ""
     }, {
       "id": "a3d9a3a4-da30-4bbe-9c11-539ca6be8eea",
-      "comment": "Verify the \"Settings\" link in the header.",
+      "comment": "Verify the \"Username\" link in the header is present, i.e. settingsHeaderLink",
       "command": "verifyElementPresent",
       "target": "id=settingsHeaderLink",
       "targets": [],
@@ -214,53 +207,58 @@
       ],
       "value": "Last Modified By"
     }, {
-      "id": "dc20f833-465d-4660-a728-602c48e8cf68",
-      "comment": "Store the name of the first Dataset to the variable firstdatasetname",
-      "command": "//storeValue",
-      "target": "xpath=//div[@id='root']/div/div[2]/div[2]/div/div/table/tbody/tr/td/a",
-      "targets": [],
-      "value": "firstdatasetname"
-    }, {
-      "id": "dfdc1cc7-3a53-401e-8678-22cd89618480",
-      "comment": "",
-      "command": "//echo",
-      "target": "${firstdatasetname}",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "13c3a88f-2368-45ee-bc18-b09be1e66309",
-      "comment": "Click on the first Dataset, whichever one it is - TBC, make sure the dataset cleared each time do this test - and do it after the Create Dataset.",
+      "comment": "Click on the \"Test Dataset - Joined\" link.",
       "command": "click",
-      "target": "xpath=//table[@id='datasetsTable']/tbody/tr/td/a",
+      "target": "linkText=Test Dataset - Joined",
       "targets": [
-        ["linkText=JoinedDataset2636", "linkText"],
-        ["css=tr:nth-child(1) a", "css:finder"],
-        ["xpath=//a[contains(text(),'JoinedDataset2636')]", "xpath:link"],
+        ["linkText=Test Dataset - Joined", "linkText"],
+        ["css=tr:nth-child(1) > td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Test Dataset - Joined')]", "xpath:link"],
         ["xpath=//table[@id='datasetsTable']/tbody/tr/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/datasets/003_6b5c542d8be24d9390f80e5a700028e8')]", "xpath:href"],
+        ["xpath=//a[contains(@href, '/datasets/003_3511029d09f949b7a9e015b3bc576220')]", "xpath:href"],
         ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'JoinedDataset2636')]", "xpath:innerText"]
+        ["xpath=//a[contains(.,'Test Dataset - Joined')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
       "id": "cb83e3e1-e17f-4726-a80a-a5947d12661d",
-      "comment": "TBC - Verify tab text \"Records\" - ONLY IF IT'S NOT A JOINED DATASET - HOW?",
-      "command": "//verifyText",
+      "comment": "Verify tab link \"Records\" IS NOT PRESENT. (The Dataset is a joined one).",
+      "command": "verifyElementNotPresent",
       "target": "linkText=Records",
-      "targets": [],
-      "value": "Records"
+      "targets": [
+        ["linkText=Records", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Records')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/nav/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Records')]", "xpath:innerText"]
+      ],
+      "value": ""
     }, {
       "id": "c3558c8d-b9cc-48b6-b4f3-aa23d3690cbf",
-      "comment": "Verify the Name field on the Details tab.",
+      "comment": "Verify the Name field value \"Test Dataset - Joined\" text on the Details tab.",
       "command": "verifyText",
-      "target": "xpath=//label[contains(.,'Name')]",
+      "target": "xpath=//p[contains(.,'Test Dataset - Joined')]",
       "targets": [
-        ["css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-label", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div/div/label", "xpath:idRelative"],
-        ["xpath=//label", "xpath:position"],
-        ["xpath=//label[contains(.,'Name')]", "xpath:innerText"]
+        ["css=.mb-2:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Test Dataset - Joined')]", "xpath:innerText"]
       ],
-      "value": "Name"
+      "value": "Test Dataset - Joined"
+    }, {
+      "id": "ec564222-97a8-4419-a2fc-e5dc08e4e12a",
+      "comment": "Verify the Status field value text \"Joined\".",
+      "command": "verifyText",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div/div/p",
+      "targets": [
+        ["css=.mb-2:nth-child(3) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/p", "xpath:position"]
+      ],
+      "value": "Joined"
     }, {
       "id": "83849e6c-32b7-4d25-a7f8-6f6caa517526",
       "comment": "Verify the Delete button",
@@ -291,7 +289,7 @@
       "value": "Create Model"
     }, {
       "id": "373e7717-3633-4482-acf2-1dbdf0a029fb",
-      "comment": "Verify the \"Categorical Columns\" text - TO BE IMPROVED",
+      "comment": "Verify the \"Categorical Columns\" text.",
       "command": "verifyText",
       "target": "css=.col-4:nth-child(1) .card-header",
       "targets": [
@@ -302,7 +300,7 @@
       "value": "Categorical Columns"
     }, {
       "id": "61f1f492-8505-42a4-a229-b1a1553c5b40",
-      "comment": "Verify the \"Continuous Columns\" text - TO BE IMPROVED",
+      "comment": "Verify the \"Continuous Columns\" text.",
       "command": "verifyText",
       "target": "css=.col-4:nth-child(2) .card-header",
       "targets": [
@@ -313,7 +311,7 @@
       "value": "Continuous Columns"
     }, {
       "id": "2c28b652-aae0-4583-a54b-abe622deea02",
-      "comment": "Verify the \"Date Columns\" text - TO BE IMPROVED",
+      "comment": "Verify the \"Date Columns\" text.",
       "command": "verifyText",
       "target": "css=.col-4:nth-child(3) .card-header",
       "targets": [
@@ -323,26 +321,168 @@
       ],
       "value": "Date Columns"
     }, {
+      "id": "b82b3e29-cdf2-44e8-af29-d1f61b0b57ad",
+      "comment": "Click the \"Models\" tab link.",
+      "command": "click",
+      "target": "linkText=Models",
+      "targets": [
+        ["linkText=Models", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Models')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/nav/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Models')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f730767-e9ae-4f2a-8ad7-b25b5de4a64b",
+      "comment": "Verify the link element \"Test Model - Trained\" is present.",
+      "command": "verifyElementPresent",
+      "target": "linkText=Test Model - Trained",
+      "targets": [
+        ["linkText=Test Model - Trained", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Test Model - Trained')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_8ca9930decf9468687c1d129febc52ad')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test Model - Trained')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "856bc3c8-db99-4142-b2f2-20f155502455",
+      "comment": "Verify the text \"TRAINED\" is present in the Status column.",
+      "command": "verifyText",
+      "target": "xpath=//td[contains(.,'TRAINED')]",
+      "targets": [
+        ["css=td:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'TRAINED')]", "xpath:innerText"]
+      ],
+      "value": "TRAINED"
+    }, {
+      "id": "f9ffa06e-1d90-448a-9bd7-7ffd2d385962",
+      "comment": "Verify the Actions picklist button IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "css=.dropdown-toggle",
+      "targets": [
+        ["css=.dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td[6]/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d388d63-6721-4885-8ce4-7dd909fda9b0",
+      "comment": "Click on the blue Back arrow button.",
+      "command": "click",
+      "target": "id=backButton",
+      "targets": [
+        ["id=backButton", "id"],
+        ["css=#backButton", "css:finder"],
+        ["xpath=//button[@id='backButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65716788-a6ab-4b63-bdeb-602bbb257923",
+      "comment": "Click on the \"Test Dataset - Uploaded\" link.",
+      "command": "click",
+      "target": "linkText=Test Dataset - Uploaded",
+      "targets": [
+        ["linkText=Test Dataset - Uploaded", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Test Dataset - Uploaded')]", "xpath:link"],
+        ["xpath=//table[@id='datasetsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/datasets/003_73d9d960029e4eef98c2569ae4503980')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test Dataset - Uploaded')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cfc5551e-ba0c-4460-ade5-87c0e63b29de",
+      "comment": "Verify tab link \"Records\" is present.",
+      "command": "verifyElementPresent",
+      "target": "linkText=Records",
+      "targets": [
+        ["linkText=Records", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Records')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/nav/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Records')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d64a1a64-551c-4bf6-bc1f-ae30ad4dd7de",
+      "comment": "Verify the Name field value \"Test Dataset - Uploaded\" text on the Details tab.",
+      "command": "verifyText",
+      "target": "xpath=//p[contains(.,'Test Dataset - Uploaded')]",
+      "targets": [
+        ["css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Test Dataset - Uploaded')]", "xpath:innerText"]
+      ],
+      "value": "Test Dataset - Uploaded"
+    }, {
+      "id": "154f6acc-9d32-42c0-b907-d558aed28978",
+      "comment": "Verify the Status field value text \"Uploaded\".",
+      "command": "verifyText",
+      "target": "css=.mb-2:nth-child(3) .form-control-plaintext",
+      "targets": [
+        ["css=.mb-2:nth-child(3) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/p", "xpath:position"]
+      ],
+      "value": "Uploaded"
+    }, {
+      "id": "0fa32cdd-c8af-4470-8508-4140f1b95523",
+      "comment": "Verify the No. of Records field text is 504.",
+      "command": "verifyText",
+      "target": "css=.mb-2:nth-child(1) > .col-6:nth-child(2) .form-control-plaintext",
+      "targets": [
+        ["css=.mb-2:nth-child(1) > .col-6:nth-child(2) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'504')]", "xpath:innerText"]
+      ],
+      "value": "504"
+    }, {
       "id": "bfb92259-6df1-4072-8ea4-4397cfe701a1",
-      "comment": "Click on the \"Records\" tab - CAN BE IMPROVED WITH AN IF STATEMENT",
-      "command": "//click",
+      "comment": "Click on the \"Records\" tab.",
+      "command": "click",
       "target": "linkText=Records",
       "targets": [],
       "value": ""
     }, {
       "id": "39ef2f9d-3562-4429-89ab-5240e6f99a43",
-      "comment": "Verify heading text \"Opportunity ID\"",
-      "command": "//verifyText",
-      "target": "xpath=//th[contains(.,'Opportunity ID')]",
-      "targets": [],
-      "value": "Opportunity ID"
+      "comment": "Verify heading text \"ACCOUNTID\".",
+      "command": "verifyText",
+      "target": "css=thead .text-truncate:nth-child(1)",
+      "targets": [
+        ["css=thead .text-truncate:nth-child(1)", "css:finder"],
+        ["xpath=//table[@id='datasetRecordsTable']/thead/tr/th", "xpath:idRelative"],
+        ["xpath=//th", "xpath:position"],
+        ["xpath=//th[contains(.,'ACCOUNTID')]", "xpath:innerText"]
+      ],
+      "value": "ACCOUNTID"
     }, {
       "id": "06d64525-282d-4bc7-b9b4-983fb58d7897",
-      "comment": "Verify heading text \"User\"",
-      "command": "//verifyText",
-      "target": "xpath=//th[contains(.,'User')]",
-      "targets": [],
-      "value": "User"
+      "comment": "Verify heading text \"OWNERID\"",
+      "command": "verifyText",
+      "target": "css=thead .text-truncate:nth-child(37)",
+      "targets": [
+        ["css=thead .text-truncate:nth-child(37)", "css:finder"],
+        ["xpath=//table[@id='datasetRecordsTable']/thead/tr/th[37]", "xpath:idRelative"],
+        ["xpath=//th[37]", "xpath:position"],
+        ["xpath=//th[contains(.,'OWNERID')]", "xpath:innerText"]
+      ],
+      "value": "OWNERID"
     }, {
       "id": "5f459fd4-1380-49d8-98c2-c1fe15435482",
       "comment": "Click the Models tab link",
@@ -426,58 +566,17 @@
       ],
       "value": "Last Modified By"
     }, {
-      "id": "9945f076-76da-40e1-80ee-62ad9e12e225",
-      "comment": "Verify the column heading \"Actions\"",
-      "command": "verifyText",
-      "target": "xpath=//th[contains(.,'Actions')]",
-      "targets": [
-        ["css=th:nth-child(6)", "css:finder"],
-        ["xpath=//table[@id='modelsTable']/thead/tr/th[6]", "xpath:idRelative"],
-        ["xpath=//th[6]", "xpath:position"],
-        ["xpath=//th[contains(.,'Actions')]", "xpath:innerText"]
-      ],
-      "value": "Actions"
-    }, {
       "id": "f5045316-eff7-4c03-8a43-8685e4c00198",
-      "comment": "Click the Model's action menu dropdown",
-      "command": "click",
-      "target": "css=.dropdown-toggle",
-      "targets": [
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
-        ["xpath=//table[@id='modelsTable']/tbody/tr/td[6]/div/button", "xpath:idRelative"],
-        ["xpath=//td[6]/div/button", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "dfce3351-32f2-4236-a43b-082c3e7bca0b",
-      "comment": "Verify the dropdown list value \"Deploy Model\" - CAN INCLUDE THIS BY ADDING AN IF STATEMENT",
-      "command": "//verifyText",
-      "target": "linkText=Deploy Model",
-      "targets": [],
-      "value": "Deploy Model"
-    }, {
-      "id": "fd23efa2-1f9a-4c26-a8f6-ca536e692215",
-      "comment": "CANNOT GET IT WORKING EVEN THOUGH IT IS RECOGNISING THE ELEMENT - Verify the dropdown list value \"Edit Model\"",
-      "command": "//verifyText",
-      "target": "linkText=Edit Model",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8e13321d-129e-4304-9d05-adf5c55abad5",
-      "comment": "Verify the dropdown list value \"Clone Model\"",
+      "comment": "Verify the \"No Records\" field value text.",
       "command": "verifyText",
-      "target": "linkText=Clone Model",
+      "target": "css=h5",
       "targets": [
-        ["linkText=Clone Model", "linkText"],
-        ["css=.dropdown-item:nth-child(2)", "css:finder"],
-        ["xpath=//a[contains(text(),'Clone Model')]", "xpath:link"],
-        ["xpath=//table[@id='modelsTable']/tbody/tr/td[6]/div/div/a[2]", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
-        ["xpath=//div/a[2]", "xpath:position"],
-        ["xpath=//a[contains(.,'Clone Model')]", "xpath:innerText"]
+        ["css=h5", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div[2]/h5", "xpath:idRelative"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'No Records')]", "xpath:innerText"]
       ],
-      "value": "Clone Model"
+      "value": "No Records"
     }, {
       "id": "db310570-8db6-4d23-b02a-ee7687713b5b",
       "comment": "Click the blue Back arrow at the top left",
@@ -503,39 +602,6 @@
         ["xpath=//h3[contains(.,'All Datasets')]", "xpath:innerText"]
       ],
       "value": "All Datasets"
-    }, {
-      "id": "baee746f-0f2e-4f07-9aa5-e302516a0fea",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "6e27e1f7-3b78-4a9e-a97c-aafb0ece9ef0",
-      "comment": "Click the Log Out link",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "aa4c3265-8c67-4688-8f22-7973ef1ee8b4",
-      "comment": "Verify the field element \"Username\" exists.",
-      "command": "verifyElementPresent",
-      "target": "id=username",
-      "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "Username"
     }]
   }, {
     "id": "25a8c0a8-f8c7-40f3-99fe-27f1355a5f6d",
@@ -545,13 +611,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "c0e1d1fc-f773-4881-8397-7e4f309d2fe5",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -631,24 +690,10 @@
     "id": "f9d2f8f8-c48e-4036-a7b7-87cec92c6a22",
     "name": "All User Types - Log in success - check the Default section, available sections & username and Log Out links in the header.",
     "commands": [{
-      "id": "2fccea6b-1992-495f-a731-1092e42e3b46",
-      "comment": "",
-      "command": "//setWindowSize",
-      "target": "1280x800",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "786ef70f-512f-43bb-9479-af55d5bd72c3",
-      "comment": "",
-      "command": "//pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -726,13 +771,6 @@
       ],
       "value": "120000"
     }, {
-      "id": "7f338713-f991-4f1c-9243-4bf4f4de1e9c",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "a1ead2e0-cbe8-40ce-b274-db9a6e0e1f09",
       "comment": "Verify that the logged-in user's username appears in the header.",
       "command": "verifyText",
@@ -751,6 +789,13 @@
         ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
         ["xpath=//div/div[2]", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "de779bcb-8adc-4d95-8a4f-aa00ad5f174a",
+      "comment": "Verify the Contact link is present.",
+      "command": "//verifyElementPresent",
+      "target": "",
+      "targets": [],
       "value": ""
     }, {
       "id": "f8874f52-7b58-4404-9e53-0ef00681dd20",
@@ -1054,13 +1099,6 @@
       "comment": "Verify the \"Users\" sidebar menu element IS NOT PRESENT.",
       "command": "verifyElementNotPresent",
       "target": "css=.usersSidebarLink",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "f246ffa5-846f-41a2-874a-da7b7b44f222",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -1576,13 +1614,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "3323d023-6007-448a-a323-3b8ddbdf063d",
-      "comment": "",
-      "command": "//pause",
-      "target": "60000",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
       "comment": "",
       "command": "if",
@@ -1672,6 +1703,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "b66ca917-f4f5-4373-bb74-ba85722b2df3",
+      "comment": "Click on the \"Create Tenant\" button. ",
+      "command": "waitForElementPresent",
+      "target": "id=createTenantButton",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "96e3bbe8-dce9-4998-a6e3-9b38ad895648",
       "comment": "Click on the \"Create Tenant\" button. ",
       "command": "click",
@@ -1706,7 +1744,7 @@
       "value": ""
     }, {
       "id": "fad00c82-e73f-42fd-a725-3eac3d03b5a6",
-      "comment": "TBC - - - Enter the new Admin's email address into the \"Admin Email Address\" field.",
+      "comment": "Enter the new Admin's email address into the \"Admin Email Address\" field.",
       "command": "type",
       "target": "id=admin_email",
       "targets": [
@@ -1862,38 +1900,10 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "2ecd4c5f-a041-4b77-8f2c-ec0e5fca163a",
-      "comment": "Wait for the sidebar toggle button to be available.",
-      "command": "//waitForElementPresent",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "7af7511a-5dba-4ec5-9541-97d40f0575fc",
-      "comment": "Click the blue Sidebar toggle button at the top left.",
-      "command": "//click",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "17a901cc-c976-4c2e-96b9-7ee52f2e0fcb",
-      "comment": "Click \"Tenants\" link from the sidebar menu",
-      "command": "//click",
-      "target": "css=.tenantsSidebarLink",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "f98e8146-8a98-4958-8d92-3bb7a6997ea7",
       "comment": "Go to the Tenants list view - cannot click on the Sidebar toggle button when running from the Command Line.",
       "command": "open",
       "target": "https://test.cloudapps.dev/tenants",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "0762e2e6-0116-41d9-b1af-9547d8819a9b",
-      "comment": "CANNOT GET THIS TO WORK - it validates the link exists.... Confirm the new Tenant Name link element exists in the table list, i.e. ${tenantcompanyname}",
-      "command": "//verifyElementPresent",
-      "target": "linkText=${tenantcompanyname}",
       "targets": [],
       "value": ""
     }, {
@@ -1925,7 +1935,7 @@
       "value": "30000"
     }, {
       "id": "336031cb-1568-4aac-a83b-2405a03b8a10",
-      "comment": "Verify the Licence Count is 22 - WORKING ON THIS ONE",
+      "comment": "Verify the Licence Count is 22",
       "command": "verifyText",
       "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div[2]/div/p",
       "targets": [
@@ -1937,7 +1947,7 @@
       "value": "22"
     }, {
       "id": "61598322-fd5a-4250-87a6-33428ac59b8e",
-      "comment": "Verify that the Org ID is persisted and saved - TBC - Need to get it working with the randomnumber variable",
+      "comment": "Verify that the Org ID is persisted and saved.",
       "command": "verifyText",
       "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div/div/p",
       "targets": [
@@ -1947,40 +1957,6 @@
         ["xpath=//p[contains(.,'madeuporgid63014')]", "xpath:innerText"]
       ],
       "value": "${currenttenantorgid}"
-    }, {
-      "id": "cb501481-ccba-40fb-9a04-9916658429fa",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "f57b7fdd-310e-46a1-980a-52d840600b7c",
-      "comment": "",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "da7a1f92-42fe-4e9a-82ee-40a95e9e5166",
-      "comment": "Verify the Login button text is present",
-      "command": "verifyElementPresent",
-      "target": "id=login",
-      "targets": [
-        ["id=login", "id"],
-        ["css=#login", "css:finder"],
-        ["xpath=//button[@id='login']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "04614dbc-f134-4488-a951-111b3ef83f06",
@@ -1990,13 +1966,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "cc3b614c-95b6-45a2-9fdf-519724786786",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -2069,13 +2038,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "396c6d85-e7d1-4091-877a-1a7cd515ae1b",
-      "comment": "Verify the \"All Datasets\" heading text exists.",
-      "command": "//verifyElementPresent",
-      "target": "css=.mb-4",
-      "targets": [],
-      "value": "All Datasets"
-    }, {
       "id": "8470a730-95e0-4cfb-8753-26c9eeb608e1",
       "comment": "Wait for the sidebar toggle button to be available.",
       "command": "waitForElementPresent",
@@ -2128,7 +2090,7 @@
       "value": ""
     }, {
       "id": "230c2ffc-39ec-48f6-9ed3-81b7cdfcd0e7",
-      "comment": "Enter the new User's full name - TBC - set with no spaces AND ALL LOWERCASE for now",
+      "comment": "Enter the new User's full name.",
       "command": "type",
       "target": "id=fullname",
       "targets": [
@@ -2177,13 +2139,17 @@
     }, {
       "id": "1bf19f07-232f-4414-9730-690fde2688fe",
       "comment": "Verify the \"Role\" dropdown list element exists.",
-      "command": "//verifyElementPresent",
+      "command": "verifyElementPresent",
       "target": "xpath=//select[@id='role']",
-      "targets": [],
+      "targets": [
+        ["css=.form-group > #role", "css:finder"],
+        ["xpath=//select[@id='role']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "02790108-2898-4837-b211-1fe0ee7add36",
-      "comment": "Click the \"Create User\" button - TBC - the ID of this field is \"editUserModalButton\" even though it's Creating a user - presume that's OK",
+      "comment": "Click the \"Create User\" button.",
       "command": "click",
       "target": "id=editUserModalButton",
       "targets": [
@@ -2194,12 +2160,12 @@
       ],
       "value": ""
     }, {
-      "id": "da3a58d9-ff25-4b9f-965a-3143f86b52f8",
-      "comment": "TBC - VERIFY THE CANCEL BUTTON ELEMENT DOESN'T EXIST, TO CONFIRM THE MODAL HAS CLOSED????",
-      "command": "//verifyElementNotPresent",
-      "target": "id=cancelEditUserModalButton",
+      "id": "05bf65e3-6334-407f-b615-9d0fadef0274",
+      "comment": "Verify the new user's Full Name link is present, i.e. ${tenantusernamevariable}",
+      "command": "verifyElementPresent",
+      "target": "linkText=${tenantusernamevariable}",
       "targets": [],
-      "value": ""
+      "value": "${tenantusernamevariable}"
     }, {
       "id": "3915a1cf-58a6-45f3-90a9-163178e64a5b",
       "comment": "Click on the new user's Full Name link, i.e. ${tenantusernamevariable}",
@@ -2209,9 +2175,9 @@
       "value": "${tenantusernamevariable}"
     }, {
       "id": "694b19e1-a30f-4184-b50b-f32721c128cf",
-      "comment": "Verify the Status field value \"FORCE_CHANGE_PASSWORD\"",
+      "comment": "Verify the Status field text value \"FORCE_CHANGE_PASSWORD\".",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div[2]/div/p",
+      "target": "xpath=//p[contains(.,'FORCE_CHANGE_PASSWORD')]",
       "targets": [
         ["css=.mb-2:nth-child(3) > .col-6:nth-child(2) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div[2]/div/p", "xpath:idRelative"],
@@ -2220,20 +2186,6 @@
       ],
       "value": "FORCE_CHANGE_PASSWORD"
     }, {
-      "id": "a85edef5-802f-401f-9864-10aada774c3f",
-      "comment": "Verify the \"Edit User\" button element is present",
-      "command": "verifyElementPresent",
-      "target": "id=editUserButton",
-      "targets": [
-        ["id=editUserButton", "id"],
-        ["css=#editUserButton", "css:finder"],
-        ["xpath=//button[@id='editUserButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
-        ["xpath=//button[2]", "xpath:position"],
-        ["xpath=//button[contains(.,'Edit User')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
       "id": "564688f7-ef9e-4e4c-9019-30733725b22f",
       "comment": "Verify the text in the \"Edit User\" button element.",
       "command": "verifyText",
@@ -2241,79 +2193,75 @@
       "targets": [],
       "value": "Edit User"
     }, {
+      "id": "a85edef5-802f-401f-9864-10aada774c3f",
+      "comment": "Click on the \"Edit User\" button.",
+      "command": "click",
+      "target": "id=editUserButton",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fdb757f8-ee2e-4247-95b4-ef88a5051eed",
+      "comment": "Type \"DELETE\" in the Full Name field.",
+      "command": "type",
+      "target": "id=fullname",
+      "targets": [
+        ["id=fullname", "id"],
+        ["css=#fullname", "css:finder"],
+        ["xpath=//input[@id='fullname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "DELETE"
+    }, {
+      "id": "57a424f3-826b-40cc-a367-82b72172815e",
+      "comment": "Click the Update button in the Edit User modal.",
+      "command": "click",
+      "target": "id=editUserModalButton",
+      "targets": [
+        ["id=editUserModalButton", "id"],
+        ["css=#editUserModalButton", "css:finder"],
+        ["xpath=//button[@id='editUserModalButton']", "xpath:attributes"],
+        ["xpath=//form/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "23dd4282-9f17-4fc3-9a67-ec9da387360e",
-      "comment": "Verify the \"Disable User\" button element is present",
-      "command": "//verifyElementPresent",
+      "comment": "Click on the \"Disable User\" button.",
+      "command": "click",
       "target": "xpath=//button[contains(.,'Disable User')]",
       "targets": [],
       "value": ""
     }, {
-      "id": "11f3eae4-74f0-4896-bb55-d72118cb33ef",
-      "comment": "Verify the text on the \"Disable User\" button element.",
-      "command": "//verifyText",
-      "target": "xpath=//button[contains(.,'Disable User')]",
-      "targets": [],
-      "value": "Disable User"
-    }, {
-      "id": "e43971cf-e41b-4300-a8cc-7345933fb286",
-      "comment": "Verify the \"Resend Password\" button element is present.",
-      "command": "//verifyElementPresent",
-      "target": "xpath=//button[contains(.,'Resend Password')]",
-      "targets": [],
+      "id": "d29fedc0-fa7b-4ae0-82ac-145f8a2c302b",
+      "comment": "Click on the Disable button on the confirmation dialog.",
+      "command": "click",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
+      ],
       "value": ""
     }, {
-      "id": "4de5fad3-897a-4d41-a90f-20b02b6921cb",
-      "comment": "Verify the text on the \"Resend Password\" button element.",
-      "command": "//verifyText",
-      "target": "xpath=//button[contains(.,'Resend Password')]",
-      "targets": [],
-      "value": "Resend Password"
-    }, {
-      "id": "19f139b6-4625-4ab8-a180-8b049d8083d8",
-      "comment": "Click the blue \"back\" arrow",
+      "id": "65cd659c-83c6-4128-a77c-afcbeb89e8c7",
+      "comment": "Click on the blue Back arrow button.",
       "command": "click",
       "target": "id=backButton",
       "targets": [
         ["id=backButton", "id"],
         ["css=#backButton", "css:finder"],
         ["xpath=//button[@id='backButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div/div/button", "xpath:idRelative"],
         ["xpath=//div/button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "40ad87db-9358-49a7-9b6a-481fc07011d2",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
+      "id": "36edec97-0a45-4150-8a03-7fabe323b90e",
+      "comment": "Verify the new user's Full Name link IS NOT PRESENT, i.e. ${tenantusernamevariable}",
+      "command": "verifyElementNotPresent",
+      "target": "linkText=${tenantusernamevariable}",
       "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "860567ba-bd8c-4f0f-af64-48747d9393ec",
-      "comment": "Click \"Logout\" in the header",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "329b781f-ed7a-4ace-a480-f670fe9b99c4",
-      "comment": "Verify the \"Username\" button element is present.",
-      "command": "verifyElementPresent",
-      "target": "id=username",
-      "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
+      "value": "${tenantusernamevariable}"
     }]
   }, {
     "id": "bbd846d2-93e8-40c7-9d16-0a4e9ad03de2",
@@ -2323,13 +2271,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a49ea405-020d-4aca-acba-d58e6aa8ac02",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -2431,19 +2372,26 @@
       ],
       "value": ""
     }, {
-      "id": "50cfa500-5036-47fb-978d-cee122944486",
-      "comment": "Click on the existing Tenant \"SL Tenant Disabled\" to access the record.",
-      "command": "click",
-      "target": "linkText=SL Tenant Disabled",
+      "id": "f48ff765-28ce-4455-9710-23accf5df260",
+      "comment": "Wait for the existing Tenant \"SL Tenant Disabled Ltd\" to be present.",
+      "command": "waitForElementPresent",
+      "target": "linkText=SL Tenant Disabled Ltd",
       "targets": [
-        ["linkText=SL Tenant Disabled", "linkText"],
-        ["css=tr:nth-child(29) a", "css:finder"],
-        ["xpath=//a[contains(text(),'SL Tenant Disabled')]", "xpath:link"],
-        ["xpath=//table[@id='tenantsTable']/tbody/tr[29]/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/tenants/001_d57cf51135cf4337bd53d61c6891be48')]", "xpath:href"],
-        ["xpath=//tr[29]/td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SL Tenant Disabled')]", "xpath:innerText"]
+        ["linkText=SL Tenant Disabled Ltd", "linkText"],
+        ["css=tr:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SL Tenant Disabled Ltd')]", "xpath:link"],
+        ["xpath=//table[@id='tenantsTable']/tbody/tr[3]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tenants/001_d0ecdf1454ac447db3b634f1d5a6acc1')]", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SL Tenant Disabled Ltd')]", "xpath:innerText"]
       ],
+      "value": "60000"
+    }, {
+      "id": "a4087ad3-8170-47fa-9ae0-e3687e9a6914",
+      "comment": "Click on the existing Tenant \"SL Tenant Disabled Ltd\" to access the record.",
+      "command": "click",
+      "target": "linkText=SL Tenant Disabled Ltd",
+      "targets": [],
       "value": ""
     }, {
       "id": "02dd808b-99cf-44a7-8b98-06f5a45ced4d",
@@ -2550,40 +2498,6 @@
       "target": "css=.form-control-plaintext path",
       "targets": [],
       "value": ""
-    }, {
-      "id": "b9d49f41-bae1-44ca-9e8a-88892ae315f3",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "be425ad1-5ec3-401b-9cf7-c7d235417ae3",
-      "comment": "",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "f7218f99-a26e-4673-a289-addaef58ba59",
-      "comment": "Verify the Login button text is present",
-      "command": "verifyElementPresent",
-      "target": "id=login",
-      "targets": [
-        ["id=login", "id"],
-        ["css=#login", "css:finder"],
-        ["xpath=//button[@id='login']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "d86b1f6f-8166-4a14-a638-6523245cc92d",
@@ -2593,13 +2507,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "e0deebd7-dc81-4957-8cca-e090161eaeac",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -2766,37 +2673,6 @@
         ["xpath=//div/div[7]", "xpath:position"]
       ],
       "value": ""
-    }, {
-      "id": "8727d1bd-8c59-47aa-a936-985a9415168a",
-      "comment": "",
-      "command": "click",
-      "target": "css=.close",
-      "targets": [
-        ["css=.close", "css:finder"],
-        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
-        ["xpath=//div[5]/div/div/div/button", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "36f92e5f-e42e-4e49-8941-d97c2b0758e0",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "223e8abc-42fb-47ae-806a-cb33452529a2",
-      "comment": "",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "15faae31-5501-4179-8ad5-f584e3e6d393",
@@ -2806,13 +2682,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "9e04705f-be68-446c-bb98-eac0ad94d833",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -3004,13 +2873,6 @@
       ],
       "value": "tenant_user@sensai.test"
     }, {
-      "id": "6b0bea5c-b737-47a1-9ae5-97c34d451871",
-      "comment": "Verify the Status field value \"FORCE_CHANGE_PASSWORD\"",
-      "command": "//verifyText",
-      "target": "xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/div/div/p",
-      "targets": [],
-      "value": "FORCE_CHANGE_PASSWORD"
-    }, {
       "id": "ae4f3fb5-bce8-4721-abed-662dd5035f43",
       "comment": "Verify the \"user status button\" says \"Disable User\"",
       "command": "verifyText",
@@ -3051,40 +2913,6 @@
         ["xpath=//div/button", "xpath:position"]
       ],
       "value": ""
-    }, {
-      "id": "1333d345-6cb8-4e48-b8c4-a51e3e65fae8",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "e46e6d99-2313-4fe9-8657-e0fa54366fe2",
-      "comment": "Click \"Logout\" in the header",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "c704f632-54f3-45cb-8714-ae13d5478aeb",
-      "comment": "Verify the \"Login\" button element is present.",
-      "command": "verifyElementPresent",
-      "target": "id=login",
-      "targets": [
-        ["id=login", "id"],
-        ["css=#login", "css:finder"],
-        ["xpath=//button[@id='login']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "04086720-9be8-457d-9cba-916cf041326e",
@@ -3094,13 +2922,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8978cd01-f8d7-4379-94c6-a9022459487a",
-      "comment": "",
-      "command": "//pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -3172,8 +2993,23 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "1e94db2b-3efa-414e-9ef4-96b60fa82f70",
+      "comment": "Wait for the existing Tenant \"SL Tenant to Edit Ltd\" to be present.",
+      "command": "waitForElementPresent",
+      "target": "linkText=SL Tenant to Edit Ltd",
+      "targets": [
+        ["linkText=SL Tenant to Edit Ltd", "linkText"],
+        ["css=tr:nth-child(5) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SL Tenant to Edit Ltd')]", "xpath:link"],
+        ["xpath=//table[@id='tenantsTable']/tbody/tr[5]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tenants/001_344d6ddbad6c41a8a272cc7ac35f1ade')]", "xpath:href"],
+        ["xpath=//tr[5]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SL Tenant to Edit Ltd')]", "xpath:innerText"]
+      ],
+      "value": "60000"
+    }, {
       "id": "b59e53cf-5ba1-4f96-8232-914a5c0f0727",
-      "comment": "Click on the existing Tenant \"SL Tenant to Edit Ltd\" to access the record - TBC - Check when I've created the \"general\" tenant",
+      "comment": "Click on the existing Tenant \"SL Tenant to Edit Ltd\" to access the record.",
       "command": "click",
       "target": "linkText=SL Tenant to Edit Ltd",
       "targets": [
@@ -3343,40 +3179,6 @@
         ["xpath=//h3[contains(.,'TestTenantdzcds')]", "xpath:innerText"]
       ],
       "value": "SL Tenant to Edit Ltd"
-    }, {
-      "id": "fc5ea793-dfe4-4791-af10-d54b70259cf2",
-      "comment": "Click on the blue \"back\" arrow.",
-      "command": "click",
-      "target": "id=backButton",
-      "targets": [
-        ["id=backButton", "id"],
-        ["css=#backButton", "css:finder"],
-        ["xpath=//button[@id='backButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/button", "xpath:idRelative"],
-        ["xpath=//div/button", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "6a3c3d3d-55c5-4206-b7a2-7a790403f37a",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "c279f893-2dec-4536-9912-109b960ca9b1",
-      "comment": "Click the Log Out link in the header",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "f499c5dc-bacb-4e99-a57e-492c7c6a0795",
-      "comment": "Verify the Login button text is present",
-      "command": "verifyElementPresent",
-      "target": "id=login",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "306cb67e-ebe8-4c23-a21a-bc61f44d6256",
@@ -3391,21 +3193,21 @@
     }, {
       "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
       "comment": "",
-      "command": "//if",
+      "command": "if",
       "target": "document.getElementById('username') === null",
       "targets": [],
       "value": ""
     }, {
       "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
       "comment": "",
-      "command": "//click",
+      "command": "click",
       "target": "id=logoutHeaderLink",
       "targets": [],
       "value": ""
     }, {
       "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
       "comment": "",
-      "command": "//end",
+      "command": "end",
       "target": "",
       "targets": [],
       "value": ""
@@ -3476,13 +3278,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "7cffebfb-f2a9-4914-aa83-ed6ad95fd594",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -3571,19 +3366,12 @@
     }]
   }, {
     "id": "b3f65c24-7ea2-4d55-8436-f14eb8a3ecf5",
-    "name": "Tenant Admin - Connections - Log in, Import datasets, Load Connections - TBC",
+    "name": "Tenant Admin - Connections - Log in and Import datasets - verify the new Datasets and clean them up after.",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a1b55acb-7592-4b9b-92cd-53153321bcb1",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -3781,15 +3569,83 @@
       ],
       "value": "Joined"
     }, {
-      "id": "f9ecc51a-f861-41ce-bfe9-4c04e49ae53f",
-      "comment": "Verify the \"Behaviour_Observation.csv\" link text exists in the Datasets list.",
+      "id": "46782511-9c9d-45ec-9c3a-b6a7badf3e72",
+      "comment": "Verify the \"Joined Dataset...\" link element is present.",
       "command": "verifyElementPresent",
-      "target": "linkText=Behaviour_Observation.csv",
+      "target": "xpath=//a[contains(text(),'Joined Dataset')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59e95b7e-3a79-455f-9800-75f83d753059",
+      "comment": "Click on the \"Joined Dataset...\" link element.",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'Joined Dataset')]",
+      "targets": [
+        ["linkText=Joined Dataset 2019-12-03", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Joined Dataset 2019-12-03')]", "xpath:link"],
+        ["xpath=//table[@id='datasetsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/datasets/003_16357ebb23994dffa3c8b6e9fab3b73a')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Joined Dataset 2019-12-03')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea25183b-d10b-4017-bb75-2fcf46e94096",
+      "comment": "Wait for the \"Create Model\" button element to be present. (Shouldn't be necessary but the test failed when I ran it.)",
+      "command": "waitForElementPresent",
+      "target": "id=createModalButton",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "f659d34d-caa7-4010-bc0e-91f8ff48d3ad",
+      "comment": "Verify the \"Create Model\" button element is present.",
+      "command": "verifyElementPresent",
+      "target": "id=createModalButton",
+      "targets": [
+        ["id=createModalButton", "id"],
+        ["css=#createModalButton", "css:finder"],
+        ["xpath=//button[@id='createModalButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "100ce087-5da3-4995-89b9-8702518fc968",
+      "comment": "Click on the Delete button for the Joined Dataset.",
+      "command": "click",
+      "target": "id=deleteModalButton",
+      "targets": [
+        ["id=deleteModalButton", "id"],
+        ["css=#deleteModalButton", "css:finder"],
+        ["xpath=//button[@id='deleteModalButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Delete')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b55eba4d-8e70-4d21-8c2b-5acb30348fdc",
+      "comment": "Click on the \"Delete\" button in the Delete Dataset modal.",
+      "command": "click",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3c27787-40d6-46e0-9fb2-175b8e5226d5",
+      "comment": "Verify the \"Joined Dataset...\" link element IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "xpath=//a[contains(text(),'Joined Dataset')]",
       "targets": [],
       "value": ""
     }, {
       "id": "b9a40f8e-d52f-4aa5-b532-177339448a3e",
-      "comment": "Verify the \"Opportunity.csv\" link text exists in the Datasets list - TBC - Need to set this as \"somewhere on the page\" rather than specific? Or just wait several minutes?",
+      "comment": "Verify the \"Opportunity.csv\" link text exists in the Datasets list.",
       "command": "verifyElementPresent",
       "target": "linkText=Opportunity.csv",
       "targets": [
@@ -3803,70 +3659,103 @@
       ],
       "value": ""
     }, {
-      "id": "c2fef670-124c-43e9-828d-99bc48382f4c",
-      "comment": "Wait for the sidebar toggle button to be available.",
-      "command": "waitForElementPresent",
-      "target": "id=sidebarToggleButton",
-      "targets": [
-        ["id=sidebarToggleButton", "id"],
-        ["css=#sidebarToggleButton", "css:finder"],
-        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"]
-      ],
-      "value": "120000"
-    }, {
-      "id": "9ce39bfb-a79e-47ab-9437-218e5763ff6d",
-      "comment": "Click on the Sidebar toggle button",
+      "id": "76e2e6b5-4742-4d20-bb1b-657eaea4ef5b",
+      "comment": "Click on the \"Opportunity.csv\" link.",
       "command": "click",
-      "target": "id=sidebarToggleButton",
+      "target": "linkText=Opportunity.csv",
       "targets": [],
       "value": ""
     }, {
-      "id": "a135f568-407c-4aa8-a5b5-961afc053e3c",
-      "comment": "Click on the Connections sidebar menu link.",
+      "id": "30c2def4-fda8-47ba-bcdd-8eea571af6c9",
+      "comment": "Verify the \"Create Model\" button element IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "id=createModalButton",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b0103f5f-0912-4bda-9ed0-4b1ffb50bcd2",
+      "comment": "Click on the Delete button for the Opportunity.csv Dataset.",
       "command": "click",
-      "target": "css=.connectionsSidebarLink",
+      "target": "id=deleteModalButton",
       "targets": [
-        ["css=.connectionsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[5]", "xpath:idRelative"],
-        ["xpath=//div/div[5]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "07c32d51-8267-490c-9da3-11fad8d9b85b",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "e7894189-cfcc-4ed6-8894-a951e196fb16",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "8e9bcb0e-cc4a-4186-9d51-2e28a240258c",
-      "comment": "Click the \"Log Out\" link in the header",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "b7c1fcf9-30d8-4dbd-bc1b-c807e02314f7",
-      "comment": "Verify the \"Log In with Salesforce\" button text exists. (can't verify that the \"Log in\" button exists)",
-      "command": "verifyElementPresent",
-      "target": "id=loginWithSalesforce",
-      "targets": [
-        ["id=loginWithSalesforce", "id"],
-        ["css=#loginWithSalesforce", "css:finder"],
-        ["xpath=//button[@id='loginWithSalesforce']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
+        ["id=deleteModalButton", "id"],
+        ["css=#deleteModalButton", "css:finder"],
+        ["xpath=//button[@id='deleteModalButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
         ["xpath=//div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Log in with Salesforce')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'Delete')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "0fd21d3f-4fec-42bd-853e-2b5024ceaf1f",
+      "comment": "Click on the \"Delete\" button in the Delete Dataset modal.",
+      "command": "click",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e16d2cc8-86c5-4e9b-a4b7-704284ae8a9f",
+      "comment": "Verify the \"Opportunity.csv\" link IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "linkText=Opportunity.csv",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6caed7ea-0c8c-42b7-98d5-4de85f41b6b3",
+      "comment": "Verify the \"Behaviour_Observation.csv\" link text exists in the Datasets list.",
+      "command": "verifyElementPresent",
+      "target": "linkText=Behaviour_Observation.csv",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9ecc51a-f861-41ce-bfe9-4c04e49ae53f",
+      "comment": "Click on the \"Behaviour_Observation.csv\" link.",
+      "command": "click",
+      "target": "linkText=Behaviour_Observation.csv",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6d9c4470-0a1d-44ea-97ae-99a9feb904d0",
+      "comment": "Verify the \"Create Model\" button element IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "id=createModalButton",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b9c1c6c7-b5b9-444f-b1f5-da5c4af5e876",
+      "comment": "Click on the Delete button for the Opportunity.csv Dataset.",
+      "command": "click",
+      "target": "id=deleteModalButton",
+      "targets": [
+        ["id=deleteModalButton", "id"],
+        ["css=#deleteModalButton", "css:finder"],
+        ["xpath=//button[@id='deleteModalButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Delete')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55c6971e-59b3-4b3a-9293-d57849f86a03",
+      "comment": "Click on the \"Delete\" button in the Delete Dataset modal.",
+      "command": "click",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eacb0e03-56ac-4081-8dd4-488f9d45e775",
+      "comment": "Verify the \"Behaviour_Observation.csv\" link IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "linkText=Behaviour_Observation.csv",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -3877,13 +3766,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "86163a70-0a46-4e80-af92-ce63e91ab3b8",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -3985,6 +3867,13 @@
       ],
       "value": ""
     }, {
+      "id": "f592c43e-4be0-4bd3-8240-73cc4d922bbb",
+      "comment": "Wait for the existing Tenant User \"SL Tenant User Disabled\" to be present.",
+      "command": "waitForElementPresent",
+      "target": "linkText=SL Tenant User Disabled",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "416e7bd6-7e19-42a2-ac25-6546c6f87d42",
       "comment": "Click on the existing Tenant User \"SL Tenant User Disabled\" to access the record.",
       "command": "click",
@@ -4025,12 +3914,12 @@
       ],
       "value": ""
     }, {
-      "id": "10d24a40-8234-44b1-bf7e-7385fd0deffd",
-      "comment": "",
-      "command": "pause",
-      "target": "120000",
+      "id": "6c727270-a5c5-474d-baa6-a1e6312313a7",
+      "comment": "Wait for the Tenant Status change button to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=toggleUserStatusButton",
       "targets": [],
-      "value": ""
+      "value": "60000"
     }, {
       "id": "465c59b3-c720-452f-9108-c9bd6cbe8a97",
       "comment": "Verify that the Tenant Status change button currently shows \"Disable User\"",
@@ -4080,13 +3969,6 @@
       ],
       "value": ""
     }, {
-      "id": "1278cc59-c6a6-44ce-80c1-e4e1c7791171",
-      "comment": "",
-      "command": "pause",
-      "target": "120000",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "f19393b7-4b4a-4aa9-8f0a-16ed57de2a97",
       "comment": "Wait for the \"Edit User\" button to be present - to make sure the Tick would be present by then.",
       "command": "waitForElementPresent",
@@ -4099,40 +3981,13 @@
         ["xpath=//button[2]", "xpath:position"],
         ["xpath=//button[contains(.,'Edit User')]", "xpath:innerText"]
       ],
-      "value": "30000"
+      "value": "60000"
     }, {
       "id": "84271358-9e89-42a5-852b-e1b71aaa3d92",
       "comment": "Verify the Enabled tick is NOT present in the Enabled field.",
       "command": "verifyElementNotPresent",
       "target": "css=.check-icon",
       "targets": [],
-      "value": ""
-    }, {
-      "id": "c0a2ed06-030c-4227-ae7d-215c33f43b64",
-      "comment": "",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "d1d786db-8ed8-4197-8e63-f5ecceb3e261",
-      "comment": "Verify the Login button text is present",
-      "command": "verifyElementPresent",
-      "target": "id=login",
-      "targets": [
-        ["id=login", "id"],
-        ["css=#login", "css:finder"],
-        ["xpath=//button[@id='login']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
-      ],
       "value": ""
     }]
   }, {
@@ -4143,13 +3998,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "2007b01e-8bf0-4f0c-a130-58a796182598",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -4238,19 +4086,12 @@
     }]
   }, {
     "id": "8d8039c6-1d43-4dd6-858f-fd4b41a7d274",
-    "name": "Tenant User - Datasets - Join Datasets, create Model, verify Model record and train the Model",
+    "name": "Tenant User - Datasets - Join Datasets, create Model, verify Model, train Model - delete it to tidy up after.",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "1dadfae8-01f4-41f1-9aaf-6fa8e41bccec",
-      "comment": "",
-      "command": "//pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -4468,8 +4309,15 @@
       ],
       "value": "Joined"
     }, {
+      "id": "17a719bf-362c-4203-8cf2-b9f6bcb85c68",
+      "comment": "Verify the link \"Joined_Dataset_${joineddatasetnumber}\" is present.",
+      "command": "verifyElementPresent",
+      "target": "linkText=${joineddatasetname}",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "913c3c19-7c29-4bd0-8f9e-48674eb366ff",
-      "comment": "Click on the link \"Joined_Dataset_${joineddatasetnumber}\" exists",
+      "comment": "Click on the link \"Joined_Dataset_${joineddatasetnumber}\".",
       "command": "click",
       "target": "linkText=${joineddatasetname}",
       "targets": [],
@@ -4674,13 +4522,6 @@
       ],
       "value": ""
     }, {
-      "id": "be240b10-ec09-4ea1-8106-21c73985f856",
-      "comment": "Verify that the \"Create\" button isn't displayed anymore.",
-      "command": "//verifyElementNotPresent",
-      "target": "id=createModelModalButton",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "1707a965-40d7-4efc-bef0-5651bf8e5dc0",
       "comment": "Go to the Models URL: https://test.cloudapps.dev/models",
       "command": "open",
@@ -4725,15 +4566,8 @@
       ],
       "value": ""
     }, {
-      "id": "1601d322-1227-47d2-8a38-744ad0693b5a",
-      "comment": "",
-      "command": "//verifyText",
-      "target": "xpath=//p[contains(.,'Model from JoinedDataset')]",
-      "targets": [],
-      "value": "Model from JoinedDataset"
-    }, {
       "id": "a42b1090-b22d-4f88-948a-e39942437d5c",
-      "comment": "",
+      "comment": "Click on the Columns tab link.",
       "command": "click",
       "target": "linkText=Columns",
       "targets": [
@@ -4748,7 +4582,7 @@
       "value": ""
     }, {
       "id": "307d4c64-e02b-4c51-8b39-8d9f5a592d38",
-      "comment": "",
+      "comment": "Verify the column header text \"Included\".",
       "command": "verifyText",
       "target": "id=included",
       "targets": [
@@ -4762,7 +4596,7 @@
       "value": "Included"
     }, {
       "id": "19c909f2-d29f-458e-b48b-99c14e00cd66",
-      "comment": "",
+      "comment": "Verify the column header text \"No. of Exclusions\".",
       "command": "verifyText",
       "target": "id=exclusions",
       "targets": [
@@ -4777,7 +4611,7 @@
     }, {
       "id": "b5d68310-5a55-48c6-8396-186f92724558",
       "comment": "Verify the \"Delete\" button element exists.",
-      "command": "//verifyElementPresent",
+      "command": "verifyElementPresent",
       "target": "id=deleteModelButton",
       "targets": [],
       "value": ""
@@ -4797,21 +4631,14 @@
       "value": ""
     }, {
       "id": "73e4595b-76d3-4289-a093-0429f8fa36fa",
-      "comment": "Verify the \"Train Model\" button element exists.",
+      "comment": "Verify the \"Train Model\" button element is present.",
       "command": "verifyElementPresent",
       "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "7c74654b-d160-47fd-9bfe-d5a956dbea8f",
-      "comment": "",
+      "comment": "Click on the Connections tab link.",
       "command": "click",
       "target": "linkText=Connections",
       "targets": [
@@ -4826,7 +4653,7 @@
       "value": ""
     }, {
       "id": "f2dac6fc-2d60-4d05-8456-01f7efec8276",
-      "comment": "",
+      "comment": "Verify the column header text \"Name\".",
       "command": "verifyText",
       "target": "xpath=(//th[@id='name'])[2]",
       "targets": [
@@ -4838,7 +4665,7 @@
       "value": "Name"
     }, {
       "id": "f006f8e7-6f89-4f2a-abb1-9a04588644b5",
-      "comment": "",
+      "comment": "Verify the column header text \"Type\".",
       "command": "verifyText",
       "target": "xpath=(//th[@id='type'])[3]",
       "targets": [
@@ -4848,13 +4675,6 @@
         ["xpath=//div[3]/div/table/thead/tr/th[2]", "xpath:position"]
       ],
       "value": "Type"
-    }, {
-      "id": "dc618b47-f574-41e9-a13d-d1af05d9b12a",
-      "comment": "CANNOT GET THIS TO WORK FOR SOME STRANGE REASON - Verify that the \"Salesforce Org Id\" column heading text is visible.",
-      "command": "//verifyText",
-      "target": "id=org_id",
-      "targets": [],
-      "value": "Salesforce Org Id"
     }, {
       "id": "c5468895-3d4e-47c0-8e23-73578ef431a4",
       "comment": "Verify that the \"Integration Username\" column heading text is visible.",
@@ -4973,45 +4793,44 @@
       ],
       "value": "TRAINED"
     }, {
-      "id": "e952db3e-ed52-4216-8376-c887775b3b45",
-      "comment": "NEED TO SET IT SO THAT IT CHECKS WHEN THE MODEL HAS TRAINED",
-      "command": "",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "89fbe7f2-afac-4af7-9220-7322823164d8",
-      "comment": "",
+      "id": "b4c8a7ac-6c2d-4a9f-ba14-bc9ff4527223",
+      "comment": "Wait for the Delete Model button to be present (it takes a while to appear).",
       "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
+      "target": "id=deleteModelButton",
       "targets": [],
-      "value": "1200000"
+      "value": "60000"
     }, {
-      "id": "50d5d970-05d4-4410-877a-6280a9093ff7",
-      "comment": "Click the Logout link in the header.",
+      "id": "e952db3e-ed52-4216-8376-c887775b3b45",
+      "comment": "Click the Delete Model button",
       "command": "click",
-      "target": "id=logoutHeaderLink",
+      "target": "id=deleteModelButton",
       "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
+        ["id=deleteModelButton", "id"],
+        ["css=#deleteModelButton", "css:finder"],
+        ["xpath=//button[@id='deleteModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Delete')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "95694c26-4ce8-4537-bd3e-7f5cfe68af4c",
-      "comment": "Verify that the Username field is now displayed (i.e. the user was logged out successfully).",
-      "command": "verifyElementPresent",
-      "target": "id=username",
+      "id": "24a89233-a15a-4ebe-ba91-7dff24071d1e",
+      "comment": "Click the Delete button in the Delete Model modal.",
+      "command": "click",
+      "target": "css=.btn-danger",
       "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "0395bc85-f7ba-4d0b-b4c4-db328e925873",
+      "comment": "Verify the Joined Dataset link IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "linkText=Model from ${joineddatasetname}",
+      "targets": [],
+      "value": "60000"
     }]
   }, {
     "id": "295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25",
@@ -5021,13 +4840,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "520b7c65-20c4-48fc-ae55-267437ca256a",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -5091,13 +4903,6 @@
         ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "31f81de0-bd22-489b-8352-54b38fa96413",
-      "comment": "",
-      "command": "//verifyText",
-      "target": "css=.mb-4",
-      "targets": [],
-      "value": "All Users"
     }, {
       "id": "e8aed648-3f55-4e0c-930b-4a177f206cd7",
       "comment": "Wait for the sidebar toggle button to be available.",
@@ -5193,44 +4998,6 @@
       "target": "css=.tenantsSidebarLink",
       "targets": [],
       "value": "Tenants"
-    }, {
-      "id": "5c9da58f-a696-4f1e-8e51-50923576c6de",
-      "comment": "",
-      "command": "click",
-      "target": "css=.close",
-      "targets": [
-        ["css=.close", "css:finder"],
-        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
-        ["xpath=//div[5]/div/div/div/button", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "49e83953-7f50-49fd-bf55-6e0f046332d8",
-      "comment": "",
-      "command": "//verifyText",
-      "target": "css=.mb-4",
-      "targets": [],
-      "value": "All Datasets"
-    }, {
-      "id": "c4888312-3ac1-40bd-b35f-54944ad8c142",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "7da73513-b76b-4ce3-a597-a77f47416923",
-      "comment": "",
-      "command": "click",
-      "target": "xpath=//div[@id='logoutHeaderLink']",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "4c34d032-2867-490a-9c6b-49f2957c953c",
@@ -5240,13 +5007,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "aafbd301-b926-4c29-a881-f9430e457c27",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -5344,92 +5104,69 @@
       ],
       "value": ""
     }, {
-      "id": "9841e17a-7ca8-4713-bd6f-51ee211e7e97",
-      "comment": "",
-      "command": "verifyText",
+      "id": "fa25c6b8-d1cd-447d-b05f-657745e115f8",
+      "comment": "Verify the \"Datasets\" sidebar menu element is present.",
+      "command": "verifyElementPresent",
       "target": "css=.datasetsSidebarLink",
       "targets": [
         ["css=.datasetsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div", "xpath:idRelative"],
-        ["xpath=//div[6]/div/div/div[2]/div/div", "xpath:position"]
-      ],
-      "value": "Datasets"
-    }, {
-      "id": "54f2139a-6994-4dff-9c69-6298c5b9f6eb",
-      "comment": "",
-      "command": "verifyText",
-      "target": "css=.modelsSidebarLink",
-      "targets": [
-        ["css=.modelsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div/div[2]/div/div[2]", "xpath:position"]
-      ],
-      "value": "Models"
-    }, {
-      "id": "9ea48925-117d-439c-aa85-1fdd3f2b2654",
-      "comment": "",
-      "command": "verifyText",
-      "target": "css=.connectionsSidebarLink",
-      "targets": [
-        ["css=.connectionsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[3]", "xpath:idRelative"],
         ["xpath=//div/div[3]", "xpath:position"]
       ],
-      "value": "Connections"
+      "value": ""
     }, {
-      "id": "21e1800b-b11e-42d5-88d3-78ac67ff5f01",
-      "comment": "",
-      "command": "verifyText",
-      "target": "css=.predictionsSidebarLink",
+      "id": "2af46b81-2214-4873-84c9-7c8529936c70",
+      "comment": "Verify the \"Models\" sidebar menu element is present.",
+      "command": "verifyElementPresent",
+      "target": "css=.modelsSidebarLink",
       "targets": [
-        ["css=.predictionsSidebarLink", "css:finder"],
+        ["css=.modelsSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[4]", "xpath:idRelative"],
         ["xpath=//div/div[4]", "xpath:position"]
       ],
-      "value": "Predictions"
-    }, {
-      "id": "e5194471-c9b0-4ecc-a734-1c061580a6c7",
-      "comment": "",
-      "command": "click",
-      "target": "css=.close",
-      "targets": [
-        ["css=.close", "css:finder"],
-        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
-        ["xpath=//div[5]/div/div/div/button", "xpath:position"]
-      ],
       "value": ""
     }, {
-      "id": "463cfd2e-df94-41c1-8e91-3bc97f647768",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "30000"
-    }, {
-      "id": "f832fcb1-dc50-4150-bd5b-46480bc15799",
-      "comment": "",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "4a6ef8a0-860c-423f-823e-775d7ddbf308",
-      "comment": "",
+      "id": "c24f24b5-6901-47eb-8646-92caee552a42",
+      "comment": "Verify the \"Connections\" sidebar menu element is present.",
       "command": "verifyElementPresent",
-      "target": "id=username",
+      "target": "css=.connectionsSidebarLink",
       "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
+        ["css=.connectionsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[5]", "xpath:idRelative"],
+        ["xpath=//div/div[5]", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "18ae309c-16aa-4148-97a9-d45e637cc0f1",
+      "comment": "Verify the \"Predictions\" sidebar menu element is present.",
+      "command": "verifyElementPresent",
+      "target": "css=.predictionsSidebarLink",
+      "targets": [
+        ["css=.predictionsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ccb255a-fbac-4e78-be53-e248a423f67d",
+      "comment": "Verify the \"Tenants\" sidebar menu element IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "css=.tenantsSidebarLink",
+      "targets": [],
+      "value": "Tenants"
+    }, {
+      "id": "085604d6-3fa2-4fa0-b290-26d54206e32f",
+      "comment": "Verify the \"Security\" sidebar menu element IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "css=.securitySidebarLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "db2e56d9-8231-4361-b27a-f718c2b5f40d",
+      "comment": "Verify the \"Users\" sidebar menu element IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "css=.usersSidebarLink",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -5440,13 +5177,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "e9803d2e-c032-4a54-ab1f-f3d4b07d55c0",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -5563,12 +5293,12 @@
       "id": "41ce6c13-3c7b-48e0-971a-cb9b34b3977d",
       "comment": "",
       "command": "verifyText",
-      "target": "xpath=//td[contains(.,'00D24000000rCVi')]",
+      "target": "xpath=//table[@id='connectionsTable']/tbody/tr/td[3]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//table[@id='connectionsTable']/tbody/tr/td[3]", "xpath:idRelative"],
         ["xpath=//td[3]", "xpath:position"],
-        ["xpath=//td[contains(.,'00D24000000rCVi')]", "xpath:innerText"]
+        ["xpath=//td[contains(.,'00D4J0000001tMu')]", "xpath:innerText"]
       ],
       "value": "00D4J0000001tMu"
     }, {
@@ -5662,36 +5392,15 @@
       "target": "linkText=Import Datasets",
       "targets": [],
       "value": ""
-    }, {
-      "id": "0cadc509-d559-480d-8529-82b90ac9face",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "03eb22a5-4a59-45f7-bfa1-136585fc70f0",
-      "comment": "",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5",
-    "name": "Tenant Admin - Model History charts - BLOCKED 27-11-2019",
+    "name": "Tenant Admin - Model History charts",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "55ff8988-4341-45fa-b2c5-4316e03ab4fc",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -5717,7 +5426,7 @@
       "value": ""
     }, {
       "id": "ff57c11b-24f5-42b2-849a-2bff54e7e003",
-      "comment": "Log in as my Tenant Admin of the Tenant that's linked to my v8 Salesforce test org.",
+      "comment": "Log in as the Tenant Admin of the Tenant that's linked to the pre-release org.",
       "command": "type",
       "target": "id=username",
       "targets": [
@@ -5727,10 +5436,10 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "slovatt@SLversion8.test"
+      "value": "slovatt@sensai.test.pre"
     }, {
       "id": "630e2436-d75c-4a70-b3e3-0ce9fb31edaf",
-      "comment": "",
+      "comment": "Enter the Sensai Pre-release tenant user's password, i.e. SL_pre-release_Tenant_User123!",
       "command": "type",
       "target": "id=password",
       "targets": [
@@ -5740,7 +5449,7 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "SL_salesforce_tenant_admin123!"
+      "value": "SL_pre-release_Tenant_User123!"
     }, {
       "id": "12fa3b6a-871f-4c06-b447-e305164db380",
       "comment": "Click the Login button.",
@@ -5794,17 +5503,17 @@
       "value": ""
     }, {
       "id": "307fe444-0f6b-49e9-b853-5bed07f24b49",
-      "comment": "Click on the \"SL Test Model\" model name link.",
+      "comment": "Click on the \"Model 1\" model name link.",
       "command": "click",
-      "target": "linkText=SL Test Model",
+      "target": "linkText=Model 1",
       "targets": [
-        ["linkText=SL Test Model", "linkText"],
-        ["css=tr:nth-child(1) > td > a", "css:finder"],
-        ["xpath=//a[contains(text(),'SL Test Model')]", "xpath:link"],
-        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/models/004_115b66f8baac4835862f5a5c44bfadac')]", "xpath:href"],
-        ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SL Test Model')]", "xpath:innerText"]
+        ["linkText=Model 1", "linkText"],
+        ["css=tr:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Model 1')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr[2]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_2fc551398ac04d409e8f2ae7593c53ed')]", "xpath:href"],
+        ["xpath=//tr[2]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Model 1')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
@@ -5823,26 +5532,12 @@
       ],
       "value": ""
     }, {
-      "id": "ad719d17-bfc0-41b4-bc2a-4b36942a1216",
-      "comment": "Verify the \"Delete\" button element is present.",
-      "command": "//verifyElementPresent",
-      "target": "id=deleteModelButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "563c7129-2d46-43f5-9b1e-d6184410b15f",
-      "comment": "Verify the \"Clone Model\" button element is present.",
-      "command": "verifyElementPresent",
+      "id": "96471886-434b-4ae8-aa8b-e8b3cdf03b84",
+      "comment": "Wait for the \"Clone Model\" button element to be present.",
+      "command": "waitForElementPresent",
       "target": "id=cloneModelButton",
-      "targets": [
-        ["id=cloneModelButton", "id"],
-        ["css=#cloneModelButton", "css:finder"],
-        ["xpath=//button[@id='cloneModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
-        ["xpath=//button[2]", "xpath:position"],
-        ["xpath=//button[contains(.,'Clone Model')]", "xpath:innerText"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "b11d8ea6-a5e8-4bad-8145-48939886c680",
       "comment": "Verify the \"Deploy Model\" button element is present.",
@@ -5856,6 +5551,13 @@
         ["xpath=//button[3]", "xpath:position"],
         ["xpath=//button[contains(.,'Deploy Model')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "ad719d17-bfc0-41b4-bc2a-4b36942a1216",
+      "comment": "Verify the \"Delete\" button element IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "id=deleteModelButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "546efec3-e9ba-4864-9e91-1b130f85f073",
@@ -5902,11 +5604,9 @@
     }, {
       "id": "464b11a6-0a02-43ba-8088-91cb4666b1ad",
       "comment": "Verify the Model Accuracy chart's X axis label text \"Cycles\" exists.",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan",
-      "targets": [
-        ["css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan", "css:finder"]
-      ],
+      "targets": [],
       "value": "Cycles"
     }, {
       "id": "4399dccb-73a0-4651-b23d-a0facbd301d4",
@@ -5944,19 +5644,17 @@
       "id": "51524e61-260d-48c7-903b-ef8b809443b8",
       "comment": "Verify the Model Loss chart's Y axis label text \"Loss\" exists.",
       "command": "verifyText",
-      "target": "css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan",
+      "target": "css=.col-md-6:nth-child(3) tspan",
       "targets": [
-        ["css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan", "css:finder"]
+        ["css=.col-md-6:nth-child(3) tspan", "css:finder"]
       ],
       "value": "Loss"
     }, {
       "id": "12f41f2b-b680-439d-8844-4f197b200be3",
       "comment": "Verify the Model Loss chart's X axis label text \"Cycles\" exists.",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan",
-      "targets": [
-        ["css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan", "css:finder"]
-      ],
+      "targets": [],
       "value": "Cycles"
     }, {
       "id": "1fb4cef5-b3a8-4a84-b110-cde806b92acc",
@@ -5996,39 +5694,6 @@
         ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "eaccfa11-f7b4-4138-a2ee-a3084a7f9457",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "27901f5c-b972-4c4f-82ab-e64fd918cf86",
-      "comment": "Click the \"Log Out\" link in the header.",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "15d2bf1a-fefc-426b-b4fc-7159edfc7a05",
-      "comment": "Verify the Username field element is present.",
-      "command": "verifyElementPresent",
-      "target": "id=username",
-      "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "b3258e1c-f266-4e39-9fa8-2584089946c7",
@@ -6038,13 +5703,6 @@
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "bc9b5be0-9c6f-4881-afb1-c07a8f6fd6ea",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -6225,76 +5883,27 @@
         ["xpath=//button[contains(.,'Edit Policy')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "f8a2c5ca-3789-46db-a53c-89dc16744bde",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "732ac688-f611-48b0-a346-871e277648d1",
-      "comment": "Click the Log Out link",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "3458ef51-ceaf-445f-9c30-06001b783f41",
-      "comment": "Verify the \"Log in with Salesforce\" button text exists (The Log In button cannot be selected in Selenium)",
-      "command": "verifyElementPresent",
-      "target": "id=loginWithSalesforce",
-      "targets": [
-        ["id=loginWithSalesforce", "id"],
-        ["css=#loginWithSalesforce", "css:finder"],
-        ["xpath=//button[@id='loginWithSalesforce']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Log in with Salesforce')]", "xpath:innerText"]
-      ],
-      "value": "Login"
     }]
   }, {
     "id": "dc31ee01-e671-4f3a-b6ae-b906dbc13a4a",
-    "name": "Tenant Admin - Salesforce - Log in and verify the Opportunity Sensai Component - BLOCKED 27-11-2019",
+    "name": "Tenant Admin - Salesforce - Log in and verify the Opportunity Sensai Component with/without Predictions",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
-      "comment": "https://login.salesforce.com/",
+      "comment": "Salesforce org, pre-release Sandbox URL: https://test.salesforce.com/",
       "command": "open",
-      "target": "https://login.salesforce.com",
+      "target": "https://test.salesforce.com",
       "targets": [],
       "value": ""
     }, {
-      "id": "ba51d0dd-7add-4700-8bc0-fd6a89b7e02d",
-      "comment": "",
-      "command": "//pause",
-      "target": "60000",
+      "id": "eb0cd523-5b71-4963-8bcc-fe0e9c5a2863",
+      "comment": "Wait for the Username field element to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=username",
       "targets": [],
-      "value": ""
-    }, {
-      "id": "290b64b5-7a16-4096-950d-6e9c325013e1",
-      "comment": "",
-      "command": "//if",
-      "target": "document.getElementById('username') === null",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "ce70d465-9234-4fbc-81cb-549fb93d2e59",
-      "comment": "",
-      "command": "//click",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "34192bc5-36b4-4c33-9154-0a3b738eead2",
-      "comment": "",
-      "command": "//end",
-      "target": "",
-      "targets": [],
-      "value": ""
+      "value": "30000"
     }, {
       "id": "e18e4b06-0f18-4a19-b76e-e283ccaed205",
-      "comment": "Log in to the Pre-release Salesforce org as my user: slovatt@sensai.prerelease.demo1",
+      "comment": "Enter the Pre-release Salesforce org SANDBOX as my user: slovatt@sensai.prerelease.demo1.sensaitest",
       "command": "type",
       "target": "id=username",
       "targets": [
@@ -6305,7 +5914,7 @@
         ["xpath=//div[@id='username_container']/input", "xpath:idRelative"],
         ["xpath=//div/input", "xpath:position"]
       ],
-      "value": "slovatt@sensai.prerelease.demo1"
+      "value": "slovatt@sensai.prerelease.demo1.sensaitest"
     }, {
       "id": "1ea6db36-913d-4ee2-b718-486f241b2c8a",
       "comment": "",
@@ -6335,23 +5944,76 @@
       ],
       "value": ""
     }, {
+      "id": "57da9f51-489e-40cd-a644-aadaa32effb3",
+      "comment": "Wait for the Sandbox: SensaiTest heading to be present before trying to access the Opportunity.",
+      "command": "waitForElementPresent",
+      "target": "xpath=//span[contains(.,'Sandbox: SensaiTest')]",
+      "targets": [
+        ["css=.level-info > span", "css:finder"],
+        ["xpath=//header[@id='oneHeader']/div/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Sandbox: SensaiTest')]", "xpath:innerText"]
+      ],
+      "value": "60000"
+    }, {
       "id": "ec9d5daa-44b2-4888-9f31-a7e10420d134",
       "comment": "Go to Opportunity \"360Networks Inc.-New Business\"",
       "command": "open",
-      "target": "https://sensai-pre-demo.lightning.force.com/lightning/r/Opportunity/0064J000002RMhUQAW/view",
+      "target": "https://sensai-pre-demo--sensaitest.lightning.force.com/lightning/r/Opportunity/0064J000002RMhUQAW/view",
       "targets": [],
       "value": ""
     }, {
-      "id": "ba0f83b6-bc39-4016-beeb-e84c670a01f0",
-      "comment": "Verify the \"Sensai\" component header element exists on the page.",
-      "command": "verifyElementPresent",
-      "target": "css=.header-bg",
+      "id": "580cb883-8112-44bc-8cb6-84bb3e74f3de",
+      "comment": "Wait for the \"sparkline\" in the Sensai component header element to be present.",
+      "command": "waitForElementPresent",
+      "target": "css=.sparkline > svg",
       "targets": [
-        ["css=.header-bg", "css:finder"],
-        ["xpath=//div[@id='brandBand_1']/div/div/div/div/div/div/div[3]/div[2]/div/article/div/div", "xpath:idRelative"],
-        ["xpath=//div[2]/div/article/div/div", "xpath:position"]
+        ["css=.sparkline > svg", "css:finder"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ba0f83b6-bc39-4016-beeb-e84c670a01f0",
+      "comment": "Verify the id=\"positive-behaviour_0\" element exists on the page.",
+      "command": "verifyElementPresent",
+      "target": "id=positive-behaviour_0",
+      "targets": [
+        ["id=positive-behaviour_0", "id"],
+        ["css=#positive-behaviour_0", "css:finder"],
+        ["xpath=//div[@id='positive-behaviour_0']", "xpath:attributes"],
+        ["xpath=//div[@id='brandBand_1']/div/div/div/div/div/div/div[3]/div[2]/div/article/div[2]/div", "xpath:idRelative"],
+        ["xpath=//article/div[2]/div", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "9e7aaa6b-0e52-4ef3-bdcf-86a881734eec",
+      "comment": "Verify the first negative behaviour element is present.",
+      "command": "verifyElementPresent",
+      "target": "xpath=//div[@id='negative-behaviour_0']/div",
+      "targets": [
+        ["css=#negative-behaviour_0 > .negative-card", "css:finder"],
+        ["xpath=//div[@id='negative-behaviour_0']/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e51a5b6-da34-4804-b24a-429c3a58a39a",
+      "comment": "Open the Opportunity that has no predictions, i.e. \"SL opp with no Predictions\"",
+      "command": "open",
+      "target": "https://sensai-pre-demo--sensaitest.lightning.force.com/lightning/r/Opportunity/0068E00000NgDrUQAV/view",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb5bf67a-0f6c-4753-a98d-e080be9b2475",
+      "comment": "Verify that the text \"Sensai is enabled and ready\" is present.",
+      "command": "verifyText",
+      "target": "xpath=//div[@id='no-data-message']/p",
+      "targets": [
+        ["css=.slds-text-heading_small", "css:finder"],
+        ["xpath=//div[@id='no-data-message']/p", "xpath:idRelative"],
+        ["xpath=//article/div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Sensai is enabled and ready!')]", "xpath:innerText"]
+      ],
+      "value": "Sensai is enabled and ready!"
     }, {
       "id": "ef602631-ed26-43ab-98a0-040ae4d1cf11",
       "comment": "Click on the User menu at the top right",
@@ -6372,6 +6034,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "a8bb0c18-c6fd-4492-b685-d14051dfea49",
+      "comment": "Wait for the \"Log In\" button element to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=Login",
+      "targets": [],
+      "value": "30000"
+    }, {
       "id": "a9c16846-7256-4b83-b606-47af18298833",
       "comment": "Verify the Salesforce \"Log in\" button exists.",
       "command": "verifyElementPresent",
@@ -6381,19 +6050,12 @@
     }]
   }, {
     "id": "c2fe18fe-bd16-49e8-b654-cf0b9d050029",
-    "name": "Tenant User - Snapshots - disable and enable",
+    "name": "Tenant User - Snapshots - enable and disable",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "874e8a7c-0bf3-43b5-bab9-450e1de50ab9",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -6485,7 +6147,7 @@
       "value": ""
     }, {
       "id": "68276658-708b-41e5-a6d5-f9e3101a8f89",
-      "comment": "Click the \"Connections\" link in the sidebar menu. (5th item)",
+      "comment": "Click the \"Connections\" link in the sidebar menu.",
       "command": "click",
       "target": "css=.connectionsSidebarLink",
       "targets": [
@@ -6507,41 +6169,7 @@
       ],
       "value": ""
     }, {
-      "id": "94c4ee50-fc7a-48e1-8de9-5dc5b832cc66",
-      "comment": "Select \"Disable Prediction Snapshot\"",
-      "command": "click",
-      "target": "linkText=Disable Prediction Snapshot",
-      "targets": [
-        ["linkText=Disable Prediction Snapshot", "linkText"],
-        ["css=.dropdown-item:nth-child(4)", "css:finder"],
-        ["xpath=//a[contains(text(),'Disable Prediction Snapshot')]", "xpath:link"],
-        ["xpath=//table[@id='connectionsTable']/tbody/tr[2]/td[7]/div/div/a[4]", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
-        ["xpath=//a[4]", "xpath:position"],
-        ["xpath=//a[contains(.,'Disable Prediction Snapshot')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "ef6241b4-e4f2-49ae-a3dc-7815c6f48229",
-      "comment": "CANNOT GET THIS WORKING - DO IT IN KANTU - Ensure there isn't a \"tick\" for \"Snapshot enabled?\" for the Sandbox row.",
-      "command": "//verifyElementNotPresent",
-      "target": "css=td > svg",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "ad1a2764-22d1-4620-b493-4562345dcd2c",
-      "comment": "Click on the Production row's action menu again.",
-      "command": "click",
-      "target": "css=.dropdown-toggle",
-      "targets": [
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
-        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button", "xpath:idRelative"],
-        ["xpath=//td[7]/div/button", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a8df7789-4376-43c5-acac-fd82f3fb5e64",
+      "id": "d70355d0-d008-44c4-b8b7-dfdac7f1711f",
       "comment": "Select \"Enable Prediction Snapshot\"",
       "command": "click",
       "target": "linkText=Enable Prediction Snapshot",
@@ -6556,10 +6184,46 @@
       ],
       "value": ""
     }, {
-      "id": "8028fa50-76c8-4e33-a834-3f2ebcf5f671",
-      "comment": "CANNOT GET THIS WORKING - DO IT IN KANTU - Ensure there IS a \"tick\" for \"Snapshot enabled?\" for the Sandbox row.",
-      "command": "//verifyElementPresent",
-      "target": "css=td > svg",
+      "id": "ef6241b4-e4f2-49ae-a3dc-7815c6f48229",
+      "comment": "Ensure the Enabled tick element is present.",
+      "command": "verifyElementPresent",
+      "target": "css=.check-icon",
+      "targets": [
+        ["css=.check-icon", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "b69b2e1f-4d75-4e87-8aa2-0e2829cb4ca5",
+      "comment": "Click on the Production row's action menu.",
+      "command": "click",
+      "target": "xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button",
+      "targets": [
+        ["css=.dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button", "xpath:idRelative"],
+        ["xpath=//td[7]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8df7789-4376-43c5-acac-fd82f3fb5e64",
+      "comment": "Select \"Disable Prediction Snapshot\"",
+      "command": "click",
+      "target": "linkText=Disable Prediction Snapshot",
+      "targets": [
+        ["linkText=Disable Prediction Snapshot", "linkText"],
+        ["css=.dropdown-item:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Disable Prediction Snapshot')]", "xpath:link"],
+        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/div/a[4]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Disable Prediction Snapshot')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "357f7813-5b10-4042-87bc-7b8698cd9e0a",
+      "comment": "Ensure the Enabled tick element IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "css=.check-icon",
       "targets": [],
       "value": ""
     }, {
@@ -6618,49 +6282,15 @@
       "target": "",
       "targets": [],
       "value": ""
-    }, {
-      "id": "647dc0cf-64c6-48ee-8d0c-aab37a05ae6a",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "580008dd-93b5-4e13-a201-331f96339a79",
-      "comment": "Click the Log Out link.",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "f4112569-2f10-4cb2-9fa4-d01486823587",
-      "comment": "",
-      "command": "verifyElementPresent",
-      "target": "id=username",
-      "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "5f5f5494-9f1e-41f0-a286-ad29be8074d5",
-    "name": "Tenant User - Models - Deploy model to External Connection",
+    "name": "Tenant User - Models - Deploy to External Connection - revert to tidy up after.",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "c59b0b0d-26e4-4858-8b30-4d1ebddafdda",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -6789,13 +6419,6 @@
       ],
       "value": ""
     }, {
-      "id": "0a4e10af-39b7-4aa9-a107-83efe0b3688f",
-      "comment": "Click on the \"Assign Model\" dropdown list.",
-      "command": "//click",
-      "target": "id=connectionId",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "4e214800-82b6-45ac-8d2b-0a5f4b240660",
       "comment": "Select \"Production\" from the \"Assign Model\" dropdown list.",
       "command": "select",
@@ -6804,7 +6427,7 @@
       "value": "Production"
     }, {
       "id": "709b4ae3-28c1-4a5c-b77e-2b20f3e86e5e",
-      "comment": "Click the \"Assign\" button on the Deploy/Assign modal.",
+      "comment": "Click the \"Assign\" button on the Deploy/Assign modal, i.e. id=deployModelModalButton",
       "command": "click",
       "target": "id=deployModelModalButton",
       "targets": [
@@ -6843,7 +6466,7 @@
       "value": ""
     }, {
       "id": "ce89fb2d-9808-4c9c-891b-c10f39076dee",
-      "comment": "Click on the Connections link in the sidebar menu. (4th item)",
+      "comment": "Click on the Connections link in the sidebar menu.",
       "command": "click",
       "target": "css=.connectionsSidebarLink",
       "targets": [
@@ -6854,7 +6477,7 @@
       "value": ""
     }, {
       "id": "cb489218-e27c-4c74-bf1e-afc03b62adc0",
-      "comment": "",
+      "comment": "Verify the Model link \"Model from JoinedDataset\" is present.",
       "command": "verifyElementPresent",
       "target": "xpath=//a[contains(text(),'Model from JoinedDataset')]",
       "targets": [
@@ -6868,48 +6491,87 @@
       ],
       "value": ""
     }, {
-      "id": "4e4dc45c-f0bf-4a66-b486-42c9867bb330",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "3b3af0c8-62a4-490b-a8a8-6199feacc964",
-      "comment": "",
+      "id": "98c2d2b3-fc08-4905-a16b-32f9948e42a9",
+      "comment": "Click the Production row's Action Menu picklist button.",
       "command": "click",
-      "target": "id=logoutHeaderLink",
+      "target": "css=.dropdown-toggle",
+      "targets": [
+        ["css=.dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button", "xpath:idRelative"],
+        ["xpath=//td[7]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd2c3c6a-3b3b-4689-86d1-441dd9183914",
+      "comment": "Click on \"Assign Model\" from the Action Menu.",
+      "command": "click",
+      "target": "linkText=Assign Model",
       "targets": [],
       "value": ""
     }, {
-      "id": "cb9d9023-2157-40b3-9634-257fe676f209",
-      "comment": "Verify the Username field is present.",
-      "command": "verifyElementPresent",
-      "target": "id=username",
+      "id": "481164bf-b9a5-4e1c-8e9b-f1cc53c915f9",
+      "comment": "Select \"SL Test Model\" from the \"Model\" picklist.",
+      "command": "select",
+      "target": "id=modelId",
       "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
+        ["id=modelId", "id"],
+        ["css=#modelId", "css:finder"],
+        ["xpath=//select[@id='modelId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "SL Test Model"
+    }, {
+      "id": "15b4c8c6-051d-4d58-8de7-0cac8c4be5d1",
+      "comment": "Click the Save button in the Assign Model modal.",
+      "command": "click",
+      "target": "id=saveConnectionEditModalButton",
+      "targets": [
+        ["id=saveConnectionEditModalButton", "id"],
+        ["css=#saveConnectionEditModalButton", "css:finder"],
+        ["xpath=//button[@id='saveConnectionEditModalButton']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "444f888c-efa5-4ab6-b304-a17d7a088bbe",
+      "comment": "Wait for the \"Connect\" button to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=connectRefreshButton",
+      "targets": [
+        ["id=connectRefreshButton", "id"],
+        ["css=#connectRefreshButton", "css:finder"],
+        ["xpath=//button[@id='connectRefreshButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Connect')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "f628c5c2-7b2e-42e2-af95-4f8cfd12d8f6",
+      "comment": "Verify the Model link \"SL Test Model\" is present.",
+      "command": "verifyElementNotPresent",
+      "target": "linkText=SL Test Model",
+      "targets": [
+        ["linkText=SL Test Model", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'SL Test Model')]", "xpath:link"],
+        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_0e2472607f534d19b7d93cd8c624fe53')]", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SL Test Model')]", "xpath:innerText"]
       ],
       "value": ""
     }]
   }, {
     "id": "5dd5b601-18b0-4233-bf56-6ef244d2f396",
-    "name": "Tenant User - Models - Clone model",
+    "name": "Tenant User - Models - Clone model and verify data - then delete the Model to tidy up.",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
       "command": "open",
       "target": "https://test.cloudapps.dev",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "bb772289-a984-4fe4-aab5-37d585df29a8",
-      "comment": "",
-      "command": "pause",
-      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -6973,13 +6635,6 @@
         ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "6430097d-3c4e-45da-a445-7c52a42446a4",
-      "comment": "",
-      "command": "//verifyText",
-      "target": "xpath=//div[@id='root']/div/div[2]/div/div/h3",
-      "targets": [],
-      "value": "All Datasets"
     }, {
       "id": "465bf082-39af-4733-9651-96e9f77c8267",
       "comment": "Wait for the sidebar toggle button to be available.",
@@ -7104,44 +6759,51 @@
       ],
       "value": ""
     }, {
+      "id": "07f0fb70-40cb-47e5-ab92-b7d9d97493c6",
+      "comment": "Wait for the link for the clone of the Model to be present.",
+      "command": "waitForElementPresent",
+      "target": "linkText=${clonedModelName}",
+      "targets": [],
+      "value": "30000"
+    }, {
       "id": "26d42469-4b4d-4db6-a869-12753c16b552",
-      "comment": "",
+      "comment": "Click on the link for the clone of the Model.",
       "command": "click",
       "target": "linkText=${clonedModelName}",
       "targets": [],
       "value": ""
     }, {
       "id": "c724015e-ff40-4bf0-92d8-1ffb3fdd79c3",
-      "comment": "",
+      "comment": "Verify the Name field text for the model, i.e. \"SL Model \" + datetime.",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div/div/p",
+      "target": "css=.mb-2:nth-child(1) .form-control-plaintext",
       "targets": [
         ["css=.mb-2:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'zzz')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'SL Model 2019-12-2 15:54:5')]", "xpath:innerText"]
       ],
       "value": "${clonedModelName}"
     }, {
       "id": "4fa03cb9-8654-4ac6-8def-9b720727dcbb",
-      "comment": "",
+      "comment": "Verify the Status field's value text \"PREPROCESSED\".",
       "command": "verifyText",
       "target": "css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext",
       "targets": [
         ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/p", "xpath:position"],
         ["xpath=//p[contains(.,'PREPROCESSED')]", "xpath:innerText"]
       ],
       "value": "PREPROCESSED"
     }, {
       "id": "ab404529-9985-41fe-8de7-660e281b52d5",
-      "comment": "",
+      "comment": "Verify the Sort Order field's value text \"SUCCESS__OCCURRENCE_DATE__C\".",
       "command": "verifyText",
-      "target": "xpath=//p[contains(.,'SUCCESS__OCCURRENCE_DATE__C')]",
+      "target": "css=.mb-2:nth-child(5) .form-control-plaintext",
       "targets": [
         ["css=.mb-2:nth-child(5) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[5]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[5]/div/div/p", "xpath:idRelative"],
         ["xpath=//div[5]/div/div/p", "xpath:position"],
         ["xpath=//p[contains(.,'SUCCESS__OCCURRENCE_DATE__C')]", "xpath:innerText"]
       ],
@@ -7163,7 +6825,7 @@
       "value": ""
     }, {
       "id": "627ebc30-b761-4912-9cb5-ec108f3f27c8",
-      "comment": "",
+      "comment": "Verify the text of the first row, first column \"LEADSOURCE\".",
       "command": "verifyText",
       "target": "xpath=//td[contains(.,'LEADSOURCE')]",
       "targets": [
@@ -7175,7 +6837,7 @@
       "value": "LEADSOURCE"
     }, {
       "id": "d254d8ae-8ca4-4ab4-a55e-73f81e0dd428",
-      "comment": "",
+      "comment": "Verify the text of the 2nd row, first column \"SUCCESS__BASE_BEHAVIOUR__C\".",
       "command": "verifyText",
       "target": "xpath=//td[contains(.,'SUCCESS__BASE_BEHAVIOUR__C')]",
       "targets": [
@@ -7187,7 +6849,7 @@
       "value": "SUCCESS__BASE_BEHAVIOUR__C"
     }, {
       "id": "80a82a14-c99b-48ef-bc35-de221e3e551c",
-      "comment": "",
+      "comment": "Verify the text of the 3rd row, first column \"TYPE\".",
       "command": "verifyText",
       "target": "xpath=//td[contains(.,'TYPE')]",
       "targets": [
@@ -7199,7 +6861,7 @@
       "value": "TYPE"
     }, {
       "id": "61813d7b-d360-4e50-9ed6-00265e5caaf2",
-      "comment": "",
+      "comment": "Click on the Connections tab link.",
       "command": "click",
       "target": "linkText=Connections",
       "targets": [
@@ -7214,7 +6876,7 @@
       "value": ""
     }, {
       "id": "9a6aaa27-cfc7-45f6-be2a-432bdd0fb096",
-      "comment": "",
+      "comment": "Verify the text \"No Records\".",
       "command": "verifyText",
       "target": "xpath=//h5[contains(.,'No Records')]",
       "targets": [
@@ -7225,60 +6887,35 @@
       ],
       "value": "No Records"
     }, {
-      "id": "9fe604e9-55c4-41b8-b06a-e29671f42d5b",
-      "comment": "Click on the blue \"back\" arrow",
+      "id": "53b54f75-457d-4043-9444-773fcb13ba16",
+      "comment": "Click the \"Delete\" button.",
       "command": "click",
-      "target": "id=backButton",
+      "target": "id=deleteModelButton",
       "targets": [
-        ["id=backButton", "id"],
-        ["css=#backButton", "css:finder"],
-        ["xpath=//button[@id='backButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/button", "xpath:idRelative"],
-        ["xpath=//div/button", "xpath:position"]
+        ["id=deleteModelButton", "id"],
+        ["css=#deleteModelButton", "css:finder"],
+        ["xpath=//button[@id='deleteModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Delete')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "7888eee2-ce16-4346-874c-5357c05150c2",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=logoutHeaderLink",
-      "targets": [],
-      "value": "1200000"
-    }, {
-      "id": "7c21e183-c4a9-4336-8ff5-40cb0f21acb8",
-      "comment": "",
+      "id": "cc7ed00b-6931-494c-8183-dd001307fce5",
+      "comment": "Click the Delete button in the \"Delete Model\" modal.",
       "command": "click",
-      "target": "id=logoutHeaderLink",
+      "target": "css=.btn-danger",
       "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[10]", "xpath:attributes"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "d456e94e-4068-4163-8b5e-25c0e5a6647a",
-      "comment": "Verify the username element is present on the log in page.",
-      "command": "verifyElementPresent",
-      "target": "id=username",
-      "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }]
-  }, {
-    "id": "27319d78-6aeb-430b-9675-11e0bcc4733a",
-    "name": "aaaaaaaa",
-    "commands": [{
-      "id": "ab296f67-d265-4e64-ab72-aff8bbb7ecec",
-      "comment": "",
-      "command": "executeScript",
-      "target": "IJavaScriptExecutor ex = (IJavaScriptExecutor)Driver; ex.ExecuteScript(\"arguments[0].click();\", id=sidebarToggleButton);",
+      "id": "b273675a-9270-4d3f-a046-47430bddc796",
+      "comment": "Verify the link for the clone of the Model IS NOT PRESENT.",
+      "command": "verifyElementNotPresent",
+      "target": "linkText=${clonedModelName}",
       "targets": [],
       "value": ""
     }]
@@ -7318,13 +6955,6 @@
     "parallel": false,
     "timeout": 300,
     "tests": ["b3f65c24-7ea2-4d55-8436-f14eb8a3ecf5", "dc31ee01-e671-4f3a-b6ae-b906dbc13a4a"]
-  }, {
-    "id": "37ef4279-3109-41b1-97c1-22dc2d1dc40b",
-    "name": "TestSuiteForTroubleshooting",
-    "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
-    "tests": ["8d8039c6-1d43-4dd6-858f-fd4b41a7d274"]
   }],
   "urls": ["http://sensai-webapp-787509357522-dev.s3-website-eu-west-1.amazonaws.com/"],
   "plugins": []
