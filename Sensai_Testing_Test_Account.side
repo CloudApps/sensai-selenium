@@ -3374,10 +3374,10 @@
       ],
       "value": "30000"
     }, {
-      "id": "8b851e51-f5ee-41ba-bcc5-65c9c7667363",
-      "comment": "Go to the datasets URL - TBC - can remove this when the new merged dataset appears automatically",
-      "command": "open",
-      "target": "https://test.cloudapps.dev/datasets",
+      "id": "b0f1d827-96d2-4cfc-84da-f63bcd241688",
+      "comment": "",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 5000);",
       "targets": [],
       "value": ""
     }, {
@@ -5133,7 +5133,7 @@
     }]
   }, {
     "id": "c2fe18fe-bd16-49e8-b654-cf0b9d050029",
-    "name": "Tenant User - Snapshots - enable and disable",
+    "name": "Tenant User - Snapshots 001 - enable snapshot - FIXED 05-12-2019",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -5240,20 +5240,22 @@
       ],
       "value": ""
     }, {
+      "id": "2a9a06f6-a316-407c-b882-220ab2deb3f2",
+      "comment": "",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 5000);",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "3720770c-7616-479d-bc09-30050399a3c4",
-      "comment": "Click on the Production row's action menu.",
+      "comment": "",
       "command": "click",
       "target": "xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button",
-      "targets": [
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
-        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button", "xpath:idRelative"],
-        ["xpath=//td[7]/div/button", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "d70355d0-d008-44c4-b8b7-dfdac7f1711f",
-      "comment": "Select \"Enable Prediction Snapshot\"",
+      "comment": "Click \"Enable Prediction Snapshot\"",
       "command": "click",
       "target": "linkText=Enable Prediction Snapshot",
       "targets": [
@@ -5267,6 +5269,13 @@
       ],
       "value": ""
     }, {
+      "id": "93da2390-d823-4812-b332-f853ba31127e",
+      "comment": "Wait for the Enabled tick element is present.",
+      "command": "waitForElementPresent",
+      "target": "css=.check-icon",
+      "targets": [],
+      "value": "30000"
+    }, {
       "id": "ef6241b4-e4f2-49ae-a3dc-7815c6f48229",
       "comment": "Ensure the Enabled tick element is present.",
       "command": "verifyElementPresent",
@@ -5274,96 +5283,6 @@
       "targets": [
         ["css=.check-icon", "css:finder"]
       ],
-      "value": ""
-    }, {
-      "id": "b69b2e1f-4d75-4e87-8aa2-0e2829cb4ca5",
-      "comment": "Click on the Production row's action menu.",
-      "command": "click",
-      "target": "xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button",
-      "targets": [
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
-        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button", "xpath:idRelative"],
-        ["xpath=//td[7]/div/button", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a8df7789-4376-43c5-acac-fd82f3fb5e64",
-      "comment": "Select \"Disable Prediction Snapshot\"",
-      "command": "click",
-      "target": "linkText=Disable Prediction Snapshot",
-      "targets": [
-        ["linkText=Disable Prediction Snapshot", "linkText"],
-        ["css=.dropdown-item:nth-child(4)", "css:finder"],
-        ["xpath=//a[contains(text(),'Disable Prediction Snapshot')]", "xpath:link"],
-        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/div/a[4]", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
-        ["xpath=//a[4]", "xpath:position"],
-        ["xpath=//a[contains(.,'Disable Prediction Snapshot')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "357f7813-5b10-4042-87bc-7b8698cd9e0a",
-      "comment": "Ensure the Enabled tick element IS NOT PRESENT.",
-      "command": "verifyElementNotPresent",
-      "target": "css=.check-icon",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "b4aa7fd3-34bc-4b8f-b75c-a963934cd43c",
-      "comment": "Wait for the sidebar toggle button to be available.",
-      "command": "//waitForElementPresent",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "b5c9a585-ec54-472c-9429-ec2f2ba782cf",
-      "comment": "Click the sidebar toggle button again",
-      "command": "//click",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "ec77da0a-5a04-43c8-a76e-9fa858db528f",
-      "comment": "Click the \"Predictions\" link in the sidebar menu. (6th item)",
-      "command": "//click",
-      "target": "css=.predictionsSidebarLink",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "87b17923-d086-408c-82a3-013972f4ac28",
-      "comment": "",
-      "command": "//click",
-      "target": "linkText=Model 1",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "ae3584b8-c275-483c-82f4-914c1ef14076",
-      "comment": "",
-      "command": "//verifyElementPresent",
-      "target": "linkText=Columns",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8125a896-c495-47cc-b238-834086f6dc4e",
-      "comment": "",
-      "command": "//verifyElementPresent",
-      "target": "linkText=History",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "bc9d3a25-bae5-491d-9f47-d2076937f8fc",
-      "comment": "",
-      "command": "//verifyElementPresent",
-      "target": "linkText=Connections",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "3134f3ca-86c6-434e-884d-d1ce0638929f",
-      "comment": "For now, delete all snapshots before running this test??? How to check for a string including today's date?",
-      "command": "",
-      "target": "",
-      "targets": [],
       "value": ""
     }]
   }, {
@@ -5849,6 +5768,13 @@
       "targets": [],
       "value": "30000"
     }, {
+      "id": "3131234c-c6a1-4fb4-b212-7ca478c4ffb4",
+      "comment": "",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 5000);",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "26d42469-4b4d-4db6-a869-12753c16b552",
       "comment": "Click on the link for the clone of the Model.",
       "command": "click",
@@ -5949,9 +5875,9 @@
       "target": "linkText=Connections",
       "targets": [
         ["linkText=Connections", "linkText"],
-        ["css=.nav-item:nth-child(3)", "css:finder"],
+        ["css=.nav > .nav-item:nth-child(3)", "css:finder"],
         ["xpath=//a[contains(text(),'Connections')]", "xpath:link"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/nav/a[3]", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/nav/a[3]", "xpath:idRelative"],
         ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
         ["xpath=//a[3]", "xpath:position"],
         ["xpath=//a[contains(.,'Connections')]", "xpath:innerText"]
@@ -5969,6 +5895,20 @@
         ["xpath=//h5[contains(.,'No Records')]", "xpath:innerText"]
       ],
       "value": "No Records"
+    }, {
+      "id": "8c3bef19-4e64-4d60-83f3-307fb5d0b1a8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 5000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "285bbd80-0b87-4634-9ed4-76270c3de9f6",
+      "comment": "",
+      "command": "pause",
+      "target": "120000",
+      "targets": [],
+      "value": ""
     }, {
       "id": "53b54f75-457d-4043-9444-773fcb13ba16",
       "comment": "Click the \"Delete\" button.",
@@ -6002,6 +5942,151 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "b31e9048-def4-4ad1-9b3a-349fe2e18095",
+    "name": "Tenant User - Snapshots 002 - disable snapshot - FIXED 05-12-2019",
+    "commands": [{
+      "id": "f496c67f-e0c0-46a8-9aaa-31a9ae2558dc",
+      "comment": "",
+      "command": "open",
+      "target": "https://test.cloudapps.dev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3bff3cbc-f82f-42da-9559-da5c0d7de57b",
+      "comment": "",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb46b449-9bf4-4897-8fdc-fb07136ada3c",
+      "comment": "",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1db2ed1a-d45c-4ec0-be2e-b27345972281",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b71143f-45ed-492b-9879-7df2184d4f2f",
+      "comment": "Enter the Tenant Admin's username, i.e. slovatt@SLversion8.test",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "slovatt@SLversion8.test"
+    }, {
+      "id": "add020d3-f00c-4568-99d5-752e1f803efd",
+      "comment": "Enter the Tenant User's password, i.e. SL_salesforce_tenant_admin123!",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "SL_salesforce_tenant_admin123!"
+    }, {
+      "id": "aca47b8a-2477-469d-82a5-35671d443375",
+      "comment": "Click the Login button",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["css=#login", "css:finder"],
+        ["xpath=//button[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c60aaa92-61bb-4fdb-87b8-5effcf8afa61",
+      "comment": "Wait for the sidebar toggle button to be available.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "120000"
+    }, {
+      "id": "f8c61d65-6171-453e-8a95-cd474644ccbb",
+      "comment": "Click the sidebar toggle button",
+      "command": "click",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ff62979-d02d-4b4f-a4af-253b8095d48b",
+      "comment": "Click the \"Connections\" link in the sidebar menu.",
+      "command": "click",
+      "target": "css=.connectionsSidebarLink",
+      "targets": [
+        ["css=.connectionsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[5]", "xpath:idRelative"],
+        ["xpath=//div/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e2236ba-f3f0-4982-a646-10084a7b054d",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 5000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1eab3bf4-315f-4c0e-bca7-fb9773667b13",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b4a45c2-4fc4-41c3-9a53-dae499daeadc",
+      "comment": "Click \"Disable Prediction Snapshot\"",
+      "command": "click",
+      "target": "linkText=Disable Prediction Snapshot",
+      "targets": [
+        ["linkText=Disable Prediction Snapshot", "linkText"],
+        ["css=.dropdown-item:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Disable Prediction Snapshot')]", "xpath:link"],
+        ["xpath=//table[@id='connectionsTable']/tbody/tr/td[7]/div/div/a[4]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Disable Prediction Snapshot')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a7cc2f7-b0c7-4f10-b371-7da2ba7a282e",
+      "comment": "Wait for 60000 to ensure the element IS NOT PRESENT.",
+      "command": "waitForElementNotPresent",
+      "target": "css=.check-icon",
+      "targets": [],
+      "value": "60000"
+    }]
   }],
   "suites": [{
     "id": "9cbb8d94-9132-40ea-a95a-df152c645676",
@@ -6015,7 +6100,7 @@
     "name": "Tenant Admin Test Suite",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 60000,
     "tests": ["295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25", "b3258e1c-f266-4e39-9fa8-2584089946c7", "04614dbc-f134-4488-a951-111b3ef83f06", "c9090129-12de-4804-aa51-7f0dbe81f7d0", "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5", "15faae31-5501-4179-8ad5-f584e3e6d393"]
   }, {
     "id": "9beaa2a2-3b73-46fa-bc5b-0bb36a6a6f8c",
@@ -6023,7 +6108,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["8d8039c6-1d43-4dd6-858f-fd4b41a7d274", "dba0a97c-d3d3-4404-9166-c83da8925147", "3e901cc4-d1c3-4a46-90a8-26b328f8a0a0", "306cb67e-ebe8-4c23-a21a-bc61f44d6256", "4838c76f-afa6-4a3a-9525-eb3dcc61ccfc", "4c34d032-2867-490a-9c6b-49f2957c953c", "5dd5b601-18b0-4233-bf56-6ef244d2f396", "5f5f5494-9f1e-41f0-a286-ad29be8074d5", "c2fe18fe-bd16-49e8-b654-cf0b9d050029", "e0a107e7-e823-4087-af95-b29995a4282d"]
+    "tests": ["8d8039c6-1d43-4dd6-858f-fd4b41a7d274", "dba0a97c-d3d3-4404-9166-c83da8925147", "3e901cc4-d1c3-4a46-90a8-26b328f8a0a0", "306cb67e-ebe8-4c23-a21a-bc61f44d6256", "4838c76f-afa6-4a3a-9525-eb3dcc61ccfc", "4c34d032-2867-490a-9c6b-49f2957c953c", "5dd5b601-18b0-4233-bf56-6ef244d2f396", "5f5f5494-9f1e-41f0-a286-ad29be8074d5", "c2fe18fe-bd16-49e8-b654-cf0b9d050029", "b31e9048-def4-4ad1-9b3a-349fe2e18095", "e0a107e7-e823-4087-af95-b29995a4282d"]
   }, {
     "id": "8d28c613-1379-4b4c-8a8b-5461cee6e134",
     "name": "Tenant Admin - Connections",
@@ -6031,6 +6116,13 @@
     "parallel": false,
     "timeout": 300,
     "tests": ["b3f65c24-7ea2-4d55-8436-f14eb8a3ecf5", "dc31ee01-e671-4f3a-b6ae-b906dbc13a4a"]
+  }, {
+    "id": "b3e7ca0e-79f1-43a1-9bf9-721f7911c96e",
+    "name": "Testing123",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5dd5b601-18b0-4233-bf56-6ef244d2f396"]
   }],
   "urls": ["http://sensai-webapp-787509357522-dev.s3-website-eu-west-1.amazonaws.com/"],
   "plugins": []
