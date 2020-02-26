@@ -5,7 +5,7 @@
   "url": "http://sensai-webapp-787509357522-dev.s3-website-eu-west-1.amazonaws.com",
   "tests": [{
     "id": "dba0a97c-d3d3-4404-9166-c83da8925147",
-    "name": "Tenant User - Datasets - View and verify tabs and fields for Uploaded and Joined ones.",
+    "name": "Tenant User 06 - Datasets - View and verify tabs and fields for Uploaded and Joined ones.",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -619,7 +619,7 @@
     }]
   }, {
     "id": "25a8c0a8-f8c7-40f3-99fe-27f1355a5f6d",
-    "name": "CloudApps Admin - Log in fail - incorrect password",
+    "name": "CloudApps Admin 02 - Log in fail - incorrect password",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -702,7 +702,7 @@
     }]
   }, {
     "id": "50c7ee26-a12f-4fa4-9dc1-1bbac663a1a8",
-    "name": "CloudApps Admin - Tenants - Create New Tenant",
+    "name": "CloudApps Admin 03 - Tenants - Create New Tenant",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -740,7 +740,7 @@
         ["id=username", "id"],
         ["css=#username", "css:finder"],
         ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": "qa@cloudapps.com"
@@ -772,10 +772,23 @@
       ],
       "value": ""
     }, {
+      "id": "367e0d72-4b6a-4566-83d9-41d62bbecbc7",
+      "comment": "Wait for the Logout link to appear in the header. This is only to try and fix the problem that started in February 2020.",
+      "command": "waitForElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
       "id": "73364a1a-8f46-4df4-a60e-7cfc5bf9e23d",
       "comment": "",
       "command": "executeScript",
-      "target": "var today = new Date(); var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); var time = today.getHours() + \"-\" + today.getMinutes(); var dateTime = date+'_'+time; return \"SL_Tenant_Admin_\" + dateTime;",
+      "target": "var today = new Date(); var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); var time = today.getHours() + \"-\" + today.getMinutes(); var dateTime = date+'_'+time; return dateTime + \"_SLTenantAdmin\";",
       "targets": [],
       "value": "tenantcompanyname"
     }, {
@@ -786,13 +799,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "65a22d68-325c-46b2-ab0a-a67f3ad4cec6",
-      "comment": "",
-      "command": "pause",
-      "target": "",
-      "targets": [],
-      "value": "120000"
-    }, {
       "id": "de0441d8-45c7-4c8e-93e4-fb8e21f527a5",
       "comment": "Go to the Tenants list view - cannot click on the Sidebar toggle button when running from the Command Line.",
       "command": "open",
@@ -801,10 +807,17 @@
       "value": ""
     }, {
       "id": "b66ca917-f4f5-4373-bb74-ba85722b2df3",
-      "comment": "Click on the \"Create Tenant\" button. ",
+      "comment": "Wait for the \"Create Tenant\" button to be present.",
       "command": "waitForElementPresent",
       "target": "id=createTenantButton",
-      "targets": [],
+      "targets": [
+        ["id=createTenantButton", "id"],
+        ["css=#createTenantButton", "css:finder"],
+        ["xpath=//button[@id='createTenantButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Create Tenant')]", "xpath:innerText"]
+      ],
       "value": "60000"
     }, {
       "id": "96e3bbe8-dce9-4998-a6e3-9b38ad895648",
@@ -918,6 +931,31 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "60e5f762-1056-4010-98b3-d228c03ffe74",
+      "comment": "Enter the Expiry date (not via the picker) - TBC - need to set it with the picker?",
+      "command": "type",
+      "target": "xpath=//*[@id=\"expires\"]",
+      "targets": [
+        ["css=.DayPickerInput > input", "css:finder"],
+        ["xpath=//input[@value='2019-12-31']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "2020-12-31"
+    }, {
+      "id": "f8dec6d5-052b-4f37-8a9b-5e6746b9be54",
+      "comment": "Store the variable currenttenantexpiry with the value of the \"id=expires\" field",
+      "command": "storeValue",
+      "target": "xpath=//*[@id=\"expires\"]",
+      "targets": [],
+      "value": "currenttenantexpiry"
+    }, {
+      "id": "64165b89-f5da-4520-88b9-49de9d2ad8ef",
+      "comment": "Echo the Tenant's expiry date",
+      "command": "echo",
+      "target": "${currenttenantexpiry}",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "295ad611-265f-47b8-bf05-75086735fca5",
       "comment": "Type the Org ID in the Salesforce Org ID field",
       "command": "type",
@@ -941,31 +979,6 @@
       "comment": "Echo the Salesforce Org ID",
       "command": "echo",
       "target": "${currenttenantorgid}",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "60e5f762-1056-4010-98b3-d228c03ffe74",
-      "comment": "Enter the Expiry date (not via the picker) - TBC - need to set it with the picker?",
-      "command": "type",
-      "target": "xpath=//*[@id=\"expires\"]",
-      "targets": [
-        ["css=.DayPickerInput > input", "css:finder"],
-        ["xpath=//input[@value='2019-12-31']", "xpath:attributes"],
-        ["xpath=//div[4]/div/input", "xpath:position"]
-      ],
-      "value": "2019-12-31"
-    }, {
-      "id": "f8dec6d5-052b-4f37-8a9b-5e6746b9be54",
-      "comment": "Store the variable currenttenantexpiry with the value of the \"id=expires\" field",
-      "command": "storeValue",
-      "target": "xpath=//*[@id=\"expires\"]",
-      "targets": [],
-      "value": "currenttenantexpiry"
-    }, {
-      "id": "64165b89-f5da-4520-88b9-49de9d2ad8ef",
-      "comment": "Echo the Tenant's expiry date",
-      "command": "echo",
-      "target": "${currenttenantexpiry}",
       "targets": [],
       "value": ""
     }, {
@@ -1004,19 +1017,23 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "5bfb3a76-704c-452d-bef0-5d70d3aad3ee",
+      "id": "f8707a9f-e7db-49a9-a349-437e6142f466",
+      "comment": "Wait for the \"Tenants\" header to appear.",
+      "command": "waitForElementPresent",
+      "target": "xpath=//h3[contains(.,'Tenants')]",
+      "targets": [
+        ["css=.mb-4", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Tenants')]", "xpath:innerText"]
+      ],
+      "value": "60000"
+    }, {
+      "id": "bfc209e0-6a53-49c4-8f48-2ee2efc0a4d6",
       "comment": "Click on the new tenant's name link - TBC - Selenium search recognises this link but it couldn't click on it",
       "command": "click",
       "target": "linkText=${tenantcompanyname}",
-      "targets": [
-        ["linkText=SLTenant16072019_Ltd", "linkText"],
-        ["css=tr:nth-child(1) a", "css:finder"],
-        ["xpath=//a[contains(text(),'SLTenant16072019_Ltd')]", "xpath:link"],
-        ["xpath=//table[@id='tenantsTable']/tbody/tr/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/tenants/0010b81b0ae5eb94e6096cddec9cae28d0c')]", "xpath:href"],
-        ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SLTenant16072019_Ltd')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "cd439c0c-c2d2-41c5-91cb-22513fe92e50",
@@ -1038,8 +1055,7 @@
       "targets": [
         ["css=.mb-2:nth-child(3) > .col-6:nth-child(2) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div[2]/div/p", "xpath:idRelative"],
-        ["xpath=//div[3]/div[2]/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'22')]", "xpath:innerText"]
+        ["xpath=//div[3]/div[2]/div/p", "xpath:position"]
       ],
       "value": "22"
     }, {
@@ -1054,10 +1070,56 @@
         ["xpath=//p[contains(.,'madeuporgid63014')]", "xpath:innerText"]
       ],
       "value": "${currenttenantorgid}"
+    }, {
+      "id": "558148dc-ce6c-4f94-8764-50040c4c0186",
+      "comment": "Click on the \"Edit Tenant\" button.",
+      "command": "click",
+      "target": "id=editTenantButton",
+      "targets": [
+        ["id=editTenantButton", "id"],
+        ["css=#editTenantButton", "css:finder"],
+        ["xpath=//button[@id='editTenantButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Edit Tenant')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f0c49cd3-9f4d-43df-b49d-27fa524b7f4f",
+      "comment": "Trying to fix the problem where it's too quick for the Company Name to display the new name.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1fbfac1-4214-496d-9792-64ad0254c187",
+      "comment": "Type \"zzz\" in the Company Name (just to fix a problem that I'm trying to work out)",
+      "command": "type",
+      "target": "id=company_name",
+      "targets": [
+        ["id=company_name", "id"],
+        ["css=#company_name", "css:finder"],
+        ["xpath=//input[@id='company_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zzz"
+    }, {
+      "id": "767aebd7-4ab6-4fc0-bcb3-2aa050af9718",
+      "comment": "Click on the \"Update\" button in the Edit Tenant modal (actually called \"createTenantModalButton\").",
+      "command": "click",
+      "target": "id=createTenantModalButton",
+      "targets": [
+        ["id=createTenantModalButton", "id"],
+        ["css=#createTenantModalButton", "css:finder"],
+        ["xpath=//button[@id='createTenantModalButton']", "xpath:attributes"],
+        ["xpath=//form/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update')]", "xpath:innerText"]
+      ],
+      "value": ""
     }]
   }, {
     "id": "04614dbc-f134-4488-a951-111b3ef83f06",
-    "name": "Tenant Admin - Users - Create New Tenant User",
+    "name": "Tenant Admin 02 - Users - Create New Tenant User",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -1196,7 +1258,7 @@
         ["xpath=//input[@id='fullname']", "xpath:attributes"],
         ["xpath=//div/input", "xpath:position"]
       ],
-      "value": "TenantUserFullName${tenantusernumber}"
+      "value": "aTenantUserFullName${tenantusernumber}"
     }, {
       "id": "4251e9aa-1ce6-4a29-b3b8-85e5f927f2c1",
       "comment": "Store the \"full name\" field as a variable \"tenantusernamevariable\"",
@@ -1245,6 +1307,13 @@
       ],
       "value": ""
     }, {
+      "id": "f416b2bb-a727-4603-afe0-95d3457c1810",
+      "comment": "",
+      "command": "pause",
+      "target": "30000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "02790108-2898-4837-b211-1fe0ee7add36",
       "comment": "Click the \"Create User\" button.",
       "command": "click",
@@ -1257,12 +1326,26 @@
       ],
       "value": ""
     }, {
+      "id": "9650eabd-55ac-492b-9d7b-0c3cda06397b",
+      "comment": "",
+      "command": "pause",
+      "target": "30000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "225cd1fa-92c6-446b-9b18-3aabf0fb66a8",
+      "comment": "Wait for the new user's Full Name link element to be VISIBLE, i.e. ${tenantusernamevariable}",
+      "command": "waitForElementVisible",
+      "target": "linkText=${tenantusernamevariable}",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "05bf65e3-6334-407f-b615-9d0fadef0274",
       "comment": "Verify the new user's Full Name link is present, i.e. ${tenantusernamevariable}",
       "command": "verifyElementPresent",
       "target": "linkText=${tenantusernamevariable}",
       "targets": [],
-      "value": "${tenantusernamevariable}"
+      "value": ""
     }, {
       "id": "3915a1cf-58a6-45f3-90a9-163178e64a5b",
       "comment": "Click on the new user's Full Name link, i.e. ${tenantusernamevariable}",
@@ -1298,7 +1381,7 @@
       "value": ""
     }, {
       "id": "fdb757f8-ee2e-4247-95b4-ef88a5051eed",
-      "comment": "Type \"DELETE\" in the Full Name field.",
+      "comment": "Type \"zzz\" in the Full Name field.",
       "command": "type",
       "target": "id=fullname",
       "targets": [
@@ -1307,7 +1390,7 @@
         ["xpath=//input[@id='fullname']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "DELETE"
+      "value": "zzz"
     }, {
       "id": "57a424f3-826b-40cc-a367-82b72172815e",
       "comment": "Click the Update button in the Edit User modal.",
@@ -1322,9 +1405,16 @@
       ],
       "value": ""
     }, {
+      "id": "971c2cf2-10ae-4079-b9bc-7325ab395617",
+      "comment": "Wait for the \"Edit User\" button to be present (to fix a problem where the user isn't being disabled.)",
+      "command": "//waitForElementPresent",
+      "target": "id=editUserButton",
+      "targets": [],
+      "value": "30000"
+    }, {
       "id": "4aed7d2c-a2dc-452d-9a79-dd82fab8343b",
       "comment": "Refresh the page.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 5000);",
       "targets": [],
       "value": ""
@@ -1361,7 +1451,11 @@
       "comment": "Wait for the Disable button element to be present on the confirmation dialog.",
       "command": "waitForElementPresent",
       "target": "css=.btn-danger",
-      "targets": [],
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
+      ],
       "value": "60000"
     }, {
       "id": "d29fedc0-fa7b-4ae0-82ac-145f8a2c302b",
@@ -1374,6 +1468,13 @@
         ["xpath=//div[3]/button[2]", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "af83259f-deea-4e9b-9469-f61e7ad7e397",
+      "comment": "Wait for the blue Back arrow button element to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=backButton",
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "65cd659c-83c6-4128-a77c-afcbeb89e8c7",
       "comment": "Click on the blue Back arrow button.",
@@ -1394,10 +1495,17 @@
       "target": "linkText=${tenantusernamevariable}",
       "targets": [],
       "value": "${tenantusernamevariable}"
+    }, {
+      "id": "22d97204-6e69-4357-933c-70bdcef745c8",
+      "comment": "Verify the Logout link element IS PRESENT, to ensure it's not displaying a blank page.",
+      "command": "verifyElementPresent",
+      "target": "id=logoutHeaderLink",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "bbd846d2-93e8-40c7-9d16-0a4e9ad03de2",
-    "name": "CloudApps Admin - Tenants - Enable and Disable Tenant",
+    "name": "CloudApps Admin 05 - Tenants - Enable and Disable Tenant",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -1576,7 +1684,7 @@
       "value": "30000"
     }, {
       "id": "45f9b088-87c2-40c7-bbd2-dae0f4a90e69",
-      "comment": "CANNOT GET THIS WORKING - NAFF - Verify the Enabled tick is present.",
+      "comment": "Verify the Enabled tick is present.",
       "command": "verifyElementPresent",
       "target": "css=.check-icon",
       "targets": [
@@ -1617,23 +1725,23 @@
       "targets": [],
       "value": "60000"
     }, {
+      "id": "e7866b80-d406-4a45-aa7d-5aac95b2ed9e",
+      "comment": "Verify the \"Tick\" Element IS NOT present.",
+      "command": "verifyElementNotPresent",
+      "target": "css=.check-icon",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "ee7147c9-f0a5-4916-92eb-6a79730843e9",
       "comment": "CANNOT GET THIS WORKING - THE BUTTON DOES NOT HAVE THAT TEXT - Verify that the Tenant Status change button currently shows \"Enable Tenant\"",
       "command": "//verifyText",
       "target": "id=toggleTenantStatusButton",
       "targets": [],
       "value": "starts-with(.,'Enable')"
-    }, {
-      "id": "2c465dd5-ba96-4d0a-8382-ecbdcca2b6a7",
-      "comment": "CANNOT GET THIS WORKING - NAFF - Verify the Enabled tick is present.",
-      "command": "verifyElementNotPresent",
-      "target": "css=.form-control-plaintext path",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "d86b1f6f-8166-4a14-a638-6523245cc92d",
-    "name": "CloudApps Admin - Log in and Verify Sidebar Menu items",
+    "name": "CloudApps Admin 01 - Log in and Verify Sidebar Menu items",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -1808,7 +1916,7 @@
     }]
   }, {
     "id": "15faae31-5501-4179-8ad5-f584e3e6d393",
-    "name": "Tenant Admin - Users - New Tenant User with same name",
+    "name": "Tenant Admin 03 - Users - New Tenant User with same name - Fixed 24-02-2020",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -1969,6 +2077,13 @@
       ],
       "value": ""
     }, {
+      "id": "17090e3f-0b44-499c-a6c0-620d622a57a0",
+      "comment": "Wait for the error element to be VISIBLE.",
+      "command": "waitForElementVisible",
+      "target": "css=.alert",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "956c53db-e048-4cb8-9a00-b86ca4e07ee2",
       "comment": "Verify the error element is present.",
       "command": "verifyElementPresent",
@@ -1977,9 +2092,9 @@
       "value": ""
     }, {
       "id": "09bfd379-26d1-4108-b0d3-2dfcd08af320",
-      "comment": "Verify the text contains \"User account already exists\".",
+      "comment": "Verify the error message text contains \"User account already exists\".",
       "command": "verifyText",
-      "target": "css=class=\"fade alert alert-danger alert-dismissible show\"",
+      "target": "css=.alert > div",
       "targets": [
         ["css=.alert > div", "css:finder"],
         ["xpath=//form/div/div/div", "xpath:position"]
@@ -2001,7 +2116,7 @@
     }]
   }, {
     "id": "04086720-9be8-457d-9cba-916cf041326e",
-    "name": "CloudApps Admin - Tenants - Edit Tenant",
+    "name": "CloudApps Admin 04 - Tenants - Edit Tenant",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -2070,6 +2185,19 @@
         ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "06868d2c-bf4a-44ac-9c21-bfb10c56a256",
+      "comment": "Wait for the Sidebar Toggle Button to be present. (Fixing a new problem.)",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
       "id": "6b5d98b7-f414-4e95-a729-0de0990fbb3f",
       "comment": "Go to the Tenants list view - cannot click on the Sidebar toggle button when running from the Command Line.",
@@ -2177,8 +2305,14 @@
       "id": "dbc1d011-b866-4ce2-b396-ac9afd5fdc6b",
       "comment": "",
       "command": "click",
-      "target": "xpath=//*[@id=\"createTenantModalButton\"]",
-      "targets": [],
+      "target": "id=createTenantModalButton",
+      "targets": [
+        ["id=createTenantModalButton", "id"],
+        ["css=#createTenantModalButton", "css:finder"],
+        ["xpath=//button[@id='createTenantModalButton']", "xpath:attributes"],
+        ["xpath=//form/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
       "id": "fdb192ff-0bd4-4da8-aa0c-391b9774e6f2",
@@ -2195,15 +2329,22 @@
       ],
       "value": "60000"
     }, {
+      "id": "88fda5d2-ce0e-4ea7-bf23-db1bab66bb19",
+      "comment": "Wait for the Tenant Name field element to be VISIBLE. Added to make sure that field is available for verifying.",
+      "command": "waitForElementVisible",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "bd8850a8-7570-4dde-8dcd-3c1c0b229c2a",
-      "comment": "",
+      "comment": "Verify the Tenant Name field value text.",
       "command": "verifyText",
-      "target": "css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p",
       "targets": [
         ["css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'SL Tenant Editing Ltd EDITED')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'SL Tenant to Edit Ltd EDITED')]", "xpath:innerText"]
       ],
       "value": "SL Tenant to Edit Ltd EDITED"
     }, {
@@ -2220,6 +2361,13 @@
         ["xpath=//button[contains(.,'Edit Tenant')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "0b33e5cb-8295-451d-ada2-15c2f3d6f6bc",
+      "comment": "Wait for the Update tenant button to be VISIBLE (to try and fix the following step that isn't working.)",
+      "command": "waitForElementVisible",
+      "target": "id=createTenantModalButton",
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "5656e7c7-9967-4df9-acef-43ea361faa9d",
       "comment": "",
@@ -2253,21 +2401,33 @@
       ],
       "value": ""
     }, {
+      "id": "d2852752-cf89-4b2a-9551-9c7932d85169",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "id=company_name",
+      "targets": [
+        ["id=company_name", "id"],
+        ["css=#company_name", "css:finder"],
+        ["xpath=//input[@id='company_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "60000"
+    }, {
       "id": "f8410349-5f6d-4276-98cd-319b558b0618",
       "comment": "",
       "command": "verifyText",
-      "target": "xpath=//h3",
+      "target": "id=company_name",
       "targets": [
-        ["css=.m-0", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/h3", "xpath:idRelative"],
-        ["xpath=//h3", "xpath:position"],
-        ["xpath=//h3[contains(.,'TestTenantdzcds')]", "xpath:innerText"]
+        ["id=company_name", "id"],
+        ["css=#company_name", "css:finder"],
+        ["xpath=//input[@id='company_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
       ],
       "value": "SL Tenant to Edit Ltd"
     }]
   }, {
     "id": "306cb67e-ebe8-4c23-a21a-bc61f44d6256",
-    "name": "Tenant User - Log In Fail - inactive user - FIXED 10-12-2019",
+    "name": "Tenant User 03 - Log In Fail - inactive user - FIXED 10-12-2019",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -2364,7 +2524,7 @@
     }]
   }, {
     "id": "4838c76f-afa6-4a3a-9525-eb3dcc61ccfc",
-    "name": "Tenant User - Log In Fail - incorrect password",
+    "name": "Tenant User 02 - Log In Fail - incorrect password",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -2458,7 +2618,7 @@
     }]
   }, {
     "id": "b3f65c24-7ea2-4d55-8436-f14eb8a3ecf5",
-    "name": "Tenant Admin - Connections - Log in and Import datasets - verify the new Datasets and clean them up after.",
+    "name": "Tenant Admin Connections 01 - Log in and Import datasets - verify the new Datasets and clean them up after.",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -2852,7 +3012,7 @@
     }]
   }, {
     "id": "c9090129-12de-4804-aa51-7f0dbe81f7d0",
-    "name": "Tenant Admin - Users - Enable and Disable Tenant User - DOESN'T WORK ON COMMAND LINE",
+    "name": "Tenant Admin 05 - Users - Enable and Disable Tenant User - DOESN'T WORK ON COMMAND LINE",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -3043,6 +3203,20 @@
       ],
       "value": ""
     }, {
+      "id": "60e74776-484f-4e59-8e94-dd9e1dcc70f8",
+      "comment": "THIS SHOULD FAIL BECAUSE THE ENABLED TICK IS THERE - Verify the Enabled tick is NOT present in the Enabled field.",
+      "command": "//verifyElementNotPresent",
+      "target": "css=.check-icon",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c63ec20-4ef1-496c-8652-e6eeb6b6dc68",
+      "comment": "Wait for the \"Disable User\" button element (toggleUserStatusButton) to be visible.",
+      "command": "waitForElementVisible",
+      "target": "id=toggleUserStatusButton",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "a5857c0c-1d5e-4f58-b38b-dd09d424bb12",
       "comment": "Click on the \"Disable User\" button for disabling the Tenant User",
       "command": "click",
@@ -3075,21 +3249,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "f19393b7-4b4a-4aa9-8f0a-16ed57de2a97",
-      "comment": "Wait for the \"Edit User\" button to be present - to make sure the Tick would be present by then.",
-      "command": "waitForElementPresent",
-      "target": "id=editUserButton",
-      "targets": [
-        ["id=editUserButton", "id"],
-        ["css=#editUserButton", "css:finder"],
-        ["xpath=//button[@id='editUserButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[2]", "xpath:idRelative"],
-        ["xpath=//button[2]", "xpath:position"],
-        ["xpath=//button[contains(.,'Edit User')]", "xpath:innerText"]
-      ],
-      "value": "60000"
+      "id": "9933500a-ba9d-45f8-b15a-9e59004af005",
+      "comment": "",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
     }, {
-      "id": "84271358-9e89-42a5-852b-e1b71aaa3d92",
+      "id": "c907d242-ac17-403e-95ea-9f24c0579a23",
       "comment": "Verify the Enabled tick is NOT present in the Enabled field.",
       "command": "verifyElementNotPresent",
       "target": "css=.check-icon",
@@ -3098,7 +3265,7 @@
     }]
   }, {
     "id": "3e901cc4-d1c3-4a46-90a8-26b328f8a0a0",
-    "name": "Tenant User - Log In Fail - Non-existent User",
+    "name": "Tenant User 04 - Log In Fail - Non-existent User",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -3192,7 +3359,7 @@
     }]
   }, {
     "id": "8d8039c6-1d43-4dd6-858f-fd4b41a7d274",
-    "name": "Tenant User - Datasets - Join Datasets and create, verify, train and delete Model and Dataset - CANNOT WORK IN COMMAND LINE",
+    "name": "Tenant User 07 - Datasets - Join Datasets and create, verify, train and delete Model and Dataset - CANNOT WORK IN COMMAND LINE",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -4095,7 +4262,7 @@
     }]
   }, {
     "id": "295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25",
-    "name": "Tenant Admin - Log in and Verify Sidebar Menu items",
+    "name": "Tenant Admin 01 - Log in and Verify Sidebar Menu items",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -4165,6 +4332,13 @@
       ],
       "value": ""
     }, {
+      "id": "ab9048dd-214e-4c82-943d-19065dd0f4d0",
+      "comment": "Wait for the sidebar toggle button to be VISIBLE. Trying to fix a problem with the clicking on the sidebar toggle button.",
+      "command": "waitForElementVisible",
+      "target": "id=sidebarToggleButton",
+      "targets": [],
+      "value": "120000"
+    }, {
       "id": "55e40d86-dadf-4fc1-8dc2-fac3e7866af0",
       "comment": "Refresh the page.",
       "command": "executeScript",
@@ -4173,17 +4347,11 @@
       "value": ""
     }, {
       "id": "e8aed648-3f55-4e0c-930b-4a177f206cd7",
-      "comment": "Wait for the sidebar toggle button to be available.",
-      "command": "waitForElementPresent",
-      "target": "id=sidebarToggleButton",
-      "targets": [
-        ["id=sidebarToggleButton", "id"],
-        ["css=#sidebarToggleButton", "css:finder"],
-        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"]
-      ],
-      "value": "120000"
+      "comment": "Pause for 60000. This is to ensure the page has drawn before trying to click on the Sidebar toggle button.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
     }, {
       "id": "e47493da-f0d3-4e8d-a70e-d599cbb76f97",
       "comment": "Click on the sidebar toggle button.",
@@ -4199,108 +4367,92 @@
       "value": ""
     }, {
       "id": "5704bef5-3d5c-4c0a-a8b9-20be746c4a47",
-      "comment": "Wait for the \"Security\" sidebar menu element to be present.",
-      "command": "waitForElementPresent",
+      "comment": "Wait for the \"Security\" sidebar menu element to be VISIBLE.",
+      "command": "waitForElementVisible",
       "target": "css=.securitySidebarLink",
       "targets": [],
       "value": "60000"
     }, {
       "id": "0382f3d4-2e90-48f2-a452-14df50058416",
-      "comment": "Verify the \"Security\" sidebar menu element is present.",
-      "command": "verifyElementPresent",
+      "comment": "Verify the \"Security\" sidebar menu element TEXT.",
+      "command": "verifyText",
       "target": "css=.securitySidebarLink",
       "targets": [],
-      "value": ""
+      "value": "Security"
     }, {
       "id": "6677a263-50f7-44ae-ac7d-72312d46c9e3",
-      "comment": "Wait for the \"Users\" sidebar menu element to be present.",
-      "command": "waitForElementPresent",
-      "target": "css=.usersSidebarLink",
-      "targets": [],
-      "value": "60000"
-    }, {
-      "id": "3bb9f6ae-f94f-490d-bc70-924b61003a36",
-      "comment": "Verify the \"Users\" sidebar menu element is present.",
-      "command": "verifyElementPresent",
+      "comment": "Wait for the \"Users\" sidebar menu element to be VISIBLE.",
+      "command": "waitForElementVisible",
       "target": "css=.usersSidebarLink",
       "targets": [
         ["css=.usersSidebarLink", "css:finder"],
         ["xpath=//div[@id='sidebarNav']/div[2]", "xpath:idRelative"],
         ["xpath=//div[2]/div/div[2]", "xpath:position"]
       ],
-      "value": ""
+      "value": "60000"
+    }, {
+      "id": "3bb9f6ae-f94f-490d-bc70-924b61003a36",
+      "comment": "Verify the \"Users\" sidebar menu element TEXT.",
+      "command": "verifyText",
+      "target": "css=.usersSidebarLink",
+      "targets": [],
+      "value": "Users"
     }, {
       "id": "8b6f34d0-bc6d-4d99-9526-c3b2bbaaa281",
-      "comment": "Wait for the \"Datasets\" sidebar menu element to be present.",
-      "command": "waitForElementPresent",
+      "comment": "Wait for the \"Datasets\" sidebar menu element to be VISIBLE.",
+      "command": "waitForElementVisible",
       "target": "css=.datasetsSidebarLink",
       "targets": [],
       "value": "60000"
     }, {
       "id": "b67203a7-871d-44bf-8e9c-6e4df8f27703",
-      "comment": "Verify the \"Datasets\" sidebar menu element is present.",
-      "command": "verifyElementPresent",
+      "comment": "Verify the \"Datasets\" sidebar menu element TEXT.",
+      "command": "verifyText",
       "target": "css=.datasetsSidebarLink",
-      "targets": [
-        ["css=.datasetsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[3]", "xpath:idRelative"],
-        ["xpath=//div/div[3]", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "Datasets"
     }, {
       "id": "768f4c26-68d7-4be8-9cb7-2ec2c8f12a8b",
-      "comment": "Wait for the \"Models\" sidebar menu element to be present.",
-      "command": "waitForElementPresent",
+      "comment": "Wait for the \"Models\" sidebar menu element to be VISIBLE.",
+      "command": "waitForElementVisible",
       "target": "css=.modelsSidebarLink",
       "targets": [],
       "value": "60000"
     }, {
       "id": "d95d3cfc-0e21-45d5-b85c-d208a38cc320",
-      "comment": "Verify the \"Models\" sidebar menu element is present.",
-      "command": "verifyElementPresent",
+      "comment": "Verify the \"Models\" sidebar menu element TEXT.",
+      "command": "verifyText",
       "target": "css=.modelsSidebarLink",
-      "targets": [
-        ["css=.modelsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[4]", "xpath:idRelative"],
-        ["xpath=//div/div[4]", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "Models"
     }, {
       "id": "0cd8ea8a-cce2-456d-88cd-4a24c22fef73",
-      "comment": "Wait for the \"Connections\" sidebar menu element to be present.",
-      "command": "waitForElementPresent",
+      "comment": "Wait for the \"Connections\" sidebar menu element to be VISIBLE.",
+      "command": "waitForElementVisible",
       "target": "css=.connectionsSidebarLink",
       "targets": [],
       "value": "60000"
     }, {
       "id": "c0388210-8927-4488-8753-9c2babf7102d",
-      "comment": "Verify the \"Connections\" sidebar menu element is present.",
-      "command": "verifyElementPresent",
+      "comment": "Verify the \"Connections\" sidebar TEXT.",
+      "command": "verifyText",
       "target": "css=.connectionsSidebarLink",
-      "targets": [
-        ["css=.connectionsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[5]", "xpath:idRelative"],
-        ["xpath=//div/div[5]", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "Connections"
     }, {
       "id": "2f511057-9b6f-47fa-96be-0b43ee479fa3",
-      "comment": "Wait for the \"Predictions\" sidebar menu element to be present.",
-      "command": "waitForElementPresent",
+      "comment": "Wait for the \"Predictions\" sidebar menu element to be VISIBLE.",
+      "command": "waitForElementVisible",
       "target": "css=.predictionsSidebarLink",
       "targets": [],
       "value": "60000"
     }, {
       "id": "bc62fa08-ba30-4293-a880-04f782a1796b",
-      "comment": "Verify the \"Predictions\" sidebar menu element is present.",
-      "command": "verifyElementPresent",
+      "comment": "Verify the \"Predictions\" sidebar menu TEXT.",
+      "command": "verifyText",
       "target": "css=.predictionsSidebarLink",
-      "targets": [
-        ["css=.predictionsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
-        ["xpath=//div/div[6]", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "Predictions"
     }, {
       "id": "73f569fe-b3eb-45cb-8575-c9d1240d08d5",
       "comment": "Verify the \"Tenants\" sidebar menu element IS NOT PRESENT.",
@@ -4311,7 +4463,7 @@
     }]
   }, {
     "id": "4c34d032-2867-490a-9c6b-49f2957c953c",
-    "name": "Tenant User - Log in and Verify Sidebar Menu items",
+    "name": "Tenant User 01 - Log in and Verify Sidebar Menu items",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -4481,7 +4633,7 @@
     }]
   }, {
     "id": "e0a107e7-e823-4087-af95-b29995a4282d",
-    "name": "Tenant User - log in and view Production Connection - FIXED 10-12-2019",
+    "name": "Tenant User 05 - log in and view Production Connection - FIXED 10-12-2019",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -4706,7 +4858,7 @@
     }]
   }, {
     "id": "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5",
-    "name": "Tenant Admin - Model History charts",
+    "name": "Tenant Admin 06 - Model History charts - Re-fixed 24-02-2020",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -4814,17 +4966,17 @@
       "value": ""
     }, {
       "id": "307fe444-0f6b-49e9-b853-5bed07f24b49",
-      "comment": "Click on the \"Model 1\" model name link.",
+      "comment": "Click on the \"Model 4 (Opp)\" model name link.",
       "command": "click",
-      "target": "linkText=Model 1",
+      "target": "linkText=Model 4 (Opp)",
       "targets": [
-        ["linkText=Model 1", "linkText"],
-        ["css=tr:nth-child(2) a", "css:finder"],
-        ["xpath=//a[contains(text(),'Model 1')]", "xpath:link"],
-        ["xpath=//table[@id='modelsTable']/tbody/tr[2]/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/models/004_2fc551398ac04d409e8f2ae7593c53ed')]", "xpath:href"],
-        ["xpath=//tr[2]/td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Model 1')]", "xpath:innerText"]
+        ["linkText=Model 4 (Opp)", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Model 4 (Opp)')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_56d5d761228d4535b032f7b6aba5f5f9')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Model 4 (Opp)')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
@@ -4864,9 +5016,16 @@
       ],
       "value": ""
     }, {
+      "id": "3490881a-cbd2-4006-8904-d6b64529b5b9",
+      "comment": "Verify the \"Delete\" button element is present.",
+      "command": "verifyElementPresent",
+      "target": "id=deleteModelButton",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "ad719d17-bfc0-41b4-bc2a-4b36942a1216",
       "comment": "Verify the \"Delete\" button element IS NOT PRESENT.",
-      "command": "verifyElementNotPresent",
+      "command": "//verifyElementNotPresent",
       "target": "id=deleteModelButton",
       "targets": [],
       "value": ""
@@ -4893,7 +5052,7 @@
       "value": ""
     }, {
       "id": "d2b68d06-5d87-489b-b602-c8373ece13ec",
-      "comment": "Verify the Model Accuracy chart's legend \"Training\" section is present above the chart.",
+      "comment": "Verify the Model Accuracy chart's legend \"Training\" text element is present above the chart.",
       "command": "verifyElementPresent",
       "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[2]/div/div/div/ul/li",
       "targets": [
@@ -4907,15 +5066,15 @@
       "id": "cb1b9716-469f-4608-9334-633843d36416",
       "comment": "Verify the Model Accuracy chart's Y axis label text \"Accuracy (%)\" exists.",
       "command": "verifyText",
-      "target": "css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer > .recharts-text > tspan",
+      "target": "css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan",
       "targets": [
-        ["css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer > .recharts-text > tspan", "css:finder"]
+        ["css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan", "css:finder"]
       ],
       "value": "Accuracy (%)"
     }, {
       "id": "464b11a6-0a02-43ba-8088-91cb4666b1ad",
       "comment": "Verify the Model Accuracy chart's X axis label text \"Cycles\" exists.",
-      "command": "//verifyText",
+      "command": "verifyText",
       "target": "css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan",
       "targets": [],
       "value": "Cycles"
@@ -4923,10 +5082,10 @@
       "id": "4399dccb-73a0-4651-b23d-a0facbd301d4",
       "comment": "Verify the Model Loss chart's heading exists",
       "command": "verifyText",
-      "target": "xpath=//h4[contains(.,'Model Loss')]",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[3]/h4",
       "targets": [
         ["css=.col-md-6:nth-child(3) > h4", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div[3]/div/div[3]/h4", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[3]/h4", "xpath:idRelative"],
         ["xpath=//div[3]/h4", "xpath:position"],
         ["xpath=//h4[contains(.,'Model Loss')]", "xpath:innerText"]
       ],
@@ -4942,7 +5101,7 @@
       "value": ""
     }, {
       "id": "582976c8-1998-44ea-b2b9-bc9e5d508faf",
-      "comment": "Verify the Model Loss chart's legend \"Training\" section is present above the chart.",
+      "comment": "Verify the Model Loss chart's legend \"Training\" text element is present above the chart.",
       "command": "verifyElementPresent",
       "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[3]/div/div/div/ul/li",
       "targets": [
@@ -4955,15 +5114,15 @@
       "id": "51524e61-260d-48c7-903b-ef8b809443b8",
       "comment": "Verify the Model Loss chart's Y axis label text \"Loss\" exists.",
       "command": "verifyText",
-      "target": "css=.col-md-6:nth-child(3) tspan",
+      "target": "css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan",
       "targets": [
-        ["css=.col-md-6:nth-child(3) tspan", "css:finder"]
+        ["css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan", "css:finder"]
       ],
       "value": "Loss"
     }, {
       "id": "12f41f2b-b680-439d-8844-4f197b200be3",
       "comment": "Verify the Model Loss chart's X axis label text \"Cycles\" exists.",
-      "command": "//verifyText",
+      "command": "verifyText",
       "target": "css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan",
       "targets": [],
       "value": "Cycles"
@@ -4992,6 +5151,13 @@
       ],
       "value": ""
     }, {
+      "id": "bb69403e-3ceb-4f1f-a9d5-31c0c0433f88",
+      "comment": "Wait for the \"Create Model\" button element to be visible.",
+      "command": "waitForElementVisible",
+      "target": "id=createModelButton",
+      "targets": [],
+      "value": "30000"
+    }, {
       "id": "3161c8c4-0392-4bfe-948f-87d1b90290cc",
       "comment": "Verify the \"Create Model\" button element is present.",
       "command": "verifyElementPresent",
@@ -5008,7 +5174,7 @@
     }]
   }, {
     "id": "b3258e1c-f266-4e39-9fa8-2584089946c7",
-    "name": "Tenant Admin - Security - View Security details inc API Key",
+    "name": "Tenant Admin 04 - Security - View Security details inc API Key - Fixed 24-02-2020",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -5154,14 +5320,14 @@
       "id": "e18aed82-0bb0-4189-8d2f-d44afcce274d",
       "comment": "Verify the Tenant ID \"001_325e3e4c6c58461295e929960a707d17\" exists",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div[2]/div/p",
+      "target": "xpath=//p[contains(.,'rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO')]",
       "targets": [
-        ["css=.active .mb-2:nth-child(1) > .col-6:nth-child(2) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div[2]/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'001_5102138f42c6453b8a115a0f31c508c9')]", "xpath:innerText"]
+        ["css=.mb-2:nth-child(5) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[5]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO')]", "xpath:innerText"]
       ],
-      "value": "001_325e3e4c6c58461295e929960a707d17"
+      "value": "rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO"
     }, {
       "id": "3f7b6f48-6d4f-4e77-ad2b-dbb9251ff116",
       "comment": "Verify the No. of Licences text is \"44\"",
@@ -5176,10 +5342,10 @@
     }, {
       "id": "6e8a4130-3280-461f-aac1-ca39baca100a",
       "comment": "Verify the API Key rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO exists",
-      "command": "//verifyText",
-      "target": "xpath=//p[contains(.,'rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO')]",
+      "command": "verifyText",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[5]/div/div/p",
       "targets": [],
-      "value": "rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO\\n\\n"
+      "value": "rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO"
     }, {
       "id": "ba073011-1d41-45d7-b819-775f9ac7c2e3",
       "comment": "Verify the \"Edit Policy\" button element exists. (The ID of the element is actually \"createUserButton\")",
@@ -5197,7 +5363,7 @@
     }]
   }, {
     "id": "dc31ee01-e671-4f3a-b6ae-b906dbc13a4a",
-    "name": "Tenant Admin - Salesforce - Log in and verify the Opportunity Sensai Component with/without Predictions - NOT WORKING 30-12-2019",
+    "name": "Tenant Admin Connections 02 - Salesforce - Log in and verify the Opportunity Sensai Component with/without Predictions - NOT WORKING 30-12-2019",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "Salesforce org, pre-release Sandbox URL: https://test.salesforce.com/",
@@ -5382,7 +5548,7 @@
     }]
   }, {
     "id": "c2fe18fe-bd16-49e8-b654-cf0b9d050029",
-    "name": "Tenant User - Snapshots - enable and disable - FIXED 05-12-2019",
+    "name": "Tenant User 10 - Snapshots - enable and disable - FIXED 05-12-2019",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -5572,7 +5738,7 @@
     }]
   }, {
     "id": "5f5f5494-9f1e-41f0-a286-ad29be8074d5",
-    "name": "Tenant User - Models - Deploy to External Connection - revert to tidy up after. FIXED 10-12-2019",
+    "name": "Tenant User 09 - Models - Deploy to External Connection - revert to tidy up after. FIXED 10-12-2019",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -5938,7 +6104,7 @@
     }]
   }, {
     "id": "5dd5b601-18b0-4233-bf56-6ef244d2f396",
-    "name": "Tenant User - Models - Clone model and verify data - then delete the Model to tidy up. FIXED 10-12-2019",
+    "name": "Tenant User 08 - Models - Clone model and verify data - then delete the Model to tidy up. FIXED 10-12-2019",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -6010,16 +6176,17 @@
     }, {
       "id": "465bf082-39af-4733-9651-96e9f77c8267",
       "comment": "Wait for the sidebar toggle button to be available.",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "id=sidebarToggleButton",
-      "targets": [
-        ["id=sidebarToggleButton", "id"],
-        ["css=#sidebarToggleButton", "css:finder"],
-        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"]
-      ],
+      "targets": [],
       "value": "120000"
+    }, {
+      "id": "228e6585-3f62-4e81-a9ea-f5e208e278c7",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 5000);",
+      "targets": [],
+      "value": ""
     }, {
       "id": "a54d583c-417f-4136-85d4-6ad3fbb8d542",
       "comment": "Click on the sidebar toggle button.",
@@ -6330,21 +6497,21 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["50c7ee26-a12f-4fa4-9dc1-1bbac663a1a8", "bbd846d2-93e8-40c7-9d16-0a4e9ad03de2", "d86b1f6f-8166-4a14-a638-6523245cc92d", "04086720-9be8-457d-9cba-916cf041326e", "25a8c0a8-f8c7-40f3-99fe-27f1355a5f6d"]
+    "tests": ["d86b1f6f-8166-4a14-a638-6523245cc92d", "25a8c0a8-f8c7-40f3-99fe-27f1355a5f6d", "50c7ee26-a12f-4fa4-9dc1-1bbac663a1a8", "04086720-9be8-457d-9cba-916cf041326e", "bbd846d2-93e8-40c7-9d16-0a4e9ad03de2"]
   }, {
     "id": "ed7bb0b5-f2a1-4643-95dd-aa0b8ae7606c",
     "name": "Tenant Admin Test Suite",
     "persistSession": false,
     "parallel": false,
     "timeout": 60000,
-    "tests": ["295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25", "b3258e1c-f266-4e39-9fa8-2584089946c7", "04614dbc-f134-4488-a951-111b3ef83f06", "c9090129-12de-4804-aa51-7f0dbe81f7d0", "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5", "15faae31-5501-4179-8ad5-f584e3e6d393"]
+    "tests": ["295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25", "04614dbc-f134-4488-a951-111b3ef83f06", "15faae31-5501-4179-8ad5-f584e3e6d393", "b3258e1c-f266-4e39-9fa8-2584089946c7", "c9090129-12de-4804-aa51-7f0dbe81f7d0", "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5"]
   }, {
     "id": "9beaa2a2-3b73-46fa-bc5b-0bb36a6a6f8c",
     "name": "Tenant User Test Suite",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["8d8039c6-1d43-4dd6-858f-fd4b41a7d274", "dba0a97c-d3d3-4404-9166-c83da8925147", "3e901cc4-d1c3-4a46-90a8-26b328f8a0a0", "306cb67e-ebe8-4c23-a21a-bc61f44d6256", "4838c76f-afa6-4a3a-9525-eb3dcc61ccfc", "4c34d032-2867-490a-9c6b-49f2957c953c", "5dd5b601-18b0-4233-bf56-6ef244d2f396", "5f5f5494-9f1e-41f0-a286-ad29be8074d5", "c2fe18fe-bd16-49e8-b654-cf0b9d050029", "e0a107e7-e823-4087-af95-b29995a4282d"]
+    "tests": ["4c34d032-2867-490a-9c6b-49f2957c953c", "4838c76f-afa6-4a3a-9525-eb3dcc61ccfc", "306cb67e-ebe8-4c23-a21a-bc61f44d6256", "3e901cc4-d1c3-4a46-90a8-26b328f8a0a0", "e0a107e7-e823-4087-af95-b29995a4282d", "dba0a97c-d3d3-4404-9166-c83da8925147", "8d8039c6-1d43-4dd6-858f-fd4b41a7d274", "5dd5b601-18b0-4233-bf56-6ef244d2f396", "5f5f5494-9f1e-41f0-a286-ad29be8074d5", "c2fe18fe-bd16-49e8-b654-cf0b9d050029"]
   }, {
     "id": "8d28c613-1379-4b4c-8a8b-5461cee6e134",
     "name": "Tenant Admin - Connections",
@@ -6358,7 +6525,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["15faae31-5501-4179-8ad5-f584e3e6d393"]
+    "tests": ["5dd5b601-18b0-4233-bf56-6ef244d2f396"]
   }],
   "urls": ["http://sensai-webapp-787509357522-dev.s3-website-eu-west-1.amazonaws.com/"],
   "plugins": []
