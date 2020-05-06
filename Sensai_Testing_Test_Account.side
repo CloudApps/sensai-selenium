@@ -5,7 +5,7 @@
   "url": "https://test.cloudapps.dev",
   "tests": [{
     "id": "dba0a97c-d3d3-4404-9166-c83da8925147",
-    "name": "Tenant User 06 - Files - View and verify tabs and fields for my test Uploaded file. RENAMED FROM DATASETS.",
+    "name": "OK - Tenant User 06 - Files - View and verify tabs and fields for my test Uploaded file. RENAMED FROM DATASETS.",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -9832,7 +9832,7 @@
     }]
   }, {
     "id": "5a1fb967-f1d3-49a1-9c9b-834dc509f60f",
-    "name": "Tenant User 06b - Files - Combine files - NEW IN MAY 2020",
+    "name": "OK - Tenant User 06b - Files - Combine files - NEW IN MAY 2020",
     "commands": [{
       "id": "ea2a24bc-82f6-4ff0-8575-66f911c0431a",
       "comment": "",
