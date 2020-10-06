@@ -62,15 +62,10 @@
     }, {
       "id": "613bcf5b-5df9-4711-886c-a8b425439a46",
       "comment": "",
-      "command": "waitForElementVisible",
-      "target": "css=.logoContainer > .logo",
-      "targets": [
-        ["css=.logoContainer > .logo", "css:finder"],
-        ["xpath=(//img[@alt='Sensai'])[2]", "xpath:img"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/img", "xpath:idRelative"],
-        ["xpath=//div/div/div/img", "xpath:position"]
-      ],
-      "value": "30000"
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
     }, {
       "id": "6294aa56-55d1-4a81-a7de-1e4a39282d9e",
       "comment": "",
