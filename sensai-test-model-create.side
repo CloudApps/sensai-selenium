@@ -473,7 +473,7 @@
       "id": "fcf29420-1bee-47ed-baa7-6edad010b94b",
       "comment": "",
       "command": "pause",
-      "target": "360000",
+      "target": "300000",
       "targets": [],
       "value": ""
     }, {
