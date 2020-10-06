@@ -442,22 +442,17 @@
       ],
       "value": ""
     }, {
-      "id": "1e29ddb5-0f76-4078-a53d-c6183f6dbf6e",
+      "id": "59deef57-a5ce-43cc-8243-d77b9c13ca3b",
       "comment": "",
-      "command": "waitForText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'TRAINING')]", "xpath:innerText"]
-      ],
-      "value": "CREATED"
+      "command": "pause",
+      "target": "15000",
+      "targets": [],
+      "value": ""
     }, {
       "id": "b4f6d8ba-6347-4430-88b8-ed8dbf293890",
       "comment": "",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p",
+      "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
     }, {
@@ -484,21 +479,14 @@
     }, {
       "id": "c7432211-f16c-4b4e-bf34-3e19688d8703",
       "comment": "",
-      "command": "waitForText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'TRAINED')]",
       "targets": [
         ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'TRAINING')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'TRAINING_REQUESTED')]", "xpath:innerText"]
       ],
-      "value": "TRAINED"
-    }, {
-      "id": "fbfbf0b0-2a8d-46ea-af96-2338b8fb3d12",
-      "comment": "",
-      "command": "assertText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p",
-      "targets": [],
       "value": "TRAINED"
     }]
   }],
