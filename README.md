@@ -1,3 +1,5 @@
+http://63.34.40.219/buildStatus/icon?job=SensaiSelenium
+
 # sensai-selenium
 Sensai Automated Tests
 
