@@ -495,7 +495,7 @@
     "name": "Default Suite",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
