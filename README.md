@@ -1,7 +1,6 @@
-http://63.34.40.219/buildStatus/icon?job=SensaiSelenium
+#### Build Status [![Build Status](http://63.34.40.219/buildStatus/icon?job=SensaiSelenium)
 
-# sensai-selenium
-Sensai Automated Tests
+# Sensai Automated Testing
 
 This repo contains the Selenium SIDE files that are used by Jenkins to perform automated testing agianst the Sensai Test Account.
 
