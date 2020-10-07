@@ -1,4 +1,4 @@
-#### Build Status ![Build Status](http://63.34.40.219/buildStatus/icon?job=SensaiSelenium)
+#### SensaiSelenium ![Build Status](http://63.34.40.219/buildStatus/icon?job=SensaiSelenium)
 
 # Sensai Automated Testing
 
