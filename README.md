@@ -11,7 +11,9 @@ When changes are made locally to the Selenium SIDE file, they need to be uploade
 Once this has been completed, the Jenkins project 'SensaiSelenium' can be built which will clone this repo and execute the selenium-side-runner on Jenkins using the sensai-test-model-create.side file.
 
 To initiate the build, the following must be run from the command line:
-sudo curl -X POST http://<github_user>:11a3417c68f5cb7ae9ca5b42e86addd18c@http://63.34.40.219/job/selenium/build?token=0oWERtBkrycGJewLExsKpPab7aDIlJcx
+sudo curl -X POST http://username:api_token@http://63.34.40.219/job/selenium/build?token=0oWERtBkrycGJewLExsKpPab7aDIlJcx
+
+Replace "username" with your Github username and "api_token" with your Jenkins api token created for your user (Click on name in top right, Configure > API Token to create one).
 
 Alternatively, you can login to Jenkins (http://63.34.40.219/job/SensaiSelenium/) and click 'Build Now'.
 
