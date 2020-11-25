@@ -5,7 +5,7 @@
   "url": "https://test.cloudapps.dev",
   "tests": [{
     "id": "007387ed-e7e9-4bf3-8ee2-84c84f050304",
-    "name": "sumo-model",
+    "name": "001_sumo-model",
     "commands": [{
       "id": "5dfe19b1-5e77-4dd6-b345-df8100f9b2fb",
       "comment": "",
@@ -14,15 +14,42 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "d56b7fd6-4616-4d4d-a643-2ddd023d8088",
+      "id": "2a0ae51a-9997-4afc-8576-256be177d8b0",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "137feabf-981b-4be8-8877-ed2ca27825c9",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d88a415-36c3-461e-ab4f-5e26eda41d1a",
       "comment": "",
-      "command": "setWindowSize",
-      "target": "1275x1057",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "501d87f8-5bee-48a5-a43b-b804182a6eb8",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
       "id": "c8862f18-5c89-4c5f-beae-1bb65f9dc75d",
-      "comment": "",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
       "command": "type",
       "target": "id=username",
       "targets": [
@@ -32,10 +59,10 @@
         ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "djsunderland@sensai.test.pre"
+      "value": "automated_testing@sensai.test"
     }, {
       "id": "82e6dbd3-3832-4754-948b-3d42e3ade389",
-      "comment": "",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
       "command": "type",
       "target": "id=password",
       "targets": [
@@ -45,10 +72,10 @@
         ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "Success19"
+      "value": "Automated123$"
     }, {
       "id": "f12440f0-c528-457f-a7ea-3526e64a2c00",
-      "comment": "",
+      "comment": "Press the \"Enter\" key to log in.",
       "command": "sendKeys",
       "target": "id=password",
       "targets": [
@@ -68,7 +95,7 @@
       "value": ""
     }, {
       "id": "6294aa56-55d1-4a81-a7de-1e4a39282d9e",
-      "comment": "",
+      "comment": "Click on the sidebarToggleButton.",
       "command": "click",
       "target": "css=path",
       "targets": [
@@ -77,7 +104,7 @@
       "value": ""
     }, {
       "id": "7bccc65f-2b8b-4732-9161-6bae55c568c7",
-      "comment": "",
+      "comment": "Click on the Models sidebar link.",
       "command": "click",
       "target": "css=.modelsSidebarLink",
       "targets": [
@@ -88,7 +115,7 @@
       "value": ""
     }, {
       "id": "3b8b5a80-74f2-438a-824f-092a8633522b",
-      "comment": "",
+      "comment": "Click the \"Create Model\" button.",
       "command": "click",
       "target": "id=createModelButton",
       "targets": [
@@ -101,47 +128,22 @@
       ],
       "value": ""
     }, {
-      "id": "eb7725e0-7265-4b7f-a3b6-00b20ca8070a",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "id=createModelButton",
-      "targets": [
-        ["id=createModelButton", "id"],
-        ["css=#createModelButton", "css:finder"],
-        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
-      ],
-      "value": ""
+      "id": "396a7192-64fe-4830-8299-ba8ec90aacc3",
+      "comment": "Set the \"CurrentDateTime\" variable as the current datetime value.",
+      "command": "executeScript",
+      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return dateTime;",
+      "targets": [],
+      "value": "CurrentDateTime"
     }, {
-      "id": "df21414e-411c-49fd-8f9e-8ca9e4d41f2d",
+      "id": "2a1fb230-f030-4b4b-a537-4db44533d1f4",
       "comment": "",
-      "command": "mouseOut",
-      "target": "id=createModelButton",
-      "targets": [
-        ["id=createModelButton", "id"],
-        ["css=#createModelButton", "css:finder"],
-        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "f407a1d5-89cf-4313-9d3b-bf4d8648b27d",
-      "comment": "",
-      "command": "click",
-      "target": "css=.form-group > #name",
-      "targets": [
-        ["css=.form-group > #name", "css:finder"],
-        ["xpath=//input[@id='name']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
+      "command": "echo",
+      "target": "${CurrentDateTime}",
+      "targets": [],
       "value": ""
     }, {
       "id": "546f65e7-aeb8-45de-af47-79585007ffc2",
-      "comment": "",
+      "comment": "Enter the new Model's name in the Name field.",
       "command": "type",
       "target": "css=.form-group > #name",
       "targets": [
@@ -149,7 +151,21 @@
         ["xpath=//input[@id='name']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "SuMo - Automated"
+      "value": "SuMo - Automated ${CurrentDateTime}"
+    }, {
+      "id": "daf3e5d0-ef22-42d3-90dc-601400158098",
+      "comment": "Store the new model's name in the variable \"new_model_name\".",
+      "command": "storeValue",
+      "target": "css=.form-group > #name",
+      "targets": [],
+      "value": "new_model_name"
+    }, {
+      "id": "9c7220d6-f748-4e2c-b30e-343f55f71f3d",
+      "comment": "",
+      "command": "echo",
+      "target": "${new_model_name}",
+      "targets": [],
+      "value": ""
     }, {
       "id": "a24b3126-0ed9-41ea-9bf8-4526a4a7652d",
       "comment": "",
@@ -158,98 +174,48 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "02240e96-293b-4af6-a052-c70e7fb46fab",
-      "comment": "",
-      "command": "click",
-      "target": "id=datasetId",
-      "targets": [
-        ["id=datasetId", "id"],
-        ["css=#datasetId", "css:finder"],
-        ["xpath=//select[@id='datasetId']", "xpath:attributes"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "962a1496-bc8f-4060-aece-dd0a5057e44d",
-      "comment": "",
+      "comment": "Select \"SuMo Dataset\" dataset from the picklist.",
       "command": "select",
       "target": "id=datasetId",
       "targets": [],
       "value": "label=SuMo Dataset"
     }, {
-      "id": "e433becf-359f-428c-923e-23c4e7af9ede",
-      "comment": "",
-      "command": "click",
-      "target": "id=primaryEntity",
+      "id": "696688f5-e71e-41f0-ae4c-65f6a9c6feb2",
+      "comment": "Select the \"SuMo - Sales\" architecture type.",
+      "command": "select",
+      "target": "id=type",
       "targets": [
-        ["id=primaryEntity", "id"],
-        ["css=#primaryEntity", "css:finder"],
-        ["xpath=//select[@id='primaryEntity']", "xpath:attributes"],
-        ["xpath=//div[4]/div/select", "xpath:position"]
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
       ],
-      "value": ""
+      "value": "SuMo - Sales"
     }, {
       "id": "564d8e1f-a8c6-4d4a-8d8b-4e586e9c0f4b",
       "comment": "",
-      "command": "select",
+      "command": "//select",
       "target": "id=primaryEntity",
       "targets": [],
       "value": "label=Opportunities"
     }, {
-      "id": "984188e9-31e2-4244-b281-9c6cc4e3daf1",
-      "comment": "",
-      "command": "click",
-      "target": "css=.rbt-input-main",
-      "targets": [
-        ["css=.rbt-input-main", "css:finder"],
-        ["xpath=//input[@value='']", "xpath:attributes"],
-        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "032e0e12-077c-4558-8c19-18ef851e0e52",
-      "comment": "",
-      "command": "//click",
-      "target": "css=.rbt-highlight-text",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "db4e1c68-0ec4-484c-881e-8f9ea5ae5690",
       "comment": "",
-      "command": "type",
+      "command": "//type",
       "target": "css=.rbt-input-main",
-      "targets": [
-        ["css=.rbt-input-main", "css:finder"],
-        ["xpath=//input[@value='ISWON']", "xpath:attributes"],
-        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "ISWON"
     }, {
       "id": "84b28a90-7279-47b6-901e-0d36b26fc0e5",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "xpath=//li[@id='rbt-menu-item-0']/a/span/mark",
-      "targets": [
-        ["css=.rbt-highlight-text", "css:finder"],
-        ["xpath=//li[@id='rbt-menu-item-0']/a/span/mark", "xpath:idRelative"],
-        ["xpath=//mark", "xpath:position"],
-        ["xpath=//mark[contains(.,'ISWON')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "196523f6-4bc3-47c1-9054-de3decd4aa3d",
-      "comment": "",
-      "command": "click",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "4accc9ae-f92a-4f62-9f35-2986c6522cc1",
-      "comment": "",
+      "comment": "Enter \"type\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
       "targets": [
@@ -260,7 +226,7 @@
       "value": "type"
     }, {
       "id": "3ebd1c07-4560-4e8a-9ea2-7fec2d065c63",
-      "comment": "",
+      "comment": "Click the \"TYPE\" checkbox to select it. (OPPORTUNITY.TYPE)",
       "command": "click",
       "target": "id=checkbox-OPPORTUNITY.TYPE",
       "targets": [
@@ -271,41 +237,8 @@
       ],
       "value": ""
     }, {
-      "id": "c4314fc5-32b2-4499-b390-e3091a98261b",
-      "comment": "",
-      "command": "click",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a2ccf69d-8b27-4a08-92cc-0f34a3cd9b24",
-      "comment": "",
-      "command": "click",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "59eb9baf-a7a2-4ca9-805f-3064c43ef9d5",
-      "comment": "",
-      "command": "doubleClick",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "d2f98874-aa9d-48b6-b12f-f1b1400e5aac",
-      "comment": "",
+      "comment": "Enter \"leadsource\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
       "targets": [
@@ -316,7 +249,7 @@
       "value": "leadsource"
     }, {
       "id": "c8b22798-6e1e-4e7b-83b3-3be9f9b2e9e0",
-      "comment": "",
+      "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
       "command": "click",
       "target": "id=checkbox-OPPORTUNITY.LEADSOURCE",
       "targets": [
@@ -328,7 +261,7 @@
       "value": ""
     }, {
       "id": "3bd769ae-91da-4649-a232-e62131efc7ce",
-      "comment": "",
+      "comment": "Click on the \"Observations\" tab link.",
       "command": "click",
       "target": "linkText=Observations",
       "targets": [
@@ -338,50 +271,11 @@
         ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
         ["xpath=//div/nav/a[2]", "xpath:position"],
         ["xpath=//a[contains(.,'Observations')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "831bc4c4-d95d-47be-91f6-41d383b01704",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "linkText=Observations",
-      "targets": [
-        ["linkText=Observations", "linkText"],
-        ["css=.nav-item:nth-child(2)", "css:finder"],
-        ["xpath=//a[contains(text(),'Observations')]", "xpath:link"],
-        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
-        ["xpath=//div/nav/a[2]", "xpath:position"],
-        ["xpath=//a[contains(.,'Observations')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "a51adcf9-85c5-4a08-907b-68c4260ed03d",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "linkText=Observations",
-      "targets": [
-        ["linkText=Observations", "linkText"],
-        ["css=.nav-item:nth-child(2)", "css:finder"],
-        ["xpath=//a[contains(text(),'Observations')]", "xpath:link"],
-        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
-        ["xpath=//div/nav/a[2]", "xpath:position"],
-        ["xpath=//a[contains(.,'Observations')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "bcc1efa3-eeb7-41d3-829e-fc99b70db59a",
-      "comment": "",
-      "command": "click",
-      "target": "css=.active .kn-search__input___2tyxf",
-      "targets": [
-        ["css=.active .kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
-        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "24831a42-32c6-4a07-b186-66decf101e9f",
-      "comment": "",
+      "comment": "Enter \"behaviour\" in the search box.",
       "command": "type",
       "target": "css=.active .kn-search__input___2tyxf",
       "targets": [
@@ -392,7 +286,7 @@
       "value": "behaviour"
     }, {
       "id": "a293888f-101a-4dce-939a-c67dba93360a",
-      "comment": "",
+      "comment": "Click the \"SUCCESS__BEHAVIOUR_OBSERVATION__C\" checkbox to select it.",
       "command": "click",
       "target": "id=checkbox-SUCCESS__BEHAVIOUR_OBSERVATION__C.SUCCESS__BASE_BEHAVIOUR__C",
       "targets": [
@@ -404,7 +298,7 @@
       "value": ""
     }, {
       "id": "4094af02-aece-4c3a-b3ac-ebb84c2b0eed",
-      "comment": "",
+      "comment": "Click the \"SUCCESS__BASE_BEHAVIOUR__R.NAME\" checkbox to select it.",
       "command": "click",
       "target": "id=checkbox-SUCCESS__BEHAVIOUR_OBSERVATION__C.SUCCESS__BASE_BEHAVIOUR__R.NAME",
       "targets": [
@@ -413,10 +307,10 @@
         ["xpath=//input[@id='checkbox-SUCCESS__BEHAVIOUR_OBSERVATION__C.SUCCESS__BASE_BEHAVIOUR__R.NAME']", "xpath:attributes"],
         ["xpath=//div[2]/div/span/span/input", "xpath:position"]
       ],
-      "value": ""
+      "value": "SUCCESS__BASE_BEHAVIOUR__R.NAME"
     }, {
       "id": "a0f125eb-8907-4516-b9ad-2bd220485ffd",
-      "comment": "",
+      "comment": "Click the \"Create\" button in the Create Model modal.",
       "command": "click",
       "target": "id=createModelModalButton",
       "targets": [
@@ -428,9 +322,9 @@
       "value": ""
     }, {
       "id": "90123beb-365c-4b27-a60d-a2d22b19eb19",
-      "comment": "",
+      "comment": "Click the new model's link on the \"All Models\" page.",
       "command": "click",
-      "target": "linkText=SuMo - Automated",
+      "target": "linkText=${new_model_name}",
       "targets": [
         ["linkText=SuMo - Automated", "linkText"],
         ["css=tr:nth-child(1) a", "css:finder"],
@@ -450,14 +344,14 @@
       "value": ""
     }, {
       "id": "b4f6d8ba-6347-4430-88b8-ed8dbf293890",
-      "comment": "",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
       "command": "assertText",
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
     }, {
       "id": "f4936390-f61b-4723-8a6d-007fc71806d5",
-      "comment": "",
+      "comment": "Click the \"Train Model\" button.",
       "command": "click",
       "target": "id=trainModelButton",
       "targets": [
@@ -470,15 +364,2933 @@
       ],
       "value": ""
     }, {
-      "id": "fcf29420-1bee-47ed-baa7-6edad010b94b",
+      "id": "3ee2e109-e594-4f4a-b8c5-6e090ca4de1f",
       "comment": "",
       "command": "pause",
-      "target": "300000",
+      "target": "360000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4d3fc41-e59e-4687-8f7f-e39fbaaf1cef",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
     }, {
       "id": "c7432211-f16c-4b4e-bf34-3e19688d8703",
+      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'TRAINED')]",
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'TRAINING_REQUESTED')]", "xpath:innerText"]
+      ],
+      "value": "TRAINED"
+    }]
+  }, {
+    "id": "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac",
+    "name": "002_opportunity-model",
+    "commands": [{
+      "id": "0600dd21-954f-4910-9e05-e63dfd836cbe",
       "comment": "",
+      "command": "open",
+      "target": "/login?redirect=/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d2bb8a4-e689-410c-813a-25f6829ca429",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "035e2851-ea7f-4bfb-989f-c5fa58c62f51",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f216733-35c2-49bc-a942-c5c4b0dc181b",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5012dec9-9602-4cce-9280-acb49d3f2370",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d44578b-a59d-49d0-ba9e-07bb5a8dfebb",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "automated_testing@sensai.test"
+    }, {
+      "id": "55cd4bd5-63cb-42cb-8603-039b8d0d34ef",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Automated123$"
+    }, {
+      "id": "fd1ea966-6f39-41d4-84af-e7fcb5b8ca25",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "78beff02-3761-4f87-93e1-79e37c9b82cd",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c619c09e-fad1-496b-801b-10297b83d72b",
+      "comment": "Click on the sidebarToggleButton.",
+      "command": "click",
+      "target": "css=path",
+      "targets": [
+        ["css=path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "59ffc8eb-7338-4d70-8703-93a42f425159",
+      "comment": "Click on the Models sidebar link.",
+      "command": "click",
+      "target": "css=.modelsSidebarLink",
+      "targets": [
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34258a38-d11d-44f8-bd40-09cf0726a411",
+      "comment": "Click the \"Create Model\" button.",
+      "command": "click",
+      "target": "id=createModelButton",
+      "targets": [
+        ["id=createModelButton", "id"],
+        ["css=#createModelButton", "css:finder"],
+        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "626e6cb9-ba3b-45cc-8c1b-0814096a9323",
+      "comment": "Set the \"CurrentDateTime\" variable as the current datetime value.",
+      "command": "executeScript",
+      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return dateTime;",
+      "targets": [],
+      "value": "CurrentDateTime"
+    }, {
+      "id": "7530b77b-144c-42e2-b9b1-c1cbc7c717b6",
+      "comment": "",
+      "command": "echo",
+      "target": "${CurrentDateTime}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e5235d5-238f-4836-a569-b4986a524f3d",
+      "comment": "Enter the new Model's name in the Name field.",
+      "command": "type",
+      "target": "css=.form-group > #name",
+      "targets": [
+        ["css=.form-group > #name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Opportunity - Automated ${CurrentDateTime}"
+    }, {
+      "id": "f6c9d415-b7e8-4223-bdcb-1361d0531aa2",
+      "comment": "Store the new model's name in the variable \"new_model_name\".",
+      "command": "storeValue",
+      "target": "css=.form-group > #name",
+      "targets": [],
+      "value": "new_model_name"
+    }, {
+      "id": "e3573f7b-3014-4f8c-b1f6-c27f0aa9f09f",
+      "comment": "",
+      "command": "echo",
+      "target": "${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b001f27e-9122-4525-94d8-e20eb54f41f9",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf4203f4-e4e2-4636-be45-2b99480580ce",
+      "comment": "Select \"Opportunity Dataset\" dataset from the picklist.",
+      "command": "select",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "label=Opportunity Dataset"
+    }, {
+      "id": "d54f425b-3854-4331-b3db-d4de63f7b9ae",
+      "comment": "Select the \"SFDC - Winning Opportunity\" architecture type.",
+      "command": "select",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": "SFDC - Winning Opportunity"
+    }, {
+      "id": "f1d87389-acd7-4dd4-b1cc-b86877a00fd5",
+      "comment": "",
+      "command": "//select",
+      "target": "id=primaryEntity",
+      "targets": [],
+      "value": "label=Opportunities"
+    }, {
+      "id": "30382574-415b-47eb-a9df-86beae17d21e",
+      "comment": "",
+      "command": "//type",
+      "target": "css=.rbt-input-main",
+      "targets": [],
+      "value": "ISWON"
+    }, {
+      "id": "655a9d8c-9d2c-4904-a3df-3106cde2d6fe",
+      "comment": "",
+      "command": "//click",
+      "target": "xpath=//li[@id='rbt-menu-item-0']/a/span/mark",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14f319fc-b10d-44a2-a695-487bc3d60f79",
+      "comment": "Enter \"type\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "type"
+    }, {
+      "id": "6ab64cab-3006-4ded-99cf-885d2187aff7",
+      "comment": "Click the \"TYPE\" checkbox to select it. (OPPORTUNITY.TYPE)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.TYPE",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.TYPE", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.TYPE", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.TYPE']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e7d11f3-6568-438c-b622-6def9149a0e4",
+      "comment": "Enter \"leadsource\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "leadsource"
+    }, {
+      "id": "b8e9e2fb-2d76-4fdc-b880-86b9b4f2da50",
+      "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.LEADSOURCE",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.LEADSOURCE", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.LEADSOURCE", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.LEADSOURCE']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b69ce75a-54ce-4fa8-bc6e-72f03aca7a89",
+      "comment": "Click the \"Create\" button in the Create Model modal.",
+      "command": "click",
+      "target": "id=createModelModalButton",
+      "targets": [
+        ["id=createModelModalButton", "id"],
+        ["css=#createModelModalButton", "css:finder"],
+        ["xpath=//button[@id='createModelModalButton']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a1228f8-9ac0-435a-948f-ed815c8b7114",
+      "comment": "Click the new model's link on the \"All Models\" page.",
+      "command": "click",
+      "target": "linkText=${new_model_name}",
+      "targets": [
+        ["linkText=SuMo - Automated", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "88b779e1-46d8-4550-93cf-32956cb5dd49",
+      "comment": "",
+      "command": "pause",
+      "target": "15000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5e3cff70-18cd-44b6-9661-8a3bf647ef22",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
+      "id": "b28b8832-fd44-420a-964e-f7bd5e00a863",
+      "comment": "Click the \"Train Model\" button.",
+      "command": "click",
+      "target": "id=trainModelButton",
+      "targets": [
+        ["id=trainModelButton", "id"],
+        ["css=#trainModelButton", "css:finder"],
+        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "484ac977-6977-43d7-b529-3e767254a6ee",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3753694-7d47-4673-ba39-f0e41c8395e4",
+      "comment": "",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26125783-64db-490b-aa77-c40f9eb2f8ad",
+      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//div[2]/div/div/p",
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'TRAINED')]", "xpath:innerText"]
+      ],
+      "value": "TRAINED"
+    }]
+  }, {
+    "id": "6f3ddb29-cf01-427c-a73f-4b4f8e304204",
+    "name": "003_opportunity-and-account-model",
+    "commands": [{
+      "id": "01850eb7-35d6-48e7-9f65-6b57f55be22d",
+      "comment": "",
+      "command": "open",
+      "target": "/login?redirect=/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "872f1e5c-13cb-483c-8199-6a9be4774eab",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31e71014-d1dd-4dec-a6b6-47880e2712cb",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4357eb24-16f1-45ed-b445-1b114bb42268",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08c3a104-857b-4ff0-91a8-baef67083b02",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3044d53d-f4d8-4ea2-aeef-8264e2ff05ca",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "automated_testing@sensai.test"
+    }, {
+      "id": "6314b511-4eb6-4af2-b999-001db537e8de",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Automated123$"
+    }, {
+      "id": "9b2eabe7-d440-4d6f-9f8b-5a390e77b774",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "470fc8de-16e8-4021-b38f-686b8fddcc74",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "62dc7914-477c-4d9f-b08f-4db94d060efe",
+      "comment": "Click on the sidebarToggleButton.",
+      "command": "click",
+      "target": "css=path",
+      "targets": [
+        ["css=path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa2d1ec0-7a49-458a-897a-092707a3cf88",
+      "comment": "Click on the Models sidebar link.",
+      "command": "click",
+      "target": "css=.modelsSidebarLink",
+      "targets": [
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cc415a6-5cc6-4b41-be31-b9740e124fce",
+      "comment": "Click the \"Create Model\" button.",
+      "command": "click",
+      "target": "id=createModelButton",
+      "targets": [
+        ["id=createModelButton", "id"],
+        ["css=#createModelButton", "css:finder"],
+        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "760926e9-1c0d-4e82-b08a-9f65335afdd3",
+      "comment": "Set the \"CurrentDateTime\" variable as the current datetime value.",
+      "command": "executeScript",
+      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return dateTime;",
+      "targets": [],
+      "value": "CurrentDateTime"
+    }, {
+      "id": "3fe8f6c8-26d5-42b7-84c3-dba97d1b4755",
+      "comment": "",
+      "command": "echo",
+      "target": "${CurrentDateTime}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd01b0fa-093a-438f-b40b-92f61640ea09",
+      "comment": "Enter the new Model's name in the Name field.",
+      "command": "type",
+      "target": "css=.form-group > #name",
+      "targets": [
+        ["css=.form-group > #name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Opp & Account - Automated ${CurrentDateTime}"
+    }, {
+      "id": "b732a560-1f92-41fc-b217-9b428a0aa682",
+      "comment": "Store the new model's name in the variable \"new_model_name\".",
+      "command": "storeValue",
+      "target": "css=.form-group > #name",
+      "targets": [],
+      "value": "new_model_name"
+    }, {
+      "id": "d8cffcea-86e3-4322-8f99-3842ef58ae10",
+      "comment": "",
+      "command": "echo",
+      "target": "${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "799b60f7-6e02-482b-b6c7-fe7ce702cd6a",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc26313c-1c22-4e11-9f29-58ead3754e43",
+      "comment": "Select \"Opportunity & Account Dataset\" dataset from the picklist.",
+      "command": "select",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "label=Opportunity & Account Dataset"
+    }, {
+      "id": "7815e454-0da4-43c3-a302-74f7c8c6d6c8",
+      "comment": "Select the \"SFDC - Winning Opportunity\" architecture type.",
+      "command": "select",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": "SFDC - Winning Opportunity"
+    }, {
+      "id": "371a423f-8fa7-456b-b96d-8cc7adbb5798",
+      "comment": "",
+      "command": "//select",
+      "target": "id=primaryEntity",
+      "targets": [],
+      "value": "label=Opportunities"
+    }, {
+      "id": "f00bfa76-abde-442d-9e05-d73936e2b34d",
+      "comment": "",
+      "command": "//type",
+      "target": "css=.rbt-input-main",
+      "targets": [],
+      "value": "ISWON"
+    }, {
+      "id": "c7266daa-0dc0-456f-ae63-2083abeb5985",
+      "comment": "",
+      "command": "//click",
+      "target": "xpath=//li[@id='rbt-menu-item-0']/a/span/mark",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0924a09b-4655-45ff-b7ed-4db971d8a3f2",
+      "comment": "Enter \"type\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "type"
+    }, {
+      "id": "bdcdc027-bb7a-4aa8-8a8a-1407bc22b509",
+      "comment": "Click the \"TYPE\" checkbox to select it. (OPPORTUNITY.TYPE)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.TYPE",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.TYPE", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.TYPE", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.TYPE']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f3a555e-38f4-4129-8dc2-3b855f7cca84",
+      "comment": "Enter \"leadsource\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "leadsource"
+    }, {
+      "id": "b56ec5c8-c966-487a-896a-c3460df49d0f",
+      "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.LEADSOURCE",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.LEADSOURCE", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.LEADSOURCE", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.LEADSOURCE']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d1074e7-3a4f-4f8d-a4ad-5289c5ab0b37",
+      "comment": "Click on the \"Accounts\" tab",
+      "command": "click",
+      "target": "linkText=Accounts",
+      "targets": [
+        ["linkText=Accounts", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Accounts')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div/nav/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Accounts')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1b9712c-27d3-487d-a93e-4106ae47182c",
+      "comment": "Start typing \"reg\" in the Search box.",
+      "command": "type",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [
+        ["css=.active .kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
+        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "reg"
+    }, {
+      "id": "7588bdb2-22dd-4a00-abde-fe6ca18a54a2",
+      "comment": "Click on the \"Region__c\" checkbox (ACCOUNT.Region__c)",
+      "command": "click",
+      "target": "id=checkbox-ACCOUNT.Region__c",
+      "targets": [
+        ["id=checkbox-ACCOUNT.Region__c", "id"],
+        ["css=#checkbox-ACCOUNT\\.Region__c", "css:finder"],
+        ["xpath=//input[@id='checkbox-ACCOUNT.Region__c']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ca41db0-9f21-4f27-b754-eac868c2417e",
+      "comment": "Click the \"Create\" button in the Create Model modal.",
+      "command": "click",
+      "target": "id=createModelModalButton",
+      "targets": [
+        ["id=createModelModalButton", "id"],
+        ["css=#createModelModalButton", "css:finder"],
+        ["xpath=//button[@id='createModelModalButton']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b72e086-daa4-4124-bcbb-34ccef002b7f",
+      "comment": "Click the new model's link on the \"All Models\" page.",
+      "command": "click",
+      "target": "linkText=${new_model_name}",
+      "targets": [
+        ["linkText=SuMo - Automated", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7f108ca-5fda-4669-ab94-051b9873edbd",
+      "comment": "",
+      "command": "pause",
+      "target": "15000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f41d7569-d24f-48e2-a6ee-1696fa3c0fbb",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
+      "id": "ee32a95b-2e21-478e-b706-47835039b9d5",
+      "comment": "Click the \"Train Model\" button.",
+      "command": "click",
+      "target": "id=trainModelButton",
+      "targets": [
+        ["id=trainModelButton", "id"],
+        ["css=#trainModelButton", "css:finder"],
+        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f0aa89a8-eaf4-4c39-aa73-858db64bdbf7",
+      "comment": "",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f43fd6b5-9857-49bf-ab26-adbfbdba7094",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4bbd40f3-d765-4eef-a8e0-c3f2d96d3b81",
+      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'TRAINED')]",
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'TRAINING_REQUESTED')]", "xpath:innerText"]
+      ],
+      "value": "TRAINED"
+    }]
+  }, {
+    "id": "72e94f46-778c-4347-9c60-cba5e6c6b9fd",
+    "name": "004_opportunities-with-accounts-model",
+    "commands": [{
+      "id": "5e9ddf8d-e952-4e1c-bfae-80d4ef8595e8",
+      "comment": "",
+      "command": "open",
+      "target": "/login?redirect=/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3518de16-b207-4fc6-bad8-68a04ad59622",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19af04cc-8af5-439c-90f8-4be57261c23b",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91d5db53-5161-43ea-a26f-380202e9d60f",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7302932d-9936-4aa5-91d4-ee24d32f4918",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d127312-0755-4a3b-beb9-d141a8d52d17",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "automated_testing@sensai.test"
+    }, {
+      "id": "9b65d258-13c4-4a8e-a5ed-c1017a035630",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Automated123$"
+    }, {
+      "id": "38a218f4-cebb-4ab7-aaf9-1e69c8349443",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "00045ae1-1f4d-4738-8e49-d29ef08e44a2",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea5c3508-983b-4083-9cd5-dc97741e4e12",
+      "comment": "Click on the sidebarToggleButton.",
+      "command": "click",
+      "target": "css=path",
+      "targets": [
+        ["css=path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "ceaa23a1-97e4-4c8a-bb76-21d956977a44",
+      "comment": "Click on the Models sidebar link.",
+      "command": "click",
+      "target": "css=.modelsSidebarLink",
+      "targets": [
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad65b2af-55a1-4bde-a707-8a2dc4e21968",
+      "comment": "Click the \"Create Model\" button.",
+      "command": "click",
+      "target": "id=createModelButton",
+      "targets": [
+        ["id=createModelButton", "id"],
+        ["css=#createModelButton", "css:finder"],
+        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4170e7f-c661-4b97-9089-ad0f4a96fcf6",
+      "comment": "Set the \"CurrentDateTime\" variable as the current datetime value.",
+      "command": "executeScript",
+      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return dateTime;",
+      "targets": [],
+      "value": "CurrentDateTime"
+    }, {
+      "id": "6ba83565-63b3-49bf-bcec-ca305ed1d8ef",
+      "comment": "",
+      "command": "echo",
+      "target": "${CurrentDateTime}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0abecfd0-3b44-4e70-afe8-b58eeb98363d",
+      "comment": "Enter the new Model's name in the Name field.",
+      "command": "type",
+      "target": "css=.form-group > #name",
+      "targets": [
+        ["css=.form-group > #name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Opportunity with Account - Automated ${CurrentDateTime}"
+    }, {
+      "id": "0d8e57fc-168e-40fb-83cc-e040ff0508fa",
+      "comment": "Store the new model's name in the variable \"new_model_name\".",
+      "command": "storeValue",
+      "target": "css=.form-group > #name",
+      "targets": [],
+      "value": "new_model_name"
+    }, {
+      "id": "f96c0f86-c8c6-4950-af58-dc2686b71a30",
+      "comment": "",
+      "command": "echo",
+      "target": "${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "354ab299-5bf1-41d2-b81a-cb5973ed052a",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "99f92d09-1d10-4d35-97d7-7240d9b3b9a6",
+      "comment": "Select \"Opportunity with Account Dataset\" dataset from the picklist.",
+      "command": "select",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "label=Opportunity with Account Dataset"
+    }, {
+      "id": "c68412be-69de-47a7-af0c-d33d4f4192ad",
+      "comment": "Select the \"SFDC - Winning Opportunity\" architecture type.",
+      "command": "select",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": "SFDC - Winning Opportunity"
+    }, {
+      "id": "00069e7e-7969-43af-a072-dbe12c30dcbf",
+      "comment": "",
+      "command": "//select",
+      "target": "id=primaryEntity",
+      "targets": [],
+      "value": "label=Opportunities"
+    }, {
+      "id": "befc5766-cd07-4d52-b7c9-064204d7e4a1",
+      "comment": "",
+      "command": "//type",
+      "target": "css=.rbt-input-main",
+      "targets": [],
+      "value": "ISWON"
+    }, {
+      "id": "80cd5c1c-a9fb-43b7-958b-99c09d6e9fd0",
+      "comment": "",
+      "command": "//click",
+      "target": "xpath=//li[@id='rbt-menu-item-0']/a/span/mark",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe111aec-5306-428e-b70f-43dabf2c6a13",
+      "comment": "Enter \"type\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "type"
+    }, {
+      "id": "3903de71-7361-43a7-9901-a91feae36b0d",
+      "comment": "Click the \"TYPE\" checkbox to select it. (OPPORTUNITY.TYPE)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.Type",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.Type", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.Type", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.Type']", "xpath:attributes"],
+        ["xpath=//div[2]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c14848f-0312-4f69-aaad-3c0608f1793c",
+      "comment": "",
+      "command": "//click",
+      "target": "id=checkbox-OPPORTUNITY.Account.Type",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fef92530-4dbf-4cf4-81f6-04ce1b817a65",
+      "comment": "Enter \"leadsource\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "leadsource"
+    }, {
+      "id": "18243a6a-e66d-4e4c-bd09-9e0d0ac8d9ab",
+      "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.Leadsource",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.Leadsource", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.Leadsource", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.Leadsource']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96cb3c5b-0a17-4c05-8d9f-d13e401df5fd",
+      "comment": "Click the \"Create\" button in the Create Model modal.",
+      "command": "click",
+      "target": "id=createModelModalButton",
+      "targets": [
+        ["id=createModelModalButton", "id"],
+        ["css=#createModelModalButton", "css:finder"],
+        ["xpath=//button[@id='createModelModalButton']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ae1a6d7-648d-43ff-aeea-c3ce699453d3",
+      "comment": "Click the new model's link on the \"All Models\" page.",
+      "command": "click",
+      "target": "linkText=${new_model_name}",
+      "targets": [
+        ["linkText=SuMo - Automated", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "523f8fe5-3122-436c-b4d2-4895a11f9913",
+      "comment": "",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6cd0104a-702c-492d-822a-bf05f19fa202",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
+      "id": "c047379b-6b18-4197-b82d-7b5f7d2c67d5",
+      "comment": "Click the \"Train Model\" button.",
+      "command": "click",
+      "target": "id=trainModelButton",
+      "targets": [
+        ["id=trainModelButton", "id"],
+        ["css=#trainModelButton", "css:finder"],
+        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "926f2429-f2ba-4cd8-b9eb-5e5ee4bfe48f",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2dc24cdd-4b8e-4ed3-82ce-3f90f07841db",
+      "comment": "",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ee0d6c4b-7716-4f96-98e5-4f7021f5de50",
+      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//div[2]/div/div/p",
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'TRAINED')]", "xpath:innerText"]
+      ],
+      "value": "TRAINED"
+    }]
+  }, {
+    "id": "5379cbba-bd69-4d68-b48b-7b35ebc29389",
+    "name": "005_opportunity-and-account-and-sumo-model",
+    "commands": [{
+      "id": "57506694-e64a-4763-858d-1cb65dda324f",
+      "comment": "",
+      "command": "open",
+      "target": "/login?redirect=/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f85f0508-6d72-471c-a040-17bece36a6e3",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d9ef43e-2b85-4b57-97e9-f12b1f845389",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd67a5d7-53c3-474e-884a-8b2824dca37b",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d80b029-a325-4258-8933-4058fca6ec8e",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55978d29-094f-4855-a31d-78bfeca4a509",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "automated_testing@sensai.test"
+    }, {
+      "id": "9986f5e3-faad-4cc0-aa5c-54c2f58f2154",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Automated123$"
+    }, {
+      "id": "019df7b8-6238-440c-900a-5c4245d886fc",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "1a5eb935-e511-4e14-a35e-95b0aae34ffe",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a34964a6-e793-4f37-a02a-0780b4604bbf",
+      "comment": "Click on the sidebarToggleButton.",
+      "command": "click",
+      "target": "css=path",
+      "targets": [
+        ["css=path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "94713d82-c1e0-4b03-a155-dd2cea4384a2",
+      "comment": "Click on the Models sidebar link.",
+      "command": "click",
+      "target": "css=.modelsSidebarLink",
+      "targets": [
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "562a4b03-0618-49b4-81b5-aff503639105",
+      "comment": "Click the \"Create Model\" button.",
+      "command": "click",
+      "target": "id=createModelButton",
+      "targets": [
+        ["id=createModelButton", "id"],
+        ["css=#createModelButton", "css:finder"],
+        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d2875e9-1c3b-4879-9113-db3ddd331a5e",
+      "comment": "Set the \"CurrentDateTime\" variable as the current datetime value.",
+      "command": "executeScript",
+      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return dateTime;",
+      "targets": [],
+      "value": "CurrentDateTime"
+    }, {
+      "id": "03f3e552-0395-441b-8bc4-fd927cdeda90",
+      "comment": "",
+      "command": "echo",
+      "target": "${CurrentDateTime}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15534911-124e-4220-a663-1810dd714ae7",
+      "comment": "Enter the new Model's name in the Name field.",
+      "command": "type",
+      "target": "css=.form-group > #name",
+      "targets": [
+        ["css=.form-group > #name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "SuMo, Opp & Account - Automated ${CurrentDateTime}"
+    }, {
+      "id": "84fa0066-7083-4473-ad29-66d30efee110",
+      "comment": "Store the new model's name in the variable \"new_model_name\".",
+      "command": "storeValue",
+      "target": "css=.form-group > #name",
+      "targets": [],
+      "value": "new_model_name"
+    }, {
+      "id": "56b8e96d-04be-4ae1-9719-78c986de400e",
+      "comment": "",
+      "command": "echo",
+      "target": "${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97282d4c-339a-4d6b-bb26-47324fc61256",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0864a890-cc72-488e-939c-db673fb61e9e",
+      "comment": "Select \"Opportunity, Account and Observations Dataset\" from the Dataset picklist.",
+      "command": "select",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "label=Opportunity, Account and Observations Dataset"
+    }, {
+      "id": "288b0553-6a81-42b9-b2c3-5619c3f83bfa",
+      "comment": "Select the \"SFDC - Winning Opportunity\" architecture type.",
+      "command": "select",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": "SFDC - Winning Opportunity"
+    }, {
+      "id": "a540d059-39d0-464f-b5d1-de3bee0ebd79",
+      "comment": "",
+      "command": "//select",
+      "target": "id=primaryEntity",
+      "targets": [],
+      "value": "label=Opportunities"
+    }, {
+      "id": "75d5e657-7e8f-4b12-a330-26714a3ea08e",
+      "comment": "",
+      "command": "//type",
+      "target": "css=.rbt-input-main",
+      "targets": [],
+      "value": "ISWON"
+    }, {
+      "id": "fd628577-85b1-4cff-814b-b35553f5caaf",
+      "comment": "",
+      "command": "//click",
+      "target": "xpath=//li[@id='rbt-menu-item-0']/a/span/mark",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4e7739f-18d0-470d-b6f6-4f1d54fc4060",
+      "comment": "Enter \"type\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "type"
+    }, {
+      "id": "2014ac65-2d9e-4342-97f3-582e2c32472a",
+      "comment": "Click the \"TYPE\" checkbox to select it. (OPPORTUNITY.TYPE)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.TYPE",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.TYPE", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.TYPE", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.TYPE']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6acfcb7-c646-4d41-9d37-6850159823df",
+      "comment": "Enter \"leadsource\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "leadsource"
+    }, {
+      "id": "dc30fb00-8671-459e-a122-8792fa70073d",
+      "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.LEADSOURCE",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.LEADSOURCE", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.LEADSOURCE", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.LEADSOURCE']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66eedcf3-3590-4030-afa2-1363a93c1e78",
+      "comment": "Click on the \"Accounts\" tab link.",
+      "command": "click",
+      "target": "linkText=Accounts",
+      "targets": [
+        ["linkText=Accounts", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Accounts')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div/nav/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Accounts')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "20ef46d7-19e8-46bb-bdf2-9b4a50b475ad",
+      "comment": "Start typing \"reg\" in the Search box.",
+      "command": "type",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [
+        ["css=.active .kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
+        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "reg"
+    }, {
+      "id": "a5632d4d-2e2e-4e73-a018-74f3de396b0b",
+      "comment": "Click on the \"Region__c\" checkbox (ACCOUNT.Region__c)",
+      "command": "click",
+      "target": "id=checkbox-ACCOUNT.Region__c",
+      "targets": [
+        ["id=checkbox-ACCOUNT.Region__c", "id"],
+        ["css=#checkbox-ACCOUNT\\.Region__c", "css:finder"],
+        ["xpath=//input[@id='checkbox-ACCOUNT.Region__c']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8fc5283-1b6a-4192-8245-b43ac486ae04",
+      "comment": "Click on the \"Observations\" tab link.",
+      "command": "click",
+      "target": "linkText=Observations",
+      "targets": [
+        ["linkText=Observations", "linkText"],
+        ["css=.nav > .nav-item:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Observations')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Observations')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b444634-3dd6-4a3f-a8fa-3dce48faf833",
+      "comment": "Start typing \"behaviour__c\" in the Search box. (SUCCESS__BASE_BEHAVIOUR__C)",
+      "command": "type",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [
+        ["css=.active .kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
+        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "behaviour__c"
+    }, {
+      "id": "bc222369-3ead-4370-bd5f-cb4b4f48147e",
+      "comment": "Click on the \"SUCCESS__BEHAVIOUR_OBSERVATION__C\" checkbox",
+      "command": "click",
+      "target": "id=checkbox-SUCCESS__BEHAVIOUR_OBSERVATION__C.SUCCESS__BASE_BEHAVIOUR__C",
+      "targets": [
+        ["id=checkbox-SUCCESS__BEHAVIOUR_OBSERVATION__C.SUCCESS__BASE_BEHAVIOUR__C", "id"],
+        ["css=#checkbox-SUCCESS__BEHAVIOUR_OBSERVATION__C\\.SUCCESS__BASE_BEHAVIOUR__C", "css:finder"],
+        ["xpath=//input[@id='checkbox-SUCCESS__BEHAVIOUR_OBSERVATION__C.SUCCESS__BASE_BEHAVIOUR__C']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f552fa3b-8e23-4b3d-afa7-11597882831a",
+      "comment": "Click the \"Create\" button in the Create Model modal.",
+      "command": "click",
+      "target": "id=createModelModalButton",
+      "targets": [
+        ["id=createModelModalButton", "id"],
+        ["css=#createModelModalButton", "css:finder"],
+        ["xpath=//button[@id='createModelModalButton']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "334335ae-39e0-45c5-9ea9-325f9f29443f",
+      "comment": "Click the new model's link on the \"All Models\" page.",
+      "command": "click",
+      "target": "linkText=${new_model_name}",
+      "targets": [
+        ["linkText=SuMo - Automated", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "79a0c856-334a-4ec0-a330-637053b37cf2",
+      "comment": "",
+      "command": "pause",
+      "target": "15000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5bd9427e-569f-4919-8951-ea5a7451d0ae",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
+      "id": "02b291d0-07d1-4623-8e78-d580992b7255",
+      "comment": "Click the \"Train Model\" button.",
+      "command": "click",
+      "target": "id=trainModelButton",
+      "targets": [
+        ["id=trainModelButton", "id"],
+        ["css=#trainModelButton", "css:finder"],
+        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75819052-31e9-4933-9c57-5540d64fab1f",
+      "comment": "",
+      "command": "pause",
+      "target": "600000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d12abb8d-690b-46b6-a580-a4f68e5ab11f",
+      "comment": "Refresh the page.",
+      "command": "//executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5fefcc65-834b-46da-8974-c574377f4585",
+      "comment": "",
+      "command": "//pause",
+      "target": "300000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1995628d-06ca-4d22-9ac3-d2e7e6ffe360",
+      "comment": "",
+      "command": "//waitForElementPresent",
+      "target": "id=cloneModelButton",
+      "targets": [],
+      "value": "360000"
+    }, {
+      "id": "8aaf1b0f-2e2e-41d3-b867-47a99f77bdf0",
+      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//div[2]/div/div/p",
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'TRAINED')]", "xpath:innerText"]
+      ],
+      "value": "TRAINED"
+    }]
+  }, {
+    "id": "270f9f2f-8785-47a0-bd64-90eca54b5733",
+    "name": "007_titanic-model",
+    "commands": [{
+      "id": "1e6ac3c9-79db-4b28-a74c-b5eb878fa65e",
+      "comment": "",
+      "command": "open",
+      "target": "/login?redirect=/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f64c47d-f078-4fb7-8da5-df1825532c54",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5e37e1d-cea7-4ce5-84f3-b6006df98dd1",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74d67ae2-0ab0-4cfc-a479-b2229788cc79",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e559779d-25f3-46db-8636-6ada3989a3b0",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9995d757-a42b-4c90-b439-b17284df0d56",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "automated_testing@sensai.test"
+    }, {
+      "id": "54251324-9b79-4a15-b80c-9ae65fc05d33",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Automated123$"
+    }, {
+      "id": "48aac393-52a7-43cd-9fe4-7479183e389c",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "715730e8-08a6-458a-846a-0958e854fff5",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2c6a3a3-b73c-4321-8e48-476ad08d4916",
+      "comment": "Click on the sidebarToggleButton.",
+      "command": "click",
+      "target": "css=path",
+      "targets": [
+        ["css=path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6465714-eece-438a-a8fe-2d5be1189c60",
+      "comment": "Click on the Models sidebar link.",
+      "command": "click",
+      "target": "css=.modelsSidebarLink",
+      "targets": [
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1c68e4a-611d-4c7b-adb9-a8e811cd848a",
+      "comment": "Click the \"Create Model\" button.",
+      "command": "click",
+      "target": "id=createModelButton",
+      "targets": [
+        ["id=createModelButton", "id"],
+        ["css=#createModelButton", "css:finder"],
+        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a96e14f7-2e34-4e62-a9df-b9b34f96e3d1",
+      "comment": "Set the \"CurrentDateTime\" variable as the current datetime value.",
+      "command": "executeScript",
+      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return dateTime;",
+      "targets": [],
+      "value": "CurrentDateTime"
+    }, {
+      "id": "bab36d5a-0485-4a96-94ef-1744c070b431",
+      "comment": "",
+      "command": "echo",
+      "target": "${CurrentDateTime}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "317e71e3-f715-4a12-a414-574ecae73989",
+      "comment": "Enter the new Model's name in the Name field.",
+      "command": "type",
+      "target": "css=.form-group > #name",
+      "targets": [
+        ["css=.form-group > #name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Titanic - Automated ${CurrentDateTime}"
+    }, {
+      "id": "ccb597f4-03d4-428f-93ee-78351b6e049c",
+      "comment": "Store the new model's name in the variable \"new_model_name\".",
+      "command": "storeValue",
+      "target": "css=.form-group > #name",
+      "targets": [],
+      "value": "new_model_name"
+    }, {
+      "id": "caf3761e-7748-4790-8a88-79423fbb5464",
+      "comment": "",
+      "command": "echo",
+      "target": "${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d715964-637c-48a5-82a5-a36546a92154",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "266152ed-0ceb-44dd-a8f4-7b7bf202ab5a",
+      "comment": "Select \"Titanic Dataset\" dataset from the picklist.",
+      "command": "select",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "label=Titanic Dataset"
+    }, {
+      "id": "03b1abf5-7967-4f1d-a854-12fcd0a86c10",
+      "comment": "Select the \"Binary Classification\" architecture type.",
+      "command": "select",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": "Binary Classification"
+    }, {
+      "id": "1f30bd0e-902b-462a-aa0f-c18c049fbda8",
+      "comment": "",
+      "command": "//select",
+      "target": "id=primaryEntity",
+      "targets": [],
+      "value": "label=Titanic"
+    }, {
+      "id": "4f05d9e2-90ca-41b9-b792-71a5d06987d7",
+      "comment": "",
+      "command": "type",
+      "target": "css=.rbt-input-main",
+      "targets": [],
+      "value": "Surv"
+    }, {
+      "id": "b19dc633-58c0-4039-b178-6562c240c561",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//mark[contains(.,'SURV')]",
+      "targets": [
+        ["css=.rbt-highlight-text", "css:finder"],
+        ["xpath=//li[@id='rbt-menu-item-0']/a/span/mark", "xpath:idRelative"],
+        ["xpath=//mark", "xpath:position"],
+        ["xpath=//mark[contains(.,'SURV')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad8f1723-01fc-412d-a13b-55d242734766",
+      "comment": "Enter \"type\" in the search box.",
+      "command": "//type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [],
+      "value": "type"
+    }, {
+      "id": "4d8f5729-f02b-424a-a4cc-245e4e14a959",
+      "comment": "Click the \"AGE\" checkbox to select it. (TITANIC.AGE)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.AGE",
+      "targets": [
+        ["id=checkbox-TITANIC.AGE", "id"],
+        ["css=#checkbox-TITANIC\\.AGE", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.AGE']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc093289-912d-48a7-be0e-792657e3f4b4",
+      "comment": "Click the \"CABIN\" checkbox to select it. (TITANIC.CABIN)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.CABIN",
+      "targets": [
+        ["id=checkbox-TITANIC.CABIN", "id"],
+        ["css=#checkbox-TITANIC\\.CABIN", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.CABIN']", "xpath:attributes"],
+        ["xpath=//div[2]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71f629c1-3b37-4b6e-bf12-f8162798d8d7",
+      "comment": "Click the \"EMBARKED\" checkbox to select it. (TITANIC.EMBARKED)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.EMBARKED",
+      "targets": [
+        ["id=checkbox-TITANIC.EMBARKED", "id"],
+        ["css=#checkbox-TITANIC\\.EMBARKED", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.EMBARKED']", "xpath:attributes"],
+        ["xpath=//div[3]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49a7c299-ba4e-4f75-b0b1-c0eba11a9863",
+      "comment": "Click the \"FARE\" checkbox to select it. (TITANIC.FARE)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.FARE",
+      "targets": [
+        ["id=checkbox-TITANIC.FARE", "id"],
+        ["css=#checkbox-TITANIC\\.FARE", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.FARE']", "xpath:attributes"],
+        ["xpath=//div[4]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "505f5ba1-2ead-4831-b986-1812800ea278",
+      "comment": "Click the \"NAME\" checkbox to select it. (TITANIC.NAME)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.NAME",
+      "targets": [
+        ["id=checkbox-TITANIC.NAME", "id"],
+        ["css=#checkbox-TITANIC\\.NAME", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.NAME']", "xpath:attributes"],
+        ["xpath=//div[5]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49e97eca-5dd8-4fb9-bb82-90a11ba7a81c",
+      "comment": "Click the \"PARCH\" checkbox to select it. (TITANIC.PARCH)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.PARCH",
+      "targets": [
+        ["id=checkbox-TITANIC.PARCH", "id"],
+        ["css=#checkbox-TITANIC\\.PARCH", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.PARCH']", "xpath:attributes"],
+        ["xpath=//div[6]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ca9f6ba-4981-4a1d-a91f-9f890eeacc26",
+      "comment": "Click the \"PASSENGERID\" checkbox to select it. (TITANIC.PASSENGERID)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.PASSENGERID",
+      "targets": [
+        ["id=checkbox-TITANIC.PASSENGERID", "id"],
+        ["css=#checkbox-TITANIC\\.PASSENGERID", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.PASSENGERID']", "xpath:attributes"],
+        ["xpath=//div[4]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "488c2305-3fa1-4814-8e95-7fcffb013352",
+      "comment": "Click the \"PCLASS\" checkbox to select it. (TITANIC.PCLASS)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.PCLASS",
+      "targets": [
+        ["id=checkbox-TITANIC.PCLASS", "id"],
+        ["css=#checkbox-TITANIC\\.PCLASS", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.PCLASS']", "xpath:attributes"],
+        ["xpath=//div[5]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "798ac3eb-85f3-46f5-a73f-b059ccff9d18",
+      "comment": "Click the \"SEX\" checkbox to select it. (TITANIC.SEX)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.SEX",
+      "targets": [
+        ["id=checkbox-TITANIC.SEX", "id"],
+        ["css=#checkbox-TITANIC\\.SEX", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.SEX']", "xpath:attributes"],
+        ["xpath=//div[6]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b1522f3-7db9-4455-86ab-a03149984ec5",
+      "comment": "Click the \"SIBSP\" checkbox to select it. (TITANIC.SIBSP)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.SIBSP",
+      "targets": [
+        ["id=checkbox-TITANIC.SIBSP", "id"],
+        ["css=#checkbox-TITANIC\\.SIBSP", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.SIBSP']", "xpath:attributes"],
+        ["xpath=//div[7]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "851b4a4d-948f-4516-beb7-77a9faa823eb",
+      "comment": "Click the \"SURVIVED\" checkbox to select it. (TITANIC.SURVIVED)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.SURVIVED",
+      "targets": [
+        ["id=checkbox-TITANIC.SURVIVED", "id"],
+        ["css=#checkbox-TITANIC\\.SURVIVED", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.SURVIVED']", "xpath:attributes"],
+        ["xpath=//div[8]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37a2fd25-eda8-49ab-9788-1da61c36d240",
+      "comment": "Click the \"TICKET\" checkbox to select it. (TITANIC.TICKET)",
+      "command": "click",
+      "target": "id=checkbox-TITANIC.TICKET",
+      "targets": [
+        ["id=checkbox-TITANIC.TICKET", "id"],
+        ["css=#checkbox-TITANIC\\.TICKET", "css:finder"],
+        ["xpath=//input[@id='checkbox-TITANIC.TICKET']", "xpath:attributes"],
+        ["xpath=//div[9]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0b9879d-4f15-4d88-bad0-556a99d6e9e0",
+      "comment": "Click the \"Create\" button in the Create Model modal.",
+      "command": "click",
+      "target": "id=createModelModalButton",
+      "targets": [
+        ["id=createModelModalButton", "id"],
+        ["css=#createModelModalButton", "css:finder"],
+        ["xpath=//button[@id='createModelModalButton']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21302a1c-ba5e-429e-aaef-226087202c04",
+      "comment": "Click the new model's link on the \"All Models\" page.",
+      "command": "click",
+      "target": "linkText=${new_model_name}",
+      "targets": [
+        ["linkText=SuMo - Automated", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "23d10771-dbca-4d87-a022-ef8e00db002e",
+      "comment": "",
+      "command": "pause",
+      "target": "15000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eac6cab6-05a6-4df2-9cdd-73afc739bbb5",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
+      "id": "25daec75-9661-4f2c-8e50-7feb8e37cce9",
+      "comment": "Click the \"Train Model\" button.",
+      "command": "click",
+      "target": "id=trainModelButton",
+      "targets": [
+        ["id=trainModelButton", "id"],
+        ["css=#trainModelButton", "css:finder"],
+        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9d05d65-c51a-4bbb-8d11-7b303b9a5984",
+      "comment": "",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b58665d4-b6a8-4edb-9373-6beb7d4955f0",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b58ae6d0-11ba-477d-8a39-1d5356e1aa65",
+      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'TRAINED')]",
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'TRAINING_REQUESTED')]", "xpath:innerText"]
+      ],
+      "value": "TRAINED"
+    }]
+  }, {
+    "id": "7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f",
+    "name": "008_Exclude-Model-column-values",
+    "commands": [{
+      "id": "208121a5-72c6-4b68-829f-7c8508e5c722",
+      "comment": "",
+      "command": "open",
+      "target": "/login?redirect=/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78a26733-3bed-4be5-8755-9c5715e6fbcd",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e570595-d665-43b0-935f-d4862656bf18",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f136cbc-6eff-4a65-a3b8-bf8ac0ad4d92",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e14d59f-a480-434e-8321-0333c7a17618",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "170ed2e4-35e3-4efd-9e6d-534008f7ee0e",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "automated_testing@sensai.test"
+    }, {
+      "id": "ae8f1d22-bb2a-4e17-a78f-11a16dd9556c",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Automated123$"
+    }, {
+      "id": "071c81ad-2cdf-4a78-8c8a-1c139ee07b7f",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "9ece1a17-2db4-4e4d-85bc-fde9a61bf9cc",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb3e8233-860c-4bb7-a673-200fe6b1dee3",
+      "comment": "Click on the sidebarToggleButton.",
+      "command": "click",
+      "target": "css=path",
+      "targets": [
+        ["css=path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "39a7280b-53a5-4ded-87ac-55037b30afd2",
+      "comment": "Click on the Models sidebar link.",
+      "command": "click",
+      "target": "css=.modelsSidebarLink",
+      "targets": [
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe4257fd-fefe-479d-981a-2dd729c8dfe5",
+      "comment": "Click on the \"SuMo Model - testing\" link.",
+      "command": "click",
+      "target": "linkText=SuMo Model - testing",
+      "targets": [
+        ["linkText=SuMo Model - testing", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SuMo Model - testing')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_da2f6b5c1d20471083cd05916c064020')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SuMo Model - testing')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f205bfec-7110-4323-bbc4-f599e02307a4",
+      "comment": "Click on the \"Columns\" tab link.",
+      "command": "click",
+      "target": "linkText=Columns",
+      "targets": [
+        ["linkText=Columns", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Columns')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/nav/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Columns')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5cad8ed0-d029-466a-a7aa-e64c185e0f09",
+      "comment": "Click on the action menu picklist for the LEADSOURCE column.",
+      "command": "click",
+      "target": "css=tr:nth-child(2) .dropdown-toggle",
+      "targets": [
+        ["css=tr:nth-child(2) .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[8]/div/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[8]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a8873eb-cfe7-4863-996d-8aa4ddf26ef2",
+      "comment": "Select the \"Edit Column\" option from the action menu picklist.",
+      "command": "click",
+      "target": "linkText=Edit Column",
+      "targets": [
+        ["linkText=Edit Column", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit Column')]", "xpath:link"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[8]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit Column')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24e0d981-ec20-4b38-9cbe-1c62041f7b99",
+      "comment": "Enter \"partner\" in the \"Excluded Values\" search field.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "partner"
+    }, {
+      "id": "bf63c8d6-570e-44d3-8471-94f5c51b0878",
+      "comment": "Click on the \"Event partner\" checkbox",
+      "command": "click",
+      "target": "id=checkbox-Event partner",
+      "targets": [
+        ["id=checkbox-Event partner", "id"],
+        ["css=#checkbox-Event\\ partner", "css:finder"],
+        ["xpath=//input[@id='checkbox-Event partner']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "346a3ed1-477f-47ec-901b-0384ffe98f61",
+      "comment": "Enter \"link\" in the \"Excluded Values\" search field.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "link"
+    }, {
+      "id": "12bc5596-79c6-41b7-b539-50571e6c996b",
+      "comment": "Click on the \"LinkedIn\" checkbox",
+      "command": "click",
+      "target": "id=checkbox-LinkedIn",
+      "targets": [
+        ["id=checkbox-LinkedIn", "id"],
+        ["css=#checkbox-LinkedIn", "css:finder"],
+        ["xpath=//input[@id='checkbox-LinkedIn']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d18cd7d-660f-4558-ba21-c1e3fd81ee42",
+      "comment": "Click \"Save\" in the \"Edit LEADSOURCE\" modal.",
+      "command": "click",
+      "target": "id=saveColumnEditModalButton",
+      "targets": [
+        ["id=saveColumnEditModalButton", "id"],
+        ["css=#saveColumnEditModalButton", "css:finder"],
+        ["xpath=//button[@id='saveColumnEditModalButton']", "xpath:attributes"],
+        ["xpath=//form/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab621fb9-ffce-4aba-9984-1afc560ce85a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) > td:nth-child(5)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(5)", "css:finder"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[5]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[5]", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "494ed321-dac2-4660-922f-dfe98675e1e0",
+      "comment": "Click on the action menu picklist for the LEADSOURCE column.",
+      "command": "click",
+      "target": "css=tr:nth-child(2) .dropdown-toggle",
+      "targets": [
+        ["css=tr:nth-child(2) .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[8]/div/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[8]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfdf83f0-192f-46d5-8b59-951def7f8458",
+      "comment": "Select the \"Edit Column\" option from the action menu picklist.",
+      "command": "click",
+      "target": "linkText=Edit Column",
+      "targets": [
+        ["linkText=Edit Column", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit Column')]", "xpath:link"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[8]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit Column')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a9c33b6-7d71-42fe-b88b-cea9f83da9ad",
+      "comment": "",
+      "command": "click",
+      "target": "css=.kn-list__list_item___1mDV9:nth-child(1) > .kn-selected_item__selected_item___1uiiv svg",
+      "targets": [
+        ["css=.kn-list__list_item___1mDV9:nth-child(1) > .kn-selected_item__selected_item___1uiiv svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "48d51a4f-50d0-4077-baae-4acc4b9a9612",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jss66:nth-child(2) svg",
+      "targets": [
+        ["css=.jss66:nth-child(2) svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b8ad047-e4b4-4780-a4f9-86a39f2f0b5a",
+      "comment": "Click \"Save\" in the \"Edit LEADSOURCE\" modal.",
+      "command": "click",
+      "target": "id=saveColumnEditModalButton",
+      "targets": [
+        ["id=saveColumnEditModalButton", "id"],
+        ["css=#saveColumnEditModalButton", "css:finder"],
+        ["xpath=//button[@id='saveColumnEditModalButton']", "xpath:attributes"],
+        ["xpath=//form/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "58f5546f-efc1-4e0c-8c8f-cfeda4a9acad",
+      "comment": "",
+      "command": "//pause",
+      "target": "75000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58d1a427-29d3-48cd-8709-2a46511ab15e",
+      "comment": "Refresh the page.",
+      "command": "//executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0db341e-62eb-4b9a-9298-322aa11c11d2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) > td:nth-child(5)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(5)", "css:finder"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[5]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[5]", "xpath:position"]
+      ],
+      "value": "0"
+    }]
+  }, {
+    "id": "7b8ed507-d0b7-43df-92f6-edc016b1f606",
+    "name": "009_Exclude-Column-from-Model-training",
+    "commands": [{
+      "id": "65dbcf18-f77c-4b6f-8e6c-472cc465d384",
+      "comment": "",
+      "command": "open",
+      "target": "/login?redirect=/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6bd0c3f5-40b4-4ae1-9877-7327626143f8",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b75b631d-3f91-44f9-84d6-46a23d4ef46d",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6dd39cba-812f-47dc-9220-eb6de1121bfb",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a482ed76-9336-4f93-891c-29ee351b5788",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9cbe8a0a-5ab9-481e-ac26-24d0188354f4",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "automated_testing@sensai.test"
+    }, {
+      "id": "20ae1d2f-b107-42e1-990e-b6acedaadfc5",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Automated123$"
+    }, {
+      "id": "1a39d1af-49e0-442d-a9cf-7238c8c7ce36",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "fc186be8-a5d8-4755-a2e3-1d6328bf9092",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2804c93-b447-4472-817d-50d07965008b",
+      "comment": "Click on the sidebarToggleButton.",
+      "command": "click",
+      "target": "css=path",
+      "targets": [
+        ["css=path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa283107-222c-4887-a663-2074e9b6a7f3",
+      "comment": "Click on the Models sidebar link.",
+      "command": "click",
+      "target": "css=.modelsSidebarLink",
+      "targets": [
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7152626-42f8-4038-b472-7307a4f91f65",
+      "comment": "Click on the \"SuMo Model - testing\" link.",
+      "command": "click",
+      "target": "linkText=SuMo Model - testing",
+      "targets": [
+        ["linkText=SuMo Model - testing", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SuMo Model - testing')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_da2f6b5c1d20471083cd05916c064020')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SuMo Model - testing')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdd56e4e-ebc1-4640-91ec-6a1e2da98f27",
+      "comment": "Click on the \"Columns\" tab link.",
+      "command": "click",
+      "target": "linkText=Columns",
+      "targets": [
+        ["linkText=Columns", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Columns')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/nav/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Columns')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "607051b5-8ea5-490e-bf36-79255a75578e",
+      "comment": "Click on the action menu picklist for the LEADSOURCE column.",
+      "command": "click",
+      "target": "css=tr:nth-child(2) .dropdown-toggle",
+      "targets": [
+        ["css=tr:nth-child(2) .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[8]/div/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[8]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c32a40a-23b3-4307-ac10-980e00ffd86f",
+      "comment": "Select the \"Edit Column\" option from the action menu picklist.",
+      "command": "click",
+      "target": "linkText=Edit Column",
+      "targets": [
+        ["linkText=Edit Column", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit Column')]", "xpath:link"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[8]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit Column')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3af63f70-4daf-4617-8894-580ae4c83710",
+      "comment": "Select \"No\" in the \"Include in training\" picklist.",
+      "command": "select",
+      "target": "id=includeInTraining",
+      "targets": [],
+      "value": "No"
+    }, {
+      "id": "85085432-77d3-4617-ac41-f33e41871d83",
+      "comment": "Click \"Save\" in the \"Edit LEADSOURCE\" modal.",
+      "command": "click",
+      "target": "id=saveColumnEditModalButton",
+      "targets": [
+        ["id=saveColumnEditModalButton", "id"],
+        ["css=#saveColumnEditModalButton", "css:finder"],
+        ["xpath=//button[@id='saveColumnEditModalButton']", "xpath:attributes"],
+        ["xpath=//form/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "59e10ab9-0d91-4169-a6a7-54fa3e1180e7",
+      "comment": "Assert that the \"Included\" column's value for \"LEADSOURCE' is \"No\"",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) .align-middle",
+      "targets": [
+        ["css=tr:nth-child(2) .align-middle", "css:finder"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[4]/span", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[4]/span", "xpath:position"]
+      ],
+      "value": "No"
+    }, {
+      "id": "fa244bb1-6016-477b-979e-c77f38e59e17",
+      "comment": "Click on the action menu picklist for the LEADSOURCE column.",
+      "command": "click",
+      "target": "css=tr:nth-child(2) .dropdown-toggle",
+      "targets": [
+        ["css=tr:nth-child(2) .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[8]/div/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[8]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb69a516-8fe0-49f1-8741-bd5d2ca39211",
+      "comment": "Select the \"Edit Column\" option from the action menu picklist.",
+      "command": "click",
+      "target": "linkText=Edit Column",
+      "targets": [
+        ["linkText=Edit Column", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit Column')]", "xpath:link"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[8]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit Column')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2ca53e9-8784-406b-a808-8e07c6d9003e",
+      "comment": "Select \"Yes\" in the \"Include in training\" picklist.",
+      "command": "select",
+      "target": "id=includeInTraining",
+      "targets": [],
+      "value": "Yes"
+    }, {
+      "id": "60b583aa-55f3-40b9-b9a5-2dcb47ba1f8f",
+      "comment": "Click \"Save\" in the \"Edit LEADSOURCE\" modal.",
+      "command": "click",
+      "target": "id=saveColumnEditModalButton",
+      "targets": [
+        ["id=saveColumnEditModalButton", "id"],
+        ["css=#saveColumnEditModalButton", "css:finder"],
+        ["xpath=//button[@id='saveColumnEditModalButton']", "xpath:attributes"],
+        ["xpath=//form/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6cc7908-7355-4815-9d65-689af6da533b",
+      "comment": "",
+      "command": "//pause",
+      "target": "75000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "60af110b-c740-4e8a-ac31-1c599028765e",
+      "comment": "Refresh the page.",
+      "command": "//executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "66771aa3-b47f-451c-aee9-599097c7a2c6",
+      "comment": "Assert that the \"Included\" column's value for \"LEADSOURCE' is \"Yes\"",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) .align-middle",
+      "targets": [
+        ["css=tr:nth-child(2) .align-middle", "css:finder"],
+        ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[4]/span", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[4]/span", "xpath:position"]
+      ],
+      "value": "Yes"
+    }]
+  }, {
+    "id": "6566cb0a-e169-4ffb-bea1-826408411227",
+    "name": "006_opportunity-and-opportunity-history-model",
+    "commands": [{
+      "id": "8d2084ad-4fbe-438f-b118-2decf2e97b1f",
+      "comment": "",
+      "command": "open",
+      "target": "/login?redirect=/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5f9022e-08bf-4cec-a0ed-20a9e557c4ab",
+      "comment": "If someone is logged in (i.e. the username field isn't present)...",
+      "command": "if",
+      "target": "document.getElementById('username') === null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d39e5d0-ee96-48de-80d0-0ef06374e399",
+      "comment": "...click the Logout link in the header.",
+      "command": "click",
+      "target": "id=logoutHeaderLink",
+      "targets": [
+        ["id=logoutHeaderLink", "id"],
+        ["css=#logoutHeaderLink", "css:finder"],
+        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fab396c5-7c91-40ab-9328-b4566389f7ca",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1071b7ca-461a-4afd-9084-460bd1920faa",
+      "comment": "End of IF statement.",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f99e445-6ce8-430b-b9fd-4c0be2b79b80",
+      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "automated_testing@sensai.test"
+    }, {
+      "id": "8ce29834-46b5-4cb4-9514-8d39c688ec84",
+      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Automated123$"
+    }, {
+      "id": "576a87a3-6638-4391-9472-7ae9e34bed9a",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "88bbf61b-d75a-4b4f-9474-ebf94677ef9d",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8c6003ec-41c2-4bb8-b4a1-70c4bbf9aad2",
+      "comment": "Click on the sidebarToggleButton.",
+      "command": "click",
+      "target": "css=path",
+      "targets": [
+        ["css=path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "77f203c6-fc47-45a1-984b-9e5bf0d5ceee",
+      "comment": "Click on the Models sidebar link.",
+      "command": "click",
+      "target": "css=.modelsSidebarLink",
+      "targets": [
+        ["css=.modelsSidebarLink", "css:finder"],
+        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
+        ["xpath=//div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef3fc018-011e-4b73-ab0c-d3eedd167183",
+      "comment": "Click the \"Create Model\" button.",
+      "command": "click",
+      "target": "id=createModelButton",
+      "targets": [
+        ["id=createModelButton", "id"],
+        ["css=#createModelButton", "css:finder"],
+        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4975b907-a403-4dee-a5b7-ef867461d768",
+      "comment": "Set the \"CurrentDateTime\" variable as the current datetime value.",
+      "command": "executeScript",
+      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return dateTime;",
+      "targets": [],
+      "value": "CurrentDateTime"
+    }, {
+      "id": "4820aa0b-5877-4726-98bc-9366215e8e55",
+      "comment": "",
+      "command": "echo",
+      "target": "${CurrentDateTime}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "00875b35-62c0-4afc-a836-8d822e5d8622",
+      "comment": "Enter the new Model's name in the Name field.",
+      "command": "type",
+      "target": "css=.form-group > #name",
+      "targets": [
+        ["css=.form-group > #name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Opp & Opp History - Automated ${CurrentDateTime}"
+    }, {
+      "id": "2ffad54e-fc9f-494a-be21-44f381512c97",
+      "comment": "Store the new model's name in the variable \"new_model_name\".",
+      "command": "storeValue",
+      "target": "css=.form-group > #name",
+      "targets": [],
+      "value": "new_model_name"
+    }, {
+      "id": "a4bec37e-546b-4356-9883-64212e91f6b3",
+      "comment": "",
+      "command": "echo",
+      "target": "${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b457acca-e96d-4fbc-a88f-35008c68bb1a",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6a8bfbe-4c53-460e-b15f-1c3c6ce360d4",
+      "comment": "Select \"Opportunity & Opportunity History Dataset\" dataset from the picklist.",
+      "command": "select",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "label=Opportunity & Opportunity History Dataset"
+    }, {
+      "id": "0ee2403a-abdc-44f7-b906-5e7df658af66",
+      "comment": "Select the \"SFDC - Winning Opportunity with History\" architecture type.",
+      "command": "select",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": "SFDC - Winning Opportunity with History"
+    }, {
+      "id": "54b13d36-d7c7-4db6-849b-0f25af620150",
+      "comment": "Enter \"name\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "name"
+    }, {
+      "id": "e634792a-2312-4c12-826c-c660ed107933",
+      "comment": "Click the \"ACCOUNT.NAME\" checkbox to select it. (OPPORTUNITY.ACCOUNT.NAME)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.ACCOUNT.NAME",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.ACCOUNT.NAME", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.ACCOUNT\\.NAME", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.ACCOUNT.NAME']", "xpath:attributes"],
+        ["xpath=//div[4]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b99e4d0-7fe5-4553-821e-ae7119ca319a",
+      "comment": "AGE DOESN'T EXIST IN MY FILE AFAICS - - - Enter \"AGE\" in the search box.",
+      "command": "//type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [],
+      "value": "AGE"
+    }, {
+      "id": "450aff07-b7a3-4a94-bbc7-518d80029317",
+      "comment": "Click the \"ACCOUNT.NAME\" checkbox to select it. (OPPORTUNITY.ACCOUNT.NAME)",
+      "command": "//click",
+      "target": "id=checkbox-OPPORTUNITY.ACCOUNT.NAME",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "90f87cae-3ab6-4b1b-872e-63eb94637364",
+      "comment": "Enter \"amount\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "amount"
+    }, {
+      "id": "95553efa-63dd-46db-9b64-931a3e982044",
+      "comment": "Click the \"AMOUNT\" checkbox to select it. (OPPORTUNITY.AMOUNT)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.AMOUNT",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.AMOUNT", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.AMOUNT", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.AMOUNT']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb5797ed-025d-4ee4-8488-1e0eb95dee29",
+      "comment": "Enter \"BASE_BEHAVIOUR__C\" in the search box.",
+      "command": "//type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [],
+      "value": "BASE_BEHAVIOUR__C"
+    }, {
+      "id": "de2de117-c9af-4427-b616-87be8178f205",
+      "comment": "Click the \"TYPE\" checkbox to select it. (OPPORTUNITY.TYPE)",
+      "command": "//click",
+      "target": "id=checkbox-OPPORTUNITY.TYPE",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79fddf8c-12f0-44e0-8dcb-1d72fb198ae4",
+      "comment": "Enter \"leadsource\" in the search box.",
+      "command": "//type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [],
+      "value": "leadsource"
+    }, {
+      "id": "6e392b8e-89e3-4af9-b30f-a407e8c60089",
+      "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
+      "command": "//click",
+      "target": "id=checkbox-OPPORTUNITY.LEADSOURCE",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b576ff6f-4191-49d5-896d-6de1d339596c",
+      "comment": "Click on the \"Accounts\" tab",
+      "command": "//click",
+      "target": "linkText=Accounts",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50dcbc7c-df69-4d57-904d-891997412494",
+      "comment": "Start typing \"reg\" in the Search box.",
+      "command": "//type",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [],
+      "value": "reg"
+    }, {
+      "id": "b2e0ef29-f33f-4cbd-b2fe-0395d712b0d4",
+      "comment": "Click on the \"Region__c\" checkbox (ACCOUNT.Region__c)",
+      "command": "//click",
+      "target": "id=checkbox-ACCOUNT.Region__c",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb2281be-3b00-44df-8c99-b9b3865d3f34",
+      "comment": "Click the \"Create\" button in the Create Model modal.",
+      "command": "click",
+      "target": "id=createModelModalButton",
+      "targets": [
+        ["id=createModelModalButton", "id"],
+        ["css=#createModelModalButton", "css:finder"],
+        ["xpath=//button[@id='createModelModalButton']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34cbf151-d201-4b93-a0d9-2f0c5a4a6a5f",
+      "comment": "Click the new model's link on the \"All Models\" page.",
+      "command": "click",
+      "target": "linkText=${new_model_name}",
+      "targets": [
+        ["linkText=SuMo - Automated", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
+        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcbf331a-6b22-4986-9321-91fa17df2896",
+      "comment": "",
+      "command": "pause",
+      "target": "15000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6003624f-bb95-419d-94d9-26e2c3b5979f",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
+      "id": "26a1a5d9-78fc-44a7-9e67-2148a6c4f198",
+      "comment": "Click the \"Train Model\" button.",
+      "command": "click",
+      "target": "id=trainModelButton",
+      "targets": [
+        ["id=trainModelButton", "id"],
+        ["css=#trainModelButton", "css:finder"],
+        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d145b63-b753-48c0-b09a-2f385c59f479",
+      "comment": "",
+      "command": "pause",
+      "target": "2500000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86a03681-6e90-4319-a8f5-c15f766bd4d4",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3657bdc2-dcd7-4d79-9711-71845860d1f2",
+      "comment": "",
+      "command": "//pause",
+      "target": "20000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eda8e9be-dbdc-49e8-94fb-f5708423b1af",
+      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
       "command": "assertText",
       "target": "xpath=//p[contains(.,'TRAINED')]",
       "targets": [
@@ -492,11 +3304,18 @@
   }],
   "suites": [{
     "id": "f1bea0fa-70df-4b92-97a4-8930feaf0b0d",
-    "name": "Default Suite",
+    "name": "CreateModels",
     "persistSession": false,
     "parallel": false,
     "timeout": 600,
-    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304"]
+    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac", "6f3ddb29-cf01-427c-a73f-4b4f8e304204", "72e94f46-778c-4347-9c60-cba5e6c6b9fd", "5379cbba-bd69-4d68-b48b-7b35ebc29389", "270f9f2f-8785-47a0-bd64-90eca54b5733", "6566cb0a-e169-4ffb-bea1-826408411227"]
+  }, {
+    "id": "713b398f-a037-46fe-9639-c6ca6f7ee517",
+    "name": "EditModels",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f", "7b8ed507-d0b7-43df-92f6-edc016b1f606"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
