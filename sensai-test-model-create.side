@@ -3303,19 +3303,12 @@
     }]
   }],
   "suites": [{
-    "id": "f1bea0fa-70df-4b92-97a4-8930feaf0b0d",
-    "name": "CreateModels",
-    "persistSession": false,
-    "parallel": false,
-    "timeout": 600,
-    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac", "6f3ddb29-cf01-427c-a73f-4b4f8e304204", "72e94f46-778c-4347-9c60-cba5e6c6b9fd", "5379cbba-bd69-4d68-b48b-7b35ebc29389", "270f9f2f-8785-47a0-bd64-90eca54b5733", "6566cb0a-e169-4ffb-bea1-826408411227"]
-  }, {
-    "id": "713b398f-a037-46fe-9639-c6ca6f7ee517",
-    "name": "EditModels",
+    "id": "ce5c3190-1e69-4799-a5b5-c137cf3a98f8",
+    "name": "CreateSuMoModel",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f", "7b8ed507-d0b7-43df-92f6-edc016b1f606"]
+    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
