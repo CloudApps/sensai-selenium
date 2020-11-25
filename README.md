@@ -6,7 +6,7 @@ This repo contains the Selenium SIDE files that are used by Jenkins to perform a
 
 Currently these tests comprise of testing the creation and training of models in the Pre-Release tenant (djsunderland@sensai.test.pre).
 
-When changes are made locally to the Selenium SIDE file, they need to be uploaded to this repo using the filename sensai-test-model-create.side
+When changes are made locally to the Selenium SIDE file, they need to be uploaded to this repo using the filename sensai-test-model-create.side. Set a Description on the commit that describes the changes made to the SIDE file.
 
 Once this has been completed, the Jenkins project 'SensaiSelenium' can be built which will clone this repo and execute the selenium-side-runner on Jenkins using the sensai-test-model-create.side file.
 
