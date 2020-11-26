@@ -702,17 +702,17 @@
       ],
       "value": ""
     }, {
+      "id": "cf4b9028-ea2c-49da-97de-4d81ebb4e418",
+      "comment": "Pause for 10 minutes",
+      "command": "pause",
+      "target": "600000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "484ac977-6977-43d7-b529-3e767254a6ee",
       "comment": "Refresh the page.",
       "command": "executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "b3753694-7d47-4673-ba39-f0e41c8395e4",
-      "comment": "Pause for 3 minutes",
-      "command": "pause",
-      "target": "180000",
       "targets": [],
       "value": ""
     }, {
@@ -1077,10 +1077,10 @@
       ],
       "value": ""
     }, {
-      "id": "f0aa89a8-eaf4-4c39-aa73-858db64bdbf7",
-      "comment": "Pause for 3 minutes",
+      "id": "1ade4764-a4c8-478e-966a-8897f66eb2be",
+      "comment": "Pause for 10 minutes",
       "command": "pause",
-      "target": "180000",
+      "target": "600000",
       "targets": [],
       "value": ""
     }, {
@@ -1422,17 +1422,17 @@
       ],
       "value": ""
     }, {
+      "id": "d2ec5746-a329-406e-8016-c6dd00fdec56",
+      "comment": "Pause for 10 minutes",
+      "command": "pause",
+      "target": "600000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "926f2429-f2ba-4cd8-b9eb-5e5ee4bfe48f",
       "comment": "Refresh the page.",
       "command": "executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "2dc24cdd-4b8e-4ed3-82ce-3f90f07841db",
-      "comment": "Pause for 3 minutes",
-      "command": "pause",
-      "target": "180000",
       "targets": [],
       "value": ""
     }, {
@@ -4248,6 +4248,27 @@
     "parallel": false,
     "timeout": 1200,
     "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304"]
+  }, {
+    "id": "68f28db0-bc01-49a7-82bb-8a4ca7002e6b",
+    "name": "CreateOppModel",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 1200,
+    "tests": ["5a24dfa1-0732-40f9-88c7-7dd0e25c20ac"]
+  }, {
+    "id": "28553aec-495b-4355-acc1-5a477c0000bc",
+    "name": "CreateOpp+AccountModel",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 1200,
+    "tests": ["6f3ddb29-cf01-427c-a73f-4b4f8e304204"]
+  }, {
+    "id": "2b6a98a8-13e3-4e25-8f66-4f780ec93eb6",
+    "name": "CreateOppWithAccountModel",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 1200,
+    "tests": ["72e94f46-778c-4347-9c60-cba5e6c6b9fd"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
