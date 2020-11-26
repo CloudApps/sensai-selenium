@@ -3088,12 +3088,12 @@
         ["id=checkbox-OPPORTUNITY.ACCOUNT.NAME", "id"],
         ["css=#checkbox-OPPORTUNITY\\.ACCOUNT\\.NAME", "css:finder"],
         ["xpath=//input[@id='checkbox-OPPORTUNITY.ACCOUNT.NAME']", "xpath:attributes"],
-        ["xpath=//div[4]/div/span/span/input", "xpath:position"]
+        ["xpath=//span/input", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "90f87cae-3ab6-4b1b-872e-63eb94637364",
-      "comment": "Enter \"amount\" in the search box.",
+      "comment": "Enter \"date\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
       "targets": [
@@ -3101,17 +3101,86 @@
         ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
         ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
       ],
-      "value": "amount"
+      "value": "date"
     }, {
       "id": "95553efa-63dd-46db-9b64-931a3e982044",
-      "comment": "Click the \"AMOUNT\" checkbox to select it. (OPPORTUNITY.AMOUNT)",
+      "comment": "Click the \"CREATEDDATE\" checkbox to select it.",
       "command": "click",
-      "target": "id=checkbox-OPPORTUNITY.AMOUNT",
+      "target": "id=checkbox-OPPORTUNITY.CREATEDDATE",
       "targets": [
-        ["id=checkbox-OPPORTUNITY.AMOUNT", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.AMOUNT", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.AMOUNT']", "xpath:attributes"],
+        ["id=checkbox-OPPORTUNITY.CREATEDDATE", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.CREATEDDATE", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.CREATEDDATE']", "xpath:attributes"],
+        ["xpath=//div[7]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6ccfdd9-d1d8-4868-b091-68265c4bf3fa",
+      "comment": "Enter \"iswon\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "iswon"
+    }, {
+      "id": "c28723b1-9e35-478f-b776-aba438c4a2d8",
+      "comment": "Click the \"ISWON\" checkbox to select it.",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.ISWON",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.ISWON", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.ISWON", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.ISWON']", "xpath:attributes"],
         ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16e8680e-1d44-4067-ad44-31e30798a4d0",
+      "comment": "Enter \"cit\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "cit"
+    }, {
+      "id": "2ba3ff2c-9339-4935-a9a2-89c7998c98a8",
+      "comment": "Click the \"ACCOUNT.SHIPPINGCITY\" checkbox to select it.",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.ACCOUNT.SHIPPINGCITY",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.ACCOUNT.SHIPPINGCITY", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.ACCOUNT\\.SHIPPINGCITY", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.ACCOUNT.SHIPPINGCITY']", "xpath:attributes"],
+        ["xpath=//div[2]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e69dc07-534e-4657-8b14-863f0cdc89a1",
+      "comment": "Enter \"TYPE\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "TYPE"
+    }, {
+      "id": "3db9bcd3-ab90-45e3-a8da-179272c08ff3",
+      "comment": "Click the \"TYPE\" checkbox to select \"OPPORTUNITY.TYPE\".",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.TYPE",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.TYPE", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.TYPE", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.TYPE']", "xpath:attributes"],
+        ["xpath=//div[2]/div/span/span/input", "xpath:position"]
       ],
       "value": ""
     }, {
