@@ -3070,7 +3070,7 @@
       "value": "SFDC - Winning Opportunity with History"
     }, {
       "id": "54b13d36-d7c7-4db6-849b-0f25af620150",
-      "comment": "Enter \"name\" in the search box.",
+      "comment": "Enter \"account.name\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
       "targets": [
@@ -3078,10 +3078,10 @@
         ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
         ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
       ],
-      "value": "name"
+      "value": "account.name"
     }, {
-      "id": "e634792a-2312-4c12-826c-c660ed107933",
-      "comment": "Click the \"ACCOUNT.NAME\" checkbox to select it. (OPPORTUNITY.ACCOUNT.NAME)",
+      "id": "ee404ded-c633-4bb5-94c2-db15d3ff172f",
+      "comment": "Click on the \"ACCOUNT.NAME\" checkbox to select it.",
       "command": "click",
       "target": "id=checkbox-OPPORTUNITY.ACCOUNT.NAME",
       "targets": [
