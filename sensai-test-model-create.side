@@ -1293,27 +1293,6 @@
       ],
       "value": "SFDC - Winning Opportunity"
     }, {
-      "id": "00069e7e-7969-43af-a072-dbe12c30dcbf",
-      "comment": "",
-      "command": "//select",
-      "target": "id=primaryEntity",
-      "targets": [],
-      "value": "label=Opportunities"
-    }, {
-      "id": "befc5766-cd07-4d52-b7c9-064204d7e4a1",
-      "comment": "",
-      "command": "//type",
-      "target": "css=.rbt-input-main",
-      "targets": [],
-      "value": "ISWON"
-    }, {
-      "id": "80cd5c1c-a9fb-43b7-958b-99c09d6e9fd0",
-      "comment": "",
-      "command": "//click",
-      "target": "xpath=//li[@id='rbt-menu-item-0']/a/span/mark",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "fe111aec-5306-428e-b70f-43dabf2c6a13",
       "comment": "Enter \"type\" in the search box.",
       "command": "type",
@@ -1335,13 +1314,6 @@
         ["xpath=//input[@id='checkbox-OPPORTUNITY.Type']", "xpath:attributes"],
         ["xpath=//div[2]/div/span/span/input", "xpath:position"]
       ],
-      "value": ""
-    }, {
-      "id": "1c14848f-0312-4f69-aaad-3c0608f1793c",
-      "comment": "",
-      "command": "//click",
-      "target": "id=checkbox-OPPORTUNITY.Account.Type",
-      "targets": [],
       "value": ""
     }, {
       "id": "fef92530-4dbf-4cf4-81f6-04ce1b817a65",
@@ -1394,10 +1366,17 @@
       ],
       "value": ""
     }, {
+      "id": "4b6ed1c9-b3fd-4c3d-89bd-3f9876ece62a",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "523f8fe5-3122-436c-b4d2-4895a11f9913",
-      "comment": "Pause for 3 minutes",
+      "comment": "Pause for 5 minutes",
       "command": "//pause",
-      "target": "180000",
+      "target": "300000",
       "targets": [],
       "value": ""
     }, {
@@ -1407,6 +1386,13 @@
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
+    }, {
+      "id": "5b6b1c41-be51-4ac5-90a1-7d0e1c80234e",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
     }, {
       "id": "c047379b-6b18-4197-b82d-7b5f7d2c67d5",
       "comment": "Click the \"Train Model\" button.",
