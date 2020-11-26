@@ -1792,10 +1792,17 @@
       ],
       "value": ""
     }, {
-      "id": "79a0c856-334a-4ec0-a330-637053b37cf2",
-      "comment": "",
+      "id": "37bf45f1-fdbb-414c-b079-dfbd8ee53888",
+      "comment": "Pause for 5 minutes",
       "command": "pause",
-      "target": "15000",
+      "target": "300000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc5466f4-ce59-41b1-92ae-256308b77376",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
     }, {
@@ -1820,7 +1827,7 @@
       ],
       "value": ""
     }, {
-      "id": "75819052-31e9-4933-9c57-5540d64fab1f",
+      "id": "e2550276-3d54-4088-8eb4-c87eef4963ee",
       "comment": "Pause for 10 minutes",
       "command": "pause",
       "target": "600000",
@@ -1829,24 +1836,10 @@
     }, {
       "id": "d12abb8d-690b-46b6-a580-a4f68e5ab11f",
       "comment": "Refresh the page.",
-      "command": "//executeScript",
+      "command": "executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
-    }, {
-      "id": "5fefcc65-834b-46da-8974-c574377f4585",
-      "comment": "",
-      "command": "//pause",
-      "target": "300000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "1995628d-06ca-4d22-9ac3-d2e7e6ffe360",
-      "comment": "",
-      "command": "//waitForElementPresent",
-      "target": "id=cloneModelButton",
-      "targets": [],
-      "value": "360000"
     }, {
       "id": "8aaf1b0f-2e2e-41d3-b867-47a99f77bdf0",
       "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
@@ -4255,6 +4248,13 @@
     "parallel": false,
     "timeout": 1200,
     "tests": ["72e94f46-778c-4347-9c60-cba5e6c6b9fd"]
+  }, {
+    "id": "46cb0288-2356-4a33-8364-f5e162f7df6f",
+    "name": "CreateOppAccountSuMoModel",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 1200,
+    "tests": ["5379cbba-bd69-4d68-b48b-7b35ebc29389"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
