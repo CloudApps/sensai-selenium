@@ -1582,7 +1582,7 @@
         ["xpath=//input[@id='name']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "SuMo, Opp & Account - Automated ${CurrentDateTime}"
+      "value": "Opp, Account & Observation - Automated ${CurrentDateTime}"
     }, {
       "id": "84fa0066-7083-4473-ad29-66d30efee110",
       "comment": "Store the new model's name in the variable \"new_model_name\".",
@@ -1623,27 +1623,6 @@
         ["xpath=//div[3]/div/select", "xpath:position"]
       ],
       "value": "SFDC - Winning Opportunity"
-    }, {
-      "id": "a540d059-39d0-464f-b5d1-de3bee0ebd79",
-      "comment": "",
-      "command": "//select",
-      "target": "id=primaryEntity",
-      "targets": [],
-      "value": "label=Opportunities"
-    }, {
-      "id": "75d5e657-7e8f-4b12-a330-26714a3ea08e",
-      "comment": "",
-      "command": "//type",
-      "target": "css=.rbt-input-main",
-      "targets": [],
-      "value": "ISWON"
-    }, {
-      "id": "fd628577-85b1-4cff-814b-b35553f5caaf",
-      "comment": "",
-      "command": "//click",
-      "target": "xpath=//li[@id='rbt-menu-item-0']/a/span/mark",
-      "targets": [],
-      "value": ""
     }, {
       "id": "a4e7739f-18d0-470d-b6f6-4f1d54fc4060",
       "comment": "Enter \"type\" in the search box.",
@@ -1776,6 +1755,13 @@
         ["xpath=//button[2]", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "f440f2f9-48f3-4886-8b85-c1178f49bc9e",
+      "comment": "Wait for the new model's link to be present on the \"All Models\" page, for up to 5 minutes.",
+      "command": "waitForElementPresent",
+      "target": "linkText=${new_model_name}",
+      "targets": [],
+      "value": "300000"
     }, {
       "id": "334335ae-39e0-45c5-9ea9-325f9f29443f",
       "comment": "Click the new model's link on the \"All Models\" page.",
@@ -2276,7 +2262,7 @@
       "value": ""
     }, {
       "id": "e9d05d65-c51a-4bbb-8d11-7b303b9a5984",
-      "comment": "",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
       "target": "150000",
       "targets": [],
@@ -3106,20 +3092,6 @@
       ],
       "value": ""
     }, {
-      "id": "6b99e4d0-7fe5-4553-821e-ae7119ca319a",
-      "comment": "AGE DOESN'T EXIST IN MY FILE AFAICS - - - Enter \"AGE\" in the search box.",
-      "command": "//type",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [],
-      "value": "AGE"
-    }, {
-      "id": "450aff07-b7a3-4a94-bbc7-518d80029317",
-      "comment": "Click the \"ACCOUNT.NAME\" checkbox to select it. (OPPORTUNITY.ACCOUNT.NAME)",
-      "command": "//click",
-      "target": "id=checkbox-OPPORTUNITY.ACCOUNT.NAME",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "90f87cae-3ab6-4b1b-872e-63eb94637364",
       "comment": "Enter \"amount\" in the search box.",
       "command": "type",
@@ -3141,55 +3113,6 @@
         ["xpath=//input[@id='checkbox-OPPORTUNITY.AMOUNT']", "xpath:attributes"],
         ["xpath=//span/input", "xpath:position"]
       ],
-      "value": ""
-    }, {
-      "id": "cb5797ed-025d-4ee4-8488-1e0eb95dee29",
-      "comment": "Enter \"BASE_BEHAVIOUR__C\" in the search box.",
-      "command": "//type",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [],
-      "value": "BASE_BEHAVIOUR__C"
-    }, {
-      "id": "de2de117-c9af-4427-b616-87be8178f205",
-      "comment": "Click the \"TYPE\" checkbox to select it. (OPPORTUNITY.TYPE)",
-      "command": "//click",
-      "target": "id=checkbox-OPPORTUNITY.TYPE",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "79fddf8c-12f0-44e0-8dcb-1d72fb198ae4",
-      "comment": "Enter \"leadsource\" in the search box.",
-      "command": "//type",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [],
-      "value": "leadsource"
-    }, {
-      "id": "6e392b8e-89e3-4af9-b30f-a407e8c60089",
-      "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
-      "command": "//click",
-      "target": "id=checkbox-OPPORTUNITY.LEADSOURCE",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "b576ff6f-4191-49d5-896d-6de1d339596c",
-      "comment": "Click on the \"Accounts\" tab",
-      "command": "//click",
-      "target": "linkText=Accounts",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "50dcbc7c-df69-4d57-904d-891997412494",
-      "comment": "Start typing \"reg\" in the Search box.",
-      "command": "//type",
-      "target": "css=.active .kn-search__input___2tyxf",
-      "targets": [],
-      "value": "reg"
-    }, {
-      "id": "b2e0ef29-f33f-4cbd-b2fe-0395d712b0d4",
-      "comment": "Click on the \"Region__c\" checkbox (ACCOUNT.Region__c)",
-      "command": "//click",
-      "target": "id=checkbox-ACCOUNT.Region__c",
-      "targets": [],
       "value": ""
     }, {
       "id": "fb2281be-3b00-44df-8c99-b9b3865d3f34",
@@ -3219,10 +3142,17 @@
       ],
       "value": ""
     }, {
-      "id": "fcbf331a-6b22-4986-9321-91fa17df2896",
-      "comment": "Pause for 3 minutes.",
+      "id": "a65e318a-fad6-4b79-95a0-d90a28e7bade",
+      "comment": "Pause for 5 minutes",
       "command": "pause",
-      "target": "180000",
+      "target": "300000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8c84e925-ef52-4b7e-97ec-a490276d652d",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
     }, {
@@ -3248,23 +3178,16 @@
       "value": ""
     }, {
       "id": "0d145b63-b753-48c0-b09a-2f385c59f479",
-      "comment": "",
+      "comment": "Pause for 5 minutes.",
       "command": "pause",
-      "target": "30000",
+      "target": "300000",
       "targets": [],
       "value": ""
     }, {
       "id": "86a03681-6e90-4319-a8f5-c15f766bd4d4",
       "comment": "Refresh the page.",
-      "command": "//executeScript",
+      "command": "executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "3657bdc2-dcd7-4d79-9711-71845860d1f2",
-      "comment": "",
-      "command": "//pause",
-      "target": "20000",
       "targets": [],
       "value": ""
     }, {
@@ -4255,6 +4178,20 @@
     "parallel": false,
     "timeout": 1200,
     "tests": ["5379cbba-bd69-4d68-b48b-7b35ebc29389"]
+  }, {
+    "id": "615888af-9555-4910-a6f4-f6761db27e26",
+    "name": "CreateOppHistoryModel",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 1200,
+    "tests": ["6566cb0a-e169-4ffb-bea1-826408411227"]
+  }, {
+    "id": "91727b59-a5d3-48fc-96d0-845d5d309272",
+    "name": "CreateTitanicModel",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 1200,
+    "tests": ["270f9f2f-8785-47a0-bd64-90eca54b5733"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
