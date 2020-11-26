@@ -1366,17 +1366,17 @@
       ],
       "value": ""
     }, {
+      "id": "523f8fe5-3122-436c-b4d2-4895a11f9913",
+      "comment": "Pause for 5 minutes",
+      "command": "pause",
+      "target": "300000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "4b6ed1c9-b3fd-4c3d-89bd-3f9876ece62a",
       "comment": "Refresh the page.",
       "command": "executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "523f8fe5-3122-436c-b4d2-4895a11f9913",
-      "comment": "Pause for 5 minutes",
-      "command": "//pause",
-      "target": "300000",
       "targets": [],
       "value": ""
     }, {
