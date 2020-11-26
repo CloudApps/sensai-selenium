@@ -365,9 +365,9 @@
       "value": ""
     }, {
       "id": "3ee2e109-e594-4f4a-b8c5-6e090ca4de1f",
-      "comment": "Pause for 5 minutes",
+      "comment": "Pause for 10 minutes",
       "command": "pause",
-      "target": "300000",
+      "target": "600000",
       "targets": [],
       "value": ""
     }, {
