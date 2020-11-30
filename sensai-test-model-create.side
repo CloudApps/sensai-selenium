@@ -3071,25 +3071,16 @@
     }, {
       "id": "54b13d36-d7c7-4db6-849b-0f25af620150",
       "comment": "Enter \"account.name\" in the search box.",
-      "command": "type",
+      "command": "//type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "account.name"
     }, {
       "id": "ee404ded-c633-4bb5-94c2-db15d3ff172f",
       "comment": "Click on the \"ACCOUNT.NAME\" checkbox to select it.",
-      "command": "click",
+      "command": "//click",
       "target": "id=checkbox-OPPORTUNITY.ACCOUNT.NAME",
-      "targets": [
-        ["id=checkbox-OPPORTUNITY.ACCOUNT.NAME", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.ACCOUNT\\.NAME", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.ACCOUNT.NAME']", "xpath:attributes"],
-        ["xpath=//span/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "90f87cae-3ab6-4b1b-872e-63eb94637364",
@@ -3196,6 +3187,13 @@
       ],
       "value": ""
     }, {
+      "id": "4cc62aa5-adfe-4b1f-b005-45271b831085",
+      "comment": "Pause for 2.5 minutes",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "34cbf151-d201-4b93-a0d9-2f0c5a4a6a5f",
       "comment": "Click the new model's link on the \"All Models\" page.",
       "command": "click",
@@ -3228,8 +3226,13 @@
       "id": "6003624f-bb95-419d-94d9-26e2c3b5979f",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
       "command": "assertText",
-      "target": "xpath=//p[contains(.,'CREATED')]",
-      "targets": [],
+      "target": "xpath=//div[2]/div/div/p",
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'TRAINED')]", "xpath:innerText"]
+      ],
       "value": "CREATED"
     }, {
       "id": "26a1a5d9-78fc-44a7-9e67-2148a6c4f198",
@@ -3255,7 +3258,7 @@
     }, {
       "id": "86a03681-6e90-4319-a8f5-c15f766bd4d4",
       "comment": "Refresh the page.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
