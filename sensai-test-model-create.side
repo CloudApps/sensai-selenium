@@ -4322,7 +4322,7 @@
     "persistSession": false,
     "parallel": true,
     "timeout": 1200,
-    "tests": ["7b8ed507-d0b7-43df-92f6-edc016b1f606", "7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f", "007387ed-e7e9-4bf3-8ee2-84c84f050304"]
+    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304", "7b8ed507-d0b7-43df-92f6-edc016b1f606", "7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
