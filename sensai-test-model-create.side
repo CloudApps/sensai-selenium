@@ -2514,6 +2514,13 @@
       ],
       "value": ""
     }, {
+      "id": "f6662cf6-8444-4bf1-9504-67ed59486b21",
+      "comment": "Pause for 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "ab621fb9-ffce-4aba-9984-1afc560ce85a",
       "comment": "",
       "command": "assertText",
@@ -2583,10 +2590,10 @@
       ],
       "value": ""
     }, {
-      "id": "58f5546f-efc1-4e0c-8c8f-cfeda4a9acad",
-      "comment": "",
-      "command": "//pause",
-      "target": "75000",
+      "id": "cf305b6f-9c5d-4e61-a894-d68f860b850c",
+      "comment": "Pause for 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -2594,6 +2601,13 @@
       "comment": "Refresh the page.",
       "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "578bc753-753a-4485-b127-51ff3829a9a2",
+      "comment": "Click on the \"Columns\" tab link.",
+      "command": "//click",
+      "target": "linkText=Columns",
       "targets": [],
       "value": ""
     }, {
@@ -2796,10 +2810,24 @@
       ],
       "value": ""
     }, {
+      "id": "82a984e4-5559-4b3f-88f8-036e23c0fc98",
+      "comment": "Pause for 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26e090b1-778c-4ce0-9dbd-ec908dc1c979",
+      "comment": "Refresh the page.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "59e10ab9-0d91-4169-a6a7-54fa3e1180e7",
       "comment": "Assert that the \"Included\" column's value for \"LEADSOURCE' is \"No\"",
       "command": "assertText",
-      "target": "css=tr:nth-child(2) .align-middle",
+      "target": "xpath=//tr[2]/td[4]/span",
       "targets": [
         ["css=tr:nth-child(2) .align-middle", "css:finder"],
         ["xpath=//table[@id='modelColumnsTable']/tbody/tr[2]/td[4]/span", "xpath:idRelative"],
@@ -2854,18 +2882,33 @@
       ],
       "value": ""
     }, {
-      "id": "a6cc7908-7355-4815-9d65-689af6da533b",
-      "comment": "",
-      "command": "//pause",
-      "target": "75000",
+      "id": "c56903fe-3c5e-4764-b563-a2548204fbd1",
+      "comment": "Pause for 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
-      "id": "60af110b-c740-4e8a-ac31-1c599028765e",
+      "id": "9d851d72-4a8f-449a-a722-2a0e9afa87c4",
       "comment": "Refresh the page.",
-      "command": "//executeScript",
+      "command": "executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "6e85b0d0-7021-457b-a27a-c20925d3fbe5",
+      "comment": "Click on the \"Columns\" tab link.",
+      "command": "click",
+      "target": "linkText=Columns",
+      "targets": [
+        ["linkText=Columns", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Columns')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/nav/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Columns')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
       "id": "66771aa3-b47f-451c-aee9-599097c7a2c6",
