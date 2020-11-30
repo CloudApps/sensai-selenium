@@ -3223,16 +3223,11 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "6003624f-bb95-419d-94d9-26e2c3b5979f",
+      "id": "d690a992-3b2c-421a-bfb6-922ef64d87ec",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
       "command": "assertText",
-      "target": "xpath=//div[2]/div/div/p",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'TRAINED')]", "xpath:innerText"]
-      ],
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
       "value": "CREATED"
     }, {
       "id": "26a1a5d9-78fc-44a7-9e67-2148a6c4f198",
@@ -3258,7 +3253,7 @@
     }, {
       "id": "86a03681-6e90-4319-a8f5-c15f766bd4d4",
       "comment": "Refresh the page.",
-      "command": "//executeScript",
+      "command": "executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
