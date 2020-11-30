@@ -4316,6 +4316,13 @@
     "parallel": false,
     "timeout": 1200,
     "tests": ["7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f"]
+  }, {
+    "id": "14e38eba-d895-41a7-a872-52551960429d",
+    "name": "Exclusions-in-parallel",
+    "persistSession": false,
+    "parallel": true,
+    "timeout": 1200,
+    "tests": ["7b8ed507-d0b7-43df-92f6-edc016b1f606", "7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
