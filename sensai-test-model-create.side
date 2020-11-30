@@ -4259,6 +4259,20 @@
     "parallel": false,
     "timeout": 1200,
     "tests": ["270f9f2f-8785-47a0-bd64-90eca54b5733"]
+  }, {
+    "id": "abb11329-549b-4136-ae4d-67c983217666",
+    "name": "EditModel-ExcludeColumn",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 1200,
+    "tests": ["7b8ed507-d0b7-43df-92f6-edc016b1f606"]
+  }, {
+    "id": "6eb24768-2bb7-4d17-bc85-91721496a7eb",
+    "name": "EditModel-ExcludeColumnValues",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 1200,
+    "tests": ["7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
