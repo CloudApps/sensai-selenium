@@ -1344,6 +1344,20 @@
       ],
       "value": ""
     }, {
+      "id": "ef54f239-7697-4946-b0dc-448a6aaaf6ab",
+      "comment": "Pause for 2.5 minutes",
+      "command": "//pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "654f3e63-30b3-4e00-a793-f9abbbd398d0",
+      "comment": "Wait for the new model's link to be present on the \"All Models\" page, for up to 5 minutes.",
+      "command": "waitForElementPresent",
+      "target": "linkText=${new_model_name}",
+      "targets": [],
+      "value": "300000"
+    }, {
       "id": "2ae1a6d7-648d-43ff-aeea-c3ce699453d3",
       "comment": "Click the new model's link on the \"All Models\" page.",
       "command": "click",
@@ -1368,7 +1382,7 @@
     }, {
       "id": "4b6ed1c9-b3fd-4c3d-89bd-3f9876ece62a",
       "comment": "Refresh the page.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
@@ -1402,15 +1416,15 @@
       "value": ""
     }, {
       "id": "d2ec5746-a329-406e-8016-c6dd00fdec56",
-      "comment": "Pause for 10 minutes",
+      "comment": "Pause for 5 minutes",
       "command": "pause",
-      "target": "600000",
+      "target": "300000",
       "targets": [],
       "value": ""
     }, {
       "id": "926f2429-f2ba-4cd8-b9eb-5e5ee4bfe48f",
       "comment": "Refresh the page.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
@@ -3498,25 +3512,16 @@
     }, {
       "id": "2765088a-ea25-4510-aeae-e6cc4684b879",
       "comment": "Enter \"checkbox\" in the search box.",
-      "command": "type",
+      "command": "//type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "checkbox"
     }, {
       "id": "750467ab-58e3-4e0b-befa-b396e680fb94",
       "comment": "Click the \"A_checkbox\" checkbox to select it.",
-      "command": "click",
+      "command": "//click",
       "target": "id=checkbox-OPPORTUNITY.A_checkbox",
-      "targets": [
-        ["id=checkbox-OPPORTUNITY.A_checkbox", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.A_checkbox", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.A_checkbox']", "xpath:attributes"],
-        ["xpath=//span/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "8b2d7598-fbdb-4848-94aa-fed5f54e330b",
@@ -4316,6 +4321,13 @@
     "parallel": true,
     "timeout": 1200,
     "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac", "7b8ed507-d0b7-43df-92f6-edc016b1f606", "7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f", "6f3ddb29-cf01-427c-a73f-4b4f8e304204", "72e94f46-778c-4347-9c60-cba5e6c6b9fd", "5379cbba-bd69-4d68-b48b-7b35ebc29389", "6566cb0a-e169-4ffb-bea1-826408411227", "270f9f2f-8785-47a0-bd64-90eca54b5733", "e1bf8610-2f73-4b8d-a8ed-45b35b375b3c"]
+  }, {
+    "id": "0c34fec5-4788-4726-839d-0f953ac4e13e",
+    "name": "OneTest",
+    "persistSession": false,
+    "parallel": true,
+    "timeout": 1200,
+    "tests": ["72e94f46-778c-4347-9c60-cba5e6c6b9fd"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
