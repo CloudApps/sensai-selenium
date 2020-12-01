@@ -3536,15 +3536,10 @@
       "value": "source"
     }, {
       "id": "9f44a37b-07bf-4cf7-af20-1ff15b66859a",
-      "comment": "Click the \"Account.Accountsource\" checkbox to select it.",
-      "command": "click",
+      "comment": "Click the \"Account.Accountsource\" checkbox to select it. DOES NOT WORK IN JENKINS.",
+      "command": "//click",
       "target": "id=checkbox-OPPORTUNITY.Account.Accountsource",
-      "targets": [
-        ["id=checkbox-OPPORTUNITY.Account.Accountsource", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.Account\\.Accountsource", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.Account.Accountsource']", "xpath:attributes"],
-        ["xpath=//span/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "de9c63b2-cf3b-4b17-a29e-c1fc38b57f3d",
@@ -4328,6 +4323,13 @@
     "parallel": true,
     "timeout": 1200,
     "tests": ["72e94f46-778c-4347-9c60-cba5e6c6b9fd"]
+  }, {
+    "id": "4aec9a69-e1c9-44a5-8ac7-410036ce370a",
+    "name": "CreateOppModel-All-Column-Types",
+    "persistSession": false,
+    "parallel": true,
+    "timeout": 1200,
+    "tests": []
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
