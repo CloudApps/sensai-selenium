@@ -4329,7 +4329,7 @@
     "persistSession": false,
     "parallel": true,
     "timeout": 1200,
-    "tests": []
+    "tests": ["e1bf8610-2f73-4b8d-a8ed-45b35b375b3c"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
