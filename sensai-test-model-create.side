@@ -352,16 +352,9 @@
     }, {
       "id": "f4936390-f61b-4723-8a6d-007fc71806d5",
       "comment": "Click the \"Train Model\" button.",
-      "command": "click",
+      "command": "//click",
       "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "3ee2e109-e594-4f4a-b8c5-6e090ca4de1f",
@@ -4320,7 +4313,7 @@
     "id": "14e38eba-d895-41a7-a872-52551960429d",
     "name": "Exclusions-in-parallel",
     "persistSession": false,
-    "parallel": false,
+    "parallel": true,
     "timeout": 1200,
     "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304", "7b8ed507-d0b7-43df-92f6-edc016b1f606", "7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac"]
   }],
