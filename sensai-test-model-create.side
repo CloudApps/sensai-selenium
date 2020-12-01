@@ -352,7 +352,7 @@
     }, {
       "id": "f4936390-f61b-4723-8a6d-007fc71806d5",
       "comment": "Click the \"Train Model\" button.",
-      "command": "//click",
+      "command": "click",
       "target": "id=trainModelButton",
       "targets": [],
       "value": ""
@@ -4311,11 +4311,11 @@
     "tests": ["7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f"]
   }, {
     "id": "14e38eba-d895-41a7-a872-52551960429d",
-    "name": "Exclusions-in-parallel",
+    "name": "Models-Testing-in-parallel",
     "persistSession": false,
     "parallel": true,
     "timeout": 1200,
-    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304", "7b8ed507-d0b7-43df-92f6-edc016b1f606", "7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac"]
+    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac", "7b8ed507-d0b7-43df-92f6-edc016b1f606", "7f7bb9eb-3f33-4457-9fb9-d0ad0d081e7f", "6f3ddb29-cf01-427c-a73f-4b4f8e304204", "72e94f46-778c-4347-9c60-cba5e6c6b9fd", "5379cbba-bd69-4d68-b48b-7b35ebc29389", "6566cb0a-e169-4ffb-bea1-826408411227", "270f9f2f-8785-47a0-bd64-90eca54b5733", "e1bf8610-2f73-4b8d-a8ed-45b35b375b3c"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
