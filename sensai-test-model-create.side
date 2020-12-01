@@ -3545,12 +3545,12 @@
       "id": "de9c63b2-cf3b-4b17-a29e-c1fc38b57f3d",
       "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
       "command": "click",
-      "target": "id=checkbox-OPPORTUNITY.LEADSOURCE",
+      "target": "id=checkbox-OPPORTUNITY.Leadsource",
       "targets": [
-        ["id=checkbox-OPPORTUNITY.LEADSOURCE", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.LEADSOURCE", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.LEADSOURCE']", "xpath:attributes"],
-        ["xpath=//span/input", "xpath:position"]
+        ["id=checkbox-OPPORTUNITY.Leadsource", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.Leadsource", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.Leadsource']", "xpath:attributes"],
+        ["xpath=//div[2]/div/span/span/input", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -3670,7 +3670,7 @@
       "value": "account"
     }, {
       "id": "0a4de7e9-7a89-4ad8-87a0-23d016be5278",
-      "comment": "Click the \"ISWON\" checkbox to select it.",
+      "comment": "Click the \"Account.Annualrevenue\" checkbox to select it.",
       "command": "click",
       "target": "id=checkbox-OPPORTUNITY.Account.Annualrevenue",
       "targets": [
