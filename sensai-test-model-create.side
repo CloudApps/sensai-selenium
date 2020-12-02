@@ -87,20 +87,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "613bcf5b-5df9-4711-886c-a8b425439a46",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "15c91bd1-4efa-4ef9-862c-91499b40ae26",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "6294aa56-55d1-4a81-a7de-1e4a39282d9e",
+      "id": "a0c09d44-09ec-4698-bb32-9bb3cb372c2c",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "7bccc65f-2b8b-4732-9161-6bae55c568c7",
@@ -467,20 +471,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "78beff02-3761-4f87-93e1-79e37c9b82cd",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "8e9ffa5a-08a2-4d15-87f1-9e2353a9f794",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "c619c09e-fad1-496b-801b-10297b83d72b",
+      "id": "604e4368-6822-4c00-8c7e-9176c6e2b36c",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "59ffc8eb-7338-4d70-8703-93a42f425159",
@@ -805,20 +813,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "470fc8de-16e8-4021-b38f-686b8fddcc74",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "d4139e9b-3871-440f-bc36-5ad73d5ad645",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "62dc7914-477c-4d9f-b08f-4db94d060efe",
+      "id": "a5e66954-2e2f-41ec-83c2-5a928bccffbe",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "aa2d1ec0-7a49-458a-897a-092707a3cf88",
@@ -1180,20 +1192,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "00045ae1-1f4d-4738-8e49-d29ef08e44a2",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "9b6654d0-1c9a-49ef-966f-1cd2e6708014",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "ea5c3508-983b-4083-9cd5-dc97741e4e12",
+      "id": "5f00de8a-05ae-4ce1-b53c-805105646843",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "ceaa23a1-97e4-4c8a-bb76-21d956977a44",
@@ -1525,20 +1541,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "1a5eb935-e511-4e14-a35e-95b0aae34ffe",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "f4efecad-7c75-4c68-bf20-49a417c44f73",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "a34964a6-e793-4f37-a02a-0780b4604bbf",
+      "id": "03c3fb14-f3ea-44e0-b4c2-e8bb038d1f20",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "94713d82-c1e0-4b03-a155-dd2cea4384a2",
@@ -1930,20 +1950,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "715730e8-08a6-458a-846a-0958e854fff5",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "6193a9d0-8243-4660-bb4d-bc20e88720e6",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "b2c6a3a3-b73c-4321-8e48-476ad08d4916",
+      "id": "a16d3b06-fb9b-423f-b75c-d1a4139646eb",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "a6465714-eece-438a-a8fe-2d5be1189c60",
@@ -2240,10 +2264,10 @@
       ],
       "value": ""
     }, {
-      "id": "23d10771-dbca-4d87-a022-ef8e00db002e",
-      "comment": "",
+      "id": "bb8c2d39-0f5d-41d5-a42f-5a3bde3d4e31",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "15000",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -2378,20 +2402,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "9ece1a17-2db4-4e4d-85bc-fde9a61bf9cc",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "4df4685e-35da-4042-b533-746ecc03fe8a",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "eb3e8233-860c-4bb7-a673-200fe6b1dee3",
+      "id": "f0214f47-cedf-4ee0-943b-efc3cd59e666",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "39a7280b-53a5-4ded-87ac-55037b30afd2",
@@ -2713,20 +2741,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "fc186be8-a5d8-4755-a2e3-1d6328bf9092",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "83abbd40-24ea-4fba-97df-b5f47fbcfe79",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "f2804c93-b447-4472-817d-50d07965008b",
+      "id": "e2482c77-945a-4bae-aaac-07bda771a918",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "aa283107-222c-4887-a663-2074e9b6a7f3",
@@ -3013,20 +3045,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "88bbf61b-d75a-4b4f-9474-ebf94677ef9d",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "d8039e63-b4b3-4c8e-9b0d-2430752e93fc",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "8c6003ec-41c2-4bb8-b4a1-70c4bbf9aad2",
+      "id": "57a68a6e-8818-4a51-9741-4e32e5b7cca0",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "77f203c6-fc47-45a1-984b-9e5bf0d5ceee",
@@ -3404,20 +3440,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "443f5638-6572-4b4b-8df3-154159c4368e",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "b27218c8-15b6-49de-a947-eaf8eb91acc0",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "0e6170dd-27c8-4edb-8088-f5dd243379a8",
+      "id": "b85622a6-e740-4775-8b2b-fd3792677847",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "6c8d1a5b-75ad-4953-89bf-379c7da8ef11",
@@ -3681,6 +3721,17 @@
       ],
       "value": ""
     }, {
+      "id": "11086d49-2641-43be-a7fd-9d9cfc758c14",
+      "comment": "Enter \"billingpostalcode\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "billingpostalcode"
+    }, {
       "id": "c98f8960-7e95-4754-9c43-073072f66e29",
       "comment": "Click the \"Account.Billingpostalcode\" checkbox to select it.",
       "command": "click",
@@ -3689,9 +3740,20 @@
         ["id=checkbox-OPPORTUNITY.Account.Billingpostalcode", "id"],
         ["css=#checkbox-OPPORTUNITY\\.Account\\.Billingpostalcode", "css:finder"],
         ["xpath=//input[@id='checkbox-OPPORTUNITY.Account.Billingpostalcode']", "xpath:attributes"],
-        ["xpath=//div[7]/div/span/span/input", "xpath:position"]
+        ["xpath=//span/input", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "372711ba-5768-4bb1-bfa0-aa6bad7b35b8",
+      "comment": "Enter \"createddate\" in the search box",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "createddate"
     }, {
       "id": "cfc85598-d8a7-4f4f-8f32-0371f4c1d0f8",
       "comment": "Click the \"Account.Createddate\" checkbox to select it.",
@@ -3705,6 +3767,17 @@
       ],
       "value": ""
     }, {
+      "id": "30efa95d-c95e-437f-8284-ada970fc7724",
+      "comment": "Enter \"industry\" in the search box",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "industry"
+    }, {
       "id": "83d434cc-0037-44b0-8489-39f8eab3e77b",
       "comment": "Click the \"Account.Industry\" checkbox to select it.",
       "command": "click",
@@ -3716,6 +3789,17 @@
         ["xpath=//div[7]/div/span/span/input", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "74e0d4e4-369d-4557-8cd8-faf72e1a34d5",
+      "comment": "Enter \"isdeleted\" in the search box",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "isdeleted"
     }, {
       "id": "51510576-b2a8-4a09-ba8f-a171630d67a6",
       "comment": "Click the \"Account.Isdeleted\" checkbox to select it.",
@@ -3729,6 +3813,17 @@
       ],
       "value": ""
     }, {
+      "id": "b6c46f3f-20b6-4d92-b2be-91e76e2eaf3e",
+      "comment": "Enter \"lastmodifieddate\" in the search box",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "lastmodifieddate"
+    }, {
       "id": "1054b277-f8cb-4694-95b0-7195251b384a",
       "comment": "Click the \"Account.Lastmodifieddate\" checkbox to select it.",
       "command": "click",
@@ -3740,6 +3835,17 @@
         ["xpath=//div[8]/div/span/span/input", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "09e2cd03-0609-421e-8ae8-1ad3f2f292a1",
+      "comment": "Enter \"name\" in the search box",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "name"
     }, {
       "id": "a582753f-20ab-4f13-a97f-f1110f6b0ee2",
       "comment": "Click the \"Account.NAME\" checkbox to select it.",
@@ -3753,6 +3859,17 @@
       ],
       "value": ""
     }, {
+      "id": "cfd802f4-b125-4c9d-8b11-06576f6e45a4",
+      "comment": "Enter \"employees\" in the search box",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "employees"
+    }, {
       "id": "afdaeb2b-1a5e-406d-a458-812ed1cff22a",
       "comment": "Click the \"Account.Numberofemployees\" checkbox to select it.",
       "command": "click",
@@ -3764,6 +3881,17 @@
         ["xpath=//div[8]/div/span/span/input", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "91f099a1-8d90-46c1-9c75-501f065e711e",
+      "comment": "Enter \"shippingpostalcode\" in the search box",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "shippingpostalcode"
     }, {
       "id": "2d160c4b-ba73-4c0f-8d13-c6bec8601b0a",
       "comment": "Click the \"Account.Shippingpostalcode\" checkbox to select it.",
@@ -3804,10 +3932,10 @@
       ],
       "value": ""
     }, {
-      "id": "72f2ea03-acbd-489c-a5d3-76bbd354e234",
-      "comment": "",
+      "id": "59b801da-89be-4374-a91f-0b1d9c76bc4e",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "15000",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -3832,16 +3960,16 @@
       ],
       "value": ""
     }, {
-      "id": "f3306fe8-1517-44b0-8eed-97caafa20233",
-      "comment": "",
+      "id": "fcacf204-0357-474d-a4da-85da59c2a886",
+      "comment": "Pause 5 minutes.",
       "command": "pause",
-      "target": "150000",
+      "target": "300000",
       "targets": [],
       "value": ""
     }, {
       "id": "0cc0c39b-9484-44fb-9354-5fcf36d7cefb",
       "comment": "Refresh the page.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
@@ -3942,20 +4070,24 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "3bb4705e-9722-4f67-a1a8-190e20508846",
-      "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
-      "value": ""
+      "id": "653e04ed-8d72-4a63-a381-c1f5ecab13e3",
+      "comment": "Wait for the sidebarToggleButton to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=sidebarToggleButton",
+      "targets": [
+        ["id=sidebarToggleButton", "id"],
+        ["css=#sidebarToggleButton", "css:finder"],
+        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
     }, {
-      "id": "e784bda5-21a3-4b75-b8cf-5876f98535f7",
+      "id": "55f6483b-9599-4428-a09c-240d6377ba0d",
       "comment": "Click on the sidebarToggleButton.",
       "command": "click",
-      "target": "css=path",
-      "targets": [
-        ["css=path", "css:finder"]
-      ],
+      "target": "id=sidebarToggleButton",
+      "targets": [],
       "value": ""
     }, {
       "id": "3d60aea3-ec3e-4920-a0fd-7aa6df214bd7",
