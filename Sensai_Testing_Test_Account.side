@@ -6340,13 +6340,13 @@
       "command": "waitForElementPresent",
       "target": "linkText=SL Tenant to Enable-Disable",
       "targets": [
-        ["linkText=SL Tenant to Disable-Enable", "linkText"],
-        ["css=tr:nth-child(13) a", "css:finder"],
-        ["xpath=//a[contains(text(),'SL Tenant to Disable-Enable')]", "xpath:link"],
-        ["xpath=//table[@id='tenantsTable']/tbody/tr[13]/td/a", "xpath:idRelative"],
+        ["linkText=SL Tenant to Enable-Disable", "linkText"],
+        ["css=tr:nth-child(14) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SL Tenant to Enable-Disable')]", "xpath:link"],
+        ["xpath=//table[@id='tenantsTable']/tbody/tr[14]/td/a", "xpath:idRelative"],
         ["xpath=//a[contains(@href, '/tenants/001_4506248614de4f43a7b00379c0b1882c')]", "xpath:href"],
-        ["xpath=//tr[13]/td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SL Tenant to Disable-Enable')]", "xpath:innerText"]
+        ["xpath=//tr[14]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SL Tenant to Enable-Disable')]", "xpath:innerText"]
       ],
       "value": "60000"
     }, {
@@ -6354,7 +6354,15 @@
       "comment": "Click on the existing Tenant \"SL Tenant to Enable-Disable\" to access the record.",
       "command": "click",
       "target": "linkText=SL Tenant to Enable-Disable",
-      "targets": [],
+      "targets": [
+        ["linkText=SL Tenant to Enable-Disable", "linkText"],
+        ["css=tr:nth-child(14) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SL Tenant to Enable-Disable')]", "xpath:link"],
+        ["xpath=//table[@id='tenantsTable']/tbody/tr[14]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tenants/001_4506248614de4f43a7b00379c0b1882c')]", "xpath:href"],
+        ["xpath=//tr[14]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SL Tenant to Enable-Disable')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
       "id": "02dd808b-99cf-44a7-8b98-06f5a45ced4d",
@@ -6434,7 +6442,7 @@
       "value": ""
     }, {
       "id": "c373ce9b-19e6-4521-840f-969c85686e8e",
-      "comment": "Enter the username of \"SL Tenant to Enable-Disable\" that's just been disabled.",
+      "comment": "Enter the username of \"SL Tenant to Enable-Disable\" that's just been enabled.",
       "command": "type",
       "target": "id=username",
       "targets": [
@@ -6444,10 +6452,10 @@
         ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sl_tenant_disable_enable@sensai.test"
+      "value": "sl_tenant_enable_disable@sensai.test"
     }, {
       "id": "bf958874-ce01-4562-ab36-d8e4569ce469",
-      "comment": "Enter the password of \"SL Tenant to Enable-Disable\" that's just been disabled.",
+      "comment": "Enter the password of \"SL Tenant to Enable-Disable\" that's just been enabled.",
       "command": "type",
       "target": "id=password",
       "targets": [
@@ -6473,6 +6481,19 @@
       ],
       "value": ""
     }, {
+      "id": "cd4664e0-d4dd-493e-8a5c-76deb6a68355",
+      "comment": "Wait for the User's name link to be present in the header, \"SL Tenant to Enable-Disable\"",
+      "command": "waitForElementPresent",
+      "target": "id=settingsHeaderLink",
+      "targets": [
+        ["id=settingsHeaderLink", "id"],
+        ["css=#settingsHeaderLink", "css:finder"],
+        ["xpath=//div[@id='settingsHeaderLink']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/header/nav/div/div", "xpath:idRelative"],
+        ["xpath=//nav/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
       "id": "15b958a1-b900-4d9f-8ad9-2f4c4b20a9f7",
       "comment": "Verify the \"SL Tenant to Enable-Disable\" link is present - ie they have logged in successfully.",
       "command": "//verifyElementPresent",
@@ -6494,26 +6515,32 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "c53562e3-89e1-4e07-b09d-972a569359f8",
+      "comment": "Wait for the \"Create User\" button element to be present. (TO CONFIRM THE USER HAS LOGGED IN SUCCESSFULLY.)",
+      "command": "//waitForElementPresent",
+      "target": "",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "2dd4d94f-3eef-4a5d-9589-9e4e88ccdf09",
+      "comment": "Pause for the page to load. THIS TEST USED TO WORK WITHOUT THIS STEP.",
+      "command": "//pause",
+      "target": "",
+      "targets": [],
+      "value": "6000"
+    }, {
       "id": "bdcca299-56c8-4349-a60e-15d705855c54",
-      "comment": "Wait for the link \"SL Tenant to Disable-Enable\" to be present. (This is just to confirm that the user has been able to log in as I can't verify the username text in the header.)",
+      "comment": "Wait for the link \"SL Tenant to Enable-Disable\" to be present. (This is just to confirm that the user has been able to log in as I can't verify the username text in the header.)",
       "command": "waitForElementPresent",
-      "target": "linkText=SL Tenant to Disable-Enable",
+      "target": "linkText=SL Tenant to Enable-Disable",
       "targets": [],
       "value": "60000"
     }, {
       "id": "9ad6b057-ed66-404b-b394-a0d2690cb140",
-      "comment": "Verify the link \"SL Tenant to Disable-Enable\" is present. (This is just to confirm that the user has been able to log in as I can't verify the username text in the header.)",
+      "comment": "Verify the link \"SL Tenant to Enable-Disable\" is present. (This is just to confirm that the user has been able to log in as I can't verify the username text in the header.)",
       "command": "verifyElementPresent",
-      "target": "linkText=SL Tenant to Disable-Enable",
-      "targets": [
-        ["linkText=SL Tenant to Disable-Enable", "linkText"],
-        ["css=td:nth-child(1) > a", "css:finder"],
-        ["xpath=//a[contains(text(),'SL Tenant to Disable-Enable')]", "xpath:link"],
-        ["xpath=//table[@id='usersTable']/tbody/tr/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/users/sl_tenant_disable_enable%40sensai.test')]", "xpath:href"],
-        ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SL Tenant to Disable-Enable')]", "xpath:innerText"]
-      ],
+      "target": "linkText=SL Tenant to Enable-Disable",
+      "targets": [],
       "value": ""
     }, {
       "id": "f7a8a638-69dc-4646-b259-acf675845d70",
@@ -6527,6 +6554,13 @@
         ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
         ["xpath=//div/div[2]", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "a585719c-9b5f-4114-988f-7927ad96819f",
+      "comment": "Re-open the login URL to ensure the Username field is available.",
+      "command": "open",
+      "target": "https://test.cloudapps.dev",
+      "targets": [],
       "value": ""
     }, {
       "id": "f758f5f7-02c5-44ce-94f9-0461449f96d7",
@@ -6655,6 +6689,20 @@
       ],
       "value": ""
     }, {
+      "id": "3ce7f60b-be47-4dd7-a03b-af2489697215",
+      "comment": "Wait for the \"Tick\" Element to be present ",
+      "command": "//waitForElementPresent",
+      "target": "css=.check-icon",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "c6dc2f4f-86f8-4737-ba99-e41ed757dfe8",
+      "comment": "Verify the Enabled tick element is NOT present.",
+      "command": "//verifyElementNotPresent",
+      "target": "css=.check-icon",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "ae728270-9f07-47e9-963b-5dd1f6476117",
       "comment": "Click the \"Log out\" button to log out of the SL Tenant to Enable-Disable account.",
       "command": "click",
@@ -6716,14 +6764,10 @@
       "value": ""
     }, {
       "id": "d031f535-5cbc-4a4b-a37b-8cd0052f865e",
-      "comment": "NOT WORKING - Verify that the Error element is present. (Cannot verify the text within it as yet.)",
-      "command": "verifyElementPresent",
-      "target": "css=.fade",
-      "targets": [
-        ["css=.fade", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div", "xpath:idRelative"],
-        ["xpath=//div[2]/div", "xpath:position"]
-      ],
+      "comment": "INTERMITTENT - Verify that the Error element is present. (Cannot verify the text within it as yet.)",
+      "command": "//verifyElementPresent",
+      "target": "xpath=//div[@id='root']/div[2]/div",
+      "targets": [],
       "value": ""
     }, {
       "id": "7891a1e4-1752-40dc-ab7b-fe7743d82d6d",
@@ -7509,6 +7553,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "1ffbc5c8-a856-45da-8f8a-d271798f4af3",
+      "comment": "Pause after refreshing the page to ensure the page has reloaded.",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "88fda5d2-ce0e-4ea7-bf23-db1bab66bb19",
       "comment": "Wait for the Tenant Name field value element to be VISIBLE. Added to make sure that field is available for verifying.",
       "command": "waitForElementVisible",
@@ -7552,7 +7603,7 @@
       "value": "SL Tenant to Edit Ltd"
     }, {
       "id": "f3bff3c7-b71e-4945-814a-851c9863cf2b",
-      "comment": "Click the createTenantModalButton button using the CSS.",
+      "comment": "Click the createTenantModalButton button using the CSS, i.e. the \"Update\" button.",
       "command": "click",
       "target": "css=button[id=\"createTenantModalButton\"]",
       "targets": [],
@@ -7565,19 +7616,33 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "dff99912-1adc-4266-9e75-7cf78af6e3df",
-      "comment": "Wait for the Tenant Name field value element to be VISIBLE. Added to make sure that field is available for verifying.",
-      "command": "//waitForElementVisible",
-      "target": "css=p[class=\"form-control-plaintext\"]",
-      "targets": [],
-      "value": "6000"
-    }, {
       "id": "36e1005a-1d86-4162-90bb-9e275d57c3cc",
       "comment": "Wait for the Tenant Name field value element to be present.",
       "command": "waitForElementPresent",
       "target": "css=p[class=\"form-control-plaintext\"]",
       "targets": [],
       "value": "120000"
+    }, {
+      "id": "2f99db45-9b46-4f3b-9bc7-036c7c1a32be",
+      "comment": "Refresh the page. Without this, I can't click on the \"Edit Tenant\" button as it's behind the popover.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "437e4df7-fedd-49f8-94e1-792f67a72ef1",
+      "comment": "Pause after refreshing the page to ensure the page has reloaded.",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "60000"
+    }, {
+      "id": "5145268b-7386-4012-9767-6d7e6de8c209",
+      "comment": "Verify the Tenant Name field value text is present, i.e. \"SL Tenant to Edit Ltd\"",
+      "command": "verifyText",
+      "target": "xpath=//p[contains(.,'SL Tenant to Edit Ltd')]",
+      "targets": [],
+      "value": "SL Tenant to Edit Ltd"
     }]
   }, {
     "id": "4838c76f-afa6-4a3a-9525-eb3dcc61ccfc",
@@ -11721,11 +11786,23 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "20d41874-b6c5-420b-8c44-353ae268c945",
+      "comment": "",
+      "command": "//pause",
+      "target": "",
+      "targets": [],
+      "value": "6000"
+    }, {
       "id": "4bf49fab-0847-41ff-8068-096fd707ad99",
       "comment": "Select \"SL Test Schema\" from the Schema picklist. THIS WILL NEED TO BE CHANGED IF WE START SELECTING A DIFFERENT SCHEMA.",
       "command": "select",
       "target": "id=schemaId",
-      "targets": [],
+      "targets": [
+        ["id=schemaId", "id"],
+        ["css=#schemaId", "css:finder"],
+        ["xpath=//select[@id='schemaId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
       "value": "SL Test Schema"
     }, {
       "id": "2fe94823-2bb7-4b9d-9bb0-21e577e38cde",
@@ -15201,47 +15278,42 @@
     }, {
       "id": "5774db13-e005-428a-a4ea-8439e6ee6794",
       "comment": "Refresh the page. The \"Edit Tenant\" button isn't clickable coz of the Toast popover.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
     }, {
       "id": "85cd273d-b2ca-414e-847b-444d191c9a9f",
       "comment": "Wait for the \"Edit Tenant\" button element to be present. Located by the CSS.",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "css=div[class=\"text-right col-4\"] > button[id=\"editTenantButton\"]",
       "targets": [],
       "value": "120000"
     }, {
       "id": "56eaee8d-5fe5-4ba4-8216-2db608a867d4",
       "comment": "Click on the \"Edit Tenant\" button. Located by the CSS.",
-      "command": "click",
+      "command": "//click",
       "target": "css=div[class=\"text-right col-4\"] > button[id=\"editTenantButton\"]",
       "targets": [],
       "value": ""
     }, {
       "id": "1c60226d-c079-416a-8d34-f68a7b1e4084",
       "comment": "Wait for the Tenant Name field (\"company_name\") in the Modal to be editable.",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "id=company_name",
-      "targets": [
-        ["id=company_name", "id"],
-        ["css=#company_name", "css:finder"],
-        ["xpath=//input[@id='company_name']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "30000"
     }, {
       "id": "f0b8e165-e17b-4162-8920-ba824bde1b42",
       "comment": "Type \"zzz\" in the Company Name (just to fix a problem that I'm trying to work out)",
-      "command": "type",
+      "command": "//type",
       "target": "id=company_name",
       "targets": [],
       "value": "zzz"
     }, {
       "id": "d9bcf668-a1ad-4aa2-9d6a-face3b8cfcf2",
       "comment": "Click on the \"Update\" button in the Edit Tenant modal (actually called \"createTenantModalButton\").",
-      "command": "click",
+      "command": "//click",
       "target": "id=createTenantModalButton",
       "targets": [],
       "value": ""
