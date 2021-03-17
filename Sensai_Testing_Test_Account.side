@@ -5650,32 +5650,26 @@
       "targets": [],
       "value": "60000"
     }, {
-      "id": "f8707a9f-e7db-49a9-a349-437e6142f466",
-      "comment": "Wait for the \"Tenants\" header to appear.",
-      "command": "//waitForElementPresent",
-      "target": "xpath=//h3[contains(.,'Tenants')]",
-      "targets": [],
-      "value": "60000"
-    }, {
-      "id": "113f44ce-ca8e-46ea-ba8e-a2400c99f980",
-      "comment": "Go to the Tenants page. The new Tenant's name doesn't appear without this.",
-      "command": "//open",
+      "id": "79662650-a819-4abf-b762-d79f6d9aa22d",
+      "comment": "Open the \"All Tenants\" URL. (In Jenkins it fails because the button is behind the toast notification.)",
+      "command": "open",
       "target": "https://test.cloudapps.dev/tenants",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "50ea46b0-47c7-43e3-a5d8-8b42d8ee46b7",
-      "comment": "Echo the Tenant company name",
-      "command": "//echo",
-      "target": "${tenantcompanyname}",
       "targets": [],
       "value": ""
     }, {
       "id": "78d94811-5a8c-40b6-822a-03850b38be50",
       "comment": "Wait for the new tenant's name link element to be present.",
       "command": "waitForElementPresent",
-      "target": "xpath=//a[contains(text(),'SLTenantAdmin')]",
-      "targets": [],
+      "target": "linkText=${tenantcompanyname}",
+      "targets": [
+        ["linkText=2021-3-17_14-47_SLTenantAdmin", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'2021-3-17_14-47_SLTenantAdmin')]", "xpath:link"],
+        ["xpath=//table[@id='tenantsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tenants/001_7c596a296bcd4b528fb08750cdb7e2ef')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'2021-3-17_14-47_SLTenantAdmin')]", "xpath:innerText"]
+      ],
       "value": "120000"
     }, {
       "id": "bfc209e0-6a53-49c4-8f48-2ee2efc0a4d6",
@@ -5707,48 +5701,6 @@
       "targets": [],
       "value": "${currenttenantorgid}"
     }, {
-      "id": "98c24ff3-867f-4829-9265-69f61aac015c",
-      "comment": "Pause for 12000 milliseconds.",
-      "command": "pause",
-      "target": "",
-      "targets": [],
-      "value": "12000"
-    }, {
-      "id": "44f81908-e803-4c6a-8bf5-95e889283d35",
-      "comment": "Click on the \"Edit Tenant\" button. Located by the CSS.",
-      "command": "//click",
-      "target": "css=div[class=\"text-right col-4\"] > button[id=\"editTenantButton\"]",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "6c994e1c-cf5c-4fde-be0e-d24ae4c4f70a",
-      "comment": "Wait for the Tenant Name field (\"company_name\") in the Modal to be editable.",
-      "command": "//waitForElementPresent",
-      "target": "id=company_name",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "d1fbfac1-4214-496d-9792-64ad0254c187",
-      "comment": "Type \"zzz\" in the Company Name (just to fix a problem that I'm trying to work out)",
-      "command": "//type",
-      "target": "id=company_name",
-      "targets": [],
-      "value": "zzz"
-    }, {
-      "id": "767aebd7-4ab6-4fc0-bcb3-2aa050af9718",
-      "comment": "Click on the \"Update\" button in the Edit Tenant modal (actually called \"createTenantModalButton\").",
-      "command": "//click",
-      "target": "id=createTenantModalButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "f3094864-da48-4398-a0ab-a055d1c68687",
-      "comment": "Refresh the page. The \"Disable Tenant\" button isn't clickable coz of the popover.",
-      "command": "//executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "5c446e38-76dc-438b-82eb-60b96ba85ae0",
       "comment": "Wait for the \"Disable Tenant\" button element to be present",
       "command": "waitForElementPresent",
@@ -5763,6 +5715,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "35f81ce8-00d5-4709-8356-030bb8397003",
+      "comment": "Click the \"OK\" button in the \"Are you sure you want to disable this tenant?\" dialog box.",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'OK')]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "b17640b3-a19d-4377-83e4-f4e802d4756a",
       "comment": "Pause for 12000 milliseconds.",
       "command": "pause",
@@ -5770,10 +5729,10 @@
       "targets": [],
       "value": "12000"
     }, {
-      "id": "35f81ce8-00d5-4709-8356-030bb8397003",
-      "comment": "Click the \"OK\" button in the \"Are you sure you want to disable this tenant?\" dialog box.",
-      "command": "click",
-      "target": "xpath=//button[contains(.,'OK')]",
+      "id": "f3094864-da48-4398-a0ab-a055d1c68687",
+      "comment": "Refresh the page. The \"Disable Tenant\" button isn't clickable coz of the popover.",
+      "command": "//executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
     }, {
@@ -5784,33 +5743,34 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "17e9265a-29a0-4aae-ae0a-0f35ad8f7bf1",
-      "comment": "Click on the blue \"back\" button.",
-      "command": "//click",
-      "target": "id=backButton",
-      "targets": [],
+      "id": "986864c4-1ecf-43ac-982a-83a663f8722b",
+      "comment": "Click on the new tenant's name link again - using linkText=${tenantcompanyname}",
+      "command": "click",
+      "target": "linkText=${tenantcompanyname}",
+      "targets": [
+        ["linkText=2020-5-14_16-50_SLTenantAdmin", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'2020-5-14_16-50_SLTenantAdmin')]", "xpath:link"],
+        ["xpath=//table[@id='tenantsTable']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tenants/001_be615874a0504bb3bbfb767a4e7986bc')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'2020-5-14_16-50_SLTenantAdmin')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
-      "id": "c79b82e4-8908-47d6-b86d-74cbc624b19f",
-      "comment": "Refresh the page. The \"Disable Tenant\" button isn't clickable coz of the popover.",
-      "command": "//executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "id": "8b54b316-3db8-45a5-b977-c297b2a6684a",
+      "comment": "Verify the \"Enabled\" checkbox element is not present - i.e. that the Tenant was successfully disabled.",
+      "command": "verifyElementNotPresent",
+      "target": "css=.mb-2:nth-child(5) .check-icon",
       "targets": [],
       "value": ""
-    }, {
-      "id": "d4a8fc77-cc00-4cf8-9095-aa723ee198d2",
-      "comment": "Pause for 12000 milliseconds.",
-      "command": "//pause",
-      "target": "",
-      "targets": [],
-      "value": "12000"
     }, {
       "id": "24d852e5-a7ce-42c3-90e3-8d0ec622278e",
-      "comment": "Verify the new tenant's name doesn't appear anymore.",
-      "command": "//verifyElementNotPresent",
-      "target": "linkText=${tenantcompanyname}",
+      "comment": "Verify the \"toggleTenantStatusButton\" has the text \"Enable Tenant\".",
+      "command": "verifyText",
+      "target": "id=toggleTenantStatusButton",
       "targets": [],
-      "value": ""
+      "value": "Enable Tenant"
     }]
   }, {
     "id": "04614dbc-f134-4488-a951-111b3ef83f06",
@@ -6391,6 +6351,20 @@
       ],
       "value": ""
     }, {
+      "id": "7ba767cf-2843-4ef1-96fe-72360decf933",
+      "comment": "Refresh the page. Without this, I can't click on the \"Edit Tenant\" button as it's behind the popover.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f406123e-ffad-468f-a299-6b7078bfba2f",
+      "comment": "Pause after refreshing the page to ensure the page has reloaded.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "5ba9e137-a0ff-4fb5-bd0d-cc6c52457482",
       "comment": "",
       "command": "waitForElementPresent",
@@ -6689,12 +6663,40 @@
       ],
       "value": ""
     }, {
+      "id": "f4a88c1d-95aa-4847-bb83-5e1171a12fef",
+      "comment": "Refresh the page. Without this, I can't click on the \"Edit Tenant\" button as it's behind the popover.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "164ea24e-179c-43a3-8843-aefbda0d871d",
+      "comment": "Pause after refreshing the page to ensure the page has reloaded.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "3ce7f60b-be47-4dd7-a03b-af2489697215",
       "comment": "Wait for the \"Tick\" Element to be present ",
-      "command": "//waitForElementPresent",
+      "command": "waitForElementPresent",
       "target": "css=.check-icon",
       "targets": [],
       "value": "30000"
+    }, {
+      "id": "8fc2d177-7505-4f11-9402-9fb94eda3033",
+      "comment": "Verify the text \"Enable Tenant\" is present in the toggleTenantStatusButton button element.",
+      "command": "verifyText",
+      "target": "id=toggleTenantStatusButton",
+      "targets": [
+        ["id=toggleTenantStatusButton", "id"],
+        ["css=#toggleTenantStatusButton", "css:finder"],
+        ["xpath=//button[@id='toggleTenantStatusButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enable Tenant')]", "xpath:innerText"]
+      ],
+      "value": "Enable Tenant"
     }, {
       "id": "c6dc2f4f-86f8-4737-ba99-e41ed757dfe8",
       "comment": "Verify the Enabled tick element is NOT present.",
@@ -6707,13 +6709,7 @@
       "comment": "Click the \"Log out\" button to log out of the SL Tenant to Enable-Disable account.",
       "command": "click",
       "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "1dca280d-9fb3-4ba7-a34e-98d643999b9a",
@@ -7527,7 +7523,7 @@
       "value": ""
     }, {
       "id": "dbc1d011-b866-4ce2-b396-ac9afd5fdc6b",
-      "comment": "",
+      "comment": "Click \"Update\" (element called \"createTenantModalButton\")",
       "command": "click",
       "target": "id=createTenantModalButton",
       "targets": [
@@ -7556,13 +7552,13 @@
       "id": "1ffbc5c8-a856-45da-8f8a-d271798f4af3",
       "comment": "Pause after refreshing the page to ensure the page has reloaded.",
       "command": "pause",
-      "target": "",
+      "target": "60000",
       "targets": [],
-      "value": "60000"
+      "value": ""
     }, {
       "id": "88fda5d2-ce0e-4ea7-bf23-db1bab66bb19",
       "comment": "Wait for the Tenant Name field value element to be VISIBLE. Added to make sure that field is available for verifying.",
-      "command": "waitForElementVisible",
+      "command": "//waitForElementVisible",
       "target": "css=p[class=\"form-control-plaintext\"]",
       "targets": [],
       "value": "60000"
@@ -7618,7 +7614,7 @@
     }, {
       "id": "36e1005a-1d86-4162-90bb-9e275d57c3cc",
       "comment": "Wait for the Tenant Name field value element to be present.",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "css=p[class=\"form-control-plaintext\"]",
       "targets": [],
       "value": "120000"
@@ -7633,9 +7629,9 @@
       "id": "437e4df7-fedd-49f8-94e1-792f67a72ef1",
       "comment": "Pause after refreshing the page to ensure the page has reloaded.",
       "command": "pause",
-      "target": "",
+      "target": "60000",
       "targets": [],
-      "value": "60000"
+      "value": ""
     }, {
       "id": "5145268b-7386-4012-9767-6d7e6de8c209",
       "comment": "Verify the Tenant Name field value text is present, i.e. \"SL Tenant to Edit Ltd\"",
@@ -15062,9 +15058,16 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "407923ca-86a9-4bc2-90ea-fa2af4a2a751",
+      "id": "3fa9c256-3340-45e7-9e4a-456ef9783c5a",
       "comment": "Verify the \"Create Tenant\" button in the modal is NOT available.",
       "command": "verifyNotEditable",
+      "target": "xpath=//*[@id=\"createTenantModalButton\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "407923ca-86a9-4bc2-90ea-fa2af4a2a751",
+      "comment": "Verify the \"Create Tenant\" button in the modal is available. THIS SHOULD FAIL.",
+      "command": "verifyEditable",
       "target": "xpath=//*[@id=\"createTenantModalButton\"]",
       "targets": [],
       "value": ""
