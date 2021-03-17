@@ -5434,6 +5434,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "ecd59b21-fc25-4b7f-b6f2-d32ed9b89231",
+      "comment": "Pause for 12000 milliseconds.",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "12000"
+    }, {
       "id": "4fb2b194-b212-42aa-b9ce-5828369c2341",
       "comment": "Enter the new Tenant's company name into the \"Tenant Name\" field (id=company_name).",
       "command": "type",
@@ -5650,6 +5657,20 @@
       "targets": [],
       "value": "60000"
     }, {
+      "id": "e8907437-e138-4153-98b5-715ab71c06fa",
+      "comment": "Refresh the page. Without this, I can't click on the \"Edit Tenant\" button as it's behind the popover.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1ec0786-3969-440a-951f-97dbb534cd7f",
+      "comment": "Pause after refreshing the page to ensure the page has reloaded.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "79662650-a819-4abf-b762-d79f6d9aa22d",
       "comment": "Open the \"All Tenants\" URL. (In Jenkins it fails because the button is behind the toast notification.)",
       "command": "open",
@@ -5724,15 +5745,22 @@
     }, {
       "id": "b17640b3-a19d-4377-83e4-f4e802d4756a",
       "comment": "Pause for 12000 milliseconds.",
-      "command": "pause",
+      "command": "//pause",
       "target": "",
       "targets": [],
       "value": "12000"
     }, {
       "id": "f3094864-da48-4398-a0ab-a055d1c68687",
       "comment": "Refresh the page. The \"Disable Tenant\" button isn't clickable coz of the popover.",
-      "command": "//executeScript",
+      "command": "executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1187c759-e0cf-4c1e-aad0-5ae574ac3db5",
+      "comment": "Pause after refreshing the page to ensure the page has reloaded.",
+      "command": "pause",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
