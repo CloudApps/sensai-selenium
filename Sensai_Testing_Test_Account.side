@@ -15067,7 +15067,7 @@
     }, {
       "id": "407923ca-86a9-4bc2-90ea-fa2af4a2a751",
       "comment": "Verify the \"Create Tenant\" button in the modal is available. THIS SHOULD FAIL.",
-      "command": "verifyEditable",
+      "command": "//verifyEditable",
       "target": "xpath=//*[@id=\"createTenantModalButton\"]",
       "targets": [],
       "value": ""
@@ -15258,6 +15258,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "f009391b-f7de-456c-9cef-194c6f58a08b",
+      "comment": "Pause after refreshing the page to ensure the page has reloaded.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "515adec4-8368-4727-933e-ebc36d222bb1",
       "comment": "Wait for the \"Disable Tenant\" button element to be present.",
       "command": "waitForElementPresent",
@@ -15276,48 +15283,6 @@
       "comment": "Click the \"OK\" button in the \"Are you sure you want to disable this tenant?\" dialog box.",
       "command": "click",
       "target": "xpath=//button[contains(.,'OK')]",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "5774db13-e005-428a-a4ea-8439e6ee6794",
-      "comment": "Refresh the page. The \"Edit Tenant\" button isn't clickable coz of the Toast popover.",
-      "command": "//executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "85cd273d-b2ca-414e-847b-444d191c9a9f",
-      "comment": "Wait for the \"Edit Tenant\" button element to be present. Located by the CSS.",
-      "command": "//waitForElementPresent",
-      "target": "css=div[class=\"text-right col-4\"] > button[id=\"editTenantButton\"]",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "56eaee8d-5fe5-4ba4-8216-2db608a867d4",
-      "comment": "Click on the \"Edit Tenant\" button. Located by the CSS.",
-      "command": "//click",
-      "target": "css=div[class=\"text-right col-4\"] > button[id=\"editTenantButton\"]",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "1c60226d-c079-416a-8d34-f68a7b1e4084",
-      "comment": "Wait for the Tenant Name field (\"company_name\") in the Modal to be editable.",
-      "command": "//waitForElementPresent",
-      "target": "id=company_name",
-      "targets": [],
-      "value": "30000"
-    }, {
-      "id": "f0b8e165-e17b-4162-8920-ba824bde1b42",
-      "comment": "Type \"zzz\" in the Company Name (just to fix a problem that I'm trying to work out)",
-      "command": "//type",
-      "target": "id=company_name",
-      "targets": [],
-      "value": "zzz"
-    }, {
-      "id": "d9bcf668-a1ad-4aa2-9d6a-face3b8cfcf2",
-      "comment": "Click on the \"Update\" button in the Edit Tenant modal (actually called \"createTenantModalButton\").",
-      "command": "//click",
-      "target": "id=createTenantModalButton",
       "targets": [],
       "value": ""
     }]
