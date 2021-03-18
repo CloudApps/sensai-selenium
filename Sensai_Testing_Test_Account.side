@@ -5,7 +5,7 @@
   "url": "https://test.cloudapps.dev",
   "tests": [{
     "id": "007387ed-e7e9-4bf3-8ee2-84c84f050304",
-    "name": "Tenant User 12 - Models - SuMo Model - No Primary Type",
+    "name": "zzz Tenant User xx - Models - SuMo Model - No Primary Type NOT NEEDED",
     "commands": [{
       "id": "b4e97e25-2218-4c20-855d-300dabcd9f67",
       "comment": "",
@@ -362,21 +362,16 @@
     }, {
       "id": "8fd7cb30-d340-46ea-a446-a3af2412b4f1",
       "comment": "Pause 7 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "420000",
       "targets": [],
       "value": ""
     }, {
       "id": "56b83c8a-543d-4bc1-9384-6131ef64499a",
       "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
-      "command": "assertText",
+      "command": "//assertText",
       "target": "xpath=//p[contains(.,'TRAINED')]",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'TRAINING_REQUESTED')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "TRAINED"
     }]
   }, {
@@ -3637,7 +3632,7 @@
     }]
   }, {
     "id": "be9e196e-517b-4aeb-aae0-e9559ee61ac4",
-    "name": "Tenant User 12a - Models - SuMo Model with Primary Type",
+    "name": "Tenant User 12 - Models - SuMo Model with Primary Type",
     "commands": [{
       "id": "117accba-de2f-422b-adc7-e12d2a54b968",
       "comment": "",
@@ -16802,134 +16797,6 @@
       "value": ""
     }]
   }, {
-    "id": "1527371c-2484-4b93-9c86-db6016122832",
-    "name": "zzzz",
-    "commands": [{
-      "id": "9918177b-a521-40dd-855f-3ae1bf1aab44",
-      "comment": "",
-      "command": "open",
-      "target": "/login?redirect=/home",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8b6007c4-97e7-444c-8afa-445bd1d280b6",
-      "comment": "If someone is logged in (i.e. the username field isn't present)...",
-      "command": "if",
-      "target": "document.getElementById('username') === null",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a9d87bf8-3e1f-4282-9106-8ac2f767a6a2",
-      "comment": "...click the Logout link in the header.",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "9e21512a-1e44-4aaf-8fcc-2a0b40be6aa9",
-      "comment": "",
-      "command": "open",
-      "target": "/login",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "25529a0a-863c-48c6-970b-7c1b7483e6e4",
-      "comment": "End of IF statement.",
-      "command": "end",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "99bc0590-0db6-4cbc-ad77-87c123c128f9",
-      "comment": "Enter \"automated_testing_user@sensai.test\" in the Username field.",
-      "command": "type",
-      "target": "id=username",
-      "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "automated_testing_user@sensai.test"
-    }, {
-      "id": "4a428c0c-8df2-41a2-bea3-7499b6ab2be3",
-      "comment": "Enter the \"automated_testing_user@sensai.test\" user's password in the Password field.",
-      "command": "type",
-      "target": "id=password",
-      "targets": [
-        ["id=password", "id"],
-        ["css=#password", "css:finder"],
-        ["xpath=//input[@id='password']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
-        ["xpath=//div[2]/input", "xpath:position"]
-      ],
-      "value": "AutomatedUser123$"
-    }, {
-      "id": "a2e7f55c-dc1a-455e-995e-4b47914f5d17",
-      "comment": "Press the \"Enter\" key to log in.",
-      "command": "sendKeys",
-      "target": "id=password",
-      "targets": [
-        ["id=password", "id"],
-        ["css=#password", "css:finder"],
-        ["xpath=//input[@id='password']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
-        ["xpath=//div[2]/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
-    }, {
-      "id": "26ce49ae-8c96-4115-b13a-604ca2240563",
-      "comment": "Wait for the sidebarToggleButton to be present.",
-      "command": "waitForElementPresent",
-      "target": "id=sidebarToggleButton",
-      "targets": [
-        ["id=sidebarToggleButton", "id"],
-        ["css=#sidebarToggleButton", "css:finder"],
-        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"]
-      ],
-      "value": "30000"
-    }, {
-      "id": "40ebc5c3-8dfb-407b-becd-76df1e98901b",
-      "comment": "Click on the sidebarToggleButton.",
-      "command": "click",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "c38da66f-6844-4861-bd27-866dc06e0c1f",
-      "comment": "Click on the Models sidebar link.",
-      "command": "click",
-      "target": "css=.modelsSidebarLink",
-      "targets": [
-        ["css=.modelsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
-        ["xpath=//div/div[6]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "0764d190-608b-4cb0-8e4d-290bf0ddfb43",
-      "comment": "Enter \"SL - BC Model to edit\" in the search box.",
-      "command": "type",
-      "target": "name=query",
-      "targets": [
-        ["name=query", "name"],
-        ["css=.form-control", "css:finder"],
-        ["xpath=//input[@name='query']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "SL - BC Model to edit"
-    }]
-  }, {
     "id": "48ea3cdf-7389-446f-bef5-a94f4b1e1239",
     "name": "Tenant User 23 - Metrics - Numerical Regression",
     "commands": [{
@@ -19068,67 +18935,88 @@
   }],
   "suites": [{
     "id": "3a7aaad8-1edf-4c23-a188-38ecd7e7028a",
-    "name": "007_-_Tenant_User_-_Models",
+    "name": "007_-_Tenant_User_-_Models_-_single_file",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
-    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304", "be9e196e-517b-4aeb-aae0-e9559ee61ac4", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac", "00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6f3ddb29-cf01-427c-a73f-4b4f8e304204", "e1bf8610-2f73-4b8d-a8ed-45b35b375b3c", "5379cbba-bd69-4d68-b48b-7b35ebc29389", "6566cb0a-e169-4ffb-bea1-826408411227", "270f9f2f-8785-47a0-bd64-90eca54b5733", "6ed746a7-9d34-4dc8-bad6-a29dee245804", "7b8ed507-d0b7-43df-92f6-edc016b1f606"]
+    "timeout": 600,
+    "tests": ["be9e196e-517b-4aeb-aae0-e9559ee61ac4", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac"]
   }, {
     "id": "2c4602e7-8cd6-478d-b47d-d07c3444a35b",
     "name": "001_Login_tests_-_All_User_Types",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["d86b1f6f-8166-4a14-a638-6523245cc92d", "25a8c0a8-f8c7-40f3-99fe-27f1355a5f6d", "295dd4fd-26bb-4b5f-b5d1-4f4b0a625b25", "4c34d032-2867-490a-9c6b-49f2957c953c", "4838c76f-afa6-4a3a-9525-eb3dcc61ccfc", "0db27bfe-5aa5-495f-b7ec-98bf57426d13"]
   }, {
     "id": "e5dc718e-ad74-48b8-9e09-56f411b1b82b",
     "name": "002_-_CloudApps_Admin_-_Tenant_administration",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["50c7ee26-a12f-4fa4-9dc1-1bbac663a1a8", "3143be28-35e5-4b66-aa6a-220213a1e754", "04086720-9be8-457d-9cba-916cf041326e", "bbd846d2-93e8-40c7-9d16-0a4e9ad03de2"]
   }, {
     "id": "5ad311d6-337b-4018-a1ee-78d086fb5174",
     "name": "003_-_Tenant_Admin_-_User_administration",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["04614dbc-f134-4488-a951-111b3ef83f06", "15faae31-5501-4179-8ad5-f584e3e6d393", "c9090129-12de-4804-aa51-7f0dbe81f7d0", "e9610431-6a6c-4f73-9c0d-85e75957f6eb", "b3258e1c-f266-4e39-9fa8-2584089946c7", "58b9f5e6-9784-4e2d-bb2c-66cd8827f7a5"]
   }, {
     "id": "598f200c-84b4-4a3b-a9d5-b596bad863bf",
     "name": "004_-_Tenant_User_-_Files",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["dba0a97c-d3d3-4404-9166-c83da8925147", "5a1fb967-f1d3-49a1-9c9b-834dc509f60f", "efce9723-5908-4df4-9d2d-8816faba2726"]
   }, {
     "id": "e9845b97-72c7-46c1-bbae-89c554baa576",
     "name": "005_-_Tenant_User_-_Schemas",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["6f1c1671-2b72-486c-8a78-e6d5dc9f4cad", "cc95bf12-d9ac-4b7d-b727-6b2dc47e4bf2", "6c856a51-ef07-46e5-8177-8c859579ad2a"]
   }, {
     "id": "ac2b5115-b227-419b-a7d3-f35fadbef36c",
     "name": "006_-_Tenant_User_-_Datasets",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["d683e394-3deb-46cc-a42c-108d82676786", "24993f2e-fef3-4990-adc3-00565dfbd04d", "b0b2518e-7f18-4cdf-8011-91a443490db8"]
   }, {
     "id": "c3899bc8-6e6e-4f95-bb3f-835e7896289b",
     "name": "008_-_Tenant_User_-_Metrics",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["7b63c851-cd97-46fd-a7fe-1eb9b16ac9ed", "48ea3cdf-7389-446f-bef5-a94f4b1e1239"]
   }, {
     "id": "49548344-bf42-4711-942c-a8d3d2917eaa",
     "name": "Testing123",
     "persistSession": false,
     "parallel": false,
-    "timeout": 300,
+    "timeout": 600,
     "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1"]
+  }, {
+    "id": "ef197e18-f0d6-4844-9604-9d5d143b6683",
+    "name": "007a_-_Tenant_User_-_Models_-_multiple_files",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 600,
+    "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6f3ddb29-cf01-427c-a73f-4b4f8e304204", "e1bf8610-2f73-4b8d-a8ed-45b35b375b3c", "5379cbba-bd69-4d68-b48b-7b35ebc29389", "6566cb0a-e169-4ffb-bea1-826408411227"]
+  }, {
+    "id": "a5f4f0ae-ebbe-4689-bdf8-09b4b952cf07",
+    "name": "007b_-_Tenant_User_-_Models_-_BC_and_NR",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 600,
+    "tests": ["270f9f2f-8785-47a0-bd64-90eca54b5733", "6ed746a7-9d34-4dc8-bad6-a29dee245804"]
+  }, {
+    "id": "dcd1b34d-eeb0-44ba-9e6c-414d0b3d8d10",
+    "name": "007c_-_Tenant_User_-_Models_-_exclusion",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 600,
+    "tests": ["7b8ed507-d0b7-43df-92f6-edc016b1f606", "2ec1a2be-dfb8-4a95-b050-20ef0bf1ee82"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
