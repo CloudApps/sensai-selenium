@@ -7,10 +7,10 @@
     "id": "007387ed-e7e9-4bf3-8ee2-84c84f050304",
     "name": "Tenant User 12 - Models - SuMo Model - No Primary Type",
     "commands": [{
-      "id": "5dfe19b1-5e77-4dd6-b345-df8100f9b2fb",
+      "id": "b4e97e25-2218-4c20-855d-300dabcd9f67",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -304,7 +304,20 @@
       ],
       "value": ""
     }, {
-      "id": "90123beb-365c-4b27-a60d-a2d22b19eb19",
+      "id": "4699cfb8-d53b-4321-825c-9231c7d4f823",
+      "comment": "Type the new Model's name in the Search box.",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${new_model_name}"
+    }, {
+      "id": "5aef99d6-7b49-4ae5-88d8-d6800f5300ed",
       "comment": "Click the new model's link on the \"All Models\" page.",
       "command": "click",
       "target": "linkText=${new_model_name}",
@@ -319,35 +332,42 @@
       ],
       "value": ""
     }, {
-      "id": "59deef57-a5ce-43cc-8243-d77b9c13ca3b",
-      "comment": "",
+      "id": "1f2014e4-3f1b-43ec-9074-f7391dd729c9",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "15000",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
-      "id": "b4f6d8ba-6347-4430-88b8-ed8dbf293890",
+      "id": "f1ec53c8-93d9-4dd2-9bb5-c08563173035",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
       "command": "assertText",
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
     }, {
-      "id": "f4936390-f61b-4723-8a6d-007fc71806d5",
+      "id": "1ede6ab4-3558-4d6f-b71e-9cb5161c0c28",
       "comment": "Click the \"Train Model\" button.",
       "command": "click",
       "target": "id=trainModelButton",
-      "targets": [],
+      "targets": [
+        ["id=trainModelButton", "id"],
+        ["css=#trainModelButton", "css:finder"],
+        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
-      "id": "3ee2e109-e594-4f4a-b8c5-6e090ca4de1f",
-      "comment": "Pause for 10 minutes",
+      "id": "8fd7cb30-d340-46ea-a446-a3af2412b4f1",
+      "comment": "Pause 7 minutes.",
       "command": "pause",
-      "target": "600000",
+      "target": "420000",
       "targets": [],
       "value": ""
     }, {
-      "id": "c7432211-f16c-4b4e-bf34-3e19688d8703",
+      "id": "56b83c8a-543d-4bc1-9384-6131ef64499a",
       "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
       "command": "assertText",
       "target": "xpath=//p[contains(.,'TRAINED')]",
@@ -363,10 +383,10 @@
     "id": "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac",
     "name": "Tenant User 13 - Models - Opportunity",
     "commands": [{
-      "id": "0600dd21-954f-4910-9e05-e63dfd836cbe",
+      "id": "62a95be4-fcd1-4460-8c9d-45f1689666ba",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -639,10 +659,10 @@
       ],
       "value": ""
     }, {
-      "id": "88b779e1-46d8-4550-93cf-32956cb5dd49",
-      "comment": "",
+      "id": "725061e8-4f25-4e24-8889-7f1621b83641",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "15000",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -667,17 +687,10 @@
       ],
       "value": ""
     }, {
-      "id": "cf4b9028-ea2c-49da-97de-4d81ebb4e418",
-      "comment": "Pause for 10 minutes",
+      "id": "d5c5b8da-e8d5-4147-af6b-b8a5cae05dc4",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "600000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "484ac977-6977-43d7-b529-3e767254a6ee",
-      "comment": "Refresh the page.",
-      "command": "//executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -697,10 +710,10 @@
     "id": "6f3ddb29-cf01-427c-a73f-4b4f8e304204",
     "name": "Tenant User 15 - Models - Opp and Account",
     "commands": [{
-      "id": "01850eb7-35d6-48e7-9f65-6b57f55be22d",
+      "id": "e9baaebe-f98f-4254-8711-490ac3f1f083",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -982,6 +995,19 @@
       ],
       "value": ""
     }, {
+      "id": "785c54df-84ed-42c9-90d4-a1ee50dd0d01",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${new_model_name}"
+    }, {
       "id": "9b72e086-daa4-4124-bcbb-34ccef002b7f",
       "comment": "Click the new model's link on the \"All Models\" page.",
       "command": "click",
@@ -997,10 +1023,10 @@
       ],
       "value": ""
     }, {
-      "id": "e7f108ca-5fda-4669-ab94-051b9873edbd",
-      "comment": "",
+      "id": "87edd607-4a83-4c43-a7d5-174a7d820197",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "15000",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -1025,17 +1051,10 @@
       ],
       "value": ""
     }, {
-      "id": "1ade4764-a4c8-478e-966a-8897f66eb2be",
-      "comment": "Pause for 10 minutes",
+      "id": "14fb3231-4af7-4825-9209-75716cb14b61",
+      "comment": "Pause 5 minutes.",
       "command": "pause",
-      "target": "600000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "f43fd6b5-9857-49bf-ab26-adbfbdba7094",
-      "comment": "Refresh the page.",
-      "command": "executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "target": "300000",
       "targets": [],
       "value": ""
     }, {
@@ -1052,341 +1071,13 @@
       "value": "TRAINED"
     }]
   }, {
-    "id": "72e94f46-778c-4347-9c60-cba5e6c6b9fd",
-    "name": "zzz DUPLICATE - Tenant User 16 - Models - Opp with Account (same CSV file)",
-    "commands": [{
-      "id": "5e9ddf8d-e952-4e1c-bfae-80d4ef8595e8",
-      "comment": "",
-      "command": "open",
-      "target": "/login?redirect=/home",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "3518de16-b207-4fc6-bad8-68a04ad59622",
-      "comment": "If someone is logged in (i.e. the username field isn't present)...",
-      "command": "if",
-      "target": "document.getElementById('username') === null",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "19af04cc-8af5-439c-90f8-4be57261c23b",
-      "comment": "...click the Logout link in the header.",
-      "command": "click",
-      "target": "id=logoutHeaderLink",
-      "targets": [
-        ["id=logoutHeaderLink", "id"],
-        ["css=#logoutHeaderLink", "css:finder"],
-        ["xpath=//div[@id='logoutHeaderLink']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "91d5db53-5161-43ea-a26f-380202e9d60f",
-      "comment": "",
-      "command": "open",
-      "target": "/login",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "7302932d-9936-4aa5-91d4-ee24d32f4918",
-      "comment": "End of IF statement.",
-      "command": "end",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "5d127312-0755-4a3b-beb9-d141a8d52d17",
-      "comment": "Enter \"automated_testing@sensai.test\" in the Username field.",
-      "command": "type",
-      "target": "id=username",
-      "targets": [
-        ["id=username", "id"],
-        ["css=#username", "css:finder"],
-        ["xpath=//input[@id='username']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "automated_testing@sensai.test"
-    }, {
-      "id": "9b65d258-13c4-4a8e-a5ed-c1017a035630",
-      "comment": "Enter the \"automated_testing@sensai.test\" user's password in the Password field.",
-      "command": "type",
-      "target": "id=password",
-      "targets": [
-        ["id=password", "id"],
-        ["css=#password", "css:finder"],
-        ["xpath=//input[@id='password']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
-        ["xpath=//div[2]/input", "xpath:position"]
-      ],
-      "value": "Automated123$"
-    }, {
-      "id": "38a218f4-cebb-4ab7-aaf9-1e69c8349443",
-      "comment": "Press the \"Enter\" key to log in.",
-      "command": "sendKeys",
-      "target": "id=password",
-      "targets": [
-        ["id=password", "id"],
-        ["css=#password", "css:finder"],
-        ["xpath=//input[@id='password']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
-        ["xpath=//div[2]/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
-    }, {
-      "id": "9b6654d0-1c9a-49ef-966f-1cd2e6708014",
-      "comment": "Wait for the sidebarToggleButton to be present.",
-      "command": "waitForElementPresent",
-      "target": "id=sidebarToggleButton",
-      "targets": [
-        ["id=sidebarToggleButton", "id"],
-        ["css=#sidebarToggleButton", "css:finder"],
-        ["xpath=//button[@id='sidebarToggleButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/header/nav/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"]
-      ],
-      "value": "30000"
-    }, {
-      "id": "5f00de8a-05ae-4ce1-b53c-805105646843",
-      "comment": "Click on the sidebarToggleButton.",
-      "command": "click",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "ceaa23a1-97e4-4c8a-bb76-21d956977a44",
-      "comment": "Click on the Models sidebar link.",
-      "command": "click",
-      "target": "css=.modelsSidebarLink",
-      "targets": [
-        ["css=.modelsSidebarLink", "css:finder"],
-        ["xpath=//div[@id='sidebarNav']/div[6]", "xpath:idRelative"],
-        ["xpath=//div/div[6]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "ad65b2af-55a1-4bde-a707-8a2dc4e21968",
-      "comment": "Click the \"Create Model\" button.",
-      "command": "click",
-      "target": "id=createModelButton",
-      "targets": [
-        ["id=createModelButton", "id"],
-        ["css=#createModelButton", "css:finder"],
-        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "f4170e7f-c661-4b97-9089-ad0f4a96fcf6",
-      "comment": "Set the \"CurrentDateTime\" variable as the current datetime value.",
-      "command": "executeScript",
-      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return dateTime;",
-      "targets": [],
-      "value": "CurrentDateTime"
-    }, {
-      "id": "6ba83565-63b3-49bf-bcec-ca305ed1d8ef",
-      "comment": "",
-      "command": "echo",
-      "target": "${CurrentDateTime}",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "0abecfd0-3b44-4e70-afe8-b58eeb98363d",
-      "comment": "Enter the new Model's name in the Name field.",
-      "command": "type",
-      "target": "css=.form-group > #name",
-      "targets": [
-        ["css=.form-group > #name", "css:finder"],
-        ["xpath=//input[@id='name']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "Opportunity with Account - Automated ${CurrentDateTime}"
-    }, {
-      "id": "0d8e57fc-168e-40fb-83cc-e040ff0508fa",
-      "comment": "Store the new model's name in the variable \"new_model_name\".",
-      "command": "storeValue",
-      "target": "css=.form-group > #name",
-      "targets": [],
-      "value": "new_model_name"
-    }, {
-      "id": "f96c0f86-c8c6-4950-af58-dc2686b71a30",
-      "comment": "",
-      "command": "echo",
-      "target": "${new_model_name}",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "354ab299-5bf1-41d2-b81a-cb5973ed052a",
-      "comment": "",
-      "command": "pause",
-      "target": "3000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "99f92d09-1d10-4d35-97d7-7240d9b3b9a6",
-      "comment": "Select \"Opportunity with Account Dataset\" dataset from the picklist.",
-      "command": "select",
-      "target": "id=datasetId",
-      "targets": [],
-      "value": "label=Opportunity with Account Dataset"
-    }, {
-      "id": "c68412be-69de-47a7-af0c-d33d4f4192ad",
-      "comment": "Select the \"SFDC - Winning Opportunity\" architecture type.",
-      "command": "select",
-      "target": "id=type",
-      "targets": [
-        ["id=type", "id"],
-        ["css=#type", "css:finder"],
-        ["xpath=//select[@id='type']", "xpath:attributes"],
-        ["xpath=//div[3]/div/select", "xpath:position"]
-      ],
-      "value": "SFDC - Winning Opportunity"
-    }, {
-      "id": "fe111aec-5306-428e-b70f-43dabf2c6a13",
-      "comment": "Enter \"type\" in the search box.",
-      "command": "type",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": "type"
-    }, {
-      "id": "3903de71-7361-43a7-9901-a91feae36b0d",
-      "comment": "Click the \"TYPE\" checkbox to select it. (OPPORTUNITY.TYPE)",
-      "command": "click",
-      "target": "id=checkbox-OPPORTUNITY.Type",
-      "targets": [
-        ["id=checkbox-OPPORTUNITY.Type", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.Type", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.Type']", "xpath:attributes"],
-        ["xpath=//div[2]/div/span/span/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "fef92530-4dbf-4cf4-81f6-04ce1b817a65",
-      "comment": "Enter \"leadsource\" in the search box.",
-      "command": "type",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": "leadsource"
-    }, {
-      "id": "18243a6a-e66d-4e4c-bd09-9e0d0ac8d9ab",
-      "comment": "Click the \"Leadsource\" checkbox to select it. (OPPORTUNITY.LEADSOURCE)",
-      "command": "click",
-      "target": "id=checkbox-OPPORTUNITY.Leadsource",
-      "targets": [
-        ["id=checkbox-OPPORTUNITY.Leadsource", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.Leadsource", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.Leadsource']", "xpath:attributes"],
-        ["xpath=//span/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "96cb3c5b-0a17-4c05-8d9f-d13e401df5fd",
-      "comment": "Click the \"Create\" button in the Create Model modal.",
-      "command": "click",
-      "target": "id=createModelModalButton",
-      "targets": [
-        ["id=createModelModalButton", "id"],
-        ["css=#createModelModalButton", "css:finder"],
-        ["xpath=//button[@id='createModelModalButton']", "xpath:attributes"],
-        ["xpath=//button[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "654f3e63-30b3-4e00-a793-f9abbbd398d0",
-      "comment": "Wait for the new model's link to be present on the \"All Models\" page, for up to 5 minutes.",
-      "command": "waitForElementPresent",
-      "target": "linkText=${new_model_name}",
-      "targets": [],
-      "value": "300000"
-    }, {
-      "id": "2ae1a6d7-648d-43ff-aeea-c3ce699453d3",
-      "comment": "Click the new model's link on the \"All Models\" page.",
-      "command": "click",
-      "target": "linkText=${new_model_name}",
-      "targets": [
-        ["linkText=SuMo - Automated", "linkText"],
-        ["css=tr:nth-child(1) a", "css:finder"],
-        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
-        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
-        ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "523f8fe5-3122-436c-b4d2-4895a11f9913",
-      "comment": "Pause for 5 minutes",
-      "command": "pause",
-      "target": "300000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "6cd0104a-702c-492d-822a-bf05f19fa202",
-      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
-      "command": "assertText",
-      "target": "xpath=//p[contains(.,'CREATED')]",
-      "targets": [],
-      "value": "CREATED"
-    }, {
-      "id": "5b6b1c41-be51-4ac5-90a1-7d0e1c80234e",
-      "comment": "Refresh the page.",
-      "command": "executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "c047379b-6b18-4197-b82d-7b5f7d2c67d5",
-      "comment": "Click the \"Train Model\" button.",
-      "command": "click",
-      "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "d2ec5746-a329-406e-8016-c6dd00fdec56",
-      "comment": "Pause for 5 minutes",
-      "command": "pause",
-      "target": "300000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "ee0d6c4b-7716-4f96-98e5-4f7021f5de50",
-      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
-      "command": "assertText",
-      "target": "xpath=//div[2]/div/div/p",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'TRAINED')]", "xpath:innerText"]
-      ],
-      "value": "TRAINED"
-    }]
-  }, {
     "id": "5379cbba-bd69-4d68-b48b-7b35ebc29389",
     "name": "Tenant User 17 - Models - Opp, Account and SuMo Observations",
     "commands": [{
-      "id": "57506694-e64a-4763-858d-1cb65dda324f",
+      "id": "2824364f-2114-42a3-9f1b-2679aa0e90ca",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -1705,12 +1396,18 @@
       ],
       "value": ""
     }, {
-      "id": "f440f2f9-48f3-4886-8b85-c1178f49bc9e",
-      "comment": "Wait for the new model's link to be present on the \"All Models\" page, for up to 5 minutes.",
-      "command": "waitForElementPresent",
-      "target": "linkText=${new_model_name}",
-      "targets": [],
-      "value": "300000"
+      "id": "e64a2312-a2f4-4e2c-a98c-77ac40728edc",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${new_model_name}"
     }, {
       "id": "334335ae-39e0-45c5-9ea9-325f9f29443f",
       "comment": "Click the new model's link on the \"All Models\" page.",
@@ -1727,10 +1424,10 @@
       ],
       "value": ""
     }, {
-      "id": "37bf45f1-fdbb-414c-b079-dfbd8ee53888",
-      "comment": "Pause for 1 minute.",
+      "id": "de250b6e-fa29-4de7-8bdc-084b94d57c6d",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "60000",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -1776,35 +1473,35 @@
     }, {
       "id": "2304231d-1f22-466a-981a-84deb5e2b187",
       "comment": "",
-      "command": "storeValue",
+      "command": "//storeValue",
       "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div[2]/div/p",
       "targets": [],
       "value": "CurrentScore"
     }, {
       "id": "eda91cb0-d451-49b9-bd4d-d7d5911fc6cd",
       "comment": "If CurrentScore is greater than 0.8417",
-      "command": "if",
+      "command": "//if",
       "target": "${CurrentScore} > 0.8417",
       "targets": [],
       "value": ""
     }, {
       "id": "a7e3aeee-4bec-4efd-a2e1-d43aad08783e",
       "comment": "If CurrentScore is less than 0.9305",
-      "command": "if",
+      "command": "//if",
       "target": "${CurrentScore} < 0.8417",
       "targets": [],
       "value": ""
     }, {
       "id": "600c2611-4cc2-4622-a725-b69077954ea3",
       "comment": "",
-      "command": "end",
+      "command": "//end",
       "target": "",
       "targets": [],
       "value": ""
     }, {
       "id": "34a2f34c-37f7-4ab7-a70e-63b88617fe55",
       "comment": "",
-      "command": "end",
+      "command": "//end",
       "target": "",
       "targets": [],
       "value": ""
@@ -1813,10 +1510,10 @@
     "id": "270f9f2f-8785-47a0-bd64-90eca54b5733",
     "name": "Tenant User 19 - Models - Binary Classification",
     "commands": [{
-      "id": "1e6ac3c9-79db-4b28-a74c-b5eb878fa65e",
+      "id": "2e9155dd-87c6-4ddd-8e66-f0c77719ee66",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -2248,13 +1945,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "3e02213e-67f6-4026-8c12-1e7499a602f5",
-      "comment": "Wait for the text \"CREATED\" element to be present.",
-      "command": "//waitForElementPresent",
-      "target": "xpath=//p[contains(.,'CREATED')]",
-      "targets": [],
-      "value": "6000"
-    }, {
       "id": "eac6cab6-05a6-4df2-9cdd-73afc739bbb5",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
       "command": "assertText",
@@ -2335,10 +2025,10 @@
     "id": "7b8ed507-d0b7-43df-92f6-edc016b1f606",
     "name": "Tenant User 21 - Models - Exclude Columns",
     "commands": [{
-      "id": "65dbcf18-f77c-4b6f-8e6c-472cc465d384",
+      "id": "a83b9fe2-1141-4839-8684-7293d4221b3f",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -2665,10 +2355,10 @@
     "id": "6566cb0a-e169-4ffb-bea1-826408411227",
     "name": "Tenant User 18 - Models - Opp and Opp History",
     "commands": [{
-      "id": "8d2084ad-4fbe-438f-b118-2decf2e97b1f",
+      "id": "35859109-a54d-47d6-a3a0-7d663cec23ae",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -2950,10 +2640,23 @@
       ],
       "value": ""
     }, {
-      "id": "4cc62aa5-adfe-4b1f-b005-45271b831085",
-      "comment": "Pause for 2.5 minutes",
-      "command": "pause",
-      "target": "150000",
+      "id": "276e3c08-0309-43d2-8e13-c779ee022f6e",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${new_model_name}"
+    }, {
+      "id": "75f7274e-03f8-4a0d-9117-db0bc66d7316",
+      "comment": "",
+      "command": "",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -2972,17 +2675,10 @@
       ],
       "value": ""
     }, {
-      "id": "a65e318a-fad6-4b79-95a0-d90a28e7bade",
-      "comment": "Pause for 5 minutes",
+      "id": "83d9a159-632a-4c9c-a183-79c3f4cd3c02",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "300000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8c84e925-ef52-4b7e-97ec-a490276d652d",
-      "comment": "Refresh the page.",
-      "command": "executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -3030,10 +2726,10 @@
     "id": "e1bf8610-2f73-4b8d-a8ed-45b35b375b3c",
     "name": "Tenant User 16 - Models - Opp with Account - all column types",
     "commands": [{
-      "id": "d4b6c6a9-dbb2-4485-bdab-b614a91ccb4d",
+      "id": "dbbbcb2a-6010-4bd1-97b2-eb8f8d169a63",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -3472,6 +3168,19 @@
         ["xpath=//button[2]", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "87c5fabc-ced8-45b9-88f7-547c0dcd8796",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${new_model_name}"
     }, {
       "id": "2a658e51-5cde-4fbe-9cb4-77ec0cedc97b",
       "comment": "Click the new model's link on the \"All Models\" page.",
@@ -3930,10 +3639,10 @@
     "id": "be9e196e-517b-4aeb-aae0-e9559ee61ac4",
     "name": "Tenant User 12a - Models - SuMo Model with Primary Type",
     "commands": [{
-      "id": "beaa6947-b1ba-44b7-b4cd-1abbeaf8431f",
+      "id": "117accba-de2f-422b-adc7-e12d2a54b968",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -4227,7 +3936,20 @@
       ],
       "value": ""
     }, {
-      "id": "06d71490-3029-4fba-9b9c-b0c453f436a6",
+      "id": "b2116bf7-ae70-43c3-9256-6b8bc05c61ce",
+      "comment": "Type the new Model's name in the Search box.",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${new_model_name}"
+    }, {
+      "id": "1d800698-0776-4ea3-941b-be6a5174178a",
       "comment": "Click the new model's link on the \"All Models\" page.",
       "command": "click",
       "target": "linkText=${new_model_name}",
@@ -4242,35 +3964,49 @@
       ],
       "value": ""
     }, {
-      "id": "b068318a-7902-405a-8ac4-949a81348ea9",
-      "comment": "",
+      "id": "f0536cee-4f3f-4f05-ab8e-676d532fdee5",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "15000",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
-      "id": "1f2612c1-7b8c-41f5-a70e-1e1d8eb2ce1a",
+      "id": "e7fc6a4d-688a-4e49-823b-e7c9d77e776b",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
       "command": "assertText",
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
     }, {
-      "id": "73c04fbd-43d7-4570-acf9-bafcf3ca290e",
+      "id": "cbba4a02-d2a9-46f9-a9b5-abdc158dcbd9",
       "comment": "Click the \"Train Model\" button.",
       "command": "click",
       "target": "id=trainModelButton",
-      "targets": [],
+      "targets": [
+        ["id=trainModelButton", "id"],
+        ["css=#trainModelButton", "css:finder"],
+        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
-      "id": "406ead0e-521c-4874-aa4e-c9bf92421181",
-      "comment": "Pause for 8 minutes",
+      "id": "e8c1e9c8-6e3e-4649-a8f3-324a42d6fd48",
+      "comment": "Pause 7 minutes.",
       "command": "pause",
-      "target": "450000",
+      "target": "420000",
       "targets": [],
       "value": ""
     }, {
-      "id": "0be3897a-2617-4c19-b3f7-6a867f00a28d",
+      "id": "4ed973db-c87b-475b-bf55-3281a254e567",
+      "comment": "Pause 2.5 minutes.",
+      "command": "//pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04305312-97e1-4b67-8392-8d6d750d365f",
       "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
       "command": "assertText",
       "target": "xpath=//p[contains(.,'TRAINED')]",
@@ -4286,10 +4022,10 @@
     "id": "00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1",
     "name": "Tenant User 14 - Models - Opp with Activity",
     "commands": [{
-      "id": "ff29486c-3f60-472f-b3c1-09a8b1e30515",
+      "id": "aeab498b-8438-484c-bd5e-4d68f392d21c",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -4755,14 +4491,20 @@
       ],
       "value": ""
     }, {
-      "id": "1de43271-0629-45d7-baba-17d9b0bb433e",
-      "comment": "Wait for the new model's link to be present on the \"All Models\" page, for up to 5 minutes.",
-      "command": "waitForElementPresent",
-      "target": "linkText=${new_model_name}",
-      "targets": [],
-      "value": "300000"
+      "id": "2834024d-fe47-4a80-8f71-0dfd1123b60b",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${new_model_name}"
     }, {
-      "id": "a106987c-745e-4aee-963c-2c740b02866e",
+      "id": "f5cc4693-7cc9-4c66-a89c-772934812b40",
       "comment": "Click the new model's link on the \"All Models\" page.",
       "command": "click",
       "target": "linkText=${new_model_name}",
@@ -4777,7 +4519,14 @@
       ],
       "value": ""
     }, {
-      "id": "101d3a2a-95b6-4a87-b411-7b2813998fe7",
+      "id": "7484d6ff-8725-4f6a-8626-95bbea9ab5f0",
+      "comment": "Pause 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3a44875-8a2c-46bb-8b62-f592fa2be34c",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
       "command": "assertText",
       "target": "xpath=//p[contains(.,'CREATED')]",
@@ -15310,10 +15059,10 @@
     "id": "2ec1a2be-dfb8-4a95-b050-20ef0bf1ee82",
     "name": "Tenant User 21a - Models - Exclude Column Values",
     "commands": [{
-      "id": "c0219572-75c9-4dcd-90a0-d30d3d5fbbdc",
+      "id": "8cb01668-179f-445b-bd2f-d910c107abf7",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -15737,10 +15486,10 @@
     "id": "6ed746a7-9d34-4dc8-bad6-a29dee245804",
     "name": "Tenant User 20 - Models - Numerical Regression",
     "commands": [{
-      "id": "c419cdb1-f324-4adb-99b7-73b3323912ce",
+      "id": "00392f6b-b980-4d67-aeeb-9ee1ce262fe3",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -16916,7 +16665,7 @@
       "value": ""
     }, {
       "id": "c8a6e1d2-0230-4202-a8ae-219797b853e4",
-      "comment": "",
+      "comment": "Click the \"Create\" button in the Create Model modal.",
       "command": "click",
       "target": "id=createModelModalButton",
       "targets": [
@@ -16926,6 +16675,19 @@
         ["xpath=//button[2]", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "8e8628c9-cd68-4127-a965-ef4de997bde8",
+      "comment": "Type the new Model's name in the Search box.",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${new_model_name}"
     }, {
       "id": "ca958df8-45d4-4b05-b86c-f6a745870171",
       "comment": "Click the new model's link on the \"All Models\" page.",
@@ -16942,47 +16704,19 @@
       ],
       "value": ""
     }, {
-      "id": "b6967905-01e6-4496-afa2-e4eb1212d47e",
-      "comment": "Click on the \"Columns\" tab link.",
-      "command": "//click",
-      "target": "linkText=Columns",
+      "id": "8912967a-50d1-4f10-a3c1-c4ea9431904e",
+      "comment": "Pause 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
-      "id": "9c4bc9b3-17e6-40ea-9f00-6816a39f6c70",
-      "comment": "Enter column name \"BsmtFinSF1\" in the search field.",
-      "command": "//type",
-      "target": "name=query",
+      "id": "4eb8f3af-ee59-4b92-80be-94d9b94b0a53",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
-      "value": "BsmtFinSF1"
-    }, {
-      "id": "4c470666-1eb4-4fbc-8521-2b073e785b53",
-      "comment": "Click on the \"BsmtFinSF1\" row's Action Menu (using CSS)",
-      "command": "//click",
-      "target": "css=div[data-name*=\"BsmtFinSF1\"] > button",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "f683f3ea-dedd-44bc-b670-8fcbda008452",
-      "comment": "Click on the \"Edit Column\" value of the action menu.",
-      "command": "//click",
-      "target": "linkText=Edit Column",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "4e887db4-25c2-420f-9dd3-a5ec5af16278",
-      "comment": "Select \"Yes\" in the \"Include in training\" picklist.",
-      "command": "//select",
-      "target": "id=includeInTraining",
-      "targets": [],
-      "value": "Yes"
-    }, {
-      "id": "065e00cb-0742-4b1b-a74c-768ebb51fde6",
-      "comment": "Click the \"Save\" button.",
-      "command": "//click",
-      "target": "id=saveColumnEditModalButton",
-      "targets": [],
-      "value": ""
+      "value": "CREATED"
     }, {
       "id": "aed66e84-f6be-480d-b012-c2fc222688f0",
       "comment": "Click on the \"Train Model\" button on the same page.",
@@ -16996,13 +16730,6 @@
         ["xpath=//button[3]", "xpath:position"],
         ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
       ],
-      "value": ""
-    }, {
-      "id": "46bdda07-adca-4a57-acb4-38d2c24e6dd3",
-      "comment": "Refresh the page.",
-      "command": "executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
       "value": ""
     }, {
       "id": "43416331-13c7-46b6-b543-277629842f17",
@@ -17189,10 +16916,10 @@
     "id": "48ea3cdf-7389-446f-bef5-a94f4b1e1239",
     "name": "Tenant User 23 - Metrics - Numerical Regression",
     "commands": [{
-      "id": "0ce470b5-56c2-4743-bc00-28675df854d1",
+      "id": "66861621-d61a-49b9-9e0f-8103fc4eaac2",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -17956,10 +17683,10 @@
     "id": "a3188f9f-4643-48ec-8e1f-677ebb85fb0a",
     "name": "A TEMPLATE to reuse - Log in to Sensai Test account",
     "commands": [{
-      "id": "64df8b3d-f6b8-4401-806d-b293a04d5113",
+      "id": "8f497209-2789-43c5-ad0e-45968f4e36a0",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -18053,10 +17780,10 @@
     "id": "7b63c851-cd97-46fd-a7fe-1eb9b16ac9ed",
     "name": "Tenant User 22 - Metrics - Binary Classification",
     "commands": [{
-      "id": "b4911bbf-12e8-4a91-81c2-67ce11533c46",
+      "id": "748bae70-9f99-4cc7-b81b-b37e5b83a725",
       "comment": "",
       "command": "open",
-      "target": "/login?redirect=/home",
+      "target": "https://test.cloudapps.dev",
       "targets": [],
       "value": ""
     }, {
@@ -19384,7 +19111,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["007387ed-e7e9-4bf3-8ee2-84c84f050304"]
+    "tests": ["5a24dfa1-0732-40f9-88c7-7dd0e25c20ac"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
