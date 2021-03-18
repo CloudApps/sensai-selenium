@@ -4200,12 +4200,26 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "0361dea4-73e1-4049-b765-4af04ef13919",
+      "comment": "Wait for the \"datasetId\" picklist element to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "795afe6c-f9ed-4c67-9ba2-362f5283c8d5",
       "comment": "Select \"Opps & Events Dataset\" dataset from the picklist.",
       "command": "select",
       "target": "id=datasetId",
       "targets": [],
       "value": "label=Opps & Events Dataset"
+    }, {
+      "id": "3987a693-5824-407b-8af2-8c00df9222f4",
+      "comment": "Wait for the \"type\" picklist element to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=type",
+      "targets": [],
+      "value": "SFDC - Winning Opportunity"
     }, {
       "id": "28331799-c474-4b13-b3e1-824c824dfa72",
       "comment": "Select the \"SFDC - Winning Opportunity\" architecture type.",
@@ -4218,6 +4232,20 @@
         ["xpath=//div[3]/div/select", "xpath:position"]
       ],
       "value": "SFDC - Winning Opportunity"
+    }, {
+      "id": "1370604b-1ec2-4c19-9de9-7d1679028795",
+      "comment": "Pause 1 minute.",
+      "command": "//pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31133236-fa51-4db0-b991-4f0006dac87b",
+      "comment": "Wait for the Search field element to be present.",
+      "command": "waitForElementPresent",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [],
+      "value": "60000"
     }, {
       "id": "9c38a551-ddd7-4249-94c1-a4183cd24fe9",
       "comment": "Enter \"deal\" in the search box.",
@@ -4385,6 +4413,13 @@
       ],
       "value": ""
     }, {
+      "id": "3ff4d1cc-8690-4003-9f56-37903a248f81",
+      "comment": "Wait for the Events search box element to be present.",
+      "command": "waitForElementPresent",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "41c60169-3029-4639-8ce9-f1d2d7099460",
       "comment": "Enter \"accountid\" in the search box.",
       "command": "type",
@@ -4452,6 +4487,13 @@
         ["xpath=//input[@id='checkbox-EVENT.TYPE']", "xpath:attributes"],
         ["xpath=//div[5]/div/span/span/input", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "47629847-97b1-4084-8dca-71702aa49c60",
+      "comment": "Pause for a minute for the Create Model modal button to be clickable.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
       "value": ""
     }, {
       "id": "e4a9a881-de28-41b6-961c-c96f4a0a09f8",
