@@ -5652,7 +5652,7 @@
     }, {
       "id": "81b3ffb3-e2b7-4461-b2f9-fdb107d76d79",
       "comment": "Wait for the Tenants header to be present again, after clicking \"Create\". Without this step it's too quick.",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "id=name",
       "targets": [],
       "value": "60000"
@@ -5680,17 +5680,9 @@
     }, {
       "id": "78d94811-5a8c-40b6-822a-03850b38be50",
       "comment": "Wait for the new tenant's name link element to be present.",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "linkText=${tenantcompanyname}",
-      "targets": [
-        ["linkText=2021-3-17_14-47_SLTenantAdmin", "linkText"],
-        ["css=tr:nth-child(1) a", "css:finder"],
-        ["xpath=//a[contains(text(),'2021-3-17_14-47_SLTenantAdmin')]", "xpath:link"],
-        ["xpath=//table[@id='tenantsTable']/tbody/tr/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/tenants/001_7c596a296bcd4b528fb08750cdb7e2ef')]", "xpath:href"],
-        ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'2021-3-17_14-47_SLTenantAdmin')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "120000"
     }, {
       "id": "bfc209e0-6a53-49c4-8f48-2ee2efc0a4d6",
