@@ -4186,9 +4186,16 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "7698ec3f-115b-464b-a2a0-ca19cd46ff63",
+      "comment": "Pause 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "7809f72c-5626-45bf-84a7-c6938b0b0dd9",
       "comment": "Pause 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
@@ -4216,11 +4223,7 @@
       "comment": "Enter \"deal\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "deal"
     }, {
       "id": "50d688db-fabe-4e20-923c-eae03d6f6ac5",
@@ -4239,11 +4242,7 @@
       "comment": "Enter \"division\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "division"
     }, {
       "id": "ddb2465c-5483-475c-89c9-8ba76cfe710f",
@@ -4262,11 +4261,7 @@
       "comment": "Enter \"global_acc\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "global_acc"
     }, {
       "id": "3f6b8489-2574-49a8-85e0-1dab59f78fdf",
@@ -4285,11 +4280,7 @@
       "comment": "Enter \"challenger\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "challenger"
     }, {
       "id": "b65637b2-384a-4a5d-acab-079cb4989c26",
@@ -4308,11 +4299,7 @@
       "comment": "Enter \"iswon\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "iswon"
     }, {
       "id": "490c1c71-c342-4812-99dc-84dc2d54099d",
@@ -4331,11 +4318,7 @@
       "comment": "Enter \"city\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "city"
     }, {
       "id": "1bcc2356-e98a-4a10-9e4f-d48489b8f896",
@@ -4354,11 +4337,7 @@
       "comment": "Enter \"sector\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "sector"
     }, {
       "id": "2d8b14e2-1bbb-4f5e-9fe6-a9211c7119ae",
@@ -4377,11 +4356,7 @@
       "comment": "Enter \"usd\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [
-        ["css=.kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
-        ["xpath=//div[6]/div/div/div/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": "usd"
     }, {
       "id": "5743ea01-99e5-4a8b-a5bc-be6ab80e0683",
@@ -19111,7 +19086,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["5a24dfa1-0732-40f9-88c7-7dd0e25c20ac"]
+    "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
