@@ -4230,6 +4230,13 @@
       "targets": [],
       "value": "label=Opps & Events Dataset"
     }, {
+      "id": "df5105b5-afab-46be-a19e-f2b10bfdfb9e",
+      "comment": "Pause 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "3987a693-5824-407b-8af2-8c00df9222f4",
       "comment": "Wait for the \"type\" picklist element to be present.",
       "command": "waitForElementPresent",
@@ -4258,7 +4265,7 @@
     }, {
       "id": "1370604b-1ec2-4c19-9de9-7d1679028795",
       "comment": "Pause 1 minute.",
-      "command": "//pause",
+      "command": "pause",
       "target": "60000",
       "targets": [],
       "value": ""
