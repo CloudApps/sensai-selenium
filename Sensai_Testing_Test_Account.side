@@ -4216,6 +4216,13 @@
       "targets": [],
       "value": "60000"
     }, {
+      "id": "9d24b379-d23f-4262-a78f-29d9eeb81f6a",
+      "comment": "Select \"Titanic Dataset\" dataset from the picklist. (Trying to get the Opps & Events checkbox selection to work.)",
+      "command": "select",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "label=Titanic Dataset"
+    }, {
       "id": "795afe6c-f9ed-4c67-9ba2-362f5283c8d5",
       "comment": "Select \"Opps & Events Dataset\" dataset from the picklist.",
       "command": "select",
@@ -4258,7 +4265,7 @@
     }, {
       "id": "dbededb0-c20c-456e-a332-fcdb2b901dc9",
       "comment": "Enter \"none\" in the search box. Need to get the checkboxes clickable.",
-      "command": "type",
+      "command": "//type",
       "target": "css=.kn-search__input___2tyxf",
       "targets": [],
       "value": "none"
