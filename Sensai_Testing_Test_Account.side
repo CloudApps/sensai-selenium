@@ -4209,13 +4209,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "7809f72c-5626-45bf-84a7-c6938b0b0dd9",
-      "comment": "Pause 2.5 minutes.",
-      "command": "//pause",
-      "target": "150000",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "0361dea4-73e1-4049-b765-4af04ef13919",
       "comment": "Wait for the \"datasetId\" picklist element to be present.",
       "command": "waitForElementPresent",
@@ -4249,13 +4242,6 @@
       ],
       "value": "SFDC - Winning Opportunity"
     }, {
-      "id": "1370604b-1ec2-4c19-9de9-7d1679028795",
-      "comment": "Pause 1 minute.",
-      "command": "//pause",
-      "target": "60000",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "31133236-fa51-4db0-b991-4f0006dac87b",
       "comment": "Wait for the Search field element to be present.",
       "command": "waitForElementPresent",
@@ -4263,21 +4249,28 @@
       "targets": [],
       "value": "60000"
     }, {
-      "id": "9c38a551-ddd7-4249-94c1-a4183cd24fe9",
-      "comment": "Enter \"deal\" in the search box.",
+      "id": "1370604b-1ec2-4c19-9de9-7d1679028795",
+      "comment": "Pause 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d142b4e-a629-45fc-b7d2-3ea4e0f0b001",
+      "comment": "Enter \"usd\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
       "targets": [],
-      "value": "deal"
+      "value": "usd"
     }, {
-      "id": "50d688db-fabe-4e20-923c-eae03d6f6ac5",
-      "comment": "Click the \"DEAL_TYPE__C\" checkbox to select it. (DEAL_TYPE__C)",
+      "id": "5743ea01-99e5-4a8b-a5bc-be6ab80e0683",
+      "comment": "Click the \"TOTAL_AMOUNT_USD__C\" checkbox to select it. (OPPORTUNITY. TOTAL_AMOUNT_USD__C)",
       "command": "click",
-      "target": "id=checkbox-OPPORTUNITY.DEAL_TYPE__C",
+      "target": "id=checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C",
       "targets": [
-        ["id=checkbox-OPPORTUNITY.DEAL_TYPE__C", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.DEAL_TYPE__C", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.DEAL_TYPE__C']", "xpath:attributes"],
+        ["id=checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.TOTAL_AMOUNT_USD__C", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C']", "xpath:attributes"],
         ["xpath=//span/input", "xpath:position"]
       ],
       "value": ""
@@ -4358,6 +4351,25 @@
       ],
       "value": ""
     }, {
+      "id": "9c38a551-ddd7-4249-94c1-a4183cd24fe9",
+      "comment": "Enter \"DEAL_TYPE__C\" in the search box.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [],
+      "value": "DEAL_TYPE__C"
+    }, {
+      "id": "50d688db-fabe-4e20-923c-eae03d6f6ac5",
+      "comment": "Click the \"DEAL_TYPE__C\" checkbox to select it. (DEAL_TYPE__C)",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.DEAL_TYPE__C",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.DEAL_TYPE__C", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.DEAL_TYPE__C", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.DEAL_TYPE__C']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
       "id": "efc64b6f-c52d-468b-afa3-c3ac1235a358",
       "comment": "Enter \"city\" in the search box.",
       "command": "type",
@@ -4393,25 +4405,6 @@
         ["css=#checkbox-OPPORTUNITY\\.SECTOR__C", "css:finder"],
         ["xpath=//input[@id='checkbox-OPPORTUNITY.SECTOR__C']", "xpath:attributes"],
         ["xpath=//div[3]/div/span/span/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "1d142b4e-a629-45fc-b7d2-3ea4e0f0b001",
-      "comment": "Enter \"usd\" in the search box.",
-      "command": "type",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [],
-      "value": "usd"
-    }, {
-      "id": "5743ea01-99e5-4a8b-a5bc-be6ab80e0683",
-      "comment": "Click the \"TOTAL_AMOUNT_USD__C\" checkbox to select it. (OPPORTUNITY. TOTAL_AMOUNT_USD__C)",
-      "command": "click",
-      "target": "id=checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C",
-      "targets": [
-        ["id=checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.TOTAL_AMOUNT_USD__C", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C']", "xpath:attributes"],
-        ["xpath=//span/input", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -16739,7 +16732,7 @@
     }, {
       "id": "8912967a-50d1-4f10-a3c1-c4ea9431904e",
       "comment": "Pause 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
@@ -16765,29 +16758,51 @@
       ],
       "value": ""
     }, {
-      "id": "43416331-13c7-46b6-b543-277629842f17",
-      "comment": "Pause for 5 minutes",
+      "id": "992531dc-1d2f-4c2d-b7ab-34ae0ba02bc3",
+      "comment": "Pause 5 minutes.",
       "command": "pause",
       "target": "300000",
       "targets": [],
       "value": ""
     }, {
       "id": "a99151ba-1a31-4fab-b472-5f07a9903b14",
-      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
-      "command": "assertText",
+      "comment": "Wait for the text \"TRAINED\" in the Status field's element.",
+      "command": "//waitForText",
       "target": "xpath=//p[contains(.,'TRAINED')]",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'TRAINING_REQUESTED')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "TRAINED"
+    }, {
+      "id": "e144850d-6d8e-4039-a58c-7e4cf1b3d63d",
+      "comment": "Click on the Training tab's link",
+      "command": "click",
+      "target": "linkText=Training",
+      "targets": [
+        ["linkText=Training", "linkText"],
+        ["css=.nav > .nav-item:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Training')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/nav/a[3]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Training')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d721a3f9-a532-4ac9-bc48-0f8400a9b808",
+      "comment": "Wait for the text \"Target\" at the top of the Training tab.",
+      "command": "waitForText",
+      "target": "xpath=//h4[contains(.,'Target')]",
+      "targets": [
+        ["css=.form-group > h4", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Target')]", "xpath:innerText"]
+      ],
+      "value": "30000"
     }, {
       "id": "cec9f409-7d25-43cb-8c68-925d3484925c",
       "comment": "Verify the text \"AdamW\" in the \"Optimizer\" field value.",
       "command": "verifyText",
-      "target": "css=.row:nth-child(3) > .col-md-6:nth-child(1) .form-control-plaintext",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[2]/div[2]/div/div[3]/div/div/p",
       "targets": [
         ["css=.row:nth-child(3) > .col-md-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[2]/div[2]/div/div[3]/div/div/p", "xpath:idRelative"],
@@ -16799,7 +16814,7 @@
       "id": "9f5d31c1-3d17-437d-8cc5-5784af81f29d",
       "comment": "Verify the text \"RMSE Plot\" appears above the RMSE chart",
       "command": "verifyText",
-      "target": "css=.mt-4:nth-child(5) > .no-margin-bottom",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[5]/h4",
       "targets": [
         ["css=.mt-4:nth-child(5) > .no-margin-bottom", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[5]/h4", "xpath:idRelative"],
@@ -16810,11 +16825,9 @@
     }, {
       "id": "049effdd-b11b-4a3b-ae76-f49aca566bd2",
       "comment": "Verify the \"Accuracy Plot\" chart element is present.",
-      "command": "verifyElementPresent",
+      "command": "//verifyElementPresent",
       "target": "css=.recharts-layer:nth-child(8) > .recharts-curve",
-      "targets": [
-        ["css=.recharts-layer:nth-child(8) > .recharts-curve", "css:finder"]
-      ],
+      "targets": [],
       "value": ""
     }]
   }, {
