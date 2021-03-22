@@ -4251,8 +4251,43 @@
     }, {
       "id": "1370604b-1ec2-4c19-9de9-7d1679028795",
       "comment": "Pause 1 minute.",
-      "command": "pause",
+      "command": "//pause",
       "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbededb0-c20c-456e-a332-fcdb2b901dc9",
+      "comment": "Enter \"none\" in the search box. Need to get the checkboxes clickable.",
+      "command": "type",
+      "target": "css=.kn-search__input___2tyxf",
+      "targets": [],
+      "value": "none"
+    }, {
+      "id": "b837dc26-faba-46a4-bd59-1d201dd080e7",
+      "comment": "Click the backspace key on the keyboard - delete the E.",
+      "command": "//sendKeys",
+      "target": "${KEY_BACKSPACE}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6888514-84c6-4b15-82b8-bf3fd80018b8",
+      "comment": "Click the backspace key on the keyboard - delete the second N.",
+      "command": "//sendKeys",
+      "target": "${KEY_BACKSPACE}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5e470d0-15cf-4082-ab68-331529173f12",
+      "comment": "Click the backspace key on the keyboard - delete the O",
+      "command": "//sendKeys",
+      "target": "${KEY_BACKSPACE}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2d72f74-1176-46b1-8eb7-7edf60553151",
+      "comment": "Click the backspace key on the keyboard - delete the first N.",
+      "command": "//sendKeys",
+      "target": "${KEY_BACKSPACE}",
       "targets": [],
       "value": ""
     }, {
@@ -4487,7 +4522,7 @@
       "value": "type"
     }, {
       "id": "0d1f0c6c-6148-404a-a753-794f3189d898",
-      "comment": "Click the \"DURATIONINMINUTES\" checkbox to select it. (OPPORTUNITY. DURATIONINMINUTES)",
+      "comment": "Click the \"EVENT.TYPE\" checkbox to select it. (OPPORTUNITY. DURATIONINMINUTES)",
       "command": "click",
       "target": "id=checkbox-EVENT.TYPE",
       "targets": [
