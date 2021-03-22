@@ -549,6 +549,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "8f0da266-d4ef-42d0-85f9-12406e365c4b",
+      "comment": "Wait for the \"Dataset\" picklist element to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=datasetId",
+      "targets": [],
+      "value": "label=Opportunity Dataset"
+    }, {
       "id": "bf4203f4-e4e2-4636-be45-2b99480580ce",
       "comment": "Select \"Opportunity Dataset\" dataset from the picklist.",
       "command": "select",
@@ -661,6 +668,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "b4dcaa12-495f-4b57-a571-1ce14d23c7a6",
+      "comment": "Wait for text \"CREATED\" in the Status field value.",
+      "command": "waitForText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
       "id": "5e3cff70-18cd-44b6-9661-8a3bf647ef22",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
       "command": "assertText",
@@ -688,6 +702,13 @@
       "target": "150000",
       "targets": [],
       "value": ""
+    }, {
+      "id": "783024c7-4b9a-4a63-b823-e4978eca79f7",
+      "comment": "Wait for text \"TRAINED\" in the Status field value.",
+      "command": "waitForText",
+      "target": "xpath=//div[2]/div/div/p",
+      "targets": [],
+      "value": "TRAINED"
     }, {
       "id": "26125783-64db-490b-aa77-c40f9eb2f8ad",
       "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
