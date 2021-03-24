@@ -16861,7 +16861,7 @@
         ["xpath=//div/div[3]/div/div/p", "xpath:position"],
         ["xpath=//p[contains(.,'AdamW')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "AdamW"
     }, {
       "id": "9f5d31c1-3d17-437d-8cc5-5784af81f29d",
       "comment": "Verify the text \"RMSE Plot\" appears above the RMSE chart",
@@ -16873,7 +16873,7 @@
         ["xpath=//div[5]/h4", "xpath:position"],
         ["xpath=//h4[contains(.,'RMSE Plot')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "RMSE Plot"
     }, {
       "id": "049effdd-b11b-4a3b-ae76-f49aca566bd2",
       "comment": "Verify the \"Accuracy Plot\" chart element is present.",
