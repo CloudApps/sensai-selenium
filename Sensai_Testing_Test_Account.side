@@ -4203,25 +4203,18 @@
       "value": ""
     }, {
       "id": "7698ec3f-115b-464b-a2a0-ca19cd46ff63",
-      "comment": "Pause 1 minute.",
+      "comment": "Pause 30 seconds. IT DOESN'T WORK WITHOUT THIS.",
       "command": "pause",
-      "target": "60000",
+      "target": "30000",
       "targets": [],
       "value": ""
     }, {
       "id": "0361dea4-73e1-4049-b765-4af04ef13919",
-      "comment": "Wait for the \"datasetId\" picklist element to be present.",
-      "command": "waitForElementPresent",
+      "comment": "Wait for the \"datasetId\" picklist element to be EDITABLE.",
+      "command": "//waitForElementEditable",
       "target": "id=datasetId",
       "targets": [],
       "value": "60000"
-    }, {
-      "id": "9d24b379-d23f-4262-a78f-29d9eeb81f6a",
-      "comment": "Select \"Titanic Dataset\" dataset from the picklist. (Trying to get the Opps & Events checkbox selection to work.)",
-      "command": "select",
-      "target": "id=datasetId",
-      "targets": [],
-      "value": "label=Titanic Dataset"
     }, {
       "id": "795afe6c-f9ed-4c67-9ba2-362f5283c8d5",
       "comment": "Select \"Opps & Events Dataset\" dataset from the picklist.",
@@ -4230,16 +4223,23 @@
       "targets": [],
       "value": "label=Opps & Events Dataset"
     }, {
+      "id": "23d77b76-042e-4549-bb5f-3a525ac0d2f0",
+      "comment": "Pause 30 seconds. IT DOESN'T WORK WITHOUT THIS.",
+      "command": "pause",
+      "target": "30000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "df5105b5-afab-46be-a19e-f2b10bfdfb9e",
       "comment": "Pause 1 minute.",
-      "command": "pause",
+      "command": "//pause",
       "target": "60000",
       "targets": [],
       "value": ""
     }, {
       "id": "3987a693-5824-407b-8af2-8c00df9222f4",
-      "comment": "Wait for the \"type\" picklist element to be present.",
-      "command": "waitForElementPresent",
+      "comment": "Wait for the \"type\" picklist element to be EDITABLE.",
+      "command": "//waitForElementEditable",
       "target": "id=type",
       "targets": [],
       "value": "SFDC - Winning Opportunity"
@@ -4256,72 +4256,154 @@
       ],
       "value": "SFDC - Winning Opportunity"
     }, {
-      "id": "31133236-fa51-4db0-b991-4f0006dac87b",
-      "comment": "Wait for the Search field element to be present.",
+      "id": "9af06ac5-f126-4193-8c03-d26e55284639",
+      "comment": "Click on the \"Events\" tab",
+      "command": "click",
+      "target": "linkText=Events",
+      "targets": [
+        ["linkText=Events", "linkText"],
+        ["css=.nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Events')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div/nav/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Events')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ff4d1cc-8690-4003-9f56-37903a248f81",
+      "comment": "Wait for the search field element to be present.",
       "command": "waitForElementPresent",
-      "target": "css=.kn-search__input___2tyxf",
+      "target": "css=.active .kn-search__input___2tyxf",
       "targets": [],
       "value": "60000"
     }, {
-      "id": "1370604b-1ec2-4c19-9de9-7d1679028795",
-      "comment": "Pause 1 minute.",
-      "command": "pause",
-      "target": "60000",
+      "id": "ddb7a2e2-82c5-428c-8f27-4c991004fcae",
+      "comment": "Click in the search field.",
+      "command": "click",
+      "target": "css=.active .kn-search__input___2tyxf",
       "targets": [],
       "value": ""
     }, {
-      "id": "dbededb0-c20c-456e-a332-fcdb2b901dc9",
-      "comment": "Enter \"none\" in the search box. Need to get the checkboxes clickable.",
-      "command": "//type",
-      "target": "css=.kn-search__input___2tyxf",
-      "targets": [],
-      "value": "none"
+      "id": "41c60169-3029-4639-8ce9-f1d2d7099460",
+      "comment": "Enter \"accountid\" in the search box.",
+      "command": "type",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [
+        ["css=.active .kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
+        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "accountid"
     }, {
-      "id": "b837dc26-faba-46a4-bd59-1d201dd080e7",
-      "comment": "Click the backspace key on the keyboard - delete the E.",
-      "command": "//sendKeys",
-      "target": "${KEY_BACKSPACE}",
-      "targets": [],
+      "id": "494fd6bb-5c30-471e-9efc-7b0263c91026",
+      "comment": "Click the \"ACCOUNTID\" checkbox to select it. (OPPORTUNITY. ACCOUNTID)",
+      "command": "click",
+      "target": "id=checkbox-EVENT.ACCOUNTID",
+      "targets": [
+        ["id=checkbox-EVENT.ACCOUNTID", "id"],
+        ["css=#checkbox-EVENT\\.ACCOUNTID", "css:finder"],
+        ["xpath=//input[@id='checkbox-EVENT.ACCOUNTID']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
+      ],
       "value": ""
     }, {
-      "id": "e6888514-84c6-4b15-82b8-bf3fd80018b8",
-      "comment": "Click the backspace key on the keyboard - delete the second N.",
-      "command": "//sendKeys",
-      "target": "${KEY_BACKSPACE}",
-      "targets": [],
+      "id": "1feaf8b4-ec69-4963-9980-aa8eeff48985",
+      "comment": "Enter \"duration\" in the search box.",
+      "command": "type",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [
+        ["css=.active .kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
+        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "duration"
+    }, {
+      "id": "94f5e941-653d-41f9-94fa-6ce31c459700",
+      "comment": "Click the \"DURATIONINMINUTES\" checkbox to select it. (OPPORTUNITY. DURATIONINMINUTES)",
+      "command": "click",
+      "target": "id=checkbox-EVENT.DURATIONINMINUTES",
+      "targets": [
+        ["id=checkbox-EVENT.DURATIONINMINUTES", "id"],
+        ["css=#checkbox-EVENT\\.DURATIONINMINUTES", "css:finder"],
+        ["xpath=//input[@id='checkbox-EVENT.DURATIONINMINUTES']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
+      ],
       "value": ""
     }, {
-      "id": "a5e470d0-15cf-4082-ab68-331529173f12",
-      "comment": "Click the backspace key on the keyboard - delete the O",
-      "command": "//sendKeys",
-      "target": "${KEY_BACKSPACE}",
-      "targets": [],
+      "id": "116d118b-0f8f-4437-b440-bedd3e4122c1",
+      "comment": "Enter \"type\" in the search box.",
+      "command": "type",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [
+        ["css=.active .kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
+        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "type"
+    }, {
+      "id": "0d1f0c6c-6148-404a-a753-794f3189d898",
+      "comment": "Click the \"EVENT.TYPE\" checkbox to select it. (OPPORTUNITY. DURATIONINMINUTES)",
+      "command": "click",
+      "target": "id=checkbox-EVENT.TYPE",
+      "targets": [
+        ["id=checkbox-EVENT.TYPE", "id"],
+        ["css=#checkbox-EVENT\\.TYPE", "css:finder"],
+        ["xpath=//input[@id='checkbox-EVENT.TYPE']", "xpath:attributes"],
+        ["xpath=//div[5]/div/span/span/input", "xpath:position"]
+      ],
       "value": ""
     }, {
-      "id": "c2d72f74-1176-46b1-8eb7-7edf60553151",
-      "comment": "Click the backspace key on the keyboard - delete the first N.",
-      "command": "//sendKeys",
-      "target": "${KEY_BACKSPACE}",
-      "targets": [],
+      "id": "195505d9-1709-411c-a3a1-85474f06310b",
+      "comment": "Click the Opportunities tab header link.",
+      "command": "click",
+      "target": "linkText=Opportunities",
+      "targets": [
+        ["linkText=Opportunities", "linkText"],
+        ["css=.nav > .nav-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Opportunities')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/nav/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Opportunities')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
-      "id": "1d142b4e-a629-45fc-b7d2-3ea4e0f0b001",
+      "id": "bcdb0015-478f-4079-8502-005eedd03e1f",
+      "comment": "Wait for the search field element to be present.",
+      "command": "waitForElementPresent",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [],
+      "value": "60000"
+    }, {
+      "id": "d138176f-95e6-4cfb-b35d-4bcb3072ed92",
+      "comment": "Click in the search field.",
+      "command": "click",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [
+        ["css=.active .kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
+        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "css=.active .kn-search__input___2tyxf"
+    }, {
+      "id": "5abfb773-fbfc-4326-8ef1-d6b8690e9444",
       "comment": "Enter \"usd\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
       "targets": [],
       "value": "usd"
     }, {
+      "id": "c55f1b8e-27ff-483e-9384-a563f6fca93e",
+      "comment": "Check the \"TOTAL_AMOUNT_USD__C\" checkbox to select it. (OPPORTUNITY. TOTAL_AMOUNT_USD__C)",
+      "command": "//check",
+      "target": "id=checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "5743ea01-99e5-4a8b-a5bc-be6ab80e0683",
       "comment": "Click the \"TOTAL_AMOUNT_USD__C\" checkbox to select it. (OPPORTUNITY. TOTAL_AMOUNT_USD__C)",
       "command": "click",
       "target": "id=checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C",
-      "targets": [
-        ["id=checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C", "id"],
-        ["css=#checkbox-OPPORTUNITY\\.TOTAL_AMOUNT_USD__C", "css:finder"],
-        ["xpath=//input[@id='checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C']", "xpath:attributes"],
-        ["xpath=//span/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "e4a6fafb-85fb-4bda-abdc-5b8dac2a2fb7",
@@ -4454,96 +4536,6 @@
         ["css=#checkbox-OPPORTUNITY\\.SECTOR__C", "css:finder"],
         ["xpath=//input[@id='checkbox-OPPORTUNITY.SECTOR__C']", "xpath:attributes"],
         ["xpath=//div[3]/div/span/span/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "9af06ac5-f126-4193-8c03-d26e55284639",
-      "comment": "Click on the \"Events\" tab",
-      "command": "click",
-      "target": "linkText=Events",
-      "targets": [
-        ["linkText=Events", "linkText"],
-        ["css=.nav-item:nth-child(2)", "css:finder"],
-        ["xpath=//a[contains(text(),'Events')]", "xpath:link"],
-        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
-        ["xpath=//div/nav/a[2]", "xpath:position"],
-        ["xpath=//a[contains(.,'Events')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "3ff4d1cc-8690-4003-9f56-37903a248f81",
-      "comment": "Wait for the Events search box element to be present.",
-      "command": "waitForElementPresent",
-      "target": "css=.active .kn-search__input___2tyxf",
-      "targets": [],
-      "value": "60000"
-    }, {
-      "id": "41c60169-3029-4639-8ce9-f1d2d7099460",
-      "comment": "Enter \"accountid\" in the search box.",
-      "command": "type",
-      "target": "css=.active .kn-search__input___2tyxf",
-      "targets": [
-        ["css=.active .kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
-        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": "accountid"
-    }, {
-      "id": "494fd6bb-5c30-471e-9efc-7b0263c91026",
-      "comment": "Click the \"ACCOUNTID\" checkbox to select it. (OPPORTUNITY. ACCOUNTID)",
-      "command": "click",
-      "target": "id=checkbox-EVENT.ACCOUNTID",
-      "targets": [
-        ["id=checkbox-EVENT.ACCOUNTID", "id"],
-        ["css=#checkbox-EVENT\\.ACCOUNTID", "css:finder"],
-        ["xpath=//input[@id='checkbox-EVENT.ACCOUNTID']", "xpath:attributes"],
-        ["xpath=//div[2]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "1feaf8b4-ec69-4963-9980-aa8eeff48985",
-      "comment": "Enter \"duration\" in the search box.",
-      "command": "type",
-      "target": "css=.active .kn-search__input___2tyxf",
-      "targets": [
-        ["css=.active .kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
-        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": "duration"
-    }, {
-      "id": "94f5e941-653d-41f9-94fa-6ce31c459700",
-      "comment": "Click the \"DURATIONINMINUTES\" checkbox to select it. (OPPORTUNITY. DURATIONINMINUTES)",
-      "command": "click",
-      "target": "id=checkbox-EVENT.DURATIONINMINUTES",
-      "targets": [
-        ["id=checkbox-EVENT.DURATIONINMINUTES", "id"],
-        ["css=#checkbox-EVENT\\.DURATIONINMINUTES", "css:finder"],
-        ["xpath=//input[@id='checkbox-EVENT.DURATIONINMINUTES']", "xpath:attributes"],
-        ["xpath=//div[2]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "116d118b-0f8f-4437-b440-bedd3e4122c1",
-      "comment": "Enter \"type\" in the search box.",
-      "command": "type",
-      "target": "css=.active .kn-search__input___2tyxf",
-      "targets": [
-        ["css=.active .kn-search__input___2tyxf", "css:finder"],
-        ["xpath=(//input[@type='text'])[4]", "xpath:attributes"],
-        ["xpath=//div/div/div[2]/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": "type"
-    }, {
-      "id": "0d1f0c6c-6148-404a-a753-794f3189d898",
-      "comment": "Click the \"EVENT.TYPE\" checkbox to select it. (OPPORTUNITY. DURATIONINMINUTES)",
-      "command": "click",
-      "target": "id=checkbox-EVENT.TYPE",
-      "targets": [
-        ["id=checkbox-EVENT.TYPE", "id"],
-        ["css=#checkbox-EVENT\\.TYPE", "css:finder"],
-        ["xpath=//input[@id='checkbox-EVENT.TYPE']", "xpath:attributes"],
-        ["xpath=//div[5]/div/span/span/input", "xpath:position"]
       ],
       "value": ""
     }, {
