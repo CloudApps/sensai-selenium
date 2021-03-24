@@ -3220,9 +3220,16 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "f3e72032-0df7-48f8-925b-28139e308214",
+      "comment": "Wait for the text \"CREATED\" to be displayed on the new Model's view page.",
+      "command": "waitForText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
       "id": "6e2e979c-f120-41a6-a777-308f4ce08906",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
-      "command": "assertText",
+      "command": "//assertText",
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
@@ -4402,8 +4409,12 @@
       "id": "5743ea01-99e5-4a8b-a5bc-be6ab80e0683",
       "comment": "Click the \"TOTAL_AMOUNT_USD__C\" checkbox to select it. (OPPORTUNITY. TOTAL_AMOUNT_USD__C)",
       "command": "click",
-      "target": "id=checkbox-OPPORTUNITY.TOTAL_AMOUNT_USD__C",
-      "targets": [],
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [
+        ["css=.active .kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "e4a6fafb-85fb-4bda-abdc-5b8dac2a2fb7",
@@ -16773,7 +16784,7 @@
     }, {
       "id": "8912967a-50d1-4f10-a3c1-c4ea9431904e",
       "comment": "Pause 2.5 minutes.",
-      "command": "//pause",
+      "command": "pause",
       "target": "150000",
       "targets": [],
       "value": ""
@@ -16806,11 +16817,16 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "a99151ba-1a31-4fab-b472-5f07a9903b14",
-      "comment": "Wait for the text \"TRAINED\" in the Status field's element.",
-      "command": "//waitForText",
+      "id": "5532bc27-f043-4eba-b8d3-bcb8c8809226",
+      "comment": "Assert the text \"TRAINED\" is displayed on the new Model's view page.",
+      "command": "assertText",
       "target": "xpath=//p[contains(.,'TRAINED')]",
-      "targets": [],
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'TRAINING_REQUESTED')]", "xpath:innerText"]
+      ],
       "value": "TRAINED"
     }, {
       "id": "e144850d-6d8e-4039-a58c-7e4cf1b3d63d",
@@ -16830,20 +16846,15 @@
     }, {
       "id": "d721a3f9-a532-4ac9-bc48-0f8400a9b808",
       "comment": "Wait for the text \"Target\" at the top of the Training tab.",
-      "command": "waitForText",
+      "command": "//waitForText",
       "target": "xpath=//h4[contains(.,'Target')]",
-      "targets": [
-        ["css=.form-group > h4", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/div/h4", "xpath:idRelative"],
-        ["xpath=//h4", "xpath:position"],
-        ["xpath=//h4[contains(.,'Target')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "30000"
     }, {
       "id": "cec9f409-7d25-43cb-8c68-925d3484925c",
       "comment": "Verify the text \"AdamW\" in the \"Optimizer\" field value.",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[2]/div[2]/div/div[3]/div/div/p",
+      "target": "xpath=//p[contains(.,'AdamW')]",
       "targets": [
         ["css=.row:nth-child(3) > .col-md-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[2]/div[2]/div/div[3]/div/div/p", "xpath:idRelative"],
@@ -16855,7 +16866,7 @@
       "id": "9f5d31c1-3d17-437d-8cc5-5784af81f29d",
       "comment": "Verify the text \"RMSE Plot\" appears above the RMSE chart",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[5]/h4",
+      "target": "xpath=//h4[contains(.,'RMSE Plot')]",
       "targets": [
         ["css=.mt-4:nth-child(5) > .no-margin-bottom", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[5]/h4", "xpath:idRelative"],
@@ -19092,6 +19103,27 @@
     "parallel": false,
     "timeout": 600,
     "tests": ["7b8ed507-d0b7-43df-92f6-edc016b1f606", "2ec1a2be-dfb8-4a95-b050-20ef0bf1ee82"]
+  }, {
+    "id": "7a3f6c7b-f32a-405b-896b-5f90251e00d6",
+    "name": "TenantUser16",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e1bf8610-2f73-4b8d-a8ed-45b35b375b3c"]
+  }, {
+    "id": "4e040b7e-b6de-450b-8919-4008918fcf93",
+    "name": "TenantUser17",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5379cbba-bd69-4d68-b48b-7b35ebc29389"]
+  }, {
+    "id": "b4732219-a06e-4c26-9f16-cd185812ebc7",
+    "name": "TenantUser18",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6566cb0a-e169-4ffb-bea1-826408411227"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
