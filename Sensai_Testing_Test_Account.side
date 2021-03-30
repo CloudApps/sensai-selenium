@@ -21884,7 +21884,7 @@
     "name": "007c_-_Tenant_User_-_Models_-_3_objects",
     "persistSession": false,
     "parallel": true,
-    "timeout": 600,
+    "timeout": 1800,
     "tests": ["5379cbba-bd69-4d68-b48b-7b35ebc29389"]
   }, {
     "id": "a563cf46-b139-4ad3-9a6c-c22c7612eb9d",
