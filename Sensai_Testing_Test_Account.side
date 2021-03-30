@@ -1837,9 +1837,16 @@
       ],
       "value": "Leadsource"
     }, {
+      "id": "f4fd4109-ce2e-4d88-932f-82c7bdad8be6",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "82a984e4-5559-4b3f-88f8-036e23c0fc98",
       "comment": "Pause for 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
@@ -1916,9 +1923,16 @@
       ],
       "value": "Leadsource"
     }, {
+      "id": "9b13eb68-b83c-46b6-8aa5-a156420931f0",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "f27eebe4-c985-46c8-96f3-3c83d6e1f90b",
       "comment": "Pause for 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
@@ -1977,9 +1991,16 @@
       ],
       "value": ""
     }, {
+      "id": "b9ba8c53-9773-4f0c-b850-71755bc5858a",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "c56903fe-3c5e-4764-b563-a2548204fbd1",
       "comment": "Pause for 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
@@ -14923,6 +14944,13 @@
       ],
       "value": "Leadsource"
     }, {
+      "id": "0537af7b-4f5c-43ea-a854-3a4d4ee0d3ce",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "31d660c4-9533-4b86-bc11-ea6f4b092dd2",
       "comment": "Pause for 2.5 minutes.",
       "command": "//pause",
@@ -15086,6 +15114,13 @@
       ],
       "value": "Leadsource"
     }, {
+      "id": "44bdcb72-8b59-436a-b682-5cb416fee45d",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "73d1b288-2c9e-47ba-8dce-1759fde09093",
       "comment": "Pause for 2.5 minutes.",
       "command": "//pause",
@@ -15160,9 +15195,16 @@
       ],
       "value": ""
     }, {
+      "id": "2c3ebd9f-60de-40cc-9aae-2f514e5c9430",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "37725e4e-4c16-46ff-b456-b6552effd1f0",
       "comment": "Pause for 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
