@@ -21835,7 +21835,7 @@
     "name": "008_-_Tenant_User_-_Metrics",
     "persistSession": false,
     "parallel": true,
-    "timeout": 600,
+    "timeout": 1800,
     "tests": ["7b63c851-cd97-46fd-a7fe-1eb9b16ac9ed", "48ea3cdf-7389-446f-bef5-a94f4b1e1239"]
   }, {
     "id": "49548344-bf42-4711-942c-a8d3d2917eaa",
