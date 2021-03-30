@@ -325,16 +325,16 @@
       ],
       "value": ""
     }, {
-      "id": "d5c5b8da-e8d5-4147-af6b-b8a5cae05dc4",
-      "comment": "Pause 2.5 minutes.",
+      "id": "62dc7ced-ff78-4d19-85a2-3ac769a86697",
+      "comment": "Pause 5 minutes.",
       "command": "pause",
-      "target": "150000",
+      "target": "300000",
       "targets": [],
       "value": ""
     }, {
       "id": "783024c7-4b9a-4a63-b823-e4978eca79f7",
       "comment": "Wait for text \"TRAINED\" in the Status field value.",
-      "command": "waitForText",
+      "command": "//waitForText",
       "target": "xpath=//div[2]/div/div/p",
       "targets": [],
       "value": "TRAINED"
@@ -3451,9 +3451,9 @@
       "value": ""
     }, {
       "id": "5f31e7a6-b61c-4645-9765-4b6f9f98d5dc",
-      "comment": "",
+      "comment": "Pause 1 minute.",
       "command": "pause",
-      "target": "3000",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -3612,9 +3612,9 @@
       "value": ""
     }, {
       "id": "f0536cee-4f3f-4f05-ab8e-676d532fdee5",
-      "comment": "Pause 2.5 minutes.",
+      "comment": "Pause 1 minute.",
       "command": "pause",
-      "target": "150000",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -21737,7 +21737,7 @@
     "name": "007_-_Tenant_User_-_Models_-_1-2_objects",
     "persistSession": false,
     "parallel": true,
-    "timeout": 1200,
+    "timeout": 1800,
     "tests": ["be9e196e-517b-4aeb-aae0-e9559ee61ac4", "5a24dfa1-0732-40f9-88c7-7dd0e25c20ac", "6f3ddb29-cf01-427c-a73f-4b4f8e304204", "e1bf8610-2f73-4b8d-a8ed-45b35b375b3c"]
   }, {
     "id": "2c4602e7-8cd6-478d-b47d-d07c3444a35b",
