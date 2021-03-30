@@ -21281,6 +21281,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "75bec1ba-0058-4513-a896-e128f5ba75f2",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "5f77bda8-b1fa-4336-87d7-c500fe0e46fa",
       "comment": "",
       "command": "verifyText",
@@ -21878,14 +21885,14 @@
     "persistSession": false,
     "parallel": true,
     "timeout": 600,
-    "tests": ["5379cbba-bd69-4d68-b48b-7b35ebc29389", "1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7"]
+    "tests": ["5379cbba-bd69-4d68-b48b-7b35ebc29389"]
   }, {
     "id": "a563cf46-b139-4ad3-9a6c-c22c7612eb9d",
     "name": "009_-_Tenant_User_-_Models_-_Long_Training",
     "persistSession": false,
     "parallel": true,
-    "timeout": 1200,
-    "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6566cb0a-e169-4ffb-bea1-826408411227", "063720e2-cd1f-4c55-9e32-3af7e568bfb4", "5e37ec91-333e-456d-8690-53119563ef00", "817b79ca-869f-432f-818d-985a2e5c02a7"]
+    "timeout": 1800,
+    "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6566cb0a-e169-4ffb-bea1-826408411227", "063720e2-cd1f-4c55-9e32-3af7e568bfb4", "5e37ec91-333e-456d-8690-53119563ef00", "817b79ca-869f-432f-818d-985a2e5c02a7", "1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
