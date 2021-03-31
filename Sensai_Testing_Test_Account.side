@@ -2186,9 +2186,9 @@
       "value": ""
     }, {
       "id": "b457acca-e96d-4fbc-a88f-35008c68bb1a",
-      "comment": "",
+      "comment": "Pause for 1 minute.",
       "command": "pause",
-      "target": "3000",
+      "target": "6000",
       "targets": [],
       "value": ""
     }, {
@@ -2198,6 +2198,13 @@
       "target": "id=datasetId",
       "targets": [],
       "value": "label=Opportunity & Opportunity History Dataset"
+    }, {
+      "id": "f7e675ac-37e4-4de7-838a-7da4a0bc6466",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
     }, {
       "id": "0ee2403a-abdc-44f7-b906-5e7df658af66",
       "comment": "Select the \"SFDC - Winning Opportunity with History\" architecture type.",
@@ -2211,6 +2218,13 @@
       ],
       "value": "SFDC - Winning Opportunity with History"
     }, {
+      "id": "df39e5ec-b380-430d-8c4a-03e92fab859c",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "54b13d36-d7c7-4db6-849b-0f25af620150",
       "comment": "Enter \"account.name\" in the search box.",
       "command": "type",
@@ -2218,10 +2232,31 @@
       "targets": [],
       "value": "account.name"
     }, {
+      "id": "14d165c0-b641-4e2c-b7bf-d907f866102f",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "ee404ded-c633-4bb5-94c2-db15d3ff172f",
       "comment": "Click on the \"ACCOUNT.NAME\" checkbox to select it.",
       "command": "click",
       "target": "id=checkbox-OPPORTUNITY.ACCOUNT.NAME",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97d72451-9f9c-43e6-83a6-f484c141bcc6",
+      "comment": "",
+      "command": "//check",
+      "target": "id=checkbox-OPPORTUNITY.ACCOUNT.NAME",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bf97bc3-db88-46be-81b2-dc1357e5b12d",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
       "targets": [],
       "value": ""
     }, {
@@ -2306,6 +2341,13 @@
       ],
       "value": ""
     }, {
+      "id": "f15c1eb5-f61e-4a8e-95ce-c226b0dcc316",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "276e3c08-0309-43d2-8e13-c779ee022f6e",
       "comment": "",
       "command": "type",
@@ -2318,13 +2360,6 @@
         ["xpath=//input", "xpath:position"]
       ],
       "value": "${new_model_name}"
-    }, {
-      "id": "75f7274e-03f8-4a0d-9117-db0bc66d7316",
-      "comment": "",
-      "command": "",
-      "target": "",
-      "targets": [],
-      "value": ""
     }, {
       "id": "34cbf151-d201-4b93-a0d9-2f0c5a4a6a5f",
       "comment": "Click the new model's link on the \"All Models\" page.",
