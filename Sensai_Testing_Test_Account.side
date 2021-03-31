@@ -18964,6 +18964,35 @@
       "targets": [],
       "value": "SFDC - Winning Opportunity"
     }, {
+      "id": "aca79ca7-6217-47b6-a236-9f12f0cea2b2",
+      "comment": "Click on the ACCOUNT_PLAN__C checkbox, just to try and get focus away from the search box. ***",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.ACCOUNT_PLAN__C",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.ACCOUNT_PLAN__C", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.ACCOUNT_PLAN__C", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.ACCOUNT_PLAN__C']", "xpath:attributes"],
+        ["xpath=//div[3]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4aca2879-e029-4d5a-9a54-9ce9bb07b113",
+      "comment": "Click \"Clear all\" to remove the ACCOUNT_PLAN__C checkbox, just to try and get focus away from the search box. ***",
+      "command": "click",
+      "target": "css=.kn-selection_status__clear_all___3gppf",
+      "targets": [
+        ["css=.kn-selection_status__clear_all___3gppf", "css:finder"],
+        ["xpath=//div/div/div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2a1401c-0675-45fe-9203-21ede4c1a1e5",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "7eca56e8-4f6d-41f0-93de-8a7cf0afa356",
       "comment": "",
       "command": "type",
@@ -21981,15 +22010,15 @@
     "id": "59487938-c338-45c6-bb6f-aa3f62d9d817",
     "name": "TenantUser14and18and24",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6566cb0a-e169-4ffb-bea1-826408411227", "063720e2-cd1f-4c55-9e32-3af7e568bfb4"]
   }, {
     "id": "6824c9ec-a02b-40f1-9a99-1cfa53bd6b6e",
     "name": "TenantUser24",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["063720e2-cd1f-4c55-9e32-3af7e568bfb4"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
