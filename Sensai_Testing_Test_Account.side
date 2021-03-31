@@ -2048,9 +2048,16 @@
       ],
       "value": ""
     }, {
+      "id": "c0eb015b-4299-4d1d-a055-b0caadab6af3",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
+      "command": "open",
+      "target": "https://test.cloudapps.dev/login",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "fab396c5-7c91-40ab-9328-b4566389f7ca",
       "comment": "",
-      "command": "open",
+      "command": "//open",
       "target": "/login",
       "targets": [],
       "value": ""
@@ -2220,24 +2227,78 @@
     }, {
       "id": "df39e5ec-b380-430d-8c4a-03e92fab859c",
       "comment": "Pause for 1 minute.",
-      "command": "pause",
+      "command": "//pause",
       "target": "6000",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "ec7e8162-627e-4ce5-86ec-d93226a9e89f",
+      "comment": "Click on the Opp History tab",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f965a962-e586-48ce-bf57-853fce0e74c3",
+      "comment": "Wait for the search field element to be present.",
+      "command": "waitForElementPresent",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [],
+      "value": "60000"
+    }, {
+      "id": "0dc37795-99f4-4087-80e0-497fcd782ad1",
+      "comment": "Click in the search field.",
+      "command": "//click",
+      "target": "css=.active .kn-search__input___2tyxf",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4d4d574-1b33-4488-94a0-144699b72b1d",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14d165c0-b641-4e2c-b7bf-d907f866102f",
+      "comment": "Pause for 1 minute.",
+      "command": "//pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2c748ac-65ca-4179-bbf8-eec29b7b3237",
+      "comment": "Click on the ACCOUNT_PLAN__C checkbox, just to try and get focus away from the search box. ***",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.ACCOUNT_PLAN__C",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.ACCOUNT_PLAN__C", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.ACCOUNT_PLAN__C", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.ACCOUNT_PLAN__C']", "xpath:attributes"],
+        ["xpath=//div[3]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e176774d-82b4-4819-bcde-9206c1867560",
+      "comment": "Click \"Clear all\" to remove the ACCOUNT_PLAN__C checkbox, just to try and get focus away from the search box. ***",
+      "command": "click",
+      "target": "css=.kn-selection_status__clear_all___3gppf",
+      "targets": [
+        ["css=.kn-selection_status__clear_all___3gppf", "css:finder"],
+        ["xpath=//div/div/div[2]/div/div[2]", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "54b13d36-d7c7-4db6-849b-0f25af620150",
       "comment": "Enter \"account.name\" in the search box.",
       "command": "type",
       "target": "css=.kn-search__input___2tyxf",
-      "targets": [],
+      "targets": [
+        ["css=.kn-search__input___2tyxf", "css:finder"],
+        ["xpath=(//input[@type='text'])[3]", "xpath:attributes"],
+        ["xpath=//div/div/div/div/div/div/div/input", "xpath:position"]
+      ],
       "value": "account.name"
-    }, {
-      "id": "14d165c0-b641-4e2c-b7bf-d907f866102f",
-      "comment": "Pause for 1 minute.",
-      "command": "pause",
-      "target": "6000",
-      "targets": [],
-      "value": ""
     }, {
       "id": "ee404ded-c633-4bb5-94c2-db15d3ff172f",
       "comment": "Click on the \"ACCOUNT.NAME\" checkbox to select it.",
@@ -2255,7 +2316,7 @@
     }, {
       "id": "8bf97bc3-db88-46be-81b2-dc1357e5b12d",
       "comment": "Pause for 1 minute.",
-      "command": "pause",
+      "command": "//pause",
       "target": "6000",
       "targets": [],
       "value": ""
@@ -3752,10 +3813,10 @@
       ],
       "value": ""
     }, {
-      "id": "d7cc01f6-891d-4676-bf5f-a0103a69a2fe",
-      "comment": "",
+      "id": "98136d18-4115-4787-8ecb-e13df2ec0a83",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -3916,20 +3977,6 @@
       "target": "30000",
       "targets": [],
       "value": ""
-    }, {
-      "id": "df5105b5-afab-46be-a19e-f2b10bfdfb9e",
-      "comment": "Pause 1 minute.",
-      "command": "//pause",
-      "target": "60000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "3987a693-5824-407b-8af2-8c00df9222f4",
-      "comment": "Wait for the \"type\" picklist element to be EDITABLE.",
-      "command": "//waitForElementEditable",
-      "target": "id=type",
-      "targets": [],
-      "value": "SFDC - Winning Opportunity"
     }, {
       "id": "28331799-c474-4b13-b3e1-824c824dfa72",
       "comment": "Select the \"SFDC - Winning Opportunity\" architecture type.",
