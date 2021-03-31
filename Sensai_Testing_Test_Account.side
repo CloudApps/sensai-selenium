@@ -19214,16 +19214,25 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "2174875b-d1c2-4d6f-bddb-8353bd6f4815",
+      "comment": "Pause 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d40f903-7042-463d-988a-4900cc5d7f74",
+      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'CREATED')]",
+      "targets": [],
+      "value": "CREATED"
+    }, {
       "id": "eb10e3a6-30e8-4a63-b457-c6bad3f3bcc1",
       "comment": "",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "xpath=//p[contains(.,'CREATED')]",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'CREATED')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "CREATED"
     }, {
       "id": "ce49c669-b9f7-47f3-b323-b49e9fde9b35",
