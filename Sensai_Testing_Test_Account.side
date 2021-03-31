@@ -18938,14 +18938,9 @@
     }, {
       "id": "23a1da6b-22f4-43d0-ab87-a2817ccd8545",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "id=datasetId",
-      "targets": [
-        ["id=datasetId", "id"],
-        ["css=#datasetId", "css:finder"],
-        ["xpath=//select[@id='datasetId']", "xpath:attributes"],
-        ["xpath=//select", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "9a04c192-dcc1-4f6e-9996-e6f2a759e4f5",
@@ -18953,7 +18948,7 @@
       "command": "select",
       "target": "id=datasetId",
       "targets": [],
-      "value": "Opp + StageHistory + Observations Dataset"
+      "value": "Opp, StageHistory & Observations Dataset"
     }, {
       "id": "4215fa5b-b074-4045-8ead-dca29773e5d0",
       "comment": "Pause for 1 minute.",
@@ -21979,8 +21974,8 @@
     "id": "d9396b8b-8709-46b5-9fa8-36806699325a",
     "name": "TenantUser14and18",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6566cb0a-e169-4ffb-bea1-826408411227"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
