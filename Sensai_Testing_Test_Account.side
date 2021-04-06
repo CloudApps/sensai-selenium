@@ -2188,7 +2188,7 @@
       "id": "b457acca-e96d-4fbc-a88f-35008c68bb1a",
       "comment": "Pause for 1 minute.",
       "command": "pause",
-      "target": "6000",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
@@ -2458,18 +2458,25 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "ddef1dcb-5ed3-4927-b59e-ee1474dd82db",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "//*[@id=\"trainModelButton\"]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "90b6f6da-0d34-4323-8782-b6d2aa78d48a",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"trainModelButton\"]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "26a1a5d9-78fc-44a7-9e67-2148a6c4f198",
       "comment": "Click the \"Train Model\" button.",
-      "command": "click",
+      "command": "//click",
       "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "3b69326d-5eea-4801-8a14-3fb595b35a11",
@@ -4377,14 +4384,7 @@
       "comment": "Click the \"Train Model\" button.",
       "command": "click",
       "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "43874d09-43cc-4a66-8e2e-161ea3255352",
@@ -19208,20 +19208,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "f1a858c7-9cab-4dba-80ec-8cbc7deca887",
-      "comment": "Refresh the page. Selenium cannot click on the link.",
-      "command": "executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "98ce0539-1a3d-412f-b934-e3bb1e574ff3",
-      "comment": "Pause 2.5 minutes.",
-      "command": "pause",
-      "target": "150000",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "10e30376-237b-4f2f-898f-c3933ca91048",
       "comment": "",
       "command": "type",
@@ -19242,10 +19228,10 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "74416c88-e122-45cc-b7ba-dbf8809c73e7",
-      "comment": "Pause 1 minute.",
+      "id": "6fa82d7c-392c-4621-9866-57dadd1a6a75",
+      "comment": "Pause 2.5 minutes.",
       "command": "pause",
-      "target": "60000",
+      "target": "150000",
       "targets": [],
       "value": ""
     }, {
@@ -19256,18 +19242,39 @@
       "targets": [],
       "value": "CREATED"
     }, {
-      "id": "ce49c669-b9f7-47f3-b323-b49e9fde9b35",
+      "id": "f1a858c7-9cab-4dba-80ec-8cbc7deca887",
+      "comment": "Refresh the page. Selenium cannot click on the link.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98ce0539-1a3d-412f-b934-e3bb1e574ff3",
+      "comment": "Pause 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "facf1641-bc64-4242-8747-9acc20dc7938",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "//*[@id=\"trainModelButton\"]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "006c2f17-a2f2-4440-b9dd-a6dce71aa369",
       "comment": "",
       "command": "click",
+      "target": "//*[@id=\"trainModelButton\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce49c669-b9f7-47f3-b323-b49e9fde9b35",
+      "comment": "",
+      "command": "//click",
       "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }]
   }, {
