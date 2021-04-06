@@ -21410,7 +21410,7 @@
     }]
   }, {
     "id": "1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7",
-    "name": "Tenant User 240 - Models - Opp, FieldHistory & StageHistory",
+    "name": "Tenant User - Models - Opp, FieldHistory & StageHistory",
     "commands": [{
       "id": "b24cb41b-560c-424f-b6d9-f2ea3477c0c2",
       "comment": "",
