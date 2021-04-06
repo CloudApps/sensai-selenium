@@ -2463,7 +2463,7 @@
       "command": "waitForElementPresent",
       "target": "//*[@id=\"trainModelButton\"]",
       "targets": [],
-      "value": "30000"
+      "value": "60000"
     }, {
       "id": "90b6f6da-0d34-4323-8782-b6d2aa78d48a",
       "comment": "",
@@ -4347,7 +4347,7 @@
     }, {
       "id": "7484d6ff-8725-4f6a-8626-95bbea9ab5f0",
       "comment": "Pause 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
@@ -4373,16 +4373,30 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "5ab7f962-62d6-45fd-a819-be9309d45d76",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "//*[@id=\"trainModelButton\"]",
+      "targets": [],
+      "value": "60000"
+    }, {
+      "id": "8c3fefa6-5215-458a-a23d-3e4a46d070c0",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"trainModelButton\"]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "49ece8db-e34a-4c2f-a8d3-42b575882c69",
       "comment": "Wait for the \"Train Model\" button element to be present.",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "id=trainModelButton",
       "targets": [],
       "value": "60000"
     }, {
       "id": "4cf5ba3c-0d43-4974-a5ee-23af9450d5c2",
       "comment": "Click the \"Train Model\" button.",
-      "command": "click",
+      "command": "//click",
       "target": "id=trainModelButton",
       "targets": [],
       "value": ""
@@ -13159,7 +13173,7 @@
       "value": ""
     }, {
       "id": "1513e0f8-9cb4-4654-a5e5-768e39b6e6d8",
-      "comment": "Click the \"Delete\" button on the Schema view page, to tidy it up at the end of the test.",
+      "comment": "Wait for the \"Delete\" button element to be present on the Schema view page.",
       "command": "waitForElementPresent",
       "target": "id=deleteButton",
       "targets": [],
@@ -19223,49 +19237,71 @@
     }, {
       "id": "66b22d64-1537-4dc6-8fa6-cdc6e75b8d9f",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "linkText=${new_model_name}",
       "targets": [],
       "value": ""
     }, {
+      "id": "feed3650-2fa2-4eed-8001-531537b9c744",
+      "comment": "Click on the New Model's row's Action Menu (using CSS).",
+      "command": "click",
+      "target": "css=div[data-name=${new_model_name}] > button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "644241ed-ffc0-486b-872a-8b791cc73cf3",
+      "comment": "Click the \"Train Model\" value from the row's Action Menu.",
+      "command": "click",
+      "target": "linkText=Train Model",
+      "targets": [
+        ["linkText=Train Model", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Train Model')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "6fa82d7c-392c-4621-9866-57dadd1a6a75",
       "comment": "Pause 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
     }, {
       "id": "eb10e3a6-30e8-4a63-b457-c6bad3f3bcc1",
       "comment": "",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
     }, {
       "id": "f1a858c7-9cab-4dba-80ec-8cbc7deca887",
       "comment": "Refresh the page. Selenium cannot click on the link.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
     }, {
       "id": "98ce0539-1a3d-412f-b934-e3bb1e574ff3",
       "comment": "Pause 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
     }, {
       "id": "facf1641-bc64-4242-8747-9acc20dc7938",
       "comment": "",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "//*[@id=\"trainModelButton\"]",
       "targets": [],
-      "value": "30000"
+      "value": "60000"
     }, {
       "id": "006c2f17-a2f2-4440-b9dd-a6dce71aa369",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "//*[@id=\"trainModelButton\"]",
       "targets": [],
       "value": ""
@@ -22035,7 +22071,7 @@
     "persistSession": false,
     "parallel": true,
     "timeout": 1800,
-    "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6566cb0a-e169-4ffb-bea1-826408411227", "5e37ec91-333e-456d-8690-53119563ef00", "817b79ca-869f-432f-818d-985a2e5c02a7", "1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7"]
+    "tests": ["817b79ca-869f-432f-818d-985a2e5c02a7", "6566cb0a-e169-4ffb-bea1-826408411227", "00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7", "063720e2-cd1f-4c55-9e32-3af7e568bfb4", "5e37ec91-333e-456d-8690-53119563ef00"]
   }, {
     "id": "d9396b8b-8709-46b5-9fa8-36806699325a",
     "name": "TenantUser14and18",
