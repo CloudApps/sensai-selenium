@@ -34,10 +34,10 @@
       ],
       "value": ""
     }, {
-      "id": "8f216733-35c2-49bc-a942-c5c4b0dc181b",
-      "comment": "",
+      "id": "c0538518-84f7-4e99-82ee-326a51408196",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -382,10 +382,10 @@
       ],
       "value": ""
     }, {
-      "id": "4357eb24-16f1-45ed-b445-1b114bb42268",
-      "comment": "",
+      "id": "14d92c99-8608-4d28-bbc5-61eea4f57dc6",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -746,10 +746,10 @@
       ],
       "value": ""
     }, {
-      "id": "bd67a5d7-53c3-474e-884a-8b2824dca37b",
-      "comment": "",
+      "id": "7a736a07-f3c1-427a-8493-537cbfd427d7",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -1182,10 +1182,10 @@
       ],
       "value": ""
     }, {
-      "id": "74d67ae2-0ab0-4cfc-a479-b2229788cc79",
-      "comment": "",
+      "id": "b2cbfea1-0448-42d1-81c9-188f1bca3737",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -1697,10 +1697,10 @@
       ],
       "value": ""
     }, {
-      "id": "6dd39cba-812f-47dc-9220-eb6de1121bfb",
-      "comment": "",
+      "id": "28092d81-cac0-4e6d-aa5e-1bd3a22203af",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -2052,13 +2052,6 @@
       "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
       "target": "https://test.cloudapps.dev/login",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "fab396c5-7c91-40ab-9328-b4566389f7ca",
-      "comment": "",
-      "command": "//open",
-      "target": "/login",
       "targets": [],
       "value": ""
     }, {
@@ -2510,10 +2503,10 @@
       ],
       "value": ""
     }, {
-      "id": "0a6cfc7e-32e8-41c6-b17f-95e62f0c6c41",
-      "comment": "",
+      "id": "0cdc35bd-aa34-4392-bb84-48678a294440",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -3039,10 +3032,10 @@
       ],
       "value": ""
     }, {
-      "id": "1dda2971-91d2-4cf8-86ec-307e8cbed3ab",
-      "comment": "",
+      "id": "c618ed04-cf86-4a7a-b812-40cc3d22e182",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -3430,10 +3423,10 @@
       ],
       "value": ""
     }, {
-      "id": "0a7da301-e698-449b-8f56-6e5d972f1bda",
-      "comment": "",
+      "id": "4af8202a-d4c1-492a-9cfb-004765ca62d2",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -4430,20 +4423,6 @@
         ["xpath=//div[2]/input", "xpath:position"]
       ],
       "value": "AutomatedUser123$"
-    }, {
-      "id": "dcd98d28-472b-417b-9ca1-521c5da0f799",
-      "comment": "Enter the Tenant User's username, i.e. sl_tenant_user@sensai.test",
-      "command": "//type",
-      "target": "id=username",
-      "targets": [],
-      "value": "sl_tenant_user@sensai.test"
-    }, {
-      "id": "e601758a-7eb2-4db7-9c0c-42e4dfe974da",
-      "comment": "Enter the Tenant User's password, i.e. SL_tenant_user_123!",
-      "command": "//type",
-      "target": "id=password",
-      "targets": [],
-      "value": "SL_tenant_user_123!"
     }, {
       "id": "2bbdef82-89e0-4c0e-a9b0-dc592a3c14b4",
       "comment": "Click on the \"Login\" button",
@@ -12090,20 +12069,6 @@
       ],
       "value": "AutomatedUser123$"
     }, {
-      "id": "ec8c5415-be7e-46e8-93de-9b41dd92ff5d",
-      "comment": "Enter the Tenant User's username, i.e. sl_tenant_user@sensai.test",
-      "command": "//type",
-      "target": "id=username",
-      "targets": [],
-      "value": "sl_tenant_user@sensai.test"
-    }, {
-      "id": "85c6ac00-47f3-4f4a-bd72-5312344b5f5c",
-      "comment": "Enter the Tenant User's password, i.e. SL_tenant_user_123!",
-      "command": "//type",
-      "target": "id=password",
-      "targets": [],
-      "value": "SL_tenant_user_123!"
-    }, {
       "id": "62ba4d66-1dca-4541-886f-296bf2550429",
       "comment": "Click on the \"Login\" button",
       "command": "click",
@@ -14886,10 +14851,10 @@
       ],
       "value": ""
     }, {
-      "id": "49fe32f4-ada1-46b3-a0f1-72e945b44ad1",
-      "comment": "",
+      "id": "37e86a70-f992-4d87-9902-47bfecc16e37",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -15334,10 +15299,10 @@
       ],
       "value": ""
     }, {
-      "id": "b0c63b9d-7b1e-4555-95e7-483f6e1c9c3e",
-      "comment": "",
+      "id": "b67bc754-21d6-4b24-8473-6c83cc5a3461",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -16656,10 +16621,10 @@
       ],
       "value": ""
     }, {
-      "id": "0cdd87e7-ea99-4a12-81d7-57bf5116c760",
-      "comment": "",
+      "id": "3b238287-25ba-4e8f-9c9e-c4d4de6949ea",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -17394,7 +17359,7 @@
     }]
   }, {
     "id": "a3188f9f-4643-48ec-8e1f-677ebb85fb0a",
-    "name": "A TEMPLATE to reuse - Log in to Sensai Test account",
+    "name": "A TEMPLATE - Log in to Sensai Test account as AutomatedTenant User",
     "commands": [{
       "id": "8f497209-2789-43c5-ad0e-45968f4e36a0",
       "comment": "",
@@ -17423,10 +17388,10 @@
       ],
       "value": ""
     }, {
-      "id": "8b329a30-8eee-4c87-a556-7cc03224f698",
-      "comment": "",
+      "id": "25590731-d3e7-47d2-8693-baf8f3d6109a",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -17520,10 +17485,10 @@
       ],
       "value": ""
     }, {
-      "id": "1bb3e9f2-f022-4504-8d08-ab3ec1ef86a4",
-      "comment": "",
+      "id": "7c627594-73ae-4b68-8f96-d0c46762b4e2",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -18792,10 +18757,10 @@
       ],
       "value": ""
     }, {
-      "id": "5e2f025e-2c71-45cb-ab4d-0a7ad99f624d",
-      "comment": "",
+      "id": "d225df99-7479-44c3-954b-1e465d9f3fef",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -19194,6 +19159,27 @@
       ],
       "value": ""
     }, {
+      "id": "a693fa5c-c37d-4d5d-871b-01fb918d8424",
+      "comment": "Pause 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f1a858c7-9cab-4dba-80ec-8cbc7deca887",
+      "comment": "Refresh the page. Selenium cannot click on the link.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98ce0539-1a3d-412f-b934-e3bb1e574ff3",
+      "comment": "Pause 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "10e30376-237b-4f2f-898f-c3933ca91048",
       "comment": "",
       "command": "type",
@@ -19214,23 +19200,16 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "2174875b-d1c2-4d6f-bddb-8353bd6f4815",
-      "comment": "Pause 2.5 minutes.",
+      "id": "74416c88-e122-45cc-b7ba-dbf8809c73e7",
+      "comment": "Pause 1 minute.",
       "command": "pause",
-      "target": "150000",
+      "target": "60000",
       "targets": [],
       "value": ""
     }, {
-      "id": "9d40f903-7042-463d-988a-4900cc5d7f74",
-      "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
-      "command": "assertText",
-      "target": "xpath=//p[contains(.,'CREATED')]",
-      "targets": [],
-      "value": "CREATED"
-    }, {
       "id": "eb10e3a6-30e8-4a63-b457-c6bad3f3bcc1",
       "comment": "",
-      "command": "//verifyText",
+      "command": "verifyText",
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
@@ -19280,10 +19259,10 @@
       ],
       "value": ""
     }, {
-      "id": "5b051c38-ba2d-40bd-a883-7b12eac06d04",
-      "comment": "",
+      "id": "d2bae073-4e2b-46db-9d75-c14967c7590c",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -19455,10 +19434,10 @@
       ],
       "value": ""
     }, {
-      "id": "a1171d60-0f5f-4424-9a91-459900c66a0e",
-      "comment": "",
+      "id": "6bf3af6c-57eb-496d-ae13-8bcd4fc3fe23",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -19988,10 +19967,10 @@
       ],
       "value": ""
     }, {
-      "id": "bc8ca8a5-1519-4f19-aa78-ff8614cd0913",
-      "comment": "",
+      "id": "760bb10f-1af8-40ef-aeb3-9c027838dbd6",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -20401,10 +20380,10 @@
       ],
       "value": ""
     }, {
-      "id": "3ef44224-5c9e-4478-9419-5a3cf7d1fdb4",
-      "comment": "",
+      "id": "2dcbf628-bd21-49e5-adc9-74e98e559599",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -20870,10 +20849,10 @@
       ],
       "value": ""
     }, {
-      "id": "7c06878e-10c2-491b-ad7f-7edfa8741293",
-      "comment": "",
+      "id": "87805297-1934-4f14-a481-d9ed3e7a5b42",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
@@ -21460,10 +21439,10 @@
       ],
       "value": ""
     }, {
-      "id": "8ffb8102-92e1-4766-a843-484f3b2fa4bc",
-      "comment": "",
+      "id": "caaacb91-8eda-448c-ac20-fe097f3b6f46",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
-      "target": "/login",
+      "target": "https://test.cloudapps.dev/login",
       "targets": [],
       "value": ""
     }, {
