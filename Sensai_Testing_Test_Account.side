@@ -2444,6 +2444,20 @@
       "targets": [],
       "value": "CREATED"
     }, {
+      "id": "9e5515f5-2441-4a57-8608-51c61533675a",
+      "comment": "Refresh the page. Selenium cannot click on the link.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e16142d9-e78a-454e-87bc-389ed6b2cc4e",
+      "comment": "Pause 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "26a1a5d9-78fc-44a7-9e67-2148a6c4f198",
       "comment": "Click the \"Train Model\" button.",
       "command": "click",
@@ -4289,6 +4303,13 @@
       ],
       "value": ""
     }, {
+      "id": "5034d5a8-b9c3-4fef-b2aa-e0d76a4d69d6",
+      "comment": "Pause 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "2834024d-fe47-4a80-8f71-0dfd1123b60b",
       "comment": "",
       "command": "type",
@@ -4330,6 +4351,27 @@
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
+    }, {
+      "id": "eb086c7a-7c49-49e4-b932-dc1d988bdd01",
+      "comment": "Refresh the page. Selenium cannot click on the link.",
+      "command": "executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "631be187-6e59-478c-af90-74918c68b856",
+      "comment": "Pause 2.5 minutes.",
+      "command": "pause",
+      "target": "150000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49ece8db-e34a-4c2f-a8d3-42b575882c69",
+      "comment": "Wait for the \"Train Model\" button element to be present.",
+      "command": "waitForElementPresent",
+      "target": "id=trainModelButton",
+      "targets": [],
+      "value": "60000"
     }, {
       "id": "4cf5ba3c-0d43-4974-a5ee-23af9450d5c2",
       "comment": "Click the \"Train Model\" button.",
