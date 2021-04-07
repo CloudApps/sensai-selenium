@@ -21536,30 +21536,35 @@
       ],
       "value": "DURATIONINMINUTES"
     }, {
-      "id": "e801b73f-7123-4170-a95a-72186a5b4301",
-      "comment": "",
-      "command": "click",
-      "target": "id=checkbox-EVENTS.DURATIONINMINUTES",
-      "targets": [
-        ["id=checkbox-EVENTS.DURATIONINMINUTES", "id"],
-        ["css=#checkbox-EVENTS\\.DURATIONINMINUTES", "css:finder"],
-        ["xpath=//input[@id='checkbox-EVENTS.DURATIONINMINUTES']", "xpath:attributes"],
-        ["xpath=//div[4]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "10d37998-b356-4ceb-a3fc-a93903e53f0a",
       "comment": "Pause for 1 minute.",
-      "command": "pause",
+      "command": "//pause",
       "target": "60000",
       "targets": [],
       "value": ""
     }, {
-      "id": "1270dd0f-290c-45bf-bc64-240011008396",
+      "id": "4f4bd3ae-23c8-41e2-a73d-68af3a8d1064",
       "comment": "",
-      "command": "",
-      "target": "",
-      "targets": [],
+      "command": "waitForElementPresent",
+      "target": "id=checkbox-EVENT.DURATIONINMINUTES",
+      "targets": [
+        ["id=checkbox-EVENT.DURATIONINMINUTES", "id"],
+        ["css=#checkbox-EVENT\\.DURATIONINMINUTES", "css:finder"],
+        ["xpath=//input[@id='checkbox-EVENT.DURATIONINMINUTES']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
+      ],
+      "value": "60000"
+    }, {
+      "id": "e801b73f-7123-4170-a95a-72186a5b4301",
+      "comment": "",
+      "command": "click",
+      "target": "id=checkbox-EVENT.DURATIONINMINUTES",
+      "targets": [
+        ["id=checkbox-EVENT.DURATIONINMINUTES", "id"],
+        ["css=#checkbox-EVENT\\.DURATIONINMINUTES", "css:finder"],
+        ["xpath=//input[@id='checkbox-EVENT.DURATIONINMINUTES']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/div[2]/div/div/div/div/span/span/input", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "3c24b10f-876a-4c6f-ab7f-bd333d02d505",
