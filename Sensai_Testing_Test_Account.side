@@ -19235,22 +19235,20 @@
       ],
       "value": "${new_model_name}"
     }, {
-      "id": "66b22d64-1537-4dc6-8fa6-cdc6e75b8d9f",
+      "id": "b54d3490-1aff-430b-ade0-cfc2e6d87494",
       "comment": "",
-      "command": "//click",
-      "target": "linkText=${new_model_name}",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "feed3650-2fa2-4eed-8001-531537b9c744",
-      "comment": "Click on the New Model's row's Action Menu (using CSS).",
       "command": "click",
-      "target": "css=div[data-name=${new_model_name}] > button",
-      "targets": [],
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [
+        ["css=.ml-2 > .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/button", "xpath:position"]
+      ],
       "value": ""
     }, {
-      "id": "644241ed-ffc0-486b-872a-8b791cc73cf3",
-      "comment": "Click the \"Train Model\" value from the row's Action Menu.",
+      "id": "b4b287b4-8c85-4776-8c04-b499cc67e1d1",
+      "comment": "",
       "command": "click",
       "target": "linkText=Train Model",
       "targets": [
@@ -19262,6 +19260,27 @@
         ["xpath=//div/div/a", "xpath:position"],
         ["xpath=//a[contains(.,'Train Model')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "66b22d64-1537-4dc6-8fa6-cdc6e75b8d9f",
+      "comment": "",
+      "command": "//click",
+      "target": "linkText=${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "feed3650-2fa2-4eed-8001-531537b9c744",
+      "comment": "Click on the New Model's row's Action Menu (using CSS).",
+      "command": "//click",
+      "target": "css=div[data-name=${new_model_name}] > button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "644241ed-ffc0-486b-872a-8b791cc73cf3",
+      "comment": "Click the \"Train Model\" value from the row's Action Menu.",
+      "command": "//click",
+      "target": "linkText=Train Model",
+      "targets": [],
       "value": ""
     }, {
       "id": "6fa82d7c-392c-4621-9866-57dadd1a6a75",
