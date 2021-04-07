@@ -2415,59 +2415,78 @@
       ],
       "value": "${new_model_name}"
     }, {
+      "id": "4c0fb4a4-d923-4793-a13e-cc2a34f04a77",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [
+        ["css=.ml-2 > .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3a87fca-ed28-42b5-bd22-8a59ede90340",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Train Model",
+      "targets": [
+        ["linkText=Train Model", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Train Model')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "34cbf151-d201-4b93-a0d9-2f0c5a4a6a5f",
       "comment": "Click the new model's link on the \"All Models\" page.",
-      "command": "click",
+      "command": "//click",
       "target": "linkText=${new_model_name}",
-      "targets": [
-        ["linkText=SuMo - Automated", "linkText"],
-        ["css=tr:nth-child(1) a", "css:finder"],
-        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
-        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
-        ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "83d9a159-632a-4c9c-a183-79c3f4cd3c02",
       "comment": "Pause 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
     }, {
       "id": "d690a992-3b2c-421a-bfb6-922ef64d87ec",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
-      "command": "assertText",
+      "command": "//assertText",
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
     }, {
       "id": "9e5515f5-2441-4a57-8608-51c61533675a",
       "comment": "Refresh the page. Selenium cannot click on the link.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
       "targets": [],
       "value": ""
     }, {
       "id": "e16142d9-e78a-454e-87bc-389ed6b2cc4e",
       "comment": "Pause 2.5 minutes.",
-      "command": "pause",
+      "command": "//pause",
       "target": "150000",
       "targets": [],
       "value": ""
     }, {
       "id": "ddef1dcb-5ed3-4927-b59e-ee1474dd82db",
       "comment": "",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "//*[@id=\"trainModelButton\"]",
       "targets": [],
       "value": "60000"
     }, {
       "id": "90b6f6da-0d34-4323-8782-b6d2aa78d48a",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "//*[@id=\"trainModelButton\"]",
       "targets": [],
       "value": ""
