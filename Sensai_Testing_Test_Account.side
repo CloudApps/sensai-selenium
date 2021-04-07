@@ -19790,6 +19790,35 @@
       "targets": [],
       "value": "SFDC - Winning Opportunity"
     }, {
+      "id": "a4634887-511c-47be-80d2-01c8678c1ce3",
+      "comment": "Click on the ACCOUNT_PLAN__C checkbox, just to try and get focus away from the search box. ***",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.ACCOUNT_PLAN__C",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.ACCOUNT_PLAN__C", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.ACCOUNT_PLAN__C", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.ACCOUNT_PLAN__C']", "xpath:attributes"],
+        ["xpath=//div[3]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3ca9edd-d8e6-4d12-afbc-79bc283d9114",
+      "comment": "Click \"Clear all\" to remove the ACCOUNT_PLAN__C checkbox, just to try and get focus away from the search box. ***",
+      "command": "click",
+      "target": "css=.kn-selection_status__clear_all___3gppf",
+      "targets": [
+        ["css=.kn-selection_status__clear_all___3gppf", "css:finder"],
+        ["xpath=//div/div/div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "46ebf3bb-e5a1-44ec-a615-63bead574ece",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "57dc19be-3557-4073-b536-fb2bb400911f",
       "comment": "",
       "command": "type",
@@ -21241,6 +21270,35 @@
       "targets": [],
       "value": "SFDC - Winning Opportunity"
     }, {
+      "id": "69634eb1-399b-4ac4-98a5-48026d0faada",
+      "comment": "Click on the ACCOUNT_PLAN__C checkbox, just to try and get focus away from the search box. ***",
+      "command": "click",
+      "target": "id=checkbox-OPPORTUNITY.ACCOUNT_PLAN__C",
+      "targets": [
+        ["id=checkbox-OPPORTUNITY.ACCOUNT_PLAN__C", "id"],
+        ["css=#checkbox-OPPORTUNITY\\.ACCOUNT_PLAN__C", "css:finder"],
+        ["xpath=//input[@id='checkbox-OPPORTUNITY.ACCOUNT_PLAN__C']", "xpath:attributes"],
+        ["xpath=//div[3]/div/span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "488f02e0-648a-4fc1-b9e3-3c2557be3e6b",
+      "comment": "Click \"Clear all\" to remove the ACCOUNT_PLAN__C checkbox, just to try and get focus away from the search box. ***",
+      "command": "click",
+      "target": "css=.kn-selection_status__clear_all___3gppf",
+      "targets": [
+        ["css=.kn-selection_status__clear_all___3gppf", "css:finder"],
+        ["xpath=//div/div/div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "626b763e-694e-4749-b42e-7a070cd4f83e",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "74ad3cbe-4cf4-4042-9fdf-369ff0e7a45a",
       "comment": "",
       "command": "type",
@@ -21456,13 +21514,14 @@
       "id": "da35522a-ad91-4138-9b36-7deab85186ae",
       "comment": "",
       "command": "click",
-      "target": "linkText=Event",
+      "target": "linkText=Events",
       "targets": [
-        ["linkText=Event", "linkText"],
+        ["linkText=Events", "linkText"],
         ["css=.nav-item:nth-child(4)", "css:finder"],
-        ["xpath=(//a[contains(text(),'Event')])[2]", "xpath:link"],
+        ["xpath=//a[contains(text(),'Events')]", "xpath:link"],
         ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
-        ["xpath=//a[4]", "xpath:position"]
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Events')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
