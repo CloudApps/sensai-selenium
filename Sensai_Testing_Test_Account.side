@@ -2449,9 +2449,16 @@
       ],
       "value": ""
     }, {
+      "id": "c3abd5be-c6fb-48ce-bcaa-e1aa37ba32f6",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "34cbf151-d201-4b93-a0d9-2f0c5a4a6a5f",
       "comment": "Click the new model's link on the \"All Models\" page.",
-      "command": "//click",
+      "command": "click",
       "target": "linkText=${new_model_name}",
       "targets": [],
       "value": ""
@@ -4336,10 +4343,10 @@
       ],
       "value": ""
     }, {
-      "id": "5034d5a8-b9c3-4fef-b2aa-e0d76a4d69d6",
-      "comment": "Pause 2.5 minutes.",
+      "id": "c863ab0f-4324-4d25-91b1-66d2b10b8c39",
+      "comment": "Pause for 1 minute.",
       "command": "pause",
-      "target": "150000",
+      "target": "6000",
       "targets": [],
       "value": ""
     }, {
@@ -4356,19 +4363,52 @@
       ],
       "value": "${new_model_name}"
     }, {
+      "id": "ce20334d-d7ab-444f-b5ed-59bdfa0871d8",
+      "comment": "Wait for the Action Menu dropdown button to be available.",
+      "command": "waitForElementPresent",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [],
+      "value": "60000"
+    }, {
+      "id": "e03caf7b-6cd3-4d32-bd82-48c14c0f99df",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [
+        ["css=.ml-2 > .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf85e990-a681-46f7-90a5-1d79cf6ac776",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Train Model",
+      "targets": [
+        ["linkText=Train Model", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Train Model')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "33e4bac3-286e-4403-ad05-1b8f024d013c",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "f5cc4693-7cc9-4c66-a89c-772934812b40",
       "comment": "Click the new model's link on the \"All Models\" page.",
       "command": "click",
       "target": "linkText=${new_model_name}",
-      "targets": [
-        ["linkText=SuMo - Automated", "linkText"],
-        ["css=tr:nth-child(1) a", "css:finder"],
-        ["xpath=//a[contains(text(),'SuMo - Automated')]", "xpath:link"],
-        ["xpath=//table[@id='modelsTable']/tbody/tr/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/models/004_4751c9d27ede4a56956a1724f65fba00')]", "xpath:href"],
-        ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SuMo - Automated')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "7484d6ff-8725-4f6a-8626-95bbea9ab5f0",
@@ -4380,35 +4420,28 @@
     }, {
       "id": "f3a44875-8a2c-46bb-8b62-f592fa2be34c",
       "comment": "Assert the text \"CREATED\" is displayed on the new Model's view page.",
-      "command": "assertText",
+      "command": "//assertText",
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
     }, {
       "id": "eb086c7a-7c49-49e4-b932-dc1d988bdd01",
       "comment": "Refresh the page. Selenium cannot click on the link.",
-      "command": "executeScript",
+      "command": "//executeScript",
       "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "631be187-6e59-478c-af90-74918c68b856",
-      "comment": "Pause 2.5 minutes.",
-      "command": "pause",
-      "target": "150000",
       "targets": [],
       "value": ""
     }, {
       "id": "5ab7f962-62d6-45fd-a819-be9309d45d76",
       "comment": "",
-      "command": "waitForElementPresent",
+      "command": "//waitForElementPresent",
       "target": "//*[@id=\"trainModelButton\"]",
       "targets": [],
       "value": "60000"
     }, {
       "id": "8c3fefa6-5215-458a-a23d-3e4a46d070c0",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "//*[@id=\"trainModelButton\"]",
       "targets": [],
       "value": ""
@@ -20041,6 +20074,13 @@
       ],
       "value": ""
     }, {
+      "id": "241699d8-7d79-4829-be7d-e697e4b4962d",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "72868765-f886-4ba5-83ec-2b94d1a18d33",
       "comment": "",
       "command": "type",
@@ -20054,6 +20094,47 @@
       ],
       "value": "${new_model_name}"
     }, {
+      "id": "1c213826-64b8-409e-bf73-9e270a9f7197",
+      "comment": "Wait for the Action Menu dropdown button to be available.",
+      "command": "waitForElementPresent",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [],
+      "value": "60000"
+    }, {
+      "id": "3c7876ed-73a1-4061-a757-15ec21621af0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [
+        ["css=.ml-2 > .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f39cbf5-8c50-494c-93f1-3f43a1b21e46",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Train Model",
+      "targets": [
+        ["linkText=Train Model", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Train Model')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce47ed2b-e987-4475-a6ed-dcb4ed8594fc",
+      "comment": "Pause 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "256e185d-e014-44ce-b50f-a58b229787dd",
       "comment": "",
       "command": "click",
@@ -20063,28 +20144,16 @@
     }, {
       "id": "0f81282d-8da8-4c7e-92b7-2c2ba199d5ea",
       "comment": "",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "xpath=//p[contains(.,'CREATED')]",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'CREATED')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "CREATED"
     }, {
       "id": "3ad7053b-e8b1-43f9-98f8-4c626500a1ef",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -21480,13 +21549,6 @@
       ],
       "value": ""
     }, {
-      "id": "36417700-7d84-4d1f-bd63-b3b471a17b76",
-      "comment": "",
-      "command": "",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "44de1894-e777-4f40-bee2-a323dbfe782a",
       "comment": "",
       "command": "click",
@@ -21519,11 +21581,38 @@
       ],
       "value": "${new_model_name}"
     }, {
-      "id": "f6e1e91b-7a7d-4d4d-a2da-ecde42e869dc",
+      "id": "ad15cbea-937c-447c-8573-8be496473bf9",
+      "comment": "Wait for the Action Menu dropdown button to be available.",
+      "command": "waitForElementPresent",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [],
+      "value": "60000"
+    }, {
+      "id": "44f35eb3-251e-46b3-8499-8b1d39a2f20b",
       "comment": "",
       "command": "click",
-      "target": "linkText=${new_model_name}",
-      "targets": [],
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [
+        ["css=.ml-2 > .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "94aa65a3-bbbf-49a1-9354-5b67d8afdf18",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Train Model",
+      "targets": [
+        ["linkText=Train Model", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Train Model')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
       "id": "75bec1ba-0058-4513-a896-e128f5ba75f2",
@@ -21533,30 +21622,25 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "f6e1e91b-7a7d-4d4d-a2da-ecde42e869dc",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "5f77bda8-b1fa-4336-87d7-c500fe0e46fa",
       "comment": "",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "xpath=//p[contains(.,'CREATED')]",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'CREATED')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "CREATED"
     }, {
       "id": "69d07115-2ff4-4738-810a-cdad71b69a6e",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -21979,6 +22063,13 @@
       ],
       "value": ""
     }, {
+      "id": "a4993295-cdf1-451c-98ac-e4d11c676bec",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "2f0eb511-7916-4f23-b45c-347d5a4ef1e9",
       "comment": "",
       "command": "type",
@@ -21992,6 +22083,47 @@
       ],
       "value": "${new_model_name}"
     }, {
+      "id": "5b2ee2b5-0c03-41f7-8ded-eec70f44ffc1",
+      "comment": "Wait for the Action Menu dropdown button to be available.",
+      "command": "waitForElementPresent",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [],
+      "value": "60000"
+    }, {
+      "id": "2112960f-dd03-4872-8178-d0938ab62124",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [
+        ["css=.ml-2 > .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "740cfb9d-75c1-4f1c-bad1-f7fe9608f6b4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Train Model",
+      "targets": [
+        ["linkText=Train Model", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Train Model')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td[6]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Train Model')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b284e680-442d-4bcd-bbae-d82659f4ce06",
+      "comment": "Pause for 1 minute.",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "e1553f14-70ac-44d1-b25e-9244a3c2f846",
       "comment": "",
       "command": "click",
@@ -22001,28 +22133,16 @@
     }, {
       "id": "671c8baf-5b2f-4df4-a1a1-15a8a5e66361",
       "comment": "",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "xpath=//p[contains(.,'CREATED')]",
-      "targets": [
-        ["css=.mb-2:nth-child(2) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div/div/p", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'CREATED')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "CREATED"
     }, {
       "id": "d497f307-c57d-4ec7-973b-8e4ed8b74a63",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "id=trainModelButton",
-      "targets": [
-        ["id=trainModelButton", "id"],
-        ["css=#trainModelButton", "css:finder"],
-        ["xpath=//button[@id='trainModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
-        ["xpath=//button[3]", "xpath:position"],
-        ["xpath=//button[contains(.,'Train Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }]
   }],
@@ -22159,6 +22279,34 @@
     "parallel": true,
     "timeout": 1800,
     "tests": ["063720e2-cd1f-4c55-9e32-3af7e568bfb4"]
+  }, {
+    "id": "85ef1be6-0be5-457a-9674-e08f2bb1ef28",
+    "name": "TenantUser_TwentyFive",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5e37ec91-333e-456d-8690-53119563ef00"]
+  }, {
+    "id": "28ff2abc-8de2-447a-bdec-a10af38f2ef3",
+    "name": "TenantUser_was_TwentyFourA",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7"]
+  }, {
+    "id": "ac25fa4c-ac8e-4bbc-a8ed-dc627738b4f2",
+    "name": "TenantUser_TwentySix",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["817b79ca-869f-432f-818d-985a2e5c02a7"]
+  }, {
+    "id": "84b3ace1-9579-4f9e-863e-f92a325afcad",
+    "name": "TenantUser14-18-24-24a-25",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6566cb0a-e169-4ffb-bea1-826408411227", "063720e2-cd1f-4c55-9e32-3af7e568bfb4", "5e37ec91-333e-456d-8690-53119563ef00", "1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
   "plugins": []
