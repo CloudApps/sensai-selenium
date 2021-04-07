@@ -2415,6 +2415,13 @@
       ],
       "value": "${new_model_name}"
     }, {
+      "id": "f385d965-9f47-418f-b190-95936d804ac1",
+      "comment": "Wait for the Action Menu dropdown button to be available.",
+      "command": "waitForElementPresent",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "4c0fb4a4-d923-4793-a13e-cc2a34f04a77",
       "comment": "",
       "command": "click",
@@ -19254,6 +19261,13 @@
       ],
       "value": "${new_model_name}"
     }, {
+      "id": "4cb7b43b-50ca-4c95-8977-c4d5144cc774",
+      "comment": "Wait for the Action Menu dropdown button to be available.",
+      "command": "waitForElementPresent",
+      "target": "css=.ml-2 > .dropdown-toggle",
+      "targets": [],
+      "value": "60000"
+    }, {
       "id": "b54d3490-1aff-430b-ade0-cfc2e6d87494",
       "comment": "",
       "command": "click",
@@ -19281,10 +19295,31 @@
       ],
       "value": ""
     }, {
+      "id": "c8814b0a-2aa2-4c65-9c2b-90b7b13de011",
+      "comment": "Pause 1 minute.",
+      "command": "pause",
+      "target": "60000",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "66b22d64-1537-4dc6-8fa6-cdc6e75b8d9f",
       "comment": "",
-      "command": "//click",
+      "command": "click",
       "target": "linkText=${new_model_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f1a858c7-9cab-4dba-80ec-8cbc7deca887",
+      "comment": "Refresh the page. Selenium cannot click on the link.",
+      "command": "//executeScript",
+      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ee1fd77e-e4aa-482b-a655-19743bafe43b",
+      "comment": "",
+      "command": "",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -19315,13 +19350,6 @@
       "target": "xpath=//p[contains(.,'CREATED')]",
       "targets": [],
       "value": "CREATED"
-    }, {
-      "id": "f1a858c7-9cab-4dba-80ec-8cbc7deca887",
-      "comment": "Refresh the page. Selenium cannot click on the link.",
-      "command": "//executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 10000);",
-      "targets": [],
-      "value": ""
     }, {
       "id": "98ce0539-1a3d-412f-b934-e3bb1e574ff3",
       "comment": "Pause 2.5 minutes.",
