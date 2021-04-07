@@ -22286,22 +22286,22 @@
     "id": "7a3f6c7b-f32a-405b-896b-5f90251e00d6",
     "name": "TenantUser16",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["e1bf8610-2f73-4b8d-a8ed-45b35b375b3c"]
   }, {
     "id": "4e040b7e-b6de-450b-8919-4008918fcf93",
     "name": "TenantUser17",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["5379cbba-bd69-4d68-b48b-7b35ebc29389"]
   }, {
     "id": "b4732219-a06e-4c26-9f16-cd185812ebc7",
     "name": "TenantUser18",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["6566cb0a-e169-4ffb-bea1-826408411227"]
   }, {
     "id": "9effd41c-f5e4-4454-a17b-a946f3b22bac",
@@ -22342,29 +22342,29 @@
     "id": "85ef1be6-0be5-457a-9674-e08f2bb1ef28",
     "name": "TenantUser_TwentyFive",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["5e37ec91-333e-456d-8690-53119563ef00"]
   }, {
     "id": "28ff2abc-8de2-447a-bdec-a10af38f2ef3",
     "name": "TenantUser_was_TwentyFourA",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7"]
   }, {
     "id": "ac25fa4c-ac8e-4bbc-a8ed-dc627738b4f2",
     "name": "TenantUser_TwentySix",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["817b79ca-869f-432f-818d-985a2e5c02a7"]
   }, {
     "id": "84b3ace1-9579-4f9e-863e-f92a325afcad",
     "name": "TenantUser14-18-24-24a-25",
     "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
+    "parallel": true,
+    "timeout": 1800,
     "tests": ["00d8ac6c-619d-4fc2-92f0-ed94fc95d3d1", "6566cb0a-e169-4ffb-bea1-826408411227", "063720e2-cd1f-4c55-9e32-3af7e568bfb4", "5e37ec91-333e-456d-8690-53119563ef00", "1b93b4a4-ea87-4a7c-ad90-ddb8733e01e7"]
   }],
   "urls": ["https://test.cloudapps.dev/"],
