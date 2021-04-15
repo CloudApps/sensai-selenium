@@ -6550,7 +6550,7 @@
       "value": "60000"
     }, {
       "id": "956c53db-e048-4cb8-9a00-b86ca4e07ee2",
-      "comment": "Verify the error element is present.",
+      "comment": "Verify the alert element is present.",
       "command": "verifyElementPresent",
       "target": "css=.alert",
       "targets": [
@@ -6559,21 +6559,25 @@
       ],
       "value": ""
     }, {
-      "id": "e8f7ec78-b7ad-43d2-8553-6e093dde31e7",
+      "id": "06cf4260-1971-48b0-822d-c46cebc78c47",
       "comment": "",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "css=.alert",
       "targets": [],
-      "value": "css=.alert [contains(.,'User account already exists')]"
+      "value": "User account already exists"
+    }, {
+      "id": "e8f7ec78-b7ad-43d2-8553-6e093dde31e7",
+      "comment": "css=.alert [contains(.,'User account already exists')]",
+      "command": "//verifyText",
+      "target": "css=.alert [contains(.,'User account already exists')]",
+      "targets": [],
+      "value": "User account already exists"
     }, {
       "id": "09bfd379-26d1-4108-b0d3-2dfcd08af320",
       "comment": "Verify the error message text contains \"User account already exists\".",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "xpath=//form/div/div/div",
-      "targets": [
-        ["css=.alert > div", "css:finder"],
-        ["xpath=//form/div/div/div", "xpath:position"]
-      ],
+      "targets": [],
       "value": "User account already exists and is expired. Please call with action RESEND to reset user account"
     }, {
       "id": "3c7c7d80-b865-4239-8484-02c84e782378",
@@ -8294,9 +8298,16 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "6a92a650-bc49-4cad-a260-fab65e642708",
+      "id": "5362ddfc-4b2b-4c8a-8fc2-fd52a86798b6",
       "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
       "command": "open",
+      "target": "https://test.cloudapps.dev/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a92a650-bc49-4cad-a260-fab65e642708",
+      "comment": "Then \"open\" the Login URL . (Without this, subsequent runs of the same test fail to log in. 28/04/2020)",
+      "command": "//open",
       "target": "https://sensai.cloudapps.com/login",
       "targets": [],
       "value": ""
@@ -8355,20 +8366,6 @@
       "targets": [],
       "value": "120000"
     }, {
-      "id": "c8ecf413-7c9e-444b-89c1-f4d52b832418",
-      "comment": "Click on the sidebar toggle button.",
-      "command": "//click",
-      "target": "id=sidebarToggleButton",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "3c832e54-137a-4c8f-a39f-948da54d47db",
-      "comment": "Click on the \"Models\" item in the sidebar",
-      "command": "//click",
-      "target": "css=.modelsSidebarLink",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "8111a9c1-22a4-4f3f-8cb4-e95f25876708",
       "comment": "Open the Models page - problems with Toggle Button in SIDE runner.",
       "command": "open",
@@ -8377,7 +8374,7 @@
       "value": ""
     }, {
       "id": "a4b4868a-c219-4f66-b3c4-d8a27a4e74f3",
-      "comment": "Type \"Model 4 (Opp)\" in the search field",
+      "comment": "Type \"SL automated testing - SuMo Model\" in the search field",
       "command": "type",
       "target": "name=query",
       "targets": [
@@ -8387,12 +8384,12 @@
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "Model 4 (Opp)"
+      "value": "SL automated testing - SuMo Model"
     }, {
       "id": "307fe444-0f6b-49e9-b853-5bed07f24b49",
-      "comment": "Click on the \"Model 4 (Opp)\" model name link.",
+      "comment": "Click on the \"SL automated testing - SuMo Model\" model name link.",
       "command": "click",
-      "target": "linkText=Model 4 (Opp)",
+      "target": "linkText=SL automated testing - SuMo Model",
       "targets": [
         ["linkText=Model 4 (Opp)", "linkText"],
         ["css=tr:nth-child(1) a", "css:finder"],
@@ -8447,137 +8444,119 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "ad719d17-bfc0-41b4-bc2a-4b36942a1216",
-      "comment": "Verify the \"Delete\" button element IS NOT PRESENT.",
-      "command": "//verifyElementNotPresent",
-      "target": "id=deleteModelButton",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "546efec3-e9ba-4864-9e91-1b130f85f073",
-      "comment": "Verify the Model Accuracy chart's heading exists",
+      "comment": "Verify the \"Accuracy Plot\" chart's heading exists",
       "command": "verifyText",
-      "target": "xpath=//h4[contains(.,'Model Accuracy')]",
+      "target": "xpath=//h4[contains(.,'Accuracy Plot')]",
       "targets": [
-        ["css=.col-md-6:nth-child(2) > h4", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div[3]/div/div[2]/h4", "xpath:idRelative"],
-        ["xpath=//h4", "xpath:position"],
-        ["xpath=//h4[contains(.,'Model Accuracy')]", "xpath:innerText"]
+        ["css=.mt-4:nth-child(5) > .no-margin-bottom", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div[5]/h4", "xpath:idRelative"],
+        ["xpath=//div[5]/h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Accuracy Plot')]", "xpath:innerText"]
       ],
-      "value": "Model Accuracy"
+      "value": "Accuracy Plot"
     }, {
       "id": "c2736bc7-3867-4da5-aa3c-a0e54f226155",
-      "comment": "Verify the \"Model Accuracy\" chart element exists",
+      "comment": "Verify the \"Accuracy Plot\" chart element exists",
       "command": "verifyElementPresent",
-      "target": "css=.col-md-6:nth-child(2) .recharts-wrapper > .recharts-surface",
+      "target": "css=.mt-4:nth-child(5) .recharts-wrapper > .recharts-surface",
       "targets": [
-        ["css=.col-md-6:nth-child(2) .recharts-wrapper > .recharts-surface", "css:finder"]
+        ["css=.mt-4:nth-child(5) .recharts-wrapper > .recharts-surface", "css:finder"]
       ],
       "value": ""
     }, {
       "id": "d2b68d06-5d87-489b-b602-c8373ece13ec",
       "comment": "Verify the Model Accuracy chart's legend \"Training\" text element is present above the chart.",
       "command": "verifyElementPresent",
-      "target": "xpath=//li[contains(.,'Training')]",
+      "target": "css=.mt-4:nth-child(5) > #undefined .legend-item-0 > .recharts-legend-item-text",
       "targets": [
-        ["css=.col-md-6:nth-child(2) .legend-item-0", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[2]/div/div/div/ul/li", "xpath:idRelative"],
-        ["xpath=//li", "xpath:position"],
-        ["xpath=//li[contains(.,'Training')]", "xpath:innerText"]
+        ["css=.mt-4:nth-child(5) > #undefined .legend-item-0 > .recharts-legend-item-text", "css:finder"],
+        ["xpath=(//div[@id='undefined']/div/div/ul/li/span)[3]", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/ul/li/span", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "cb1b9716-469f-4608-9334-633843d36416",
-      "comment": "Verify the Model Accuracy chart's Y axis label text \"Accuracy (%)\" exists.",
+      "comment": "Verify the Accuracy Plot chart's Y axis label text \"Accuracy (%)\" exists.",
       "command": "verifyText",
-      "target": "css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan",
+      "target": "css=.mt-4:nth-child(5) > #undefined .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan",
       "targets": [
-        ["css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan", "css:finder"]
+        ["css=.mt-4:nth-child(5) > #undefined .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan", "css:finder"]
       ],
       "value": "Accuracy (%)"
     }, {
       "id": "464b11a6-0a02-43ba-8088-91cb4666b1ad",
-      "comment": "Verify the Model Accuracy chart's X axis label text \"Cycles\" exists.",
+      "comment": "Verify the Accuracy Plot chart's X axis label text \"Epoch\" exists.",
       "command": "verifyText",
-      "target": "css=.col-md-6:nth-child(2) .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan",
-      "targets": [],
-      "value": "Cycles"
+      "target": "css=.mt-4:nth-child(5) > #undefined .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan",
+      "targets": [
+        ["css=.mt-4:nth-child(5) > #undefined .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan", "css:finder"]
+      ],
+      "value": "Epoch"
     }, {
       "id": "4399dccb-73a0-4651-b23d-a0facbd301d4",
-      "comment": "Verify the Model Loss chart's heading exists",
+      "comment": "Verify the Loss Plot chart's heading exists",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[3]/h4",
+      "target": "xpath=//h4[contains(.,'Loss Plot')]",
       "targets": [
-        ["css=.col-md-6:nth-child(3) > h4", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div[3]/h4", "xpath:idRelative"],
-        ["xpath=//div[3]/h4", "xpath:position"],
-        ["xpath=//h4[contains(.,'Model Loss')]", "xpath:innerText"]
+        ["css=.mt-4:nth-child(4) > .no-margin-bottom", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div[4]/h4", "xpath:idRelative"],
+        ["xpath=//div[4]/h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Loss Plot')]", "xpath:innerText"]
       ],
-      "value": "Model Loss"
+      "value": "Loss Plot"
     }, {
       "id": "11403e29-4c6f-441a-b4b3-47397f82ef16",
-      "comment": "Verify the \"Model Loss\" chart element exists",
+      "comment": "Verify the \"Loss Plot\" chart element exists",
       "command": "verifyElementPresent",
-      "target": "css=.col-md-6:nth-child(3) .recharts-wrapper > .recharts-surface",
+      "target": "css=.mt-4:nth-child(4) .recharts-wrapper > .recharts-surface",
       "targets": [
-        ["css=.col-md-6:nth-child(3) .recharts-wrapper > .recharts-surface", "css:finder"]
+        ["css=.mt-4:nth-child(4) .recharts-wrapper > .recharts-surface", "css:finder"]
       ],
       "value": ""
     }, {
       "id": "582976c8-1998-44ea-b2b9-bc9e5d508faf",
-      "comment": "Verify the Model Loss chart's legend \"Training\" text element is present above the chart.",
+      "comment": "Verify the Loss Plot chart's legend \"Training\" text element is present above the chart.",
       "command": "verifyElementPresent",
-      "target": "xpath=//div[3]/div/div/div/ul/li/span",
+      "target": "xpath=//span[contains(.,'Training')]",
       "targets": [
-        ["css=.col-md-6:nth-child(3) > #undefined .legend-item-0 > .recharts-legend-item-text", "css:finder"],
-        ["xpath=(//div[@id='undefined']/div/div/ul/li/span)[3]", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div/div/ul/li/span", "xpath:position"]
+        ["css=.mt-4:nth-child(4) > #undefined .legend-item-0 > .recharts-legend-item-text", "css:finder"],
+        ["xpath=//div[@id='undefined']/div/div/ul/li/span", "xpath:idRelative"],
+        ["xpath=//li/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Training')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
       "id": "51524e61-260d-48c7-903b-ef8b809443b8",
-      "comment": "Verify the Model Loss chart's Y axis label text \"Loss\" exists.",
+      "comment": "Verify the Loss Plot chart's Y axis label text \"Loss\" exists.",
       "command": "verifyText",
-      "target": "css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan",
+      "target": "css=.mt-4:nth-child(4) > #undefined .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan",
       "targets": [
-        ["css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan", "css:finder"]
+        ["css=.mt-4:nth-child(4) > #undefined .recharts-surface > .recharts-layer:nth-child(4) > .recharts-text > tspan", "css:finder"]
       ],
       "value": "Loss"
     }, {
       "id": "12f41f2b-b680-439d-8844-4f197b200be3",
-      "comment": "Verify the Model Loss chart's X axis label text \"Cycles\" exists.",
+      "comment": "Verify the Loss Plot chart's X axis label text \"Epoch\" exists.",
       "command": "verifyText",
-      "target": "css=.col-md-6:nth-child(3) .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan",
-      "targets": [],
-      "value": "Cycles"
-    }, {
-      "id": "1fb4cef5-b3a8-4a84-b110-cde806b92acc",
-      "comment": "Verify that the blue Help \"alert\" element is present.",
-      "command": "verifyElementPresent",
-      "target": "css=.alert",
+      "target": "css=.mt-4:nth-child(4) > #undefined .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan",
       "targets": [
-        ["css=.alert", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[3]/div/div/div", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div/div", "xpath:position"]
+        ["css=.mt-4:nth-child(4) > #undefined .recharts-surface > .recharts-layer:nth-child(3) > .recharts-text > tspan", "css:finder"]
       ],
-      "value": ""
+      "value": "Epoch"
     }, {
       "id": "d53169a5-1cee-40e2-a1fa-b054160585e1",
       "comment": "Verify the top of the Model Accuracy chart's X-axis is 100",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "css=.col-md-6:nth-child(2) > #undefined .recharts-layer:nth-child(4) .recharts-layer:nth-child(4) tspan",
-      "targets": [
-        ["css=.col-md-6:nth-child(2) > #undefined .recharts-layer:nth-child(4) .recharts-layer:nth-child(4) tspan", "css:finder"]
-      ],
+      "targets": [],
       "value": "100"
     }, {
       "id": "2671cbdf-8625-4592-a525-63a6dd2c958a",
       "comment": "Verify the top of the Model Loss chart's X-axis is 0.6",
-      "command": "verifyText",
+      "command": "//verifyText",
       "target": "css=.recharts-yAxis .recharts-layer:nth-child(5) tspan",
-      "targets": [
-        ["css=.recharts-yAxis .recharts-layer:nth-child(5) tspan", "css:finder"]
-      ],
+      "targets": [],
       "value": "0.6"
     }, {
       "id": "5fe501a4-1ace-4f0e-83c2-c9b44f7bd0c1",
@@ -8602,16 +8581,9 @@
     }, {
       "id": "3161c8c4-0392-4bfe-948f-87d1b90290cc",
       "comment": "Verify the \"Create Model\" button element is present.",
-      "command": "verifyElementPresent",
+      "command": "//verifyElementPresent",
       "target": "id=createModelButton",
-      "targets": [
-        ["id=createModelButton", "id"],
-        ["css=#createModelButton", "css:finder"],
-        ["xpath=//button[@id='createModelButton']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Create Model')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -8745,70 +8717,76 @@
       "value": ""
     }, {
       "id": "de77731e-5a74-4b2f-8585-40169740731c",
-      "comment": "Verify the heading text \"SL Tenant Ltd\" exists",
+      "comment": "Verify the heading text \"Selenium Testing - please leave\" exists",
       "command": "verifyText",
-      "target": "xpath=//h3[contains(.,'SL Tenant Ltd')]",
+      "target": "xpath=//h3[contains(.,'Selenium Testing - please leave')]",
       "targets": [
         ["css=.mb-4", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div/div/h3", "xpath:idRelative"],
         ["xpath=//h3", "xpath:position"],
-        ["xpath=//h3[contains(.,'SL Tenant Ltd')]", "xpath:innerText"]
+        ["xpath=//h3[contains(.,'Selenium Testing - please leave')]", "xpath:innerText"]
       ],
-      "value": "SL Tenant Ltd"
+      "value": "Selenium Testing - please leave"
     }, {
       "id": "06cb64ad-70dd-4c85-97ed-bf18d7ed3114",
-      "comment": "Verify the Tenant Name text \"SL Tenant Ltd\" exists",
+      "comment": "Verify the Tenant Name text \"Selenium Testing - please leave\" exists",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p",
+      "target": "xpath=//p[contains(.,'Selenium Testing - please leave')]",
       "targets": [
-        ["css=.active .mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
+        ["css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'SL Tenant Ltd')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Selenium Testing - please leave')]", "xpath:innerText"]
       ],
-      "value": "SL Tenant Ltd"
+      "value": "Selenium Testing - please leave"
     }, {
       "id": "8ffff8af-36ac-401c-8eb1-ffeee189d6dc",
-      "comment": "Verify the Salesforce Org ID \"00D24000000rCVi\" exists",
+      "comment": "Verify the Salesforce Org ID \"abcdefghijkl123\" exists",
       "command": "verifyText",
-      "target": "css=.mb-2:nth-child(3) > .col-6:nth-child(1) .form-control-plaintext",
+      "target": "xpath=//p[contains(.,'abcdefghijkl123')]",
       "targets": [
         ["css=.mb-2:nth-child(3) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/div/form/div[3]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div/div/p", "xpath:idRelative"],
         ["xpath=//div[3]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'00D24000000rCVi')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'abcdefghijkl123')]", "xpath:innerText"]
       ],
-      "value": "00D24000000rCVi"
+      "value": "abcdefghijkl123"
     }, {
       "id": "e18aed82-0bb0-4189-8d2f-d44afcce274d",
-      "comment": "Verify the Tenant ID \"001_325e3e4c6c58461295e929960a707d17\" exists",
+      "comment": "Verify the Tenant ID \"001_f26c630cb5f54033924594927fda16e0\" exists",
       "command": "verifyText",
-      "target": "xpath=//p[contains(.,'rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO')]",
+      "target": "xpath=//p[contains(.,'001_f26c630cb5f54033924594927fda16e0')]",
+      "targets": [
+        ["css=.mb-2:nth-child(1) > .col-6:nth-child(2) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'001_f26c630cb5f54033924594927fda16e0')]", "xpath:innerText"]
+      ],
+      "value": "001_f26c630cb5f54033924594927fda16e0"
+    }, {
+      "id": "3f7b6f48-6d4f-4e77-ad2b-dbb9251ff116",
+      "comment": "Verify the No. of Licences text is \"100\"",
+      "command": "verifyText",
+      "target": "xpath=//p[contains(.,'100')]",
+      "targets": [
+        ["css=.mb-2:nth-child(3) > .col-6:nth-child(2) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'100')]", "xpath:innerText"]
+      ],
+      "value": "100"
+    }, {
+      "id": "6e8a4130-3280-461f-aac1-ca39baca100a",
+      "comment": "Verify the API Key i2tOQkWmBo8AyuSPbXucr6INbvQ13PwS4D7xlhMF exists",
+      "command": "verifyText",
+      "target": "xpath=//p[contains(.,'i2tOQkWmBo8AyuSPbXucr6INbvQ13PwS4D7xlhMF')]",
       "targets": [
         ["css=.mb-2:nth-child(5) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[5]/div/div/p", "xpath:idRelative"],
         ["xpath=//div[5]/div/div/p", "xpath:position"],
-        ["xpath=//p[contains(.,'rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'i2tOQkWmBo8AyuSPbXucr6INbvQ13PwS4D7xlhMF')]", "xpath:innerText"]
       ],
-      "value": "rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO"
-    }, {
-      "id": "3f7b6f48-6d4f-4e77-ad2b-dbb9251ff116",
-      "comment": "Verify the No. of Licences text is \"44\"",
-      "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div[2]/div/p",
-      "targets": [
-        ["css=.mb-2:nth-child(3) > .col-6:nth-child(2) .form-control-plaintext", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[3]/div[2]/div/p", "xpath:idRelative"],
-        ["xpath=//div[3]/div[2]/div/p", "xpath:position"]
-      ],
-      "value": "44"
-    }, {
-      "id": "6e8a4130-3280-461f-aac1-ca39baca100a",
-      "comment": "Verify the API Key rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO exists",
-      "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[5]/div/div/p",
-      "targets": [],
-      "value": "rmc7TgJTBeaDbdwuNhHDR8XB01OJoXIm4fJsc2rO"
+      "value": "i2tOQkWmBo8AyuSPbXucr6INbvQ13PwS4D7xlhMF"
     }, {
       "id": "ba073011-1d41-45d7-b819-775f9ac7c2e3",
       "comment": "Verify the \"Edit Policy\" button element exists. (The ID of the element is actually \"createUserButton\")",
@@ -9569,7 +9547,7 @@
     }]
   }, {
     "id": "5dd5b601-18b0-4233-bf56-6ef244d2f396",
-    "name": "Tenant User xx - Models - Clone and verify data",
+    "name": "Tenant User 30 - Models - Clone and verify data",
     "commands": [{
       "id": "6ef7937d-a0d1-4f09-8a1e-fcfc58043b2a",
       "comment": "",
@@ -9607,7 +9585,7 @@
       "value": ""
     }, {
       "id": "b72299d7-9eab-4914-bd80-c30e960a3a55",
-      "comment": "",
+      "comment": "Enter \"automated_testing_user@sensai.test\" in the Username field.",
       "command": "type",
       "target": "id=username",
       "targets": [
@@ -9617,10 +9595,10 @@
         ["xpath=//div[@id='root']/div/div[2]/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sl_tenant_user@sensai.test"
+      "value": "automated_testing_user@sensai.test"
     }, {
       "id": "198917e4-c746-443f-92ab-717f19436da8",
-      "comment": "",
+      "comment": "Enter the \"automated_testing_user@sensai.test\" user's password in the Password field.",
       "command": "type",
       "target": "id=password",
       "targets": [
@@ -9630,20 +9608,26 @@
         ["xpath=//div[@id='root']/div/div/form/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "SL_tenant_user_123!"
+      "value": "AutomatedUser123$"
+    }, {
+      "id": "2caf24d7-d4c7-49b4-a2e7-037b2e1a39e4",
+      "comment": "Press the \"Enter\" key to log in.",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
     }, {
       "id": "85b3a606-c7c6-4dab-8fbd-b770de689147",
       "comment": "",
-      "command": "click",
+      "command": "//click",
       "target": "id=login",
-      "targets": [
-        ["id=login", "id"],
-        ["css=#login", "css:finder"],
-        ["xpath=//button[@id='login']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "465bf082-39af-4733-9651-96e9f77c8267",
@@ -9687,7 +9671,7 @@
       "id": "94116875-3a95-45d7-a289-1bf6e334ba98",
       "comment": "Get the new Model's name ready before clicking the Clone button.",
       "command": "executeScript",
-      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return \"SL Model \" + dateTime;",
+      "target": "var today = new Date();  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();  var time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();  var dateTime = date+' '+time; return \"SL Model clone \" + dateTime;",
       "targets": [],
       "value": "modelnamewithdate"
     }, {
@@ -9799,20 +9783,6 @@
       "targets": [],
       "value": "30000"
     }, {
-      "id": "3131234c-c6a1-4fb4-b212-7ca478c4ffb4",
-      "comment": "Refresh the page.",
-      "command": "//executeScript",
-      "target": "window.setTimeout(function () {     location.reload(false); }, 5000);",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "dab858e5-80cd-4aba-90df-1b93218ad383",
-      "comment": "Wait for the new Model's name link to be present.",
-      "command": "waitForElementPresent",
-      "target": "linkText=${clonedModelName}",
-      "targets": [],
-      "value": "30000"
-    }, {
       "id": "26d42469-4b4d-4db6-a869-12753c16b552",
       "comment": "Click on the link for the clone of the Model.",
       "command": "click",
@@ -9844,7 +9814,7 @@
       ],
       "value": "CREATED"
     }, {
-      "id": "e3326245-6f63-4513-b7da-4ae998ecf6f8",
+      "id": "3dbf6fa8-bfd8-45c8-a7a1-4b5bb4b007f6",
       "comment": "Verify the Target field's value is \"OPPORTUNITY.ISWON\".",
       "command": "verifyText",
       "target": "xpath=//p[contains(.,'OPPORTUNITY.ISWON')]",
@@ -9855,6 +9825,30 @@
         ["xpath=//p[contains(.,'OPPORTUNITY.ISWON')]", "xpath:innerText"]
       ],
       "value": "OPPORTUNITY.ISWON"
+    }, {
+      "id": "3da77e4f-f317-444b-8c77-2859afab76e5",
+      "comment": "Verify the Architecture Type field's value is \"SFDC - Winning Opportunity\".",
+      "command": "verifyText",
+      "target": "xpath=//p[contains(.,'SFDC - Winning Opportunity')]",
+      "targets": [
+        ["css=.col-12 > .form-group > .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[4]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'SFDC - Winning Opportunity')]", "xpath:innerText"]
+      ],
+      "value": "SFDC - Winning Opportunity"
+    }, {
+      "id": "e3326245-6f63-4513-b7da-4ae998ecf6f8",
+      "comment": "Verify the Column Count field's value is \"11 (of which 1 are excluded)\".",
+      "command": "verifyText",
+      "target": "xpath=//p[contains(.,'11 (of which 1 are excluded)')]",
+      "targets": [
+        ["css=.mb-2:nth-child(2) > .col-6:nth-child(2) .form-control-plaintext", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'11 (of which 1 are excluded)')]", "xpath:innerText"]
+      ],
+      "value": "11 (of which 1 are excluded)"
     }, {
       "id": "3fa1d66d-d872-4a32-b028-99df82a94d96",
       "comment": "",
@@ -9871,21 +9865,20 @@
       ],
       "value": ""
     }, {
-      "id": "2e6c6278-671d-46d7-9e8d-3a2621cc7bef",
-      "comment": "Wait for the first row, first column \"LEADSOURCE\" element to be present.",
-      "command": "waitForElementPresent",
-      "target": "xpath=//td[contains(.,'LEADSOURCE')]",
-      "targets": [],
-      "value": "30000"
+      "id": "2cf4e308-ba7d-4382-ab4b-cdbb75f04e90",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "SUCCESS__BASE_BEHAVIOUR__C"
     }, {
-      "id": "627ebc30-b761-4912-9cb5-ec108f3f27c8",
-      "comment": "Verify the text of the first row, first column \"LEADSOURCE\".",
-      "command": "verifyText",
-      "target": "xpath=//td[contains(.,'LEADSOURCE')]",
-      "targets": [],
-      "value": "LEADSOURCE"
-    }, {
-      "id": "2682ec6a-29cb-47c1-abb6-e7ea159111ec",
+      "id": "237bf2c4-dbf0-4e74-9d75-3f7698e52bf3",
       "comment": "Verify the \"SUCCESS__BASE_BEHAVIOUR__C\" value is present.",
       "command": "verifyElementPresent",
       "target": "xpath=//td[contains(.,'SUCCESS__BASE_BEHAVIOUR__C')]",
@@ -9897,9 +9890,131 @@
       ],
       "value": ""
     }, {
+      "id": "b4d636d6-4439-4642-900a-fcb806148f30",
+      "comment": "Verify the Type column's value is \"Categorical\"",
+      "command": "verifyText",
+      "target": "xpath=//td[contains(.,'Categorical')]",
+      "targets": [
+        ["css=td:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'Categorical')]", "xpath:innerText"]
+      ],
+      "value": "Categorical"
+    }, {
+      "id": "3387e2c7-5629-423a-a0c0-5498f7ae3783",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "type"
+    }, {
+      "id": "2764d1de-ad63-4d0c-8bde-ecebe822b117",
+      "comment": "Verify the \"TYPE\" text value is present.",
+      "command": "verifyText",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/table/tbody/tr[2]/td",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/table/tbody/tr[2]/td", "xpath:idRelative"],
+        ["xpath=//tr[2]/td", "xpath:position"]
+      ],
+      "value": "TYPE"
+    }, {
+      "id": "2682ec6a-29cb-47c1-abb6-e7ea159111ec",
+      "comment": "Verify the \"DEAL_TYPE__C\" text value is present.",
+      "command": "verifyText",
+      "target": "xpath=//td[contains(.,'DEAL_TYPE__C')]",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'DEAL_TYPE__C')]", "xpath:innerText"]
+      ],
+      "value": "DEAL_TYPE__C"
+    }, {
+      "id": "aa09d736-0e0f-4676-8867-a546e601ebf7",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "NEWVALUE"
+    }, {
+      "id": "1b82fb6a-d867-4bf1-86b5-c05baa644196",
+      "comment": "Verify the \"NEWVALUE\" text value is present.",
+      "command": "verifyText",
+      "target": "xpath=//td[contains(.,'NEWVALUE')]",
+      "targets": [
+        ["css=td:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'NEWVALUE')]", "xpath:innerText"]
+      ],
+      "value": "NEWVALUE"
+    }, {
+      "id": "883b28c7-7a2b-40e6-9a62-2b408d574d04",
+      "comment": "Verify the \"OPPORTUNITYFIELDHISTORY\" text value is present.",
+      "command": "verifyText",
+      "target": "xpath=//td[contains(.,'OPPORTUNITYFIELDHISTORY')]",
+      "targets": [
+        ["css=td:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'OPPORTUNITYFIELDHISTORY')]", "xpath:innerText"]
+      ],
+      "value": "OPPORTUNITYFIELDHISTORY"
+    }, {
+      "id": "bde7230f-4cdb-4db2-83c3-77656f92edb1",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "ISWON"
+    }, {
+      "id": "9a620622-3eea-466c-97bb-ceb0e9e0ba24",
+      "comment": "Verify the Type column's value is \"bool\".",
+      "command": "verifyText",
+      "target": "xpath=//td[contains(.,'bool')]",
+      "targets": [
+        ["css=td:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'bool')]", "xpath:innerText"]
+      ],
+      "value": "bool"
+    }, {
+      "id": "7717ec31-8fc3-4ce3-84b7-e56a6e570d6c",
+      "comment": "Verify the Included column's value is \"No\".",
+      "command": "verifyText",
+      "target": "xpath=//span[contains(.,'No')]",
+      "targets": [
+        ["css=td > .align-middle", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[4]/span", "xpath:idRelative"],
+        ["xpath=//td[4]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'No')]", "xpath:innerText"]
+      ],
+      "value": "No"
+    }, {
       "id": "80a82a14-c99b-48ef-bc35-de221e3e551c",
       "comment": "Verify the text of the 3rd row, first column \"TYPE\".",
-      "command": "verifyElementPresent",
+      "command": "//verifyElementPresent",
       "target": "xpath=//td[contains(.,'TYPE')]",
       "targets": [],
       "value": "TYPE"
@@ -9959,9 +10074,70 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "5684b70b-679c-461e-b313-5fd80db780a8",
+      "comment": "",
+      "command": "open",
+      "target": "https://test.cloudapps.dev/models",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8fde3825-3a83-43ac-801d-1724ab988548",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "name=query",
+      "targets": [
+        ["name=query", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='query']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "9e46cab8-f246-409d-93f5-44af97314a80",
+      "comment": "",
+      "command": "type",
+      "target": "name=query",
+      "targets": [],
+      "value": "SL Model for Cloning"
+    }, {
+      "id": "5f102c09-2670-498e-9490-a0c457f4613a",
+      "comment": "Verify the link for the original Model IS present.",
+      "command": "verifyElementPresent",
+      "target": "linkText=SL Model for Cloning",
+      "targets": [
+        ["linkText=SL Model for Cloning", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'SL Model for Cloning')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/table/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/models/004_06a15050c0e64034a5105e956259337c')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SL Model for Cloning')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5aed124a-24bb-4fdd-9cde-30a961515ae4",
+      "comment": "Enter the new model's name in the search box.",
+      "command": "type",
+      "target": "name=query",
+      "targets": [],
+      "value": "${clonedModelName}"
+    }, {
+      "id": "ed32813b-0235-473d-8578-ea3700294eca",
+      "comment": "Ensure the text \"No matches found\".",
+      "command": "verifyText",
+      "target": "xpath=//h5[contains(.,'No matches found')]",
+      "targets": [
+        ["css=h5", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div[2]/h5", "xpath:idRelative"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'No matches found')]", "xpath:innerText"]
+      ],
+      "value": "No matches found"
+    }, {
       "id": "b273675a-9270-4d3f-a046-47430bddc796",
       "comment": "Verify the link for the clone of the Model IS NOT PRESENT.",
-      "command": "verifyElementNotPresent",
+      "command": "//verifyElementNotPresent",
       "target": "linkText=${clonedModelName}",
       "targets": [],
       "value": ""
@@ -13589,32 +13765,32 @@
       "value": ""
     }, {
       "id": "14fbf22a-9d6c-4871-9791-f63c1cdc9204",
-      "comment": "Wait for the existing Tenant User \"SL Tenant User for Editing\" to be present.",
+      "comment": "Wait for the existing Tenant User \"Auto Testing User for Editing\" to be present.",
       "command": "waitForElementPresent",
-      "target": "linkText=SL Tenant User for Editing",
+      "target": "linkText=Auto Testing User for Editing",
       "targets": [
-        ["linkText=SL Tenant User for Editing", "linkText"],
-        ["css=tr:nth-child(4) > td:nth-child(1) > a", "css:finder"],
-        ["xpath=//a[contains(text(),'SL Tenant User for Editing')]", "xpath:link"],
-        ["xpath=//table[@id='usersTable']/tbody/tr[4]/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/users/sl_tenant_user_editing%40sensai.test')]", "xpath:href"],
-        ["xpath=//tr[4]/td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SL Tenant User for Editing')]", "xpath:innerText"]
+        ["linkText=Auto Testing User for Editing", "linkText"],
+        ["css=tr:nth-child(3) > td:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Auto Testing User for Editing')]", "xpath:link"],
+        ["xpath=//table[@id='usersTable']/tbody/tr[3]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/users/automated_testing_user_editing%40sensai.test')]", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Auto Testing User for Editing')]", "xpath:innerText"]
       ],
       "value": "60000"
     }, {
       "id": "236c0942-3073-40c5-ae5a-aa7477f624ba",
-      "comment": "Click on the existing Tenant User \"SL Tenant User for Editing\" to access the record.",
+      "comment": "Click on the existing Tenant User \"Auto Testing User for Editing\" to access the record.",
       "command": "click",
-      "target": "linkText=SL Tenant User for Editing",
+      "target": "linkText=Auto Testing User for Editing",
       "targets": [
-        ["linkText=SL Tenant User for Editing", "linkText"],
-        ["css=tr:nth-child(4) > td:nth-child(1) > a", "css:finder"],
-        ["xpath=//a[contains(text(),'SL Tenant User for Editing')]", "xpath:link"],
-        ["xpath=//table[@id='usersTable']/tbody/tr[4]/td/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/users/sl_tenant_user_editing%40sensai.test')]", "xpath:href"],
-        ["xpath=//tr[4]/td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'SL Tenant User for Editing')]", "xpath:innerText"]
+        ["linkText=Auto Testing User for Editing", "linkText"],
+        ["css=tr:nth-child(3) > td:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Auto Testing User for Editing')]", "xpath:link"],
+        ["xpath=//table[@id='usersTable']/tbody/tr[3]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/users/automated_testing_user_editing%40sensai.test')]", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Auto Testing User for Editing')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
@@ -13642,7 +13818,7 @@
         ["xpath=//input[@id='fullname']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "SL Tenant User for Editing - EDITED"
+      "value": "Auto Testing User for Editing - EDITED"
     }, {
       "id": "6a752dd6-91ab-4a49-ba18-1c789383a817",
       "comment": "Change the user type to a Tenant Admin (from Tenant user).",
@@ -13677,16 +13853,16 @@
       "value": "60000"
     }, {
       "id": "f563d48b-bbf7-4484-98f1-5b95261c1648",
-      "comment": "Verify the text of the Full Name field value \"SL Tenant User for Editing - EDITED\"",
+      "comment": "Verify the text of the Full Name field value \"Auto Testing User for Editing - EDITED\"",
       "command": "verifyText",
-      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p",
+      "target": "xpath=//p[contains(.,'Auto Testing User for Editing - EDITED')]",
       "targets": [
         ["css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'SL Tenant User for Editing - EDITED')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Auto Testing User for Editing - EDITED')]", "xpath:innerText"]
       ],
-      "value": "SL Tenant User for Editing - EDITED"
+      "value": "Auto Testing User for Editing - EDITED"
     }, {
       "id": "2350d9fc-a4d2-406b-97f9-c1a07d5a28d1",
       "comment": "Verify the Role field value is \"TenantAdmin\".",
@@ -13740,7 +13916,7 @@
         ["xpath=//input[@id='fullname']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "SL Tenant User for Editing"
+      "value": "Auto Testing User for Editing"
     }, {
       "id": "f5d50069-bace-4712-a453-8e2bc5982299",
       "comment": "Change the user type to a Tenant Admin (from Tenant user).",
@@ -13769,7 +13945,7 @@
     }, {
       "id": "75bf3ac5-691f-4798-8915-3e8d667e8e1f",
       "comment": "",
-      "command": "pause",
+      "command": "//pause",
       "target": "",
       "targets": [],
       "value": "60000"
@@ -13788,24 +13964,24 @@
       "targets": [],
       "value": "60000"
     }, {
-      "id": "e1d21348-4faa-46fb-abb6-9907420cccfa",
-      "comment": "",
-      "command": "//waitForText",
-      "target": "css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext",
-      "targets": [],
-      "value": "60000"
-    }, {
       "id": "5026e641-6606-4574-b2a1-3d53bb771815",
-      "comment": "Verify the text of the Full Name field value has been set back to the original value \"SL Tenant User for Editing\"",
+      "comment": "Verify the text of the Full Name field value has been set back to the original value \"Auto Testing User for Editing\"",
       "command": "verifyText",
-      "target": "xpath=//p[contains(.,'SL Tenant User for Editing')]",
+      "target": "xpath=//p[contains(.,'Auto Testing User for Editing')]",
       "targets": [
         ["css=.mb-2:nth-child(1) > .col-6:nth-child(1) .form-control-plaintext", "css:finder"],
         ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div/div/div/p", "xpath:idRelative"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'SL Tenant User for Editing')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Auto Testing User for Editing')]", "xpath:innerText"]
       ],
-      "value": "SL Tenant User for Editing"
+      "value": "Auto Testing User for Editing"
+    }, {
+      "id": "c440fc8b-54fa-42d0-b094-2f5e05cc57d4",
+      "comment": "Verify the Role field value is \"TenantUser\".",
+      "command": "verifyText",
+      "target": "xpath=//div[@id='root']/div[2]/div[2]/div/div/div/form/div[2]/div[2]/div/p",
+      "targets": [],
+      "value": "TenantUser"
     }, {
       "id": "89806a30-626f-4348-819d-eccb3cfc606f",
       "comment": "CANNOT GET THIS TO WORK - Verify the Role field value is \"TenantUser\".",
